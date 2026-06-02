@@ -267,6 +267,13 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 .empty{text-align:center;padding:50px 20px;color:var(--text-muted)}
 .empty .ei{font-size:30px;margin-bottom:10px}
 
+/* Doc embed */
+.doc-embed-wrap{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:14px;background:var(--surface2)}
+.doc-embed-bar{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--surface);border-bottom:1px solid var(--border);font-size:var(--text-xs);color:var(--text-muted)}
+.doc-embed-bar a{font-size:var(--text-xs);color:var(--green);text-decoration:none;font-weight:500}
+.doc-embed-bar a:hover{text-decoration:underline}
+.doc-embed{width:100%;height:620px;border:none;display:block}
+
 /* Toast */
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--text);color:white;padding:7px 14px;border-radius:7px;font-size:var(--text-sm);font-weight:500;pointer-events:none;opacity:0;transition:opacity .2s;z-index:9999;role:status;aria-live:polite}
 .toast.show{opacity:1}
@@ -441,10 +448,19 @@ function buildResDropdown(subjectDownloads) {
     : RES.fonts.filter(f => f.label !== 'CMU Serif Roman');
 
   let h = `<div class="res-dropdown-title">Downloads & Resources</div>`;
-  h += `<div class="res-group"><div class="res-group-label">Shared — All Subjects</div><div class="dl-row">${RES.shared.map(dlBtn).join('')}</div></div>`;
+
+  // For math, shared is already inside the math key concept — show shared first
+  if (subjectDownloads !== 'math') {
+    h += `<div class="res-group"><div class="res-group-label">Shared — All Subjects</div><div class="dl-row">${RES.shared.map(dlBtn).join('')}</div></div>`;
+  } else {
+    h += `<div class="res-group"><div class="res-group-label math-label">Shared</div><div class="dl-row">${RES.shared.map(dlBtn).join('')}</div></div>`;
+  }
+
   h += `<div class="res-group"><div class="res-group-label font-label">Fonts</div><div class="dl-row">${fontsToShow.map(dlBtn).join('')}</div></div>`;
+
   if (subjectDownloads && RES[subjectDownloads] && RES[subjectDownloads].length) {
-    const lbl = subjectDownloads.charAt(0).toUpperCase() + subjectDownloads.slice(1) + ' Files';
+    const lbl = subjectDownloads === 'math' ? 'Math Reference Files' :
+                subjectDownloads.charAt(0).toUpperCase() + subjectDownloads.slice(1) + ' Files';
     h += `<div class="res-group"><div class="res-group-label ${subjectDownloads}-label">${lbl}</div><div class="dl-row">${RES[subjectDownloads].map(dlBtn).join('')}</div></div>`;
   }
   document.getElementById('res-dropdown').innerHTML = h;
@@ -504,6 +520,15 @@ function renderEl(el, accentColor, subjectBadge) {
     <div class="card-body">`;
 
   h += imgGallery(el.images);
+  if (el.docEmbed) {
+    h += `<div class="doc-embed-wrap">
+      <div class="doc-embed-bar">
+        <span>Read-only document view</span>
+        <a href="${el.docEmbed.replace('/preview','/')}" target="_blank" rel="noopener">Open in Google Docs ↗</a>
+      </div>
+      <iframe src="${el.docEmbed}" class="doc-embed" title="${el.label}" loading="lazy"></iframe>
+    </div>`;
+  }
   if (hasGradeTable) h += gTable(el.gradeTable);
 
   if (el.specs && el.specs.length) {
@@ -658,6 +683,7 @@ function renderWelcome() {
     <div class="welcome-dl-grid">
       <div>
         <div class="wdl-sub"><div class="wdl-group-label math-label">Math / Shared</div><div class="dl-row">${RES.shared.map(dlBtn).join('')}</div></div>
+        <div class="wdl-sub"><div class="wdl-group-label math-label" style="margin-top:8px">Math Files</div><div class="dl-row">${RES.math.map(dlBtn).join('')}</div></div>
         <div class="wdl-sub"><div class="wdl-group-label bio-label">Biology</div><div class="dl-row">${RES.biology.map(dlBtn).join('')}</div></div>
         <div class="wdl-sub"><div class="wdl-group-label font-label">Fonts</div><div class="dl-row">${RES.fonts.map(dlBtn).join('')}</div></div>
       </div>
@@ -708,7 +734,7 @@ function renderWelcome() {
     <div class="welcome">
       <div class="welcome-hero" role="banner">
         <h1>CK-12 Diagram Style Guide</h1>
-        <p>Single source for all diagram specifications — for internal teams and external contractors. Pick a subject below to get started.</p>
+        <p>Single source of truth for all diagram specifications — for internal teams and external contractors. Pick a subject below to get started.</p>
       </div>
       <div class="subject-cards" role="list" aria-label="Subjects">${cards}</div>
       ${wdl}
