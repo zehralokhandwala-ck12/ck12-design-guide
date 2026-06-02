@@ -34,6 +34,12 @@ const RES = {
     { label:"Latin Modern Math", url:"https://www.gust.org.pl/projects/e-foundry/lm-math/download", icon:"∑" },
     { label:"CMU Serif Roman", url:"https://drive.google.com/open?id=1wM5EEnnxLuiuwTp-aik9oHhLZNIDapLj&usp=drive_fs", icon:"Σ" },
   ],
+  math: [
+    { label:"Diagram Labelling .ai Files", url:"https://drive.google.com/open?id=1CN_AgUXP4Dc2roR0qbYdsArv28AY8N0f&usp=drive_fs", icon:"📐" },
+    { label:"Guide to Place Point Labels (.ai)", url:"https://drive.google.com/open?id=1CQwbXSi8yEYCIywe2ti5cx3ay95RhSn8&usp=drive_fs", icon:"📍" },
+    { label:"AP Image Guidelines (Graphs)", url:"https://docs.google.com/document/d/15O2UthiEJMu-_0EfefMBEcZs7Dd_mQ9emk4hqyPk0h4/edit?tab=t.0", icon:"📄" },
+    { label:"Pie Chart Reference File", url:"https://drive.google.com/file/d/1egheyvUESNyesFVDy-P8KIOIFBttUEY9/view?usp=sharing", icon:"🥧" },
+  ],
   biology: [
     { label:"Artwork Creation Guide", url:"https://docs.google.com/document/d/1Zd2j9117hieGSQTK3h3OicJoPJRUPu2ReIlF7ApoYFk/edit?tab=t.0", icon:"📄" },
   ],
@@ -60,7 +66,7 @@ const DATA = { subjects: [
   icon:"∑", iconBg:"#e8f5ee", iconColor:"#008545",
   accentColor:"#008545",
   description:"Grade 6–10+ · Lines, points, graphs, construction",
-  downloads:"shared",
+  downloads:"math",
   categories:[
 
     { id:"canvas", label:"Canvas & Padding", elements:[{
@@ -136,6 +142,9 @@ const DATA = { subjects: [
         banners:[
           {type:"note", text:"In complex diagrams, reduce arrowhead to 40% (from standard 60%) in Illustrator."},
           {type:"note", text:"Arrow placed first, then label. 10px spacing between arrow and diagram line."},
+          {type:"note", text:"<strong>Right-aligned</strong> labels are also valid depending on placement. Use left, center, or right alignment so that if text is edited later, it does not overlap the diagram."},
+          {type:"note", text:"If limited space or multiple labels, align the label <strong>along the direction of the line</strong> to clarify which label belongs to which segment."},
+          {type:"info", text:"<strong>When to skip the arrow marker:</strong> No arrow needed when the measurement is already obvious (e.g. a single radius r=6cm). Arrow IS needed when there is potential confusion — e.g. a diameter where point O is the midpoint, or concentric circles where it is unclear which radius is being labelled."},
         ]
       },
       { id:"vertex-label", label:"Vertex Label", images:[],
@@ -267,6 +276,7 @@ const DATA = { subjects: [
           {label:"Style", values:["10 Bold","10 Bold","10 Bold"]},
           {label:"Graph axis marker", values:["2px #999999","2px #999999","2px #999999"]},
           {label:"Denominator color", values:["#333333","#999999","#666666"], highlight:true, type:"color"},
+          {label:"Denominator size + cap", values:["2px, Round","2px, Round","2px, Round"]},
         ]}
       }
     ]},
@@ -298,9 +308,11 @@ const DATA = { subjects: [
           {label:"Axis numeral markers", value:"Latin Modern Roman, 14px, #999999, 10 Bold"},
           {label:"Axis labels (x, y)", value:"Latin Modern Roman, 14px, #999999, 10 Bold Italic"},
           {label:"Axis labels (X, X′, Y, Y′)", value:"Latin Modern Roman, 16px, #999999, 10 Bold Italic"},
-          {label:"Graph equation color", value:"#666666", type:"color"},
+          {label:"Graph equation color", value:"#999999", type:"color"},
           {label:"Equation — alphabet", value:"10 Bold Italic"},
           {label:"Equation — numeral", value:"10 Bold"},
+          {label:"Descriptive label (axis heading)", value:"Proxima Nova, 18px, #999999, Regular"},
+          {label:"Heading (math symbol text)", value:"Latin Modern Roman, 18px, #999999, 10 Bold / 10 Bold Italic"},
           {label:"Superscript / subscript", value:"21px"},
         ],
         banners:[
@@ -341,12 +353,20 @@ const DATA = { subjects: [
       },
       { id:"pie-chart", label:"Pie Chart", images:[],
         specs:[
+          {label:"Segment stroke", value:"2px, #FFFFFF, Round cap"},
+          {label:"Angle marker", value:"3px, #666666, Butt cap, Miter join"},
           {label:"Label line", value:"1px, #000000, Round"},
           {label:"Label points", value:"6px, #000000"},
-          {label:"Numerals inside", value:"Latin Modern Roman, 18px, #000000, 10 Bold"},
-          {label:"Text inside", value:"Proxima Nova, 18px, #000000, 10 Bold"},
+          {label:"Numerals — inside chart", value:"Latin Modern Roman, 18px, #000000, 10 Bold"},
+          {label:"Descriptive labels — inside chart", value:"Proxima Nova, 18px, #000000, Bold"},
+          {label:"Descriptive labels — outside chart", value:"Proxima Nova, 18px, #4a4a4a, Regular"},
+          {label:"Measurement label numerals — outside", value:"Latin Modern Roman, 18px, #000000, 10 Bold"},
+          {label:"Measurement label alphabets — outside", value:"Latin Modern Roman, 18px, #000000, 10 Bold Italic"},
           {label:"Legends", value:"Proxima Nova, 18px, #666666, Regular"},
           {label:"Title", value:"Proxima Nova, 21px, #000000, Bold"},
+        ],
+        banners:[
+          {type:"info", text:"Label colors differ based on placement. Labels <strong>inside</strong> the pie use <code>#000000</code>. Descriptive labels <strong>outside</strong> use <code>#4a4a4a</code> Regular. Use label line + point when data cannot fit inside."},
         ]
       },
       { id:"pie-colors", label:"Pie Chart Color Palette",
@@ -397,19 +417,31 @@ const DATA = { subjects: [
 
     { id:"sequence", label:"Sequence Diagrams", elements:[{
       id:"sequence-spec", label:"Sequence Diagram", gradeVaries:true, images:[],
+      gradeTable:{ columns:["Property","Grade 6","Grade 7–10+"], rows:[
+        {label:"Line color", values:["#666666","#999999"], highlight:true, type:"color"},
+        {label:"Label 1 font", values:["Latin Modern Roman","Latin Modern Roman"], highlight:false},
+        {label:"Label 1 size", values:["18px","14px"], highlight:true},
+        {label:"Label 1 color", values:["#333333","#999999"], highlight:true, type:"color"},
+        {label:"Label 1 style", values:["10 Bold","10 Bold"], highlight:false},
+        {label:"Label 2 font", values:["Proxima Nova","Latin Modern Roman"], highlight:true},
+        {label:"Label 2 size", values:["18px","18px"], highlight:false},
+        {label:"Label 2 color", values:["#000000","#999999"], highlight:true, type:"color"},
+        {label:"Label 2 style", values:["Regular","10 Bold"], highlight:true},
+        {label:"Label term font", values:["Latin Modern Roman","Latin Modern Roman"], highlight:false},
+        {label:"Label term size", values:["18px","14px"], highlight:true},
+        {label:"Label term color", values:["#000000","#999999"], highlight:true, type:"color"},
+        {label:"Label term style", values:["10 Bold","10 Bold Italic"], highlight:true},
+      ]},
       specs:[
         {label:"Line size", value:"2px"},
-        {label:"Line color (Grade 8+)", value:"#999999", type:"color"},
-        {label:"Line color (Grade 6)", value:"#666666", type:"color"},
         {label:"Shape stroke", value:"2px, #999999"},
         {label:"Point size", value:"4px"},
-        {label:"Arrow", value:"Arrow 7, 1px, 20% scale"},
-        {label:"Label 1", value:"14px, #999999, 10 Bold"},
-        {label:"Label 2", value:"18px, #999999, 10 Bold"},
-        {label:"Label term", value:"14px, #999999, 10 Bold Italic"},
+        {label:"Point color", value:"#000000"},
+        {label:"Arrow", value:"Arrow 7, 1px stroke, 20% scale"},
       ],
       banners:[
-        {type:"note", text:"Arc arrow: full circle → remove lower semicircle → push top anchor down 3px → center Arrow 7 on arc."},
+        {type:"info", text:"<strong>Grade 6 uses colorful, larger labels</strong> with Proxima Nova and darker colors. Grade 7 onwards uses Latin Modern Roman with #999999 throughout."},
+        {type:"note", text:"Arc arrow construction: full circle → remove lower semicircle → push top anchor down 3px → center Arrow 7 on arc."},
       ]
     }]}
 
@@ -423,7 +455,7 @@ const DATA = { subjects: [
   id:"biology", label:"Biology", badge:"biology",
   icon:"🧬", iconBg:"#e0f2e9", iconColor:"#00783E",
   accentColor:"#00783E",
-  description:"Cells, proteins, lipids, energy molecules",
+  description:"Cells, organelles, proteins, lipids, energy molecules",
   downloads:"biology",
   categories:[
 
@@ -441,10 +473,65 @@ const DATA = { subjects: [
       banners:[
         {type:"warn", text:"Guidelines updated — old assets will show color variation. New standard: primary <code>#999999</code>, secondary <code>#000000</code>."},
         {type:"note", text:"Use <code>#000000</code> when <code>#999999</code> merges with diagram. Designer's call."},
-        {type:"note", text:"If many labels, 16px is acceptable for label text."},
+        {type:"note", text:"If there is no subheading in the image, use 18px Bold for the heading instead of 21px."},
+        {type:"note", text:"If the image has more labels, 16px is acceptable for label text."},
         {type:"note", text:"Use double stroke in Illustrator on dark backgrounds for label line visibility."},
+        {type:"note", text:"The 40px and 10px label spacing can be adjusted according to the image. Designer's call based on canvas space available."},
       ]
     }]},
+
+    { id:"bio-cell-references", label:"Cell & Organism References", elements:[
+      {
+        id:"cell-membrane", label:"Cell Membrane & Cytoplasm", images:[],
+        specs:[],
+        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+      },
+      {
+        id:"chromosome", label:"Chromosome", images:[],
+        specs:[],
+        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+      },
+      {
+        id:"dna-atgc", label:"DNA — ATGC", images:[],
+        specs:[],
+        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+      },
+      {
+        id:"enzymes", label:"Enzymes", images:[],
+        specs:[],
+        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+      },
+      {
+        id:"mitochondria", label:"Mitochondria", images:[],
+        specs:[],
+        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+      },
+      {
+        id:"nucleus-dna", label:"Nucleus & DNA Strand", images:[],
+        specs:[],
+        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+      },
+      {
+        id:"ribosome", label:"Ribosome", images:[],
+        specs:[],
+        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+      },
+      {
+        id:"plant-cell", label:"Plant Cell", images:[],
+        specs:[],
+        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+      },
+      {
+        id:"bacteria-cell", label:"Bacteria Cell", images:[],
+        specs:[],
+        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+      },
+      {
+        id:"membrane-proteins", label:"Membrane Proteins", images:[],
+        specs:[],
+        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+      },
+    ]},
 
     { id:"bio-protein", label:"Protein Structure", elements:[
       { id:"protein-primary", label:"Primary Structure", images:[],
@@ -458,14 +545,21 @@ const DATA = { subjects: [
           {label:"Inner path stroke", value:"1.5px"},
         ]
       },
-      { id:"protein-tertiary", label:"Tertiary Structure",
+      {
+        id:"protein-secondary", label:"Secondary Structure", images:[],
+        specs:[],
+        banners:[
+          {type:"info", text:"Secondary structure is defined visually. No fixed numerical specs in the doc. Add reference image when available."},
+        ]
+      },
+      { id:"protein-tertiary", label:"Tertiary Structure", images:[],
         specs:[
           {label:"Fill color", value:"#8564d5", type:"color"},
           {label:"Stroke color", value:"#5b4491", type:"color"},
           {label:"Stroke size", value:"1px"},
         ]
       },
-      { id:"protein-quaternary", label:"Quaternary Structure",
+      { id:"protein-quaternary", label:"Quaternary Structure", images:[],
         specs:[
           {label:"Blue fill", value:"#8564d5", type:"color"},
           {label:"Blue stroke", value:"#5b4491", type:"color"},
@@ -476,16 +570,25 @@ const DATA = { subjects: [
       }
     ]},
 
-    { id:"bio-lipids", label:"Lipids", elements:[{
-      id:"lipid-low", label:"Lipid — Low Fidelity", images:[],
-      specs:[
-        {label:"Head fill", value:"#ff816e", type:"color"},
-        {label:"Head stroke", value:"#a14739", type:"color"},
-        {label:"Head stroke size", value:"0.5px"},
-        {label:"Tail color", value:"#bf7b24", type:"color"},
-        {label:"Tail stroke", value:"0.5px, Round corner"},
-      ]
-    }]},
+    { id:"bio-lipids", label:"Lipids", elements:[
+      {
+        id:"lipid-low", label:"Lipid — Low Fidelity", images:[],
+        specs:[
+          {label:"Head fill", value:"#ff816e", type:"color"},
+          {label:"Head stroke", value:"#a14739", type:"color"},
+          {label:"Head stroke size", value:"0.5px"},
+          {label:"Tail color", value:"#bf7b24", type:"color"},
+          {label:"Tail stroke", value:"0.5px, Round corner"},
+        ]
+      },
+      {
+        id:"lipid-high", label:"Lipid — High Fidelity", images:[],
+        specs:[],
+        banners:[
+          {type:"info", text:"High fidelity lipid is defined visually. No fixed numerical specs in the doc. Add reference image when available."},
+        ]
+      }
+    ]},
 
     { id:"bio-energy", label:"Energy-Carrying Molecules", elements:[{
       id:"energy-molecule", label:"Molecule Shapes", images:[],
@@ -590,7 +693,7 @@ const DATA = { subjects: [
         {label:"Positive fill", value:"#3399ff @ 30% opacity", type:"color-inline", colorValue:"#3399ff"},
         {label:"Negative fill", value:"#da51e5 @ 30% opacity", type:"color-inline", colorValue:"#da51e5"},
         {label:"Circle diameter (small)", value:"25px"},
-        {label:"Circle diameter (large)", value:"40–45px"},
+        {label:"Circle diameter (large)", value:"45px"},
         {label:"Stroke", value:"2px"},
         {label:"Label font", value:"Proxima Nova, 24–28px, Bold, #666666"},
       ],
@@ -677,6 +780,15 @@ const DATA = { subjects: [
   downloads:"chemistry",
   categories:[
 
+    { id:"chem-fig-guidelines", label:"Chemistry Figure Guidelines", elements:[{
+      id:"chem-fig-doc", label:"Chemistry Figure Guidelines",
+      docEmbed:"https://docs.google.com/document/d/14FD8QgNC7PnpQK_DXEW1kOVtYjal9ZN9/preview",
+      images:[], specs:[],
+      banners:[
+        {type:"info", text:"Full figure construction guidelines for chemistry diagrams. Scroll to read the complete document."},
+      ]
+    }]},
+
     { id:"chem-general", label:"General Guidelines", elements:[{
       id:"chem-image-size", label:"Image Size & Scaling", images:[],
       specs:[
@@ -739,6 +851,7 @@ const DATA = { subjects: [
         banners:[
           {type:"note", text:"Bond joins atom at half the atom's radius."},
           {type:"note", text:"Bond construction: draw 2px stroke first, then add 6px stroke on top. Alternatively use a 4px height rectangle with 2px stroke."},
+          {type:"note", text:"<strong>Double bond</strong> uses the same stick specifications as single bond."},
         ]
       },
       { id:"ball-stick-large", label:"Ball & Stick — 250px Atoms", images:[],
@@ -751,6 +864,12 @@ const DATA = { subjects: [
         ],
         banners:[
           {type:"note", text:"Stroke rule: 2px up to 200px atom, +1px per 100px above that."},
+        ]
+      },
+      { id:"cubic-crystal", label:"Cubic Crystal Structure", images:[],
+        specs:[],
+        banners:[
+          {type:"info", text:"Cubic crystal structure is defined visually. Uses the same atom and bond specifications. Add reference image when available."},
         ]
       },
       { id:"space-filling", label:"Space-Filling Model", images:[],
@@ -838,12 +957,6 @@ const DATA = { subjects: [
         banners:[
           {type:"info", text:"Use the Charges .ai file for all charge representations. Download above."},
           {type:"note", text:"Charge symbols maintain consistent visual weight — do not redraw from scratch."},
-        ]
-      },
-      { id:"lewis-dot-struct", label:"Lewis Dot Structure", images:[],
-        specs:[
-          {label:"Color", value:"#000000", type:"color"},
-          {label:"Dot diameter", value:"4px"},
         ]
       },
       { id:"long-brackets", label:"Long Brackets", images:[],
