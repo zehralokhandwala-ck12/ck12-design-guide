@@ -164,6 +164,8 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 .spec-table td.lc{color:var(--text-muted);font-family:var(--sans);font-size:var(--text-sm);width:200px}
 /* Value cells get monospace for spec data */
 .spec-table td:not(.lc){font-family:var(--mono)}
+.source-links{display:grid;gap:3px;margin-top:5px;font:400 12px/1.5 var(--sans)}
+.source-links a,.math-review-link{color:var(--green-dark);text-decoration:underline;text-underline-offset:2px}
 
 /* ── COLOR SWATCH ── */
 .sw-wrap{display:flex;align-items:center;gap:8px}
@@ -307,6 +309,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
   </div>
 
   <a href="source-images/" style="margin:0 18px 10px;color:var(--green-dark);font-size:var(--text-sm)">Source images</a>
+  <a class="math-review-link" href="math-review/" style="margin:0 18px 10px;font-size:var(--text-sm)">Math source comparison</a>
   <nav id="nav" aria-label="Style guide sections"></nav>
 </div>
 
@@ -320,6 +323,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 <div id="res-dropdown" class="res-dropdown" role="region" aria-label="Downloads and resources"></div>
 
 <script src="specs.js"></script>
+<script src="math-review/guide-links.js"></script>
 <script>
 /* ── HELPERS ── */
 function cp(text) {
@@ -396,14 +400,22 @@ function bnr(b) {
 }
 
 /* ── GRADE TABLE (no legend inside — shown once per page) ── */
-function gTable(gt) {
+function referenceLinks(review, field) {
+  const refs = review?.fields[field];
+  if (!refs?.length) return '';
+  return '<div class="source-links">' + refs.map(ref =>
+    `<a href="source-images/#${ref.id}">${ref.label}</a>`
+  ).join('') + '</div>';
+}
+
+function gTable(gt, review) {
   let h = `<div class="gt-wrap"><table class="gt" role="table">
     <thead><tr>`;
   gt.columns.forEach(c => { h += `<th scope="col">${c}</th>`; });
   h += `</tr></thead><tbody>`;
   gt.rows.forEach(r => {
     const diff = r.highlight && new Set(r.values).size > 1;
-    h += `<tr><th scope="row" style="text-align:left;font-family:var(--sans);color:var(--text-muted);font-size:var(--text-sm);padding:7px 8px 7px 0;font-weight:400;border-bottom:1px solid var(--note-bg)">${r.label}</th>`;
+    h += `<tr><th scope="row" style="text-align:left;font-family:var(--sans);color:var(--text-muted);font-size:var(--text-sm);padding:7px 8px 7px 0;font-weight:400;border-bottom:1px solid var(--note-bg)">${r.label}${referenceLinks(review, r.label)}</th>`;
     r.values.forEach(v => {
       let cell = v;
       const hm = r.type === 'color' && v.match(/#?([0-9a-fA-F]{6})/);
@@ -520,6 +532,13 @@ function renderEl(el, accentColor, subjectBadge) {
     </div>
     <div class="card-body">`;
 
+  const review = subjectBadge === 'math' ? mathReviewLinks[el.id] : null;
+  if (review) {
+    h += `<p><a class="math-review-link" href="math-review/#${el.id}">Compare the six Math sources</a></p>`;
+    for (const decision of review.decisions) {
+      h += bnr({ type: 'note', text: `Under review · <a class="math-review-link" href="math-review/#decision-${decision.id}">${decision.label}</a>` });
+    }
+  }
   h += imgGallery(el.images);
   if (el.docEmbed) {
     h += `<div class="doc-embed-wrap">
@@ -530,7 +549,7 @@ function renderEl(el, accentColor, subjectBadge) {
       <iframe src="${el.docEmbed}" class="doc-embed" title="${el.label}" loading="lazy"></iframe>
     </div>`;
   }
-  if (hasGradeTable) h += gTable(el.gradeTable);
+  if (hasGradeTable) h += gTable(el.gradeTable, review);
 
   if (el.specs && el.specs.length) {
     if (hasGradeTable) h += `<div style="height:12px"></div>`;
@@ -538,7 +557,7 @@ function renderEl(el, accentColor, subjectBadge) {
       <thead><tr><th scope="col">Property</th><th scope="col">Value</th></tr></thead>
       <tbody>`;
     el.specs.forEach(s => {
-      h += `<tr><td class="lc">${s.label}</td><td>${svClean(s)}</td></tr>`;
+      h += `<tr><td class="lc">${s.label}</td><td>${svClean(s)}${referenceLinks(review, s.label)}</td></tr>`;
     });
     h += `</tbody></table>`;
   }
@@ -791,6 +810,7 @@ function doSearch(q) {
     <div class="sr-hd" aria-live="polite"><strong>${res.length} result${res.length !== 1 ? 's' : ''}</strong> for "${q}"</div>`;
 
   h += `<p><a href="source-images/?q=${encodeURIComponent(query)}">Search source images for this topic</a></p>`;
+  h += `<p><a href="math-review/?q=${encodeURIComponent(query)}">Search the Math source comparison</a></p>`;
   if (!res.length) {
     h += `<div class="empty"><div class="ei" aria-hidden="true">🔍</div><p>No specs found. Try a color code, element name, or px value.</p></div>`;
   } else {
