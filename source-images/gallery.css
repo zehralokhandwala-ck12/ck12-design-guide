@@ -1,0 +1,24 @@
+:root { font: 16px/1.5 "DM Sans", system-ui, sans-serif; color: #18312b; background: #f7f9f8; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 78rem; margin: auto; padding: clamp(1rem, 4vw, 3.5rem); }
+a { color: #09613e; text-underline-offset: .18em; }
+a:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #176c50; outline-offset: 3px; }
+h1 { margin: 1.25rem 0 .4rem; font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.12; }
+main > p { max-width: 48rem; }
+form { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.6rem 0 .6rem; }
+label { display: grid; gap: .25rem; font-size: .9rem; font-weight: 600; }
+label:first-child { flex: 1 1 18rem; max-width: 34rem; }
+input, select { border: 1px solid #8da49b; background: white; border-radius: .4rem; padding: .6rem .8rem; font: inherit; color: inherit; }
+#status, .source, .permalink { color: #476158; font-size: .875rem; }
+section { margin: 2.3rem 0; }
+h2 { margin: 0; font-size: 1.45rem; }
+.source { margin: .15rem 0 1rem; overflow-wrap: anywhere; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); gap: 1rem; }
+figure { margin: 0; border: 1px solid #cddad4; background: white; border-radius: .5rem; overflow: hidden; scroll-margin: 1rem; }
+figure:target { outline: 3px solid #16764e; }
+.original { display: flex; align-items: center; justify-content: center; padding: .75rem; height: 12rem; cursor: zoom-in; }
+.original:focus-visible { outline-offset: -4px; }
+img { display: block; width: 100%; height: 100%; object-fit: contain; }
+figcaption { border-top: 1px solid #e0e8e4; padding: .75rem 1rem 1rem; }
+h3 { margin: 0 0 .25rem; font-size: 1rem; line-height: 1.4; }

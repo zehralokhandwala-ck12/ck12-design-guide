@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Source images · CK-12 Diagram Style Guide</title>
+  <link rel="stylesheet" href="gallery.css">
+  <script src="gallery.js" defer></script>
+</head>
+<body>
+  <main>
+    <a href="../">← Diagram Style Guide</a>
+    <h1>Source images</h1>
+    <p>Original figures and Illustrator screenshots from the CK-12 specification documents. Open an image to inspect its annotations at full resolution. Use its figure link when reviewing a spec.</p>
+    <form id="filters" role="search">
+      <label>Search images<input type="search" id="query" placeholder="e.g. grade 8 pie chart" autocomplete="off"></label>
+      <label>Subject<select id="subject"><option value="">All subjects</option></select></label>
+    </form>
+    <p id="status" role="status" aria-live="polite">Loading source images…</p>
+    <div id="documents"></div>
+    <noscript>Enable JavaScript to browse the image catalog.</noscript>
+  </main>
+  <template id="figure-template">
+    <figure>
+      <a class="original"><img loading="lazy" decoding="async"></a>
+      <figcaption><h3></h3><a class="permalink"></a></figcaption>
+    </figure>
+  </template>
+</body>
+</html>

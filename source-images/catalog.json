@@ -1,0 +1,1863 @@
+[
+  {
+    "title": "Math · 2025",
+    "subject": "Math",
+    "file": "Math Spec -2025 (1).docx",
+    "figures": [
+      {
+        "id": "math-2025-p19",
+        "title": "Canvas padding near a vertex",
+        "location": "P19",
+        "src": "math/2025/image10.png",
+        "width": 850,
+        "height": 613,
+        "sha256": "72001ccaf0279f25ca4ab48971fa7a565ad0dc246c6250d4826a8942c9f71f88"
+      },
+      {
+        "id": "math-2025-p21",
+        "title": "Padding around a horizontal line",
+        "location": "P21",
+        "src": "math/2025/image12.png",
+        "width": 689,
+        "height": 283,
+        "sha256": "26186ecbb5b32c7d20d5312f7c30f468a5e6de9f60a4d564dd643ac155b2d231"
+      },
+      {
+        "id": "math-2025-p28",
+        "title": "Solid line segment",
+        "location": "P28",
+        "src": "math/2025/image31.png",
+        "width": 1163,
+        "height": 126,
+        "sha256": "7853c131209ebccf8b3f608f8a75bb18ba1e67bb16754c6d693723b3cbdf74f9"
+      },
+      {
+        "id": "math-2025-p33",
+        "title": "Illustrator transform panel and half-pixel coordinates",
+        "location": "P33",
+        "src": "math/2025/image33.png",
+        "width": 488,
+        "height": 579,
+        "sha256": "5b28eb2fecfc6e1885b19ffc2a180e71ed1a5dd28ba17ef52a4cdf83a479fbd3"
+      },
+      {
+        "id": "math-2025-p45",
+        "title": "Dotted line segment",
+        "location": "P45",
+        "src": "math/2025/image13.png",
+        "width": 1163,
+        "height": 126,
+        "sha256": "6b398152a44109dc5b6a2185da256fc1b0b24a36cdde861144627b1760b28a7e"
+      },
+      {
+        "id": "math-2025-p55",
+        "title": "Solid and hollow points",
+        "location": "P55",
+        "src": "math/2025/image15.png",
+        "width": 613,
+        "height": 301,
+        "sha256": "c66f8c3247f801e8755b1fca383206632201cfb05a7e70d9cef2be0dbb05cdc6"
+      },
+      {
+        "id": "math-2025-p65",
+        "title": "Diagram points on a triangle",
+        "location": "P65",
+        "src": "math/2025/image25.png",
+        "width": 424,
+        "height": 335,
+        "sha256": "7531ffacb696c284e1254f595d3ec0f5e64f3747bdf9417c0defc633454b08ed"
+      },
+      {
+        "id": "math-2025-p76",
+        "title": "Vertex and measurement label callouts",
+        "location": "P76",
+        "src": "math/2025/image14.png",
+        "width": 448,
+        "height": 424,
+        "sha256": "e1ffb8befd7de4b04bc8f143d72e754aa1f92147178d79060693585c122a955a"
+      },
+      {
+        "id": "math-2025-p105",
+        "title": "Center-aligned measurement label",
+        "location": "P105",
+        "src": "math/2025/image16.png",
+        "width": 1138,
+        "height": 238,
+        "sha256": "73cc4e790671292cc01b01b92831546f4b3fae810dccac814a3491146b90226d"
+      },
+      {
+        "id": "math-2025-p108",
+        "title": "Left-aligned measurement label",
+        "location": "P108",
+        "src": "math/2025/image40.png",
+        "width": 284,
+        "height": 1000,
+        "sha256": "8b06c659eae0ea9cc1f5fffdee7d007257971b3fb854d1f846ad0e662b2c2e27"
+      },
+      {
+        "id": "math-2025-p111",
+        "title": "Right-aligned measurement label",
+        "location": "P111",
+        "src": "math/2025/image37.png",
+        "width": 298,
+        "height": 1000,
+        "sha256": "307614c0ab5662a4748b965fb70837b8584941a7f24f579d23a03e67ee541604"
+      },
+      {
+        "id": "math-2025-p124",
+        "title": "Radius and diameter label placement",
+        "location": "P124",
+        "src": "math/2025/image35.png",
+        "width": 581,
+        "height": 569,
+        "sha256": "24629020eb4f8a75914686e6a48702b40b87a7c32a12df4038b4e9d3cb4e47f1"
+      },
+      {
+        "id": "math-2025-p128",
+        "title": "Radius markers on concentric circles",
+        "location": "P128",
+        "src": "math/2025/image18.png",
+        "width": 300,
+        "height": 330,
+        "sha256": "f532ec2cc08d9d2409685efb8b1bfa4528ae196cd03b7a52c6574d9c7a7568d7"
+      },
+      {
+        "id": "math-2025-p133",
+        "title": "Length arrow and label spacing",
+        "location": "P133",
+        "src": "math/2025/image19.png",
+        "width": 676,
+        "height": 553,
+        "sha256": "9d62582e464a41929eb1ab439e84bc668b3dffb14267f030652f170e4f34c690"
+      },
+      {
+        "id": "math-2025-p135",
+        "title": "Length markers on a vector diagram",
+        "location": "P135",
+        "src": "math/2025/image34.png",
+        "width": 572,
+        "height": 537,
+        "sha256": "5a2ea41d87f67244a21590bb8beb17057333e46da462618812999d1f689a4990"
+      },
+      {
+        "id": "math-2025-p137",
+        "title": "Reduced arrowheads in a complex diagram",
+        "location": "P137",
+        "src": "math/2025/image36.png",
+        "width": 410,
+        "height": 300,
+        "sha256": "6a80d9d5c7ee01e3a69e022b5d63e5e5436f285de0b13c314dc8c5c6c8ea743e"
+      },
+      {
+        "id": "math-2025-p145",
+        "title": "Math symbol and character settings",
+        "location": "P145",
+        "src": "math/2025/image38.png",
+        "width": 1200,
+        "height": 663,
+        "sha256": "bb96638614b0b27de87ec519591f40957e7cc2b45f2ae5cb41ac8a24b5c4b6c4"
+      },
+      {
+        "id": "math-2025-p150",
+        "title": "Point label placement guide",
+        "location": "P150",
+        "src": "math/2025/image41.png",
+        "width": 1496,
+        "height": 648,
+        "sha256": "1b94045b6fc845ac5572a38f96bd67783e3dbd1cfb36a1ffee332899552d6baa"
+      },
+      {
+        "id": "math-2025-p164",
+        "title": "Angle marker arc radii and spacing",
+        "location": "P164",
+        "src": "math/2025/image39.png",
+        "width": 418,
+        "height": 257,
+        "sha256": "5f0f38767bac2cde78e97f5ce5172999438f9c38641a759e0ca2d4b19bc868ff"
+      },
+      {
+        "id": "math-2025-p171",
+        "title": "Arrowhead placement in a tight angle diagram",
+        "location": "P171",
+        "src": "math/2025/image28.png",
+        "width": 826,
+        "height": 576,
+        "sha256": "b3d3535769c312c37bd6d3a5813e0341049396790add51459d76e656e6fe3687"
+      },
+      {
+        "id": "math-2025-p182",
+        "title": "Multiple angle markers on a triangle",
+        "location": "P182",
+        "src": "math/2025/image8.png",
+        "width": 350,
+        "height": 350,
+        "sha256": "7ae9003cade43097c39b0e43cec1ad4b13424f94ee4486eb157553b67521b951"
+      },
+      {
+        "id": "math-2025-p186",
+        "title": "Right angle marker at 15 px",
+        "location": "P186",
+        "src": "math/2025/image17.png",
+        "width": 346,
+        "height": 156,
+        "sha256": "2c25a68405394892f14b42e05f05a447b2737e492ecdf3834631d84c610efefd"
+      },
+      {
+        "id": "math-2025-p188",
+        "title": "Right angle marker at 20 px",
+        "location": "P188",
+        "src": "math/2025/image20.png",
+        "width": 199,
+        "height": 302,
+        "sha256": "4919c3804128425bc7e393af763b18fd79f2a33e5bfef7eeecc42b0cfa3f7b38"
+      },
+      {
+        "id": "math-2025-p190",
+        "title": "Right angle marker at 25 px",
+        "location": "P190",
+        "src": "math/2025/image24.png",
+        "width": 373,
+        "height": 263,
+        "sha256": "1255214236c5a53333e23b0c69e70601fac2c04c7ea8ff3a8bd31033041347c4"
+      },
+      {
+        "id": "math-2025-p202",
+        "title": "Hatch marker dimensions",
+        "location": "P202",
+        "src": "math/2025/image29.png",
+        "width": 285,
+        "height": 257,
+        "sha256": "8f0e23e4dda947a42429ec87c46e7134387b4186572284b2d7052df6305d3402"
+      },
+      {
+        "id": "math-2025-p214",
+        "title": "Parallel line feather markers",
+        "location": "P214",
+        "src": "math/2025/image3.png",
+        "width": 323,
+        "height": 300,
+        "sha256": "441bae63dcefd58483e1723c8fb4d0c813ffad4dd628a2271f4a5e31d690b79d"
+      },
+      {
+        "id": "math-2025-p224",
+        "title": "Illustrator vector arrow settings",
+        "location": "P224",
+        "src": "math/2025/image30.png",
+        "width": 287,
+        "height": 398,
+        "sha256": "d83aa206b0cbec2dbf63f158590c0e3f3520ff5c9fa13344e8e819c270deb7d0"
+      },
+      {
+        "id": "math-2025-p229",
+        "title": "Vectors with common origin",
+        "location": "P229",
+        "src": "math/2025/image2.png",
+        "width": 553,
+        "height": 518,
+        "sha256": "df18b52986a4347a562023ef7b4d0b5ae60c617ea3ca43b69205e8578b3982e1"
+      },
+      {
+        "id": "math-2025-p230",
+        "title": "Vector components and projection",
+        "location": "P230",
+        "src": "math/2025/image34.png",
+        "width": 572,
+        "height": 537,
+        "sha256": "5a2ea41d87f67244a21590bb8beb17057333e46da462618812999d1f689a4990"
+      },
+      {
+        "id": "math-2025-p245",
+        "title": "Number line points and labels",
+        "location": "P245",
+        "src": "math/2025/image26.png",
+        "width": 1434,
+        "height": 454,
+        "sha256": "82ab4206f15f68ed0aad1b4590bb3a41176be3db34e809d108009944f21e5b03"
+      },
+      {
+        "id": "math-2025-p261",
+        "title": "Graph grid spacing",
+        "location": "P261",
+        "src": "math/2025/image1.png",
+        "width": 289,
+        "height": 282,
+        "sha256": "ba5121bd4b078bfc15bf5fd772f61f823b5fe1ab1151529b16196bad56d0c4d8"
+      },
+      {
+        "id": "math-2025-p266",
+        "title": "Graph axis tick marks",
+        "location": "P266",
+        "src": "math/2025/image27.png",
+        "width": 322,
+        "height": 242,
+        "sha256": "47f1bec498a7cbc04b81c875bdd8378accf1b1261b61605da63270eae62e0bdb"
+      },
+      {
+        "id": "math-2025-p274",
+        "title": "Axis labels on a plotted graph",
+        "location": "P274",
+        "src": "math/2025/image5.png",
+        "width": 316,
+        "height": 422,
+        "sha256": "8368eb5cd676dcc3ac16fd1225414a166004d5265f675aa2c518574f30cf785e"
+      },
+      {
+        "id": "math-2025-p291",
+        "title": "Inequality graph with shaded regions",
+        "location": "P291",
+        "src": "math/2025/image9.png",
+        "width": 680,
+        "height": 675,
+        "sha256": "07bcb3f0e6f26169446998d0f6c7ba8bf06f6660994e08fb903f382b01cc8466"
+      },
+      {
+        "id": "math-2025-p313",
+        "title": "Bar graph with horizontal labels",
+        "location": "P313",
+        "src": "math/2025/image23.png",
+        "width": 607,
+        "height": 479,
+        "sha256": "c71d87f237484c6d1493b3f88ae6ef10642c1c38fa15059d31a12c0e7a05407a"
+      },
+      {
+        "id": "math-2025-p325",
+        "title": "Bar graph with vertically arranged categories",
+        "location": "P325",
+        "src": "math/2025/image32.png",
+        "width": 953,
+        "height": 743,
+        "sha256": "0f04888545148003aca1c11af8aced6676b8a4c8dec88a3ca7d7aee66fa494dd"
+      },
+      {
+        "id": "math-2025-p326",
+        "title": "Double bar graph",
+        "location": "P326",
+        "src": "math/2025/image22.png",
+        "width": 520,
+        "height": 499,
+        "sha256": "e2608dcf66b85ce56a2a1b656e70ae4f478d6ba0db6097cef40b8e38166bc60b"
+      },
+      {
+        "id": "math-2025-p344",
+        "title": "Pie chart with outside category labels",
+        "location": "P344",
+        "src": "math/2025/image4.png",
+        "width": 625,
+        "height": 365,
+        "sha256": "e337b53d73b774809d09c16e321b39985fee6af5c5aeaef111e364d1c09bc2ae"
+      },
+      {
+        "id": "math-2025-p346",
+        "title": "Pie chart with outside subject labels",
+        "location": "P346",
+        "src": "math/2025/image6.png",
+        "width": 535,
+        "height": 350,
+        "sha256": "8e4a0bd42a3e79b823505cc84f2fa2f0b24d4e6622f481c97ded74ead449dede"
+      },
+      {
+        "id": "math-2025-p355",
+        "title": "Pie chart with values inside slices",
+        "location": "P355",
+        "src": "math/2025/image11.png",
+        "width": 370,
+        "height": 400,
+        "sha256": "483981f697b6fead6384481fe93ab53cdc4de9e2c119771bf0b3fd2e1ce55381"
+      },
+      {
+        "id": "math-2025-p358",
+        "title": "Pie chart with angles inside slices",
+        "location": "P358",
+        "src": "math/2025/image7.png",
+        "width": 360,
+        "height": 400,
+        "sha256": "1fd03d312957233b47681976c3e1341a3e791ae2fa8b20a75d123f10c4bb175e"
+      },
+      {
+        "id": "math-2025-p364",
+        "title": "Pie chart with percentages outside",
+        "location": "P364",
+        "src": "math/2025/image21.png",
+        "width": 620,
+        "height": 360,
+        "sha256": "2ad990d9f5f3e5f05c6e2989230d0bb4cdce74b9338698d7e4a2e9eb7ae4a8d5"
+      }
+    ]
+  },
+  {
+    "title": "Math · Grade 6",
+    "subject": "Math",
+    "file": "Copy of Math Spec - Class 6th (1).docx",
+    "figures": [
+      {
+        "id": "math-grade-6-p29",
+        "title": "Sequence diagram labels and tiles",
+        "location": "P29",
+        "src": "math/grade-6/image2.png",
+        "width": 2048,
+        "height": 842,
+        "sha256": "8444e69f4625f2c092175ed496b9df828c6adcd77b49a2efa55c35670abe7955"
+      },
+      {
+        "id": "math-grade-6-p38",
+        "title": "Factor tree labels and branches",
+        "location": "P38",
+        "src": "math/grade-6/image9.png",
+        "width": 598,
+        "height": 692,
+        "sha256": "b5bb5973129829eb715bcbf294de7430006eb0d375f0cf36d93e1f875d9ee591"
+      },
+      {
+        "id": "math-grade-6-p47",
+        "title": "Sequence arrow on a number line",
+        "location": "P47",
+        "src": "math/grade-6/image4.png",
+        "width": 2048,
+        "height": 372,
+        "sha256": "21c95d18cb055c59afab0943b5d696a333874667f20586af1bb8c17a77427aea"
+      },
+      {
+        "id": "math-grade-6-p55",
+        "title": "Step 1 · Draw the circle between axis markers",
+        "location": "P55",
+        "src": "math/grade-6/image6.png",
+        "width": 2048,
+        "height": 299,
+        "sha256": "dcb82bc0a7f635bed35778688f6731693cfb12b2bb63ac5683ae7843b6474dea"
+      },
+      {
+        "id": "math-grade-6-p63",
+        "title": "Step 2 · Remove the lower semicircle",
+        "location": "P63",
+        "src": "math/grade-6/image1.png",
+        "width": 2048,
+        "height": 299,
+        "sha256": "47b32da634e32d84d2b8065dc646148ea48c748995365641f63849b0df5adf6e"
+      },
+      {
+        "id": "math-grade-6-p69",
+        "title": "Step 3 · Select the top anchor point",
+        "location": "P69",
+        "src": "math/grade-6/image8.png",
+        "width": 869,
+        "height": 156,
+        "sha256": "1f75e2724e7d157c5b5f60de0ee6d6643328a05dfa43f1a291edec410042ff89"
+      },
+      {
+        "id": "math-grade-6-p75",
+        "title": "Step 4 · Lower the top anchor point",
+        "location": "P75",
+        "src": "math/grade-6/image7.png",
+        "width": 2048,
+        "height": 286,
+        "sha256": "2b138a52ef5d3e7cc5940e17a285d92eb69a25d450c51f2fa782d54bdd12d48c"
+      },
+      {
+        "id": "math-grade-6-p81",
+        "title": "Step 5 · Center the arrow on the arc",
+        "location": "P81",
+        "src": "math/grade-6/image3.png",
+        "width": 2048,
+        "height": 307,
+        "sha256": "8ba6d324f53d3535564fba7e33e38bc014366bcbe6dade39e2aef9acf6118141"
+      },
+      {
+        "id": "math-grade-6-p88",
+        "title": "Illustrator arrowhead settings for a sequence",
+        "location": "P88",
+        "src": "math/grade-6/image5.png",
+        "width": 647,
+        "height": 697,
+        "sha256": "8ea04ea7ce856d1db4bec1be1d21ed24374f5adad3e6e28c6f8574dfb399acac"
+      }
+    ]
+  },
+  {
+    "title": "Math · Grade 7",
+    "subject": "Math",
+    "file": "Copy of  Math Spec - Class 7th.docx",
+    "figures": [
+      {
+        "id": "math-grade-7-p22",
+        "title": "Solid line segment",
+        "location": "P22",
+        "src": "math/grade-7/image8.png",
+        "width": 1228,
+        "height": 88,
+        "sha256": "3929f9de7665d083aa495ce4dd952db0c4c6c5d91fe1824fb554773de9d17bbf"
+      },
+      {
+        "id": "math-grade-7-p34",
+        "title": "Dotted line segment",
+        "location": "P34",
+        "src": "math/grade-7/image9.png",
+        "width": 1163,
+        "height": 126,
+        "sha256": "ed3a15fdfb551bd359bb972345382537d0298a2275ddb9eef766104d65bf3827"
+      },
+      {
+        "id": "math-grade-7-p50",
+        "title": "Diagram points on a quadrilateral",
+        "location": "P50",
+        "src": "math/grade-7/image14.png",
+        "width": 388,
+        "height": 413,
+        "sha256": "7a04385ee49c9913338fd51e303b3a4cb54e4f5d8abb2e9cfe1aaa030013c5d1"
+      },
+      {
+        "id": "math-grade-7-p55",
+        "title": "Construction points on a bisected triangle",
+        "location": "P55",
+        "src": "math/grade-7/image2.png",
+        "width": 333,
+        "height": 341,
+        "sha256": "994e2d8da24b3eb9b34e1001bd6bb4ad0654ee4174d443817bf820dfd513114f"
+      },
+      {
+        "id": "math-grade-7-p66",
+        "title": "Vertex and measurement labels",
+        "location": "P66",
+        "src": "math/grade-7/image1.png",
+        "width": 586,
+        "height": 390,
+        "sha256": "1f4dd738c7040a0fb09b285686a4a93e84b9d107d13fc0a072478a50166612f6"
+      },
+      {
+        "id": "math-grade-7-p79",
+        "title": "Prime symbol and font settings",
+        "location": "P79",
+        "src": "math/grade-7/image11.png",
+        "width": 1200,
+        "height": 663,
+        "sha256": "e761ef3708e2b2b1e8b2f6484461ff8cbdd2baab4f81e1c2f37d28635831392f"
+      },
+      {
+        "id": "math-grade-7-p90",
+        "title": "Angle marker arc radii and spacing",
+        "location": "P90",
+        "src": "math/grade-7/image7.png",
+        "width": 489,
+        "height": 331,
+        "sha256": "64bd4573deeeced8e188d5d5ceb926c5eef7f4cd71dd343962f9b9ea4932d723"
+      },
+      {
+        "id": "math-grade-7-p97",
+        "title": "Right angle marker at 15 px",
+        "location": "P97",
+        "src": "math/grade-7/image10.png",
+        "width": 224,
+        "height": 424,
+        "sha256": "2e231c9c17ede62d22039c4591f4b476cdd88287a702d81ea864224d302d0658"
+      },
+      {
+        "id": "math-grade-7-p99",
+        "title": "Right angle marker at 20 px",
+        "location": "P99",
+        "src": "math/grade-7/image12.png",
+        "width": 393,
+        "height": 330,
+        "sha256": "1a4e54d1e02a0c3ed16a18720fcf5c550ba58bb03325c314ce584597bd5c7bb6"
+      },
+      {
+        "id": "math-grade-7-p104",
+        "title": "Right angle marker at 25 px",
+        "location": "P104",
+        "src": "math/grade-7/image4.png",
+        "width": 393,
+        "height": 330,
+        "sha256": "ad7334b87871ce1e4df65232590ef604f3d0a05ba08d0249758e25b199b3e705"
+      },
+      {
+        "id": "math-grade-7-p117",
+        "title": "Length and hatch marker spacing",
+        "location": "P117",
+        "src": "math/grade-7/image5.png",
+        "width": 414,
+        "height": 283,
+        "sha256": "07a06a6e108d5c4f64745280f1ad46d43ae3c3e6fcab8d49b4413e02e313f7f6"
+      },
+      {
+        "id": "math-grade-7-p129",
+        "title": "Parallel line feather markers",
+        "location": "P129",
+        "src": "math/grade-7/image13.png",
+        "width": 599,
+        "height": 466,
+        "sha256": "86937ec950624018dbf9d28a01cb669f7f2ef08a28e2cfedb2a4013c56b895de"
+      },
+      {
+        "id": "math-grade-7-p139",
+        "title": "Construction diagram and label callouts",
+        "location": "P139",
+        "src": "math/grade-7/image3.png",
+        "width": 610,
+        "height": 486,
+        "sha256": "4c9171eab5c6d702e707ddc2cbf7158e4885bb725e9a68e4249fa3058d6a4444"
+      },
+      {
+        "id": "math-grade-7-p151",
+        "title": "Number line points and labels",
+        "location": "P151",
+        "src": "math/grade-7/image6.png",
+        "width": 627,
+        "height": 202,
+        "sha256": "8aa920aacb43f36adb3ab0091a90ed4b07f3738625f6ef32a004786ecfedb69d"
+      }
+    ]
+  },
+  {
+    "title": "Math · Grade 8",
+    "subject": "Math",
+    "file": "Copy of Math Spec - Class 8th.docx",
+    "figures": [
+      {
+        "id": "math-grade-8-p40",
+        "title": "Construction diagram and label callouts",
+        "location": "P40",
+        "src": "math/grade-8/image4.png",
+        "width": 494,
+        "height": 389,
+        "sha256": "53f6b30a4eadb553609aba18edce50af3ffe7b6086b4c021362d5419358464f5"
+      },
+      {
+        "id": "math-grade-8-p53",
+        "title": "Number line points and labels",
+        "location": "P53",
+        "src": "math/grade-8/image2.png",
+        "width": 627,
+        "height": 202,
+        "sha256": "3e4984fc79a0d35ff470faa6ad6680a080bc237daaf352fbbd3c82802ec36216"
+      },
+      {
+        "id": "math-grade-8-p75",
+        "title": "Pie chart with labels inside the slices",
+        "location": "P75",
+        "src": "math/grade-8/image5.png",
+        "width": 692,
+        "height": 597,
+        "sha256": "cbfe22379d313399e46de3d95deb01a5b0482e1bcc83766de8823c95daacdc54"
+      },
+      {
+        "id": "math-grade-8-p88",
+        "title": "Pie chart with data labels outside the slices",
+        "location": "P88",
+        "src": "math/grade-8/image3.png",
+        "width": 806,
+        "height": 545,
+        "sha256": "dd3a12aba115062f4e86f907a13a018ea2c5046e9490ab9072b5d4cf5e9777ab"
+      },
+      {
+        "id": "math-grade-8-p105",
+        "title": "Pie chart with percentages or angles outside",
+        "location": "P105",
+        "src": "math/grade-8/image1.png",
+        "width": 799,
+        "height": 535,
+        "sha256": "002ec826f01c832657cb22dd29342f26d9d0d520147d71005ee693b69c58281e"
+      }
+    ]
+  },
+  {
+    "title": "Math · Grade 9",
+    "subject": "Math",
+    "file": "Copy of Math Spec - Class 9th.docx",
+    "figures": [
+      {
+        "id": "math-grade-9-p30",
+        "title": "Diagram points on a triangle",
+        "location": "P30",
+        "src": "math/grade-9/image5.png",
+        "width": 424,
+        "height": 335,
+        "sha256": "d20a170dfeffd94a234ee1c75d9ec5e4a869067c8393cd2cc505c321c79d7cef"
+      },
+      {
+        "id": "math-grade-9-p35",
+        "title": "Construction points on a bisected triangle",
+        "location": "P35",
+        "src": "math/grade-9/image7.png",
+        "width": 168,
+        "height": 214,
+        "sha256": "857059ec2c4b0540502395d8a8c2f341c63b946c59521c01f0e276310afe77f9"
+      },
+      {
+        "id": "math-grade-9-p42",
+        "title": "Parallel line feathers on a triangle",
+        "location": "P42",
+        "src": "math/grade-9/image10.png",
+        "width": 323,
+        "height": 300,
+        "sha256": "077181d2ad3830f3089e329d8b46d0cdfbe38882c2cc8bf47185dfc407d32490"
+      },
+      {
+        "id": "math-grade-9-p44",
+        "title": "Parallel line feathers on a quadrilateral",
+        "location": "P44",
+        "src": "math/grade-9/image1.png",
+        "width": 493,
+        "height": 347,
+        "sha256": "2ce120dfbb8e41bf4666c31c27c69e9dd84d634ebd4811b39511e57b58ce20db"
+      },
+      {
+        "id": "math-grade-9-p58",
+        "title": "Construction diagram and label callouts",
+        "location": "P58",
+        "src": "math/grade-9/image11.png",
+        "width": 494,
+        "height": 389,
+        "sha256": "53f6b30a4eadb553609aba18edce50af3ffe7b6086b4c021362d5419358464f5"
+      },
+      {
+        "id": "math-grade-9-p70",
+        "title": "Number line points and labels",
+        "location": "P70",
+        "src": "math/grade-9/image9.png",
+        "width": 640,
+        "height": 202,
+        "sha256": "09ca7e99f8b9dcbb59115d676f3d15f227888d3b699386807a123e137a046662"
+      },
+      {
+        "id": "math-grade-9-p81",
+        "title": "Vertical bar graph",
+        "location": "P81",
+        "src": "math/grade-9/image8.png",
+        "width": 463,
+        "height": 665,
+        "sha256": "31df75de029943aca042b6fee8699d5ed49129bb2cfc0710c44e38fef39050ed"
+      },
+      {
+        "id": "math-grade-9-p84",
+        "title": "Double bar graph",
+        "location": "P84",
+        "src": "math/grade-9/image3.png",
+        "width": 510,
+        "height": 500,
+        "sha256": "fe23c2b7aff941bd76232f6184358b978b34e1980d408e8cbc6ee24339fe4269"
+      },
+      {
+        "id": "math-grade-9-p86",
+        "title": "Horizontal bar graph",
+        "location": "P86",
+        "src": "math/grade-9/image4.png",
+        "width": 400,
+        "height": 350,
+        "sha256": "7baa3927c31736578df91346268d54eab57d246b6322a010f27c7de4d35d30e5"
+      },
+      {
+        "id": "math-grade-9-p90",
+        "title": "Grouped bar graph",
+        "location": "P90",
+        "src": "math/grade-9/image6.png",
+        "width": 520,
+        "height": 370,
+        "sha256": "83515de843e9fe32c23d69abb888ad0dff781c2c60875b2b5c69be60b391d2ad"
+      },
+      {
+        "id": "math-grade-9-p94",
+        "title": "Income distribution histogram",
+        "location": "P94",
+        "src": "math/grade-9/image2.png",
+        "width": 446,
+        "height": 325,
+        "sha256": "dd002647999bbcc9cfdc1597d6d77b15311205aa6834fe55e8dac638bcfb03fc"
+      }
+    ]
+  },
+  {
+    "title": "Math · Grade 10",
+    "subject": "Math",
+    "file": "Copy of  Math Spec - Class 10th.docx",
+    "figures": [
+      {
+        "id": "math-grade-10-p20",
+        "title": "Solid line segment",
+        "location": "P20",
+        "src": "math/grade-10/image23.png",
+        "width": 1163,
+        "height": 126,
+        "sha256": "7853c131209ebccf8b3f608f8a75bb18ba1e67bb16754c6d693723b3cbdf74f9"
+      },
+      {
+        "id": "math-grade-10-p24",
+        "title": "Illustrator transform panel for a solid line",
+        "location": "P24",
+        "src": "math/grade-10/image29.png",
+        "width": 488,
+        "height": 579,
+        "sha256": "32c8b0ec9e85c7819e74c5418663dc773ce5a61ae7f7cf2f75fca1b4a13401a2"
+      },
+      {
+        "id": "math-grade-10-p36",
+        "title": "Dotted line segment",
+        "location": "P36",
+        "src": "math/grade-10/image22.png",
+        "width": 1163,
+        "height": 126,
+        "sha256": "6b398152a44109dc5b6a2185da256fc1b0b24a36cdde861144627b1760b28a7e"
+      },
+      {
+        "id": "math-grade-10-p55",
+        "title": "Diagram points on a triangle",
+        "location": "P55",
+        "src": "math/grade-10/image17.png",
+        "width": 424,
+        "height": 335,
+        "sha256": "d20a170dfeffd94a234ee1c75d9ec5e4a869067c8393cd2cc505c321c79d7cef"
+      },
+      {
+        "id": "math-grade-10-p60",
+        "title": "Construction points on a bisected triangle",
+        "location": "P60",
+        "src": "math/grade-10/image10.png",
+        "width": 168,
+        "height": 214,
+        "sha256": "857059ec2c4b0540502395d8a8c2f341c63b946c59521c01f0e276310afe77f9"
+      },
+      {
+        "id": "math-grade-10-p75",
+        "title": "Vertex and measurement label callouts",
+        "location": "P75",
+        "src": "math/grade-10/image15.png",
+        "width": 448,
+        "height": 424,
+        "sha256": "00bd129cf60bae4f85b8039c08f3142fd24f092219638090a7c45b0ee08cf68c"
+      },
+      {
+        "id": "math-grade-10-p88",
+        "title": "Center-aligned measurement label",
+        "location": "P88",
+        "src": "math/grade-10/image24.png",
+        "width": 1185,
+        "height": 147,
+        "sha256": "b5bc0e69099692d69eaebeea6c7851d0a57770011a489ba8aeae008cea1fd232"
+      },
+      {
+        "id": "math-grade-10-p91",
+        "title": "Left-aligned measurement label",
+        "location": "P91",
+        "src": "math/grade-10/image7.png",
+        "width": 284,
+        "height": 1000,
+        "sha256": "8b06c659eae0ea9cc1f5fffdee7d007257971b3fb854d1f846ad0e662b2c2e27"
+      },
+      {
+        "id": "math-grade-10-p94",
+        "title": "Right-aligned measurement label",
+        "location": "P94",
+        "src": "math/grade-10/image18.png",
+        "width": 298,
+        "height": 1000,
+        "sha256": "307614c0ab5662a4748b965fb70837b8584941a7f24f579d23a03e67ee541604"
+      },
+      {
+        "id": "math-grade-10-p100",
+        "title": "Prime symbol and font settings",
+        "location": "P100",
+        "src": "math/grade-10/image4.png",
+        "width": 1200,
+        "height": 663,
+        "sha256": "e761ef3708e2b2b1e8b2f6484461ff8cbdd2baab4f81e1c2f37d28635831392f"
+      },
+      {
+        "id": "math-grade-10-p103",
+        "title": "Point label placement guide",
+        "location": "P103",
+        "src": "math/grade-10/image6.png",
+        "width": 1496,
+        "height": 648,
+        "sha256": "40a796bcbce11546e7b6772da7b39819943834c2c2b7e7f469da2cfc28d3f4f9"
+      },
+      {
+        "id": "math-grade-10-p114",
+        "title": "Sequence diagram labels and circles",
+        "location": "P114",
+        "src": "math/grade-10/image16.png",
+        "width": 629,
+        "height": 234,
+        "sha256": "922b2062290d3a9261f0c895fef66316bdd88624b5a028b4acc0ddf0565c7274"
+      },
+      {
+        "id": "math-grade-10-p131",
+        "title": "Factor tree line and arrow example",
+        "location": "P131",
+        "src": "math/grade-10/image19.png",
+        "width": 320,
+        "height": 383,
+        "sha256": "e815482caa18cf3ed1e57b980d7b596a0caa1587b1f3badc4f9113c515fa5ced"
+      },
+      {
+        "id": "math-grade-10-p150",
+        "title": "Angle marker arc radii and spacing",
+        "location": "P150",
+        "src": "math/grade-10/image5.png",
+        "width": 418,
+        "height": 257,
+        "sha256": "6084a631046a1aae304382759d921e961c919855521a51ad618c41254af0791e"
+      },
+      {
+        "id": "math-grade-10-p154",
+        "title": "Right angle marker at 15 px",
+        "location": "P154",
+        "src": "math/grade-10/image2.png",
+        "width": 346,
+        "height": 156,
+        "sha256": "646b1f4c0c8c68335808e51c3b6857ab1426f73e8e34211fb63ec0a8941c7e53"
+      },
+      {
+        "id": "math-grade-10-p156",
+        "title": "Right angle marker at 20 px",
+        "location": "P156",
+        "src": "math/grade-10/image8.png",
+        "width": 199,
+        "height": 302,
+        "sha256": "51cddd85c40eee77ee01eef5bb2c52794407e88debece0497df16e74f4795d15"
+      },
+      {
+        "id": "math-grade-10-p158",
+        "title": "Right angle marker at 25 px",
+        "location": "P158",
+        "src": "math/grade-10/image27.png",
+        "width": 373,
+        "height": 263,
+        "sha256": "242e463119b39e413d30796e162cd692f14932a590c4c6df7e57ebff4cca897a"
+      },
+      {
+        "id": "math-grade-10-p173",
+        "title": "Length marker spacing",
+        "location": "P173",
+        "src": "math/grade-10/image30.png",
+        "width": 285,
+        "height": 257,
+        "sha256": "3c0ffc586a2ae96ececcb6db12a6eb1779f64c4ce978774f056e6338482454a1"
+      },
+      {
+        "id": "math-grade-10-p175",
+        "title": "Hatch marker examples on a triangle",
+        "location": "P175",
+        "src": "math/grade-10/image13.png",
+        "width": 346,
+        "height": 185,
+        "sha256": "91ac1d88cf064ee3f3d463b751efc0d25e552f2fc0a8b53c78f5c67a38cb0ed4"
+      },
+      {
+        "id": "math-grade-10-p185",
+        "title": "Parallel line feather markers",
+        "location": "P185",
+        "src": "math/grade-10/image11.png",
+        "width": 323,
+        "height": 300,
+        "sha256": "f89f8bfc722b5c39d91471b44db2901392cae32f4aec90ab50fd9d2049a7a5a7"
+      },
+      {
+        "id": "math-grade-10-p199",
+        "title": "Construction diagram and label callouts",
+        "location": "P199",
+        "src": "math/grade-10/image9.png",
+        "width": 225,
+        "height": 219,
+        "sha256": "885b6a892ad9bcc85d0ab2363b9a02d24748b64a9410028d8c6bc015fbec59f3"
+      },
+      {
+        "id": "math-grade-10-p214",
+        "title": "Number line points and labels",
+        "location": "P214",
+        "src": "math/grade-10/image26.png",
+        "width": 1434,
+        "height": 454,
+        "sha256": "d76604064d6902eaf04ace9cbf812fffa6dffb4af82e6d603bc96a80ee8d91a4"
+      },
+      {
+        "id": "math-grade-10-p223",
+        "title": "Graph grid spacing",
+        "location": "P223",
+        "src": "math/grade-10/image28.png",
+        "width": 289,
+        "height": 282,
+        "sha256": "962d42b5ed26d3e99a557d442219bd93ad19c28b8b420cfb015b576bd299f06a"
+      },
+      {
+        "id": "math-grade-10-p229",
+        "title": "Graph axis tick marks",
+        "location": "P229",
+        "src": "math/grade-10/image12.png",
+        "width": 322,
+        "height": 242,
+        "sha256": "92c3a1a65316777d0c1ac41bb19f91f5744b0eeb769e47dac4fdc5a6fed6e1cb"
+      },
+      {
+        "id": "math-grade-10-p248",
+        "title": "Linear graph label callouts",
+        "location": "P248",
+        "src": "math/grade-10/image1.png",
+        "width": 539,
+        "height": 445,
+        "sha256": "0d6834ceef68e188980b78b6a6b6839ffcfe987bcbc36755b30a8249013c9944"
+      },
+      {
+        "id": "math-grade-10-p250",
+        "title": "Graph title and descriptive labels",
+        "location": "P250",
+        "src": "math/grade-10/image32.png",
+        "width": 1774,
+        "height": 1165,
+        "sha256": "77be108fb153c9dabc92b5c0889bacde3b915e63ed550928282e5ab1de23678f"
+      },
+      {
+        "id": "math-grade-10-p256",
+        "title": "Title case on a graph",
+        "location": "P256",
+        "src": "math/grade-10/image3.png",
+        "width": 447,
+        "height": 625,
+        "sha256": "5c677546dbb9f3fdd63708050eef0ea50738d7d29984d7826dd95256be193c75"
+      },
+      {
+        "id": "math-grade-10-p261",
+        "title": "Minus and equation symbols on graph",
+        "location": "P261",
+        "src": "math/grade-10/image33.png",
+        "width": 1480,
+        "height": 1150,
+        "sha256": "3711dd22b8d78731214276dc478b7c59596d72bbb30498187888fb4f98946a4f"
+      },
+      {
+        "id": "math-grade-10-p263",
+        "title": "Equation on a plotted curve",
+        "location": "P263",
+        "src": "math/grade-10/image25.png",
+        "width": 275,
+        "height": 482,
+        "sha256": "5b29e50465522e406bb3e0a575e27c629e0db5314c4931f1a72dccf1525de785"
+      },
+      {
+        "id": "math-grade-10-p265",
+        "title": "Equation labels inside graph",
+        "location": "P265",
+        "src": "math/grade-10/image14.png",
+        "width": 316,
+        "height": 422,
+        "sha256": "8368eb5cd676dcc3ac16fd1225414a166004d5265f675aa2c518574f30cf785e"
+      },
+      {
+        "id": "math-grade-10-p269",
+        "title": "Equation below graph",
+        "location": "P269",
+        "src": "math/grade-10/image34.png",
+        "width": 1191,
+        "height": 1933,
+        "sha256": "dc715ab33eaebf19c7d93e4962a06ddbff9e631b5f15eb6da6ca3ea2b5aaf938"
+      },
+      {
+        "id": "math-grade-10-p281",
+        "title": "Bar graph label callouts",
+        "location": "P281",
+        "src": "math/grade-10/image31.png",
+        "width": 1730,
+        "height": 1224,
+        "sha256": "7cf2aabe3e98b17216fcc2b59e6ecc095505103d77ef2e10c764176d9a394533"
+      },
+      {
+        "id": "math-grade-10-p284",
+        "title": "Histogram axis and bars",
+        "location": "P284",
+        "src": "math/grade-10/image21.png",
+        "width": 943,
+        "height": 868,
+        "sha256": "89694aed7abca36a88819c815d954bfba5144e98047ca37b15492eb10b8c0980"
+      },
+      {
+        "id": "math-grade-10-p295",
+        "title": "Multicolor line graph palette request",
+        "location": "P295",
+        "src": "math/grade-10/image20.png",
+        "width": 565,
+        "height": 430,
+        "sha256": "52b4eb8ed00dccaf83e32c7547c91b4ee5bf19857e5b82ed12a0bae7dce16162"
+      }
+    ]
+  },
+  {
+    "title": "Biology specifications",
+    "subject": "Biology",
+    "file": "Biology-specs updated.docx",
+    "figures": [
+      {
+        "id": "biology-updated-p21",
+        "title": "Heading and leader lines on an illustration",
+        "location": "P21",
+        "src": "biology/updated/image23.png",
+        "width": 652,
+        "height": 578,
+        "sha256": "ba3624292bbe2c62372025347fef2102ef6c17a4a4f67f6511b2e6d3a8386b9b"
+      },
+      {
+        "id": "biology-updated-p22",
+        "title": "Dark-background label example",
+        "location": "P22",
+        "src": "biology/updated/image7.png",
+        "width": 874,
+        "height": 586,
+        "sha256": "c8b28a0a975a0e2a2107df33001bad7b364c400a87a9566e0f14aa340e393950"
+      },
+      {
+        "id": "biology-updated-p25",
+        "title": "Illustrator double-stroke settings",
+        "location": "P25",
+        "src": "biology/updated/image22.png",
+        "width": 279,
+        "height": 354,
+        "sha256": "88e391026ffd43aebc615e64e42f57aef9eb70ed0e3b531e714b64c90bd40982"
+      },
+      {
+        "id": "biology-updated-p35",
+        "title": "Cell membrane and cytoplasm palette",
+        "location": "P35",
+        "src": "biology/updated/image8.jpg",
+        "width": 1982,
+        "height": 1724,
+        "sha256": "ca6508d263a4c8f9b94fd942a252aabe85f4242a28f57686acbcae436bf9e4b5"
+      },
+      {
+        "id": "biology-updated-p38",
+        "title": "Chromosome palette",
+        "location": "P38",
+        "src": "biology/updated/image6.jpg",
+        "width": 2048,
+        "height": 1461,
+        "sha256": "f54fc46a65747754438711b7b2e0f3c774c5ce05aa021b56f71f77f0d5b4e1f7"
+      },
+      {
+        "id": "biology-updated-p40",
+        "title": "DNA bases A T G C palette",
+        "location": "P40",
+        "src": "biology/updated/image3.jpg",
+        "width": 2048,
+        "height": 1461,
+        "sha256": "e5130e9c02e27e3053896d577d1d13e9bf2812c267bfb541a086491d576e3052"
+      },
+      {
+        "id": "biology-updated-p43",
+        "title": "Enzyme palette",
+        "location": "P43",
+        "src": "biology/updated/image12.jpg",
+        "width": 2048,
+        "height": 1798,
+        "sha256": "043ae1945033e7ac3d43171340c3d319c38b0dd106e2291cb78b7581e8ff03fc"
+      },
+      {
+        "id": "biology-updated-p47",
+        "title": "Mitochondria palette",
+        "location": "P47",
+        "src": "biology/updated/image20.jpg",
+        "width": 1982,
+        "height": 1724,
+        "sha256": "18a841829a18b561748467da682775e66a3f123962832551b098e3cb2a78224f"
+      },
+      {
+        "id": "biology-updated-p51",
+        "title": "Nucleus and DNA strand palette",
+        "location": "P51",
+        "src": "biology/updated/image1.jpg",
+        "width": 2048,
+        "height": 1461,
+        "sha256": "052d1b73d225874ea3ca03636266b541767f558b3cec0e8f758215eefa262a2f"
+      },
+      {
+        "id": "biology-updated-p53",
+        "title": "Ribosome palette",
+        "location": "P53",
+        "src": "biology/updated/image9.jpg",
+        "width": 2048,
+        "height": 1461,
+        "sha256": "6c3d2009e0530787020577804f651410fe6cf1b05393efb9051fed60af6db95b"
+      },
+      {
+        "id": "biology-updated-p57",
+        "title": "Plant cell diagram",
+        "location": "P57",
+        "src": "biology/updated/image2.png",
+        "width": 580,
+        "height": 329,
+        "sha256": "ccdac1db6be6565934f2f4249e9f99e3a96d45c46410bdbc31f30b27519ecc12"
+      },
+      {
+        "id": "biology-updated-p59",
+        "title": "Plant cell palette",
+        "location": "P59",
+        "src": "biology/updated/image21.png",
+        "width": 1831,
+        "height": 272,
+        "sha256": "c330711a683346a8425121f361c0a47bc84d8fc3451d3ea4c8c70a2188ec03bf"
+      },
+      {
+        "id": "biology-updated-p63",
+        "title": "Bacteria cell diagram",
+        "location": "P63",
+        "src": "biology/updated/image4.png",
+        "width": 1424,
+        "height": 835,
+        "sha256": "cfe467fa1b58b141a392e683d2c3513efce8c46c33c83ced01bec46e8a58dd37"
+      },
+      {
+        "id": "biology-updated-p66",
+        "title": "Bacteria cell palette",
+        "location": "P66",
+        "src": "biology/updated/image17.png",
+        "width": 1085,
+        "height": 1014,
+        "sha256": "8ef701ebeedf3da8b280ed57a76b59b8bd2ab15477ed25ba811d06e13538e3d2"
+      },
+      {
+        "id": "biology-updated-p70",
+        "title": "Membrane protein palette",
+        "location": "P70",
+        "src": "biology/updated/image15.png",
+        "width": 562,
+        "height": 392,
+        "sha256": "31f89cb341540129605399da66959e35662a32e225b146700f6c70c76b7cbaff"
+      },
+      {
+        "id": "biology-updated-p75",
+        "title": "Primary protein structure",
+        "location": "P75",
+        "src": "biology/updated/image16.png",
+        "width": 504,
+        "height": 505,
+        "sha256": "458e43328ff81832e245384834d0825c7b79dcaa696a740198fda35097541417"
+      },
+      {
+        "id": "biology-updated-p82",
+        "title": "Secondary protein ribbons",
+        "location": "P82",
+        "src": "biology/updated/image14.png",
+        "width": 435,
+        "height": 521,
+        "sha256": "342ad6cccdb128cfd0b6ef3967c523fca4340779ab99c68ad4f83befa5bb7cbb"
+      },
+      {
+        "id": "biology-updated-p85",
+        "title": "Secondary protein structure palette",
+        "location": "P85",
+        "src": "biology/updated/image11.png",
+        "width": 494,
+        "height": 190,
+        "sha256": "caf2635e42121bd3294c1f2bb8070ad102f849575a80fcc8095c9545471bf664"
+      },
+      {
+        "id": "biology-updated-p89",
+        "title": "Tertiary protein structure",
+        "location": "P89",
+        "src": "biology/updated/image10.png",
+        "width": 630,
+        "height": 527,
+        "sha256": "4cd25f30536cd9fd4c7da87fa3bd22a0736a3764e723891b10e8b66079ad0bef"
+      },
+      {
+        "id": "biology-updated-p103",
+        "title": "Low-fidelity lipid",
+        "location": "P103",
+        "src": "biology/updated/image13.png",
+        "width": 31,
+        "height": 65,
+        "sha256": "3161657f7fc0377f0a08372560250efea3d4eca1265f19c0576b468c135dda65"
+      },
+      {
+        "id": "biology-updated-p111",
+        "title": "High-fidelity lipid head and tail palette",
+        "location": "P111",
+        "src": "biology/updated/image5.png",
+        "width": 839,
+        "height": 267,
+        "sha256": "58405f9573f026f6a1140ce835d36ecddcff2f549e78fda4631e27fe99e55bd5"
+      },
+      {
+        "id": "biology-updated-p115",
+        "title": "Energy-carrying molecule labels",
+        "location": "P115",
+        "src": "biology/updated/image18.png",
+        "width": 1272,
+        "height": 937,
+        "sha256": "f4d74b1be908db109324ef81eccf0f665f73e33e8133a60cbc00108439536663"
+      },
+      {
+        "id": "biology-updated-p123",
+        "title": "ATP shape",
+        "location": "P123",
+        "src": "biology/updated/image19.png",
+        "width": 275,
+        "height": 188,
+        "sha256": "788257a5660db54e6d55714edd6ef3b3f2e0fcb58d0f3ddbaa5672bfa5531406"
+      }
+    ]
+  },
+  {
+    "title": "Physics · 2025",
+    "subject": "Physics",
+    "file": "Physics- specs-2025.docx",
+    "figures": [
+      {
+        "id": "physics-2025-p17",
+        "title": "Label placement on a Physics graph",
+        "location": "P17",
+        "src": "physics/2025/image7.png",
+        "width": 350,
+        "height": 320,
+        "sha256": "1628ca3dfc01c7530884715e83eb04c5d52394d98319376567b0bd1c6e94e94f"
+      },
+      {
+        "id": "physics-2025-p18",
+        "title": "Label placement on a vector diagram",
+        "location": "P18",
+        "src": "physics/2025/image6.png",
+        "width": 340,
+        "height": 210,
+        "sha256": "7ec5639dc13628f928d99e56a7cd1e677845e0d3e7ecb84c77b416e228ed670c"
+      },
+      {
+        "id": "physics-2025-p28",
+        "title": "Physics axis and origin labeling example",
+        "location": "P28",
+        "src": "physics/2025/image13.png",
+        "width": 701,
+        "height": 568,
+        "sha256": "4e36083fe479e4ec2bf9685ef62640e40999a1610583cf9c18aa4f6f42bf0edd"
+      },
+      {
+        "id": "physics-2025-p51",
+        "title": "Illustrator vector arrow settings",
+        "location": "P51",
+        "src": "physics/2025/image5.png",
+        "width": 284,
+        "height": 400,
+        "sha256": "7a0974b34c53cd69a1ca6b8a3320824e3c9dda2b32ee3de72b479b17231dbadd"
+      },
+      {
+        "id": "physics-2025-p59",
+        "title": "Position and force vector examples",
+        "location": "P59",
+        "src": "physics/2025/image3.png",
+        "width": 341,
+        "height": 441,
+        "sha256": "e24b33be813a9052aec1d9d15a27035ee0f8dff0e70dc2349c4a3dd97ea1746e"
+      },
+      {
+        "id": "physics-2025-p62",
+        "title": "Free-body diagram on a slope",
+        "location": "P62",
+        "src": "physics/2025/image4.png",
+        "width": 669,
+        "height": 514,
+        "sha256": "4a27536feeaa711ce6fec172b6c12cff5f7eef52ca8c0a619806afc4d3808b15"
+      },
+      {
+        "id": "physics-2025-p63",
+        "title": "Free-body diagram of a suspended object",
+        "location": "P63",
+        "src": "physics/2025/image22.png",
+        "width": 341,
+        "height": 554,
+        "sha256": "96e39ec67ba278c91f0d06a5b346f4cf9eeb7b24fe938092bebdf9fb94faa820"
+      },
+      {
+        "id": "physics-2025-p79",
+        "title": "Positive and negative point charges",
+        "location": "P79",
+        "src": "physics/2025/image12.png",
+        "width": 583,
+        "height": 538,
+        "sha256": "274873b8adc3d09c68ba22d472fca593eb81a6c5020dc47211fdf40827f90fbc"
+      },
+      {
+        "id": "physics-2025-p81",
+        "title": "Point charge and q label",
+        "location": "P81",
+        "src": "physics/2025/image19.png",
+        "width": 575,
+        "height": 552,
+        "sha256": "fd9c37a8b077beada4bd4ba55191fcc470398aa5a323ce1f3065fe6a515e060f"
+      },
+      {
+        "id": "physics-2025-p93",
+        "title": "Generic charge symbol",
+        "location": "P93",
+        "src": "physics/2025/image17.png",
+        "width": 470,
+        "height": 154,
+        "sha256": "02391d1eae6c71dde11d9fe893b65014097d08028adf633e5480cf3a3d9d0a46"
+      },
+      {
+        "id": "physics-2025-p98",
+        "title": "Electric and magnetic field arrows",
+        "location": "P98",
+        "src": "physics/2025/image8.png",
+        "width": 761,
+        "height": 586,
+        "sha256": "d5e4232aa297a858a6e64f043895c1118d67d8a325f791034e761f93ef6fd777"
+      },
+      {
+        "id": "physics-2025-p99",
+        "title": "Electric field through a surface",
+        "location": "P99",
+        "src": "physics/2025/image10.png",
+        "width": 671,
+        "height": 525,
+        "sha256": "0f85728b89cd6596099bad30e7b788da02ffd679a97d972fcebcc29e83b9c689"
+      },
+      {
+        "id": "physics-2025-p106",
+        "title": "Illustrator settings for equipotential lines",
+        "location": "P106",
+        "src": "physics/2025/image20.png",
+        "width": 301,
+        "height": 402,
+        "sha256": "ab93725a39289da55e57da25ff34249773dabc6995afb5bcbb493ffe2f5b8355"
+      },
+      {
+        "id": "physics-2025-p110",
+        "title": "Equipotential lines around a point charge",
+        "location": "P110",
+        "src": "physics/2025/image1.png",
+        "width": 402,
+        "height": 377,
+        "sha256": "503030f4e6e2bf28357273760c76f89f8f7d337482dda371ffa49a8995d67ef0"
+      },
+      {
+        "id": "physics-2025-p113",
+        "title": "Equipotential surface in a field",
+        "location": "P113",
+        "src": "physics/2025/image2.png",
+        "width": 576,
+        "height": 455,
+        "sha256": "2ce32d92c0d04a4712428c621de66894bd59222ef5e6919ccc8efe9bb035010c"
+      },
+      {
+        "id": "physics-2025-p153",
+        "title": "Optical light ray diagram with mirrors",
+        "location": "P153",
+        "src": "physics/2025/image9.png",
+        "width": 530,
+        "height": 461,
+        "sha256": "9d43508700eaeebcfefdc6fb114f6de0f8340daac3fcdec427ea1ee766df6762"
+      },
+      {
+        "id": "physics-2025-p155",
+        "title": "Lens ray diagram with object and image",
+        "location": "P155",
+        "src": "physics/2025/image14.png",
+        "width": 1009,
+        "height": 782,
+        "sha256": "bec66ef482012ad3a5618615c82f662cdc81baa0fed0b95471a7bcdcf4512e50"
+      },
+      {
+        "id": "physics-2025-p159",
+        "title": "Concave and convex mirror hatching",
+        "location": "P159",
+        "src": "physics/2025/image15.png",
+        "width": 626,
+        "height": 382,
+        "sha256": "9ad012f207242f03e106bee24c31d44c2f0fb0a5797e4d318750561cc267e92f"
+      },
+      {
+        "id": "physics-2025-p162",
+        "title": "Plane mirror hatching",
+        "location": "P162",
+        "src": "physics/2025/image11.png",
+        "width": 628,
+        "height": 578,
+        "sha256": "64ade60133b66ea5510f2582c3bbc77d993b01e05f000c59180085112711db88"
+      },
+      {
+        "id": "physics-2025-p171",
+        "title": "Physics texture library examples",
+        "location": "P171",
+        "src": "physics/2025/image18.png",
+        "width": 846,
+        "height": 547,
+        "sha256": "3f45143d47d22349cc73f3dad2391045129c2f04cfb742a3127983a4a21937eb"
+      },
+      {
+        "id": "physics-2025-p178",
+        "title": "Real-life outline on a container",
+        "location": "P178",
+        "src": "physics/2025/image21.png",
+        "width": 943,
+        "height": 531,
+        "sha256": "038ee927f66f71c13b45ad3890c2104c04779e42706c9fd85d3393cc69393b10"
+      },
+      {
+        "id": "physics-2025-p181",
+        "title": "Object outlines in a mechanics diagram",
+        "location": "P181",
+        "src": "physics/2025/image16.png",
+        "width": 568,
+        "height": 346,
+        "sha256": "f10ac526433790b94af6306fd433cc7c4e85e956830bb3da6398059d031c769d"
+      }
+    ]
+  },
+  {
+    "title": "Chemistry master specifications",
+    "subject": "Chemistry",
+    "file": "Chemistry-specs-master.docx",
+    "figures": [
+      {
+        "id": "chemistry-master-p10",
+        "title": "Base atom diameter and outline",
+        "location": "P10",
+        "src": "chemistry/master/image15.png",
+        "width": 104,
+        "height": 125,
+        "sha256": "af66a132f538aca565080310eca5cca8308d3f9fbdd9a9d88e4b8866398560f5"
+      },
+      {
+        "id": "chemistry-master-p14",
+        "title": "Highlight and shade position",
+        "location": "P14",
+        "src": "chemistry/master/image4.png",
+        "width": 131,
+        "height": 89,
+        "sha256": "7705f2c4666ec3319cc60bd24474032ed675bda42da5394c86f4d1d48ca39159"
+      },
+      {
+        "id": "chemistry-master-p19",
+        "title": "Highlight and shade width",
+        "location": "P19",
+        "src": "chemistry/master/image11.png",
+        "width": 132,
+        "height": 89,
+        "sha256": "74afc43bb18148405c687c6fcdaa1fee0115e8a127de67f976b891953a5ef852"
+      },
+      {
+        "id": "chemistry-master-p25",
+        "title": "Highlight opacity and shade brightness",
+        "location": "P25",
+        "src": "chemistry/master/image3.png",
+        "width": 469,
+        "height": 151,
+        "sha256": "c67b36ff432ca5636ba2653d6da04ce99fc1f4a7c75ff4f4446c3c359a915aa8"
+      },
+      {
+        "id": "chemistry-master-p33",
+        "title": "Highlight rotation",
+        "location": "P33",
+        "src": "chemistry/master/image12.png",
+        "width": 190,
+        "height": 30,
+        "sha256": "eb6935281d08261cc79fb97f672775b4436ec4c2daad25b90932b3d605edb234"
+      },
+      {
+        "id": "chemistry-master-p40",
+        "title": "Convert highlight and shadow strokes to outlines",
+        "location": "P40",
+        "src": "chemistry/master/image10.png",
+        "width": 250,
+        "height": 246,
+        "sha256": "0d8c6301a52a19825567085769f8e982c1460b991621aa74271d9acc10772cb0"
+      },
+      {
+        "id": "chemistry-master-p45",
+        "title": "Illustrator scaling settings",
+        "location": "P45",
+        "src": "chemistry/master/image2.png",
+        "width": 395,
+        "height": 422,
+        "sha256": "25df29b91e52bb57342e35f795a1fb32a851aba714c286ede1a596f0cf00def1"
+      },
+      {
+        "id": "chemistry-master-p85",
+        "title": "Worked atom sizing examples",
+        "location": "P85",
+        "src": "chemistry/master/image17.png",
+        "width": 1469,
+        "height": 2048,
+        "sha256": "3f961cd5f6dfbbee5a00649af35b6da3173ed84ff75f6f41bbefd1b6319b9db1"
+      },
+      {
+        "id": "chemistry-master-p103",
+        "title": "Ball-and-stick bond first stroke",
+        "location": "P103",
+        "src": "chemistry/master/image9.png",
+        "width": 666,
+        "height": 359,
+        "sha256": "4bb61ef69c002db5760b2a7b160152679e66aa1a860de4a135cf3bc933a31023"
+      },
+      {
+        "id": "chemistry-master-p106",
+        "title": "Ball-and-stick bond second stroke",
+        "location": "P106",
+        "src": "chemistry/master/image6.png",
+        "width": 694,
+        "height": 397,
+        "sha256": "fa419e2b1d50d71654fcc56aa07aacf236585983ad822c1e63326c2fe19db5bf"
+      },
+      {
+        "id": "chemistry-master-p111",
+        "title": "Rectangle method for a bond",
+        "location": "P111",
+        "src": "chemistry/master/image16.png",
+        "width": 516,
+        "height": 26,
+        "sha256": "1f51a0573afd90b475259ffc0240d97b2faf9b6cbc8ba00f3368770f65973253"
+      },
+      {
+        "id": "chemistry-master-p118",
+        "title": "Single bond with 20 px atoms",
+        "location": "P118",
+        "src": "chemistry/master/image19.png",
+        "width": 467,
+        "height": 85,
+        "sha256": "00838b523616861606086af7e523dfc1ffbf4f49780b31e71c07f75e98e2bb4f"
+      },
+      {
+        "id": "chemistry-master-p129",
+        "title": "Single bond with 250 px atoms",
+        "location": "P129",
+        "src": "chemistry/master/image8.png",
+        "width": 2048,
+        "height": 786,
+        "sha256": "2197638ad243f2808c52945c9e1ceb8d8ebea5769076d8c5412a9ca265d30d8f"
+      },
+      {
+        "id": "chemistry-master-p141",
+        "title": "Double bond spacing for smaller atoms",
+        "location": "P141",
+        "src": "chemistry/master/image14.png",
+        "width": 979,
+        "height": 206,
+        "sha256": "24cae824ed6388a66228031a7406b56c60b1212a5d0ea25e3c445f01647dc990"
+      },
+      {
+        "id": "chemistry-master-p146",
+        "title": "Double bond spacing for larger atoms",
+        "location": "P146",
+        "src": "chemistry/master/image18.png",
+        "width": 2048,
+        "height": 786,
+        "sha256": "85627c5e7f007d6182dab1cc48a0d5c60057a9291388080c165a26beafa00c10"
+      },
+      {
+        "id": "chemistry-master-p153",
+        "title": "Cubic crystal structure and bond junctions",
+        "location": "P153",
+        "src": "chemistry/master/image7.png",
+        "width": 811,
+        "height": 691,
+        "sha256": "561ee7022219d367a90f82eb600215e18f5996adeca7f669b2b9e5057159b4da"
+      },
+      {
+        "id": "chemistry-master-p160",
+        "title": "Correct space-filling model example",
+        "location": "P160",
+        "src": "chemistry/master/image5.png",
+        "width": 258,
+        "height": 225,
+        "sha256": "498a9b25c075db65a08871b15cfd03c87d3c761af545c91c4a3895510ae96958"
+      },
+      {
+        "id": "chemistry-master-p162",
+        "title": "Incorrect space-filling model example",
+        "location": "P162",
+        "src": "chemistry/master/image13.png",
+        "width": 233,
+        "height": 168,
+        "sha256": "11d78f65d0e6dc4b606a864c591c799a05733d4ebcd627b7dbae9bd96e012c05"
+      },
+      {
+        "id": "chemistry-master-p165",
+        "title": "Lewis dot spacing on a molecular model",
+        "location": "P165",
+        "src": "chemistry/master/image1.png",
+        "width": 826,
+        "height": 355,
+        "sha256": "81bca2902ce34c08b1c5cc2a938d0f1745ac642123fddda534bdd4a2a0b5758f"
+      }
+    ]
+  },
+  {
+    "title": "Chemistry figure guidelines",
+    "subject": "Chemistry",
+    "file": "Chemistry chem fig guidelines .docx",
+    "figures": [
+      {
+        "id": "chemistry-figures-p14",
+        "title": "Equation caption and spacing",
+        "location": "P14",
+        "src": "chemistry/figures/image9.png",
+        "width": 628,
+        "height": 283,
+        "sha256": "663e55af4ec22e011bd1d3a4ca419b4b810ee600a8297d755c52b0c5b1579258"
+      },
+      {
+        "id": "chemistry-figures-p35",
+        "title": "Chemical names and conditions around reaction arrows",
+        "location": "P35",
+        "src": "chemistry/figures/image13.png",
+        "width": 1294,
+        "height": 270,
+        "sha256": "8936914a8d9fc347b524bfc9fae1487e5f85a0cbb3912603747ea70d665a1f1a"
+      },
+      {
+        "id": "chemistry-figures-p40",
+        "title": "Long chemical equation",
+        "location": "P40",
+        "src": "chemistry/figures/image7.png",
+        "width": 1289,
+        "height": 145,
+        "sha256": "4839038a5ddf9884838363f7f85cf20988132f9a16508f0f1ba2d66166a5e422"
+      },
+      {
+        "id": "chemistry-figures-p45",
+        "title": "One-way and two-sided equation arrows",
+        "location": "P45",
+        "src": "chemistry/figures/image20.png",
+        "width": 779,
+        "height": 296,
+        "sha256": "4fbfff431a2793d4b9d0013b1f65e985fb2a31d99218eaf7ab73edb3696b88b8"
+      },
+      {
+        "id": "chemistry-figures-p52",
+        "title": "Reversible reaction arrow",
+        "location": "P52",
+        "src": "chemistry/figures/image8.png",
+        "width": 643,
+        "height": 424,
+        "sha256": "712ecc260c701f3e245b461df6a12e9e0ab81e74391e36ce5a5c6ad631c7cc78"
+      },
+      {
+        "id": "chemistry-figures-p58",
+        "title": "Rotation arrow",
+        "location": "P58",
+        "src": "chemistry/figures/image10.png",
+        "width": 672,
+        "height": 716,
+        "sha256": "8b1eeb46967d269caefe5dea19a8b3c4af4df811846ee400c833b953baa3b5d6"
+      },
+      {
+        "id": "chemistry-figures-p65",
+        "title": "Lewis dot spacing in a structural formula",
+        "location": "P65",
+        "src": "chemistry/figures/image4.png",
+        "width": 982,
+        "height": 411,
+        "sha256": "21038e967c57d15792cd7c4f2ba3a3c760b2c2b5a99f76f1729bf45bc676778e"
+      },
+      {
+        "id": "chemistry-figures-p72",
+        "title": "Long bracket width and stroke",
+        "location": "P72",
+        "src": "chemistry/figures/image1.png",
+        "width": 715,
+        "height": 741,
+        "sha256": "c06ad38a3db0cba61b905f3004db69bf819024a488c59b9f431762c74bf97899"
+      },
+      {
+        "id": "chemistry-figures-p78",
+        "title": "Positive and negative charge glyphs",
+        "location": "P78",
+        "src": "chemistry/figures/image2.png",
+        "width": 1363,
+        "height": 363,
+        "sha256": "ed075dffdc84cd134c5f299548fdc394dfae8458f501d9078a3fe9d2c77ae6d7"
+      },
+      {
+        "id": "chemistry-figures-p82",
+        "title": "Charge glyph on a structure",
+        "location": "P82",
+        "src": "chemistry/figures/image15.png",
+        "width": 382,
+        "height": 629,
+        "sha256": "4b586003401f3fb7ba962f5037be7b2a2162d0ea96948d85a659a4c985d9a7bb"
+      },
+      {
+        "id": "chemistry-figures-p91",
+        "title": "Locant number placement",
+        "location": "P91",
+        "src": "chemistry/figures/image3.png",
+        "width": 715,
+        "height": 494,
+        "sha256": "67c42ef3399749d6d580e9a3d33ae5ae8edbd6815fd99c157ca05588c838490f"
+      },
+      {
+        "id": "chemistry-figures-p100",
+        "title": "Benzene ring numbering offset",
+        "location": "P100",
+        "src": "chemistry/figures/image6.png",
+        "width": 570,
+        "height": 656,
+        "sha256": "b2bca6032df33373b06403d757f17e24e52ab573323ecb62d86b95beef78c270"
+      },
+      {
+        "id": "chemistry-figures-p101",
+        "title": "Benzene ring locants on a substituted ring",
+        "location": "P101",
+        "src": "chemistry/figures/image19.png",
+        "width": 908,
+        "height": 705,
+        "sha256": "a6481fbd24cc9e03eaa62c10bcc511b2cd4f37d8742dbcd7e7b93a53c99f4376"
+      },
+      {
+        "id": "chemistry-figures-p107",
+        "title": "Intramolecular bond Illustrator settings",
+        "location": "P107",
+        "src": "chemistry/figures/image11.png",
+        "width": 277,
+        "height": 342,
+        "sha256": "6d8aebc9dfc2fa7627abb39445265e502620f4f86440af3b5ae31b62dd2f58d3"
+      },
+      {
+        "id": "chemistry-figures-p110",
+        "title": "Intramolecular bond example",
+        "location": "P110",
+        "src": "chemistry/figures/image17.png",
+        "width": 674,
+        "height": 346,
+        "sha256": "582cbfec6d8c30b77b1202c5ddd782458fff5733834cc8cc9dbd576654e64f0a"
+      },
+      {
+        "id": "chemistry-figures-p115",
+        "title": "Carbon chain Illustrator settings",
+        "location": "P115",
+        "src": "chemistry/figures/image5.png",
+        "width": 268,
+        "height": 393,
+        "sha256": "7430c3d80b622b82369cf37b5c5d406f20a97b453bff834e7d29b3ecde6c00b4"
+      },
+      {
+        "id": "chemistry-figures-p116",
+        "title": "Carbon chain dashed enclosure clearance",
+        "location": "P116",
+        "src": "chemistry/figures/image12.png",
+        "width": 701,
+        "height": 426,
+        "sha256": "ba3acfff1e1581ebd298083b812bcd91dc4bae2f2540615459da5c9d22553d38"
+      },
+      {
+        "id": "chemistry-figures-p118",
+        "title": "Carbon chain enclosure example",
+        "location": "P118",
+        "src": "chemistry/figures/image16.png",
+        "width": 916,
+        "height": 414,
+        "sha256": "f689114ac7b62c87e583aa7cd91979ec954208a9d8fe24a1312a91ac9e16eb6d"
+      },
+      {
+        "id": "chemistry-figures-p124",
+        "title": "Solid and dashed wedge dimensions",
+        "location": "P124",
+        "src": "chemistry/figures/image14.png",
+        "width": 1114,
+        "height": 609,
+        "sha256": "a206080856a5798e4beeb1da01378bf21ea3a7b88e380f41ccecd787940cc8c9"
+      },
+      {
+        "id": "chemistry-figures-p126",
+        "title": "Stereochemical bonds in a structure",
+        "location": "P126",
+        "src": "chemistry/figures/image18.png",
+        "width": 366,
+        "height": 407,
+        "sha256": "0a6c3cac5eb5d3208b5c7c9746a7f89a4d528f4c3191180cb5bae368e0fa0c90"
+      }
+    ]
+  }
+]

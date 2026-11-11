@@ -306,6 +306,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
     <button id="sclear" aria-label="Clear search">✕</button>
   </div>
 
+  <a href="source-images/" style="margin:0 18px 10px;color:var(--green-dark);font-size:var(--text-sm)">Source images</a>
   <nav id="nav" aria-label="Style guide sections"></nav>
 </div>
 
@@ -789,6 +790,7 @@ function doSearch(q) {
   let h = `<div class="sr" role="region" aria-label="Search results">
     <div class="sr-hd" aria-live="polite"><strong>${res.length} result${res.length !== 1 ? 's' : ''}</strong> for "${q}"</div>`;
 
+  h += `<p><a href="source-images/?q=${encodeURIComponent(query)}">Search source images for this topic</a></p>`;
   if (!res.length) {
     h += `<div class="empty"><div class="ei" aria-hidden="true">🔍</div><p>No specs found. Try a color code, element name, or px value.</p></div>`;
   } else {
