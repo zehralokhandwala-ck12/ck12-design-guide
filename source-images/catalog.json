@@ -1507,7 +1507,8 @@
         "src": "chemistry/master/image15.png",
         "width": 104,
         "height": 125,
-        "sha256": "af66a132f538aca565080310eca5cca8308d3f9fbdd9a9d88e4b8866398560f5"
+        "sha256": "af66a132f538aca565080310eca5cca8308d3f9fbdd9a9d88e4b8866398560f5",
+        "specId": "atom-base"
       },
       {
         "id": "chemistry-master-p14",
@@ -1516,7 +1517,8 @@
         "src": "chemistry/master/image4.png",
         "width": 131,
         "height": 89,
-        "sha256": "7705f2c4666ec3319cc60bd24474032ed675bda42da5394c86f4d1d48ca39159"
+        "sha256": "7705f2c4666ec3319cc60bd24474032ed675bda42da5394c86f4d1d48ca39159",
+        "specId": "atom-base"
       },
       {
         "id": "chemistry-master-p19",
@@ -1525,7 +1527,8 @@
         "src": "chemistry/master/image11.png",
         "width": 132,
         "height": 89,
-        "sha256": "74afc43bb18148405c687c6fcdaa1fee0115e8a127de67f976b891953a5ef852"
+        "sha256": "74afc43bb18148405c687c6fcdaa1fee0115e8a127de67f976b891953a5ef852",
+        "specId": "atom-base"
       },
       {
         "id": "chemistry-master-p25",
@@ -1534,7 +1537,8 @@
         "src": "chemistry/master/image3.png",
         "width": 469,
         "height": 151,
-        "sha256": "c67b36ff432ca5636ba2653d6da04ce99fc1f4a7c75ff4f4446c3c359a915aa8"
+        "sha256": "c67b36ff432ca5636ba2653d6da04ce99fc1f4a7c75ff4f4446c3c359a915aa8",
+        "specId": "atom-base"
       },
       {
         "id": "chemistry-master-p33",
@@ -1543,7 +1547,8 @@
         "src": "chemistry/master/image12.png",
         "width": 190,
         "height": 30,
-        "sha256": "eb6935281d08261cc79fb97f672775b4436ec4c2daad25b90932b3d605edb234"
+        "sha256": "eb6935281d08261cc79fb97f672775b4436ec4c2daad25b90932b3d605edb234",
+        "specId": "atom-base"
       },
       {
         "id": "chemistry-master-p40",
@@ -1552,7 +1557,8 @@
         "src": "chemistry/master/image10.png",
         "width": 250,
         "height": 246,
-        "sha256": "0d8c6301a52a19825567085769f8e982c1460b991621aa74271d9acc10772cb0"
+        "sha256": "0d8c6301a52a19825567085769f8e982c1460b991621aa74271d9acc10772cb0",
+        "specId": "atom-base"
       },
       {
         "id": "chemistry-master-p45",
@@ -1561,7 +1567,8 @@
         "src": "chemistry/master/image2.png",
         "width": 395,
         "height": 422,
-        "sha256": "25df29b91e52bb57342e35f795a1fb32a851aba714c286ede1a596f0cf00def1"
+        "sha256": "25df29b91e52bb57342e35f795a1fb32a851aba714c286ede1a596f0cf00def1",
+        "specId": "atom-base"
       },
       {
         "id": "chemistry-master-p85",
@@ -1570,7 +1577,9 @@
         "src": "chemistry/master/image17.png",
         "width": 1469,
         "height": 2048,
-        "sha256": "3f961cd5f6dfbbee5a00649af35b6da3173ed84ff75f6f41bbefd1b6319b9db1"
+        "sha256": "3f961cd5f6dfbbee5a00649af35b6da3173ed84ff75f6f41bbefd1b6319b9db1",
+        "specId": "atom-size-examples",
+        "reviewNote": "Use the calculated values as drawn diameters. For Ca(OH)₂ the reviewed calcium diameter is 100 px, using Ca 160 and H 32 with H at 20 px."
       },
       {
         "id": "chemistry-master-p103",
@@ -1579,7 +1588,8 @@
         "src": "chemistry/master/image9.png",
         "width": 666,
         "height": 359,
-        "sha256": "4bb61ef69c002db5760b2a7b160152679e66aa1a860de4a135cf3bc933a31023"
+        "sha256": "4bb61ef69c002db5760b2a7b160152679e66aa1a860de4a135cf3bc933a31023",
+        "specId": "ball-stick-small"
       },
       {
         "id": "chemistry-master-p106",
@@ -1588,7 +1598,8 @@
         "src": "chemistry/master/image6.png",
         "width": 694,
         "height": 397,
-        "sha256": "fa419e2b1d50d71654fcc56aa07aacf236585983ad822c1e63326c2fe19db5bf"
+        "sha256": "fa419e2b1d50d71654fcc56aa07aacf236585983ad822c1e63326c2fe19db5bf",
+        "specId": "ball-stick-small"
       },
       {
         "id": "chemistry-master-p111",
@@ -1597,7 +1608,8 @@
         "src": "chemistry/master/image16.png",
         "width": 516,
         "height": 26,
-        "sha256": "1f51a0573afd90b475259ffc0240d97b2faf9b6cbc8ba00f3368770f65973253"
+        "sha256": "1f51a0573afd90b475259ffc0240d97b2faf9b6cbc8ba00f3368770f65973253",
+        "specId": "ball-stick-small"
       },
       {
         "id": "chemistry-master-p118",
@@ -1606,7 +1618,8 @@
         "src": "chemistry/master/image19.png",
         "width": 467,
         "height": 85,
-        "sha256": "00838b523616861606086af7e523dfc1ffbf4f49780b31e71c07f75e98e2bb4f"
+        "sha256": "00838b523616861606086af7e523dfc1ffbf4f49780b31e71c07f75e98e2bb4f",
+        "specId": "ball-stick-small"
       },
       {
         "id": "chemistry-master-p129",
@@ -1615,7 +1628,8 @@
         "src": "chemistry/master/image8.png",
         "width": 2048,
         "height": 786,
-        "sha256": "2197638ad243f2808c52945c9e1ceb8d8ebea5769076d8c5412a9ca265d30d8f"
+        "sha256": "2197638ad243f2808c52945c9e1ceb8d8ebea5769076d8c5412a9ca265d30d8f",
+        "specId": "ball-stick-large"
       },
       {
         "id": "chemistry-master-p141",
@@ -1624,7 +1638,8 @@
         "src": "chemistry/master/image14.png",
         "width": 979,
         "height": 206,
-        "sha256": "24cae824ed6388a66228031a7406b56c60b1212a5d0ea25e3c445f01647dc990"
+        "sha256": "24cae824ed6388a66228031a7406b56c60b1212a5d0ea25e3c445f01647dc990",
+        "specId": "ball-stick-small"
       },
       {
         "id": "chemistry-master-p146",
@@ -1633,7 +1648,8 @@
         "src": "chemistry/master/image18.png",
         "width": 2048,
         "height": 786,
-        "sha256": "85627c5e7f007d6182dab1cc48a0d5c60057a9291388080c165a26beafa00c10"
+        "sha256": "85627c5e7f007d6182dab1cc48a0d5c60057a9291388080c165a26beafa00c10",
+        "specId": "ball-stick-large"
       },
       {
         "id": "chemistry-master-p153",
@@ -1642,7 +1658,8 @@
         "src": "chemistry/master/image7.png",
         "width": 811,
         "height": 691,
-        "sha256": "561ee7022219d367a90f82eb600215e18f5996adeca7f669b2b9e5057159b4da"
+        "sha256": "561ee7022219d367a90f82eb600215e18f5996adeca7f669b2b9e5057159b4da",
+        "specId": "cubic-crystal"
       },
       {
         "id": "chemistry-master-p160",
@@ -1651,7 +1668,8 @@
         "src": "chemistry/master/image5.png",
         "width": 258,
         "height": 225,
-        "sha256": "498a9b25c075db65a08871b15cfd03c87d3c761af545c91c4a3895510ae96958"
+        "sha256": "498a9b25c075db65a08871b15cfd03c87d3c761af545c91c4a3895510ae96958",
+        "specId": "space-filling"
       },
       {
         "id": "chemistry-master-p162",
@@ -1660,7 +1678,8 @@
         "src": "chemistry/master/image13.png",
         "width": 233,
         "height": 168,
-        "sha256": "11d78f65d0e6dc4b606a864c591c799a05733d4ebcd627b7dbae9bd96e012c05"
+        "sha256": "11d78f65d0e6dc4b606a864c591c799a05733d4ebcd627b7dbae9bd96e012c05",
+        "specId": "space-filling"
       },
       {
         "id": "chemistry-master-p165",
@@ -1669,7 +1688,8 @@
         "src": "chemistry/master/image1.png",
         "width": 826,
         "height": 355,
-        "sha256": "81bca2902ce34c08b1c5cc2a938d0f1745ac642123fddda534bdd4a2a0b5758f"
+        "sha256": "81bca2902ce34c08b1c5cc2a938d0f1745ac642123fddda534bdd4a2a0b5758f",
+        "specId": "lewis-dot-model"
       }
     ]
   },
@@ -1685,7 +1705,8 @@
         "src": "chemistry/figures/image9.png",
         "width": 628,
         "height": 283,
-        "sha256": "663e55af4ec22e011bd1d3a4ca419b4b810ee600a8297d755c52b0c5b1579258"
+        "sha256": "663e55af4ec22e011bd1d3a4ca419b4b810ee600a8297d755c52b0c5b1579258",
+        "specId": "chem-equation-font"
       },
       {
         "id": "chemistry-figures-p35",
@@ -1694,7 +1715,8 @@
         "src": "chemistry/figures/image13.png",
         "width": 1294,
         "height": 270,
-        "sha256": "8936914a8d9fc347b524bfc9fae1487e5f85a0cbb3912603747ea70d665a1f1a"
+        "sha256": "8936914a8d9fc347b524bfc9fae1487e5f85a0cbb3912603747ea70d665a1f1a",
+        "specId": "chem-names"
       },
       {
         "id": "chemistry-figures-p40",
@@ -1703,7 +1725,8 @@
         "src": "chemistry/figures/image7.png",
         "width": 1289,
         "height": 145,
-        "sha256": "4839038a5ddf9884838363f7f85cf20988132f9a16508f0f1ba2d66166a5e422"
+        "sha256": "4839038a5ddf9884838363f7f85cf20988132f9a16508f0f1ba2d66166a5e422",
+        "specId": "chem-names"
       },
       {
         "id": "chemistry-figures-p45",
@@ -1712,7 +1735,8 @@
         "src": "chemistry/figures/image20.png",
         "width": 779,
         "height": 296,
-        "sha256": "4fbfff431a2793d4b9d0013b1f65e985fb2a31d99218eaf7ab73edb3696b88b8"
+        "sha256": "4fbfff431a2793d4b9d0013b1f65e985fb2a31d99218eaf7ab73edb3696b88b8",
+        "specId": "equation-arrows"
       },
       {
         "id": "chemistry-figures-p52",
@@ -1721,7 +1745,8 @@
         "src": "chemistry/figures/image8.png",
         "width": 643,
         "height": 424,
-        "sha256": "712ecc260c701f3e245b461df6a12e9e0ab81e74391e36ce5a5c6ad631c7cc78"
+        "sha256": "712ecc260c701f3e245b461df6a12e9e0ab81e74391e36ce5a5c6ad631c7cc78",
+        "specId": "reversible-reaction"
       },
       {
         "id": "chemistry-figures-p58",
@@ -1730,7 +1755,8 @@
         "src": "chemistry/figures/image10.png",
         "width": 672,
         "height": 716,
-        "sha256": "8b1eeb46967d269caefe5dea19a8b3c4af4df811846ee400c833b953baa3b5d6"
+        "sha256": "8b1eeb46967d269caefe5dea19a8b3c4af4df811846ee400c833b953baa3b5d6",
+        "specId": "rotation-arrows"
       },
       {
         "id": "chemistry-figures-p65",
@@ -1739,7 +1765,8 @@
         "src": "chemistry/figures/image4.png",
         "width": 982,
         "height": 411,
-        "sha256": "21038e967c57d15792cd7c4f2ba3a3c760b2c2b5a99f76f1729bf45bc676778e"
+        "sha256": "21038e967c57d15792cd7c4f2ba3a3c760b2c2b5a99f76f1729bf45bc676778e",
+        "specId": "lewis-dot-chem"
       },
       {
         "id": "chemistry-figures-p72",
@@ -1748,7 +1775,8 @@
         "src": "chemistry/figures/image1.png",
         "width": 715,
         "height": 741,
-        "sha256": "c06ad38a3db0cba61b905f3004db69bf819024a488c59b9f431762c74bf97899"
+        "sha256": "c06ad38a3db0cba61b905f3004db69bf819024a488c59b9f431762c74bf97899",
+        "specId": "long-brackets"
       },
       {
         "id": "chemistry-figures-p78",
@@ -1757,7 +1785,8 @@
         "src": "chemistry/figures/image2.png",
         "width": 1363,
         "height": 363,
-        "sha256": "ed075dffdc84cd134c5f299548fdc394dfae8458f501d9078a3fe9d2c77ae6d7"
+        "sha256": "ed075dffdc84cd134c5f299548fdc394dfae8458f501d9078a3fe9d2c77ae6d7",
+        "specId": "chem-charge"
       },
       {
         "id": "chemistry-figures-p82",
@@ -1766,7 +1795,8 @@
         "src": "chemistry/figures/image15.png",
         "width": 382,
         "height": 629,
-        "sha256": "4b586003401f3fb7ba962f5037be7b2a2162d0ea96948d85a659a4c985d9a7bb"
+        "sha256": "4b586003401f3fb7ba962f5037be7b2a2162d0ea96948d85a659a4c985d9a7bb",
+        "specId": "chem-charge"
       },
       {
         "id": "chemistry-figures-p91",
@@ -1775,7 +1805,8 @@
         "src": "chemistry/figures/image3.png",
         "width": 715,
         "height": 494,
-        "sha256": "67c42ef3399749d6d580e9a3d33ae5ae8edbd6815fd99c157ca05588c838490f"
+        "sha256": "67c42ef3399749d6d580e9a3d33ae5ae8edbd6815fd99c157ca05588c838490f",
+        "specId": "locants"
       },
       {
         "id": "chemistry-figures-p100",
@@ -1784,7 +1815,8 @@
         "src": "chemistry/figures/image6.png",
         "width": 570,
         "height": 656,
-        "sha256": "b2bca6032df33373b06403d757f17e24e52ab573323ecb62d86b95beef78c270"
+        "sha256": "b2bca6032df33373b06403d757f17e24e52ab573323ecb62d86b95beef78c270",
+        "specId": "benzene-ring"
       },
       {
         "id": "chemistry-figures-p101",
@@ -1793,7 +1825,8 @@
         "src": "chemistry/figures/image19.png",
         "width": 908,
         "height": 705,
-        "sha256": "a6481fbd24cc9e03eaa62c10bcc511b2cd4f37d8742dbcd7e7b93a53c99f4376"
+        "sha256": "a6481fbd24cc9e03eaa62c10bcc511b2cd4f37d8742dbcd7e7b93a53c99f4376",
+        "specId": "benzene-ring"
       },
       {
         "id": "chemistry-figures-p107",
@@ -1802,7 +1835,8 @@
         "src": "chemistry/figures/image11.png",
         "width": 277,
         "height": 342,
-        "sha256": "6d8aebc9dfc2fa7627abb39445265e502620f4f86440af3b5ae31b62dd2f58d3"
+        "sha256": "6d8aebc9dfc2fa7627abb39445265e502620f4f86440af3b5ae31b62dd2f58d3",
+        "specId": "intramolecular"
       },
       {
         "id": "chemistry-figures-p110",
@@ -1811,7 +1845,9 @@
         "src": "chemistry/figures/image17.png",
         "width": 674,
         "height": 346,
-        "sha256": "582cbfec6d8c30b77b1202c5ddd782458fff5733834cc8cc9dbd576654e64f0a"
+        "sha256": "582cbfec6d8c30b77b1202c5ddd782458fff5733834cc8cc9dbd576654e64f0a",
+        "specId": "intramolecular",
+        "reviewNote": "The working dashed intramolecular bond stroke is 1 pt with a 6 pt dash. The annotation displays the older unit."
       },
       {
         "id": "chemistry-figures-p115",
@@ -1820,7 +1856,8 @@
         "src": "chemistry/figures/image5.png",
         "width": 268,
         "height": 393,
-        "sha256": "7430c3d80b622b82369cf37b5c5d406f20a97b453bff834e7d29b3ecde6c00b4"
+        "sha256": "7430c3d80b622b82369cf37b5c5d406f20a97b453bff834e7d29b3ecde6c00b4",
+        "specId": "carbon-chain"
       },
       {
         "id": "chemistry-figures-p116",
@@ -1829,7 +1866,9 @@
         "src": "chemistry/figures/image12.png",
         "width": 701,
         "height": 426,
-        "sha256": "ba3acfff1e1581ebd298083b812bcd91dc4bae2f2540615459da5c9d22553d38"
+        "sha256": "ba3acfff1e1581ebd298083b812bcd91dc4bae2f2540615459da5c9d22553d38",
+        "specId": "carbon-chain",
+        "reviewNote": "Use a 1 pt stroke with a 4 pt dash. The 5 px callout measures clearance from the enclosure to the structure."
       },
       {
         "id": "chemistry-figures-p118",
@@ -1838,7 +1877,8 @@
         "src": "chemistry/figures/image16.png",
         "width": 916,
         "height": 414,
-        "sha256": "f689114ac7b62c87e583aa7cd91979ec954208a9d8fe24a1312a91ac9e16eb6d"
+        "sha256": "f689114ac7b62c87e583aa7cd91979ec954208a9d8fe24a1312a91ac9e16eb6d",
+        "specId": "carbon-chain"
       },
       {
         "id": "chemistry-figures-p124",
@@ -1847,7 +1887,8 @@
         "src": "chemistry/figures/image14.png",
         "width": 1114,
         "height": 609,
-        "sha256": "a206080856a5798e4beeb1da01378bf21ea3a7b88e380f41ccecd787940cc8c9"
+        "sha256": "a206080856a5798e4beeb1da01378bf21ea3a7b88e380f41ccecd787940cc8c9",
+        "specId": "wedge-bond"
       },
       {
         "id": "chemistry-figures-p126",
@@ -1856,7 +1897,8 @@
         "src": "chemistry/figures/image18.png",
         "width": 366,
         "height": 407,
-        "sha256": "0a6c3cac5eb5d3208b5c7c9746a7f89a4d528f4c3191180cb5bae368e0fa0c90"
+        "sha256": "0a6c3cac5eb5d3208b5c7c9746a7f89a4d528f4c3191180cb5bae368e0fa0c90",
+        "specId": "wedge-bond"
       }
     ]
   }

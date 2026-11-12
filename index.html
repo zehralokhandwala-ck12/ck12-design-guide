@@ -152,7 +152,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 /* ── LIGHTBOX ── */
 #lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:1000;align-items:center;justify-content:center}
 #lightbox.show{display:flex}
-#lightbox img{max-width:90vw;max-height:90vh;border-radius:8px;object-fit:contain}
+#lightbox img{max-width:90vw;max-height:90vh;border-radius:8px;object-fit:contain;background:white}
 #lightbox-close{position:absolute;top:20px;right:24px;color:white;font-size:28px;cursor:pointer;line-height:1;background:none;border:none;padding:4px 8px;border-radius:6px}
 #lightbox-close:focus-visible{outline:2px solid white;outline-offset:2px}
 
@@ -322,7 +322,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- Resources dropdown panel -->
 <div id="res-dropdown" class="res-dropdown" role="region" aria-label="Downloads and resources"></div>
 
-<script src="specs.js?v=abda84f0b3"></script>
+<script src="specs.js?v=761c8ffc56"></script>
 <script src="math-review/guide-links.js?v=bd09685a7f"></script>
 <script>
 /* ── HELPERS ── */
@@ -542,7 +542,7 @@ function renderEl(el, accentColor, subjectBadge) {
       h += `<p class="source-links"><a href="math-review/#decision-${decision.id}">Approved decision · ${decision.label}</a></p>`;
     }
   }
-  h += imgGallery(el.images);
+  if (subjectBadge !== 'chemistry') h += imgGallery(el.images);
   if (el.docEmbed) {
     h += `<div class="doc-embed-wrap">
       <div class="doc-embed-bar">
@@ -560,12 +560,20 @@ function renderEl(el, accentColor, subjectBadge) {
       <thead><tr><th scope="col">Property</th><th scope="col">Value</th></tr></thead>
       <tbody>`;
     el.specs.forEach((s, i) => {
-      h += `<tr data-match-row="spec-${i}" tabindex="-1"><td class="lc">${s.label}</td><td>${svClean(s)}${referenceLinks(review, s.label)}</td></tr>`;
+      const figure = s.figure ? `<div class="source-links"><a href="source-images/#${s.figure}">View annotated source figure</a></div>` : '';
+      h += `<tr data-match-row="spec-${i}" tabindex="-1"><td class="lc">${s.label}</td><td>${svClean(s)}${referenceLinks(review, s.label)}${figure}</td></tr>`;
     });
     h += `</tbody></table>`;
   }
 
   if (el.banners) el.banners.forEach(b => { h += bnr(b); });
+  if (subjectBadge === 'chemistry') {
+    h += imgGallery(el.images);
+    if (el.archivalImages?.length) {
+      h += `<details><summary>Original Illustrator references (${el.archivalImages.length})</summary>${imgGallery(el.archivalImages)}</details>`;
+    }
+    h += `<p><a class="math-review-link" href="chemistry-review/#topic-${el.id}">Source passages for this entry</a></p>`;
+  }
   h += `</div></div>`;
   return h;
 }
@@ -785,7 +793,7 @@ function renderWelcome() {
 
 /* ── SEARCH ── */
 function normalizeSearch(text) {
-  return text.toLowerCase().replace(/[-‐‑‒–—]/g, ' ').replace(/\s+/g, ' ').trim();
+  return text.normalize('NFKC').toLowerCase().replace(/[-‐‑‒–—]/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
 function gradeApplies(label, grade) {

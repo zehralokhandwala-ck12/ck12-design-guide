@@ -49,6 +49,7 @@ const RES = {
     { label:"Optical Instruments (.ai)", url:"https://drive.google.com/open?id=1U3lhcPEHD4eOUQ6dBItvR40o1PETDtqN&usp=drive_fs", icon:"🔭" },
   ],
   chemistry: [
+    { label:"Structure sizing reference (.ai)", url:"https://drive.google.com/open?id=1TbVfYxc1cIMVSrS2a3U2ZzQ8_Q62gzma&usp=drive_fs", icon:"📐" },
     { label:"Charges (.ai file)", url:"https://drive.google.com/open?id=1Tyeq4raCrkF3P73czzVtoRyAx2ngJpm0&usp=drive_fs", icon:"⚗" },
     { label:"Periodic Table (colors)", url:"https://drive.google.com/file/d/1ZoRgkow3tB25WzwhcrE6uHS11qoYgg-r/view?usp=drive_link", icon:"🔬" },
     { label:"Atomic Radius Sheet", url:"https://docs.google.com/spreadsheets/d/1vQTlV8xBBgzu4fv803PwACB1vCMWLclgEmOw7k0VeiY/edit#gid=0", icon:"📊" },
@@ -914,218 +915,372 @@ const DATA = { subjects: [
   description:"Atoms, bonds, molecular models, equations",
   downloads:"chemistry",
   categories:[
-
-    { id:"chem-fig-guidelines", label:"Chemistry Figure Guidelines", elements:[{
-      id:"chem-fig-doc", label:"Chemistry Figure Guidelines",
-      docEmbed:"https://docs.google.com/document/d/14FD8QgNC7PnpQK_DXEW1kOVtYjal9ZN9/preview",
-      images:[], specs:[],
-      banners:[
-        {type:"info", text:"Full figure construction guidelines for chemistry diagrams. Scroll to read the complete document."},
-      ]
-    }]},
-
-    { id:"chem-general", label:"General Guidelines", elements:[{
-      id:"chem-image-size", label:"Image Size & Scaling", images:[],
-      specs:[
-        {label:"Canvas", value:"Grow canvas if more space needed"},
-        {label:"Scaling", value:"NEVER non-uniform scaling"},
-      ],
-      banners:[
-        {type:"warn", text:"<strong>NEVER do non-uniform scaling of chemical figures.</strong> If the structure needs scaling, flag it to the team before doing it across multiple assets."},
-        {type:"note", text:"If more elements need to be added, grow the image canvas size — retain the original size of the existing structure."},
-      ]
-    }]},
-
+    { id:"chem-fig-guidelines", label:"Chemistry Figure Guidelines", elements:[
+      {
+        id:"chem-fig-doc",
+        label:"Chemistry Figure Guidelines",
+        specs:[
+          {label:"Artwork", value:"Generate the chemical illustration with AI using the appropriate structural-formula or rendered-model references."},
+          {label:"Text and labels", value:"Set headings, captions, element labels, charges and locants manually. Check font, size, alignment and spacing in the finished figure."},
+        ],
+        banners:[
+          {type:"note", text:"<a href=\"chemistry-review/\">Read the Chemistry source review</a> for the original Word passages, figures and reviewed decisions."},
+        ]
+      }
+    ]},
+    { id:"chem-general", label:"General Guidelines", elements:[
+      {
+        id:"chem-image-size",
+        label:"Image Size & Scaling",
+        specs:[
+          {label:"Canvas", value:"Enlarge the canvas to make room for new elements. Retain the original size of the supplied SVG structure and benzene ring."},
+          {label:"Structure scaling", value:"Scale uniformly if a size change is necessary. Review the change with the team before applying it across multiple figures."},
+        ]
+      }
+    ]},
     { id:"chem-atoms", label:"Atom Sizing", elements:[
-      { id:"atom-base", label:"Atom — Base Specs", images:[],
+      {
+        id:"atom-base",
+        label:"Rendered Atoms — Size, Outline and Lighting",
         specs:[
-          {label:"Base atom size", value:"20px circle"},
-          {label:"Stroke", value:"2px (≤200px size)"},
-          {label:"Highlight / shade position", value:"70% of atom size"},
-          {label:"Highlight / shade width", value:"30% of diameter"},
-          {label:"Highlight", value:"White, 40% opacity"},
-          {label:"Shade", value:"20% darker than atom color"},
-          {label:"Highlight angle", value:"Top-left, 45° rotation"},
+          {label:"Base atom", value:"20 px circle with a 2 px outline", figure:"chemistry-master-p10"},
+          {label:"Outline thickness", value:"2 px through 200 px atom size. Above 200 px, increase by 1 px per 100 px of atom size."},
+          {label:"Highlight and shade position", value:"70% of atom size", figure:"chemistry-master-p14"},
+          {label:"Highlight and shade width", value:"30% of atom diameter", figure:"chemistry-master-p19"},
+          {label:"Highlight", value:"White at 40% opacity in most cases", figure:"chemistry-master-p25"},
+          {label:"Light-colored atom example", value:"The pale atom in the reference shows a 100% opacity highlight.", figure:"chemistry-master-p25"},
+          {label:"Shade", value:"20% darker than the atom color", figure:"chemistry-master-p25"},
+          {label:"Light direction", value:"Top left, with a 45° rotation", figure:"chemistry-master-p33"},
+          {label:"Atom fill colors", value:"Use the CK-12 periodic table in Resources."},
+          {label:"When scaling", value:"Scale highlight and shade proportionally to the atom. Retain the outline thickness specified for that size."},
         ],
-        banners:[
-          {type:"note", text:"Scaling: enable Scale Corners, disable Scale Strokes & Effects. Stroke stays at 2px."},
-          {type:"note", text:"Stroke rule: 2px up to 200px atom size. Add 1px per 100px above that."},
-          {type:"info", text:"Atom colors: see Periodic Table file on Drive. Atomic radii: see Atomic Radius Sheet (Column D). Both downloadable above."},
+        images:[
+          {src:"source-images/chemistry/master/image15.png", caption:"Master P10 · Base atom diameter and outline"},
+          {src:"source-images/chemistry/master/image4.png", caption:"Master P14 · Highlight and shade position"},
+          {src:"source-images/chemistry/master/image11.png", caption:"Master P19 · Highlight and shade width"},
+          {src:"source-images/chemistry/master/image3.png", caption:"Master P25 · Highlight opacity and shade brightness"},
+          {src:"source-images/chemistry/master/image12.png", caption:"Master P33 · Highlight rotation"},
+        ],
+        archivalImages:[
+          {src:"source-images/chemistry/master/image10.png", caption:"Master P40 · Convert highlight and shadow strokes to outlines"},
+          {src:"source-images/chemistry/master/image2.png", caption:"Master P45 · Illustrator scaling settings"},
         ]
       },
-      { id:"atom-scaling", label:"Atom Size — Calculation Formula", images:[],
-        specs:[],
-        banners:[
-          {type:"info", text:"<strong>Formula:</strong> Smallest atom = 20px base. Scale others: <code>new_size = 20 × (target_radius ÷ smallest_radius)</code>."},
-          {type:"note", text:"<strong>Example — CaCl₂:</strong> Ca radius=174, Cl radius=100. Cl=20px. Ca = 20×(174/100) = 35px."},
-          {type:"note", text:"For multi-molecule images: atom with smallest atomic radius in that image gets the 20px base. Calculate all others relative to it."},
-        ]
-      },
-      { id:"subatomic", label:"Subatomic Particles", images:[],
+      {
+        id:"atom-scaling",
+        label:"Relative Atom Sizing — Formula and Examples",
         specs:[
-          {label:"Electron", value:"See Periodic Table file"},
-          {label:"Proton", value:"See Periodic Table file"},
-          {label:"Neutron", value:"See Periodic Table file"},
-          {label:"Positron", value:"See Periodic Table file"},
+          {label:"Atomic radius input", value:"Use column D of the linked CK-12 Atomic Radius Sheet."},
+          {label:"Base", value:"Use a drawn diameter of 20 px for the smallest atom in the comparison."},
+          {label:"Relative size", value:"Drawn diameter = reference diameter × target atomic radius ÷ reference atomic radius. Round the worked result to whole pixels."},
+          {label:"CaCl₂ example", value:"With Cl at 20 px and radii Ca 174, Cl 100, draw Ca at approximately 35 px."},
+          {label:"CaO example using the same Ca", value:"Retain Ca at 35 px. Oxygen is approximately 13 px using 35 × 64 ÷ 174."},
+          {label:"Several molecules in one artwork", value:"Use one common scale across the artwork. Set the smallest atomic radius in the group to 20 px."},
         ],
         banners:[
-          {type:"info", text:"Refer to the Periodic Table Drive file for subatomic particle representations."},
+          {type:"note", text:"<a href=\"?spec=atom-size-examples\">Open the worked atom-size examples</a> for the measured sizes printed in the source figure."},
+        ]
+      },
+      {
+        id:"atom-size-examples",
+        label:"Worked Atom Sizes by Formula",
+        specs:[
+          {label:"Na₂CO₃ · sodium carbonate", value:"O 64 → 20 px, C 75 → 23 px, Na 160 → 50 px", figure:"chemistry-master-p85"},
+          {label:"NaHCO₃ · sodium bicarbonate", value:"H 32 → 20 px, C 75 → 47 px, O 64 → 40 px, Na 160 → 100 px", figure:"chemistry-master-p85"},
+          {label:"AlCl₃ · aluminium chloride", value:"Cl 100 → 20 px, Al 124 → 25 px", figure:"chemistry-master-p85"},
+          {label:"KCl · potassium chloride", value:"Cl 100 → 20 px, K 200 → 40 px", figure:"chemistry-master-p85"},
+          {label:"Ca(OH)₂ · calcium hydroxide", value:"H 32 → 20 px, O 64 → 40 px, Ca 160 → 100 px", figure:"chemistry-master-p85"},
+          {label:"BaSO₄ · barium sulfate", value:"O 64 → 20 px, S 104 → 33 px, Ba 206 → 64 px", figure:"chemistry-master-p85"},
+          {label:"NH₃ · ammonia", value:"H 32 → 20 px, N 71 → 44 px", figure:"chemistry-master-p85"},
+          {label:"H₂O · water", value:"H 32 → 20 px, O 64 → 40 px", figure:"chemistry-master-p85"},
+          {label:"CaF₂ · calcium fluoride", value:"F 60 → 20 px, Ca 174 → 58 px", figure:"chemistry-master-p85"},
+          {label:"H₂SO₄ · sulfuric acid", value:"H 32 → 20 px, S 104 → 65 px, O 64 → 40 px", figure:"chemistry-master-p85"},
+        ],
+        images:[
+          {src:"source-images/chemistry/master/image17.png", caption:"Master P85 · Historical sizing chart; use the corrected Ca(OH)₂ value and diameter rule above"},
+        ],
+        banners:[
+          {type:"note", text:"Read each pair as source atomic radius → drawn diameter in pixels. For Ca(OH)₂, 20 × 160 ÷ 32 = 100 px. The historical screenshot labels the output as a radius and prints 109 px for Ca in this example."},
+        ]
+      },
+      {
+        id:"subatomic",
+        label:"Subatomic Particle References",
+        specs:[
+          {label:"Particles named in the master", value:"Electron, proton, neutron and positron. The Word export lists these names without a particle-specific illustration, diameter or palette."},
         ]
       }
     ]},
-
     { id:"chem-molecular", label:"Molecular Representations", elements:[
-      { id:"ball-stick-small", label:"Ball & Stick — 20px Atoms", images:[],
+      {
+        id:"ball-stick-small",
+        label:"Ball & Stick — 20 px Atoms",
         specs:[
-          {label:"Inside stroke", value:"2px, #999999", type:"color-inline", colorValue:"#999999"},
-          {label:"Outside stroke", value:"2px, #333333", type:"color-inline", colorValue:"#333333"},
-          {label:"Stick height", value:"6px"},
-          {label:"Cap / Corner", value:"Round"},
-          {label:"Align stroke", value:"Center"},
+          {label:"Inside stroke", value:"2 px, #999999", type:"color-inline", colorValue:"#999999"},
+          {label:"Outside stroke", value:"2 px, #333333", type:"color-inline", colorValue:"#333333"},
+          {label:"Stick height", value:"6 px", figure:"chemistry-master-p118"},
+          {label:"Cap and corner", value:"Round"},
+          {label:"Stroke alignment", value:"Center"},
+          {label:"Double bond gap", value:"5 px between the two sticks in the illustrated example", figure:"chemistry-master-p141"},
+        ],
+        images:[
+          {src:"source-images/chemistry/master/image19.png", caption:"Master P118 · Single bond with 20 px atoms"},
+          {src:"source-images/chemistry/master/image14.png", caption:"Master P141 · Double bond spacing for smaller atoms"},
+        ],
+        archivalImages:[
+          {src:"source-images/chemistry/master/image9.png", caption:"Master P103 · Ball-and-stick bond first stroke"},
+          {src:"source-images/chemistry/master/image6.png", caption:"Master P106 · Ball-and-stick bond second stroke"},
+          {src:"source-images/chemistry/master/image16.png", caption:"Master P111 · Rectangle method for a bond"},
+        ]
+      },
+      {
+        id:"ball-stick-large",
+        label:"Ball & Stick — 250 px Atoms",
+        specs:[
+          {label:"Inside stroke", value:"3 px, #999999", type:"color-inline", colorValue:"#999999"},
+          {label:"Outside stroke", value:"3 px, #333333", type:"color-inline", colorValue:"#333333"},
+          {label:"Stick height", value:"9 px", figure:"chemistry-master-p129"},
+          {label:"Cap and corner", value:"Round"},
+          {label:"Stroke alignment", value:"Center"},
+          {label:"Double bond gap", value:"10 px between the two sticks in the illustrated example", figure:"chemistry-master-p146"},
+          {label:"Bond stroke by atom size", value:"2 px through 200 px atom size. Above 200 px, increase by 1 px per 100 px; the 250 px reference uses 3 px."},
+        ],
+        images:[
+          {src:"source-images/chemistry/master/image8.png", caption:"Master P129 · Single bond with 250 px atoms"},
+          {src:"source-images/chemistry/master/image18.png", caption:"Master P146 · Double bond spacing for larger atoms"},
+        ]
+      },
+      {
+        id:"cubic-crystal",
+        label:"Cubic Crystal Structure",
+        specs:[
+          {label:"Bond junction", value:"When a bond appears on top of an atom, place the junction halfway along the atom’s radius.", figure:"chemistry-master-p153"},
+        ],
+        images:[
+          {src:"source-images/chemistry/master/image7.png", caption:"Master P153 · Cubic crystal structure and bond junctions"},
+        ]
+      },
+      {
+        id:"space-filling",
+        label:"Space-Filling Model",
+        specs:[
+          {label:"Atom arrangement", value:"Overlap the atom circles using the relative sizes and geometry of the depicted molecule."},
+          {label:"Water example", value:"The accepted water example shows a 104.5° angle. Compare the positions of the two hydrogen atoms in the accepted and rejected references.", figure:"chemistry-master-p160"},
+        ],
+        images:[
+          {src:"source-images/chemistry/master/image5.png", caption:"Master P160 · Correct space-filling model example"},
+          {src:"source-images/chemistry/master/image13.png", caption:"Master P162 · Incorrect space-filling model example"},
+        ]
+      },
+      {
+        id:"lewis-dot-chem",
+        label:"Lewis Dots — Structural Formula",
+        specs:[
+          {label:"Dot diameter", value:"4 px", figure:"chemistry-figures-p65"},
+          {label:"Gap between paired dots", value:"3 px", figure:"chemistry-figures-p65"},
+          {label:"Dot color", value:"#000000", type:"color"},
+        ],
+        images:[
+          {src:"source-images/chemistry/figures/image4.png", caption:"Figure guidelines P65 · Lewis dot spacing in a structural formula"},
         ],
         banners:[
-          {type:"note", text:"Bond joins atom at half the atom's radius."},
-          {type:"note", text:"Bond construction: draw 2px stroke first, then add 6px stroke on top. Alternatively use a 4px height rectangle with 2px stroke."},
-          {type:"note", text:"<strong>Double bond</strong> uses the same stick specifications as single bond."},
+          {type:"note", text:"Use this rule for dots alongside element letters in a structural formula. <a href=\"?spec=lewis-dot-model\">See Lewis dots on a rendered molecular model</a>."},
         ]
       },
-      { id:"ball-stick-large", label:"Ball & Stick — 250px Atoms", images:[],
+      {
+        id:"lewis-dot-model",
+        label:"Lewis Dots — Rendered Molecular Model",
         specs:[
-          {label:"Inside stroke", value:"3px, #999999", type:"color-inline", colorValue:"#999999"},
-          {label:"Outside stroke", value:"3px, #333333", type:"color-inline", colorValue:"#333333"},
-          {label:"Stick height", value:"9px"},
-          {label:"Cap / Corner", value:"Round"},
-          {label:"Align stroke", value:"Center"},
+          {label:"Dot diameter", value:"8 px", figure:"chemistry-master-p165"},
+          {label:"Gap between paired dots", value:"5 px", figure:"chemistry-master-p165"},
+          {label:"Clearance from dot to atom", value:"5 px", figure:"chemistry-master-p165"},
+          {label:"Dot color", value:"#000000", type:"color"},
         ],
-        banners:[
-          {type:"note", text:"Stroke rule: 2px up to 200px atom, +1px per 100px above that."},
-        ]
-      },
-      { id:"cubic-crystal", label:"Cubic Crystal Structure", images:[],
-        specs:[],
-        banners:[
-          {type:"info", text:"Cubic crystal structure is defined visually. Uses the same atom and bond specifications. Add reference image when available."},
-        ]
-      },
-      { id:"space-filling", label:"Space-Filling Model", images:[],
-        specs:[],
-        banners:[
-          {type:"info", text:"Space-filling models use the same atom circle specs. Atoms overlap based on their relative sizes — no bond sticks are shown."},
-        ]
-      },
-      { id:"lewis-dot-chem", label:"Lewis Dot Structure", images:[],
-        specs:[
-          {label:"Color", value:"#000000", type:"color"},
-          {label:"Dot diameter", value:"4px"},
+        images:[
+          {src:"source-images/chemistry/master/image1.png", caption:"Master P165 · Lewis dot spacing on a molecular model"},
         ]
       }
     ]},
-
     { id:"chem-bonds", label:"Bonds", elements:[
-      { id:"wedge-bond", label:"Wedge / Stereochemical Bond", images:[],
+      {
+        id:"wedge-bond",
+        label:"Wedge / Stereochemical Bond",
         specs:[
           {label:"Solid wedge color", value:"#000000", type:"color"},
-          {label:"Dash stroke", value:"1px"},
+          {label:"Solid and dashed wedge length", value:"20 px", figure:"chemistry-figures-p124"},
+          {label:"Narrow tip width", value:"1 px", figure:"chemistry-figures-p124"},
+          {label:"Wide base width", value:"7 px", figure:"chemistry-figures-p124"},
+          {label:"Dash stroke", value:"1 px", figure:"chemistry-figures-p124"},
+        ],
+        images:[
+          {src:"source-images/chemistry/figures/image14.png", caption:"Figure guidelines P124 · Solid and dashed wedge dimensions"},
+          {src:"source-images/chemistry/figures/image18.png", caption:"Figure guidelines P126 · Stereochemical bonds in a structure"},
         ]
       },
-      { id:"intramolecular", label:"Intramolecular Bond", images:[],
+      {
+        id:"intramolecular",
+        label:"Dashed Intramolecular Bond",
         specs:[
-          {label:"Style", value:"Dash line"},
-          {label:"Color", value:"#000000", type:"color"},
+          {label:"Dashed stroke weight", value:"1 pt", figure:"chemistry-figures-p107"},
+          {label:"Stroke color", value:"#000000", type:"color"},
+          {label:"Dash length", value:"6 pt", figure:"chemistry-figures-p107"},
+          {label:"Cap and corner", value:"Round", figure:"chemistry-figures-p107"},
+          {label:"Stroke alignment", value:"Center", figure:"chemistry-figures-p107"},
+        ],
+        images:[
+          {src:"source-images/chemistry/figures/image17.png", caption:"Figure guidelines P110 · Bond placement example. The working stroke weight is 1 pt."},
+        ],
+        archivalImages:[
+          {src:"source-images/chemistry/figures/image11.png", caption:"Figure guidelines P107 · Intramolecular bond Illustrator settings"},
         ]
       },
-      { id:"carbon-chain", label:"Carbon Chain", images:[],
+      {
+        id:"carbon-chain",
+        label:"Carbon Chain — Dashed Enclosure",
         specs:[
-          {label:"Style", value:"Dash line, 1px"},
-          {label:"Color", value:"#000000", type:"color"},
+          {label:"Dashed stroke weight", value:"1 pt", figure:"chemistry-figures-p115"},
+          {label:"Stroke color", value:"#000000", type:"color"},
+          {label:"Dash length", value:"4 pt", figure:"chemistry-figures-p115"},
+          {label:"Clearance between structure and enclosure", value:"5 px", figure:"chemistry-figures-p116"},
+          {label:"Cap and corner", value:"Round", figure:"chemistry-figures-p115"},
+          {label:"Stroke alignment", value:"Center", figure:"chemistry-figures-p115"},
+        ],
+        images:[
+          {src:"source-images/chemistry/figures/image12.png", caption:"Figure guidelines P116 · Carbon chain dashed enclosure clearance"},
+          {src:"source-images/chemistry/figures/image16.png", caption:"Figure guidelines P118 · Carbon chain enclosure example"},
+        ],
+        archivalImages:[
+          {src:"source-images/chemistry/figures/image5.png", caption:"Figure guidelines P115 · Carbon chain Illustrator settings"},
         ]
       }
     ]},
-
     { id:"chem-equations", label:"Equations & Arrows", elements:[
-      { id:"chem-equation-font", label:"Equation Heading / Caption", images:[],
+      {
+        id:"chem-equation-font",
+        label:"Equation Heading / Caption",
         specs:[
-          {label:"Font", value:"Proxima Nova Regular"},
-          {label:"Size", value:"16pt"},
-          {label:"Color", value:"#000000", type:"color"},
+          {label:"Default typeface", value:"CMU Serif Roman"},
+          {label:"Default caption size", value:"16 pt"},
+          {label:"SME-requested variant", value:"Proxima Nova Regular, 16 pt, #000000", figure:"chemistry-figures-p14"},
+          {label:"Caption clearance", value:"20–25 px below the structure in the illustrated example", figure:"chemistry-figures-p14"},
+        ],
+        images:[
+          {src:"source-images/chemistry/figures/image9.png", caption:"Figure guidelines P14 · Equation caption and spacing"},
         ],
         banners:[
-          {type:"note", text:"Use only when instructed by SME. Default font is CMU Serif Roman."},
+          {type:"note", text:"Apply the Proxima Nova variant when requested by the subject-matter expert. Set the caption manually."},
         ]
       },
-      { id:"chem-names", label:"Chemical Names in Reactions", images:[],
+      {
+        id:"chem-names",
+        label:"Chemical Names & Reaction Conditions",
         specs:[
-          {label:"Font", value:"CMU Serif Roman (LaTeX)"},
-          {label:"Size", value:"14pt"},
-          {label:"Position", value:"Below structure or above/below arrow"},
+          {label:"Typeface", value:"CMU Serif Roman (LaTeX style)"},
+          {label:"Chemical name below structure", value:"14 pt", figure:"chemistry-figures-p35"},
+          {label:"Conditions above or below arrow", value:"14 pt", figure:"chemistry-figures-p35"},
+        ],
+        images:[
+          {src:"source-images/chemistry/figures/image13.png", caption:"Figure guidelines P35 · Chemical names and conditions around reaction arrows"},
+          {src:"source-images/chemistry/figures/image7.png", caption:"Figure guidelines P40 · Long chemical equation"},
+        ]
+      },
+      {
+        id:"equation-arrows",
+        label:"Equation Arrows",
+        specs:[
+          {label:"Arrow form", value:"Match the supplied reaction artwork. The reference shows a one-way arrow and a double-ended arrow.", figure:"chemistry-figures-p45"},
+        ],
+        images:[
+          {src:"source-images/chemistry/figures/image20.png", caption:"Figure guidelines P45 · One-way and two-sided equation arrows"},
         ],
         banners:[
-          {type:"info", text:"Download CMU Serif Roman from the font download button above."},
-          {type:"note", text:"Names or conditions above/below the arrow are also 14pt CMU Serif Roman."},
+          {type:"note", text:"Keep arrow direction and chemical meaning consistent with the supplied equation."},
         ]
       },
-      { id:"equation-arrows", label:"Equation Arrows", images:[],
-        specs:[],
-        banners:[
-          {type:"info", text:"Use arrows generated by the Davinci image generator for equation arrows in chemistry."},
-        ]
-      },
-      { id:"reversible-reaction", label:"Reversible Reaction Arrows", images:[],
+      {
+        id:"reversible-reaction",
+        label:"Reversible Reaction Arrows",
         specs:[
-          {label:"Font", value:"Latin Modern Roman"},
-          {label:"Size", value:"22px"},
+          {label:"Typeface", value:"Latin Modern Roman CK12"},
+          {label:"Glyph size", value:"22 px", figure:"chemistry-figures-p52"},
           {label:"Color", value:"#000000", type:"color"},
+        ],
+        images:[
+          {src:"source-images/chemistry/figures/image8.png", caption:"Figure guidelines P52 · Reversible reaction arrow"},
         ]
       },
-      { id:"rotation-arrows", label:"Single / Double Rotation Arrows", images:[],
+      {
+        id:"rotation-arrows",
+        label:"Single / Double Rotation Arrows",
         specs:[
-          {label:"Stroke", value:"1px"},
-          {label:"Arrow type", value:"Arrow 7"},
-          {label:"Scale", value:"50%"},
+          {label:"Stroke", value:"1 px"},
+          {label:"Arrowhead", value:"Arrow 7"},
+          {label:"Arrowhead scale", value:"50%"},
+        ],
+        images:[
+          {src:"source-images/chemistry/figures/image10.png", caption:"Figure guidelines P58 · Rotation arrow"},
         ]
       }
     ]},
-
     { id:"chem-charges", label:"Charges & Symbols", elements:[
-      { id:"chem-charge", label:"Positive & Negative Charge", images:[],
-        specs:[],
-        banners:[
-          {type:"info", text:"Use the Charges .ai file for all charge representations. Download above."},
-          {type:"note", text:"Charge symbols maintain consistent visual weight — do not redraw from scratch."},
-        ]
-      },
-      { id:"long-brackets", label:"Long Brackets", images:[],
+      {
+        id:"chem-charge",
+        label:"Positive & Negative Charge Symbols",
         specs:[
-          {label:"Height", value:"Adjustable by image"},
+          {label:"Charge circle diameter", value:"8 px", figure:"chemistry-figures-p78"},
+          {label:"Charge circle stroke", value:"1 px", figure:"chemistry-figures-p78"},
+          {label:"Plus or minus sign size", value:"10 pt", figure:"chemistry-figures-p78"},
+        ],
+        images:[
+          {src:"source-images/chemistry/figures/image2.png", caption:"Figure guidelines P78 · Positive and negative charge glyphs"},
+          {src:"source-images/chemistry/figures/image15.png", caption:"Figure guidelines P82 · Charge glyph on a structure"},
         ],
         banners:[
-          {type:"note", text:"The height of the bracket is adjustable according to the image content."},
+          {type:"note", text:"Use the charge glyphs from the CK-12 Charges file in Resources."},
+        ]
+      },
+      {
+        id:"long-brackets",
+        label:"Long Brackets",
+        specs:[
+          {label:"Bracket height", value:"Adjust to the height of the structure."},
+          {label:"Horizontal arm width", value:"10 px", figure:"chemistry-figures-p72"},
+          {label:"Stroke", value:"1 px", figure:"chemistry-figures-p72"},
+        ],
+        images:[
+          {src:"source-images/chemistry/figures/image1.png", caption:"Figure guidelines P72 · Long bracket width and stroke"},
         ]
       }
     ]},
-
     { id:"chem-misc", label:"Other Elements", elements:[
-      { id:"benzene-ring", label:"Benzene Ring Locants", images:[],
+      {
+        id:"benzene-ring",
+        label:"Benzene Ring Locants",
         specs:[
-          {label:"Font", value:"Proxima Nova Regular"},
-          {label:"Size", value:"12pt"},
+          {label:"Typeface", value:"Proxima Nova Regular"},
+          {label:"Size", value:"12 pt", figure:"chemistry-figures-p101"},
           {label:"Color", value:"#000000", type:"color"},
-          {label:"Position", value:"1.5px offset from ring"},
-          {label:"Alignment", value:"Center (horizontal & vertical)"},
+          {label:"Placement", value:"Offset the numbers 1.5 px from the ring at the carbon positions.", figure:"chemistry-figures-p100"},
+          {label:"Multiple locants", value:"Center-align related numbers horizontally and vertically.", figure:"chemistry-figures-p100"},
         ],
-        banners:[
-          {type:"note", text:"Numbers represent carbon atoms at the intersections of the ring lines. Multiple numbers must be center-aligned with each other both horizontally and vertically."},
+        images:[
+          {src:"source-images/chemistry/figures/image6.png", caption:"Figure guidelines P100 · Benzene ring numbering offset"},
+          {src:"source-images/chemistry/figures/image19.png", caption:"Figure guidelines P101 · Benzene ring locants on a substituted ring"},
         ]
       },
-      { id:"locants", label:"Locants", images:[],
+      {
+        id:"locants",
+        label:"Locants",
         specs:[
-          {label:"Font", value:"Proxima Nova Regular"},
-          {label:"Size", value:"12pt"},
+          {label:"Typeface", value:"Proxima Nova Regular"},
+          {label:"Size", value:"12 pt", figure:"chemistry-figures-p91"},
           {label:"Color", value:"#000000", type:"color"},
+        ],
+        images:[
+          {src:"source-images/chemistry/figures/image3.png", caption:"Figure guidelines P91 · Locant number placement"},
         ]
       }
     ]}
-
   ]
 }
 

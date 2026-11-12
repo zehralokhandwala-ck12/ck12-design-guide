@@ -60,6 +60,17 @@ function buildSection(doc) {
     link.href = './#' + item.id;
     link.textContent = 'Figure link · ' + item.location;
     link.setAttribute('aria-label', 'Link to ' + doc.title + ', ' + item.location + ', ' + item.title);
+    if (item.specId) {
+      const spec = document.createElement('a');
+      spec.href = '../?spec=' + encodeURIComponent(item.specId);
+      spec.textContent = 'Working spec';
+      link.after(' · ', spec);
+    }
+    if (item.reviewNote) {
+      const note = document.createElement('p');
+      note.textContent = item.reviewNote;
+      figure.querySelector('figcaption').append(note);
+    }
     grid.append(figure);
     cards.push({ figure, terms: [doc.title, doc.subject, doc.file, item.title, item.location, item.src].join(' ').toLowerCase() });
   }
@@ -69,7 +80,7 @@ function buildSection(doc) {
 }
 
 async function loadCatalog() {
-  const response = await fetch('catalog.json');
+  const response = await fetch('catalog.json?v=a4f201367f');
   if (!response.ok) throw new Error('Catalog unavailable');
   const documents = await response.json();
   for (const name of new Set(documents.map(doc => doc.subject))) subject.add(new Option(name, name));
