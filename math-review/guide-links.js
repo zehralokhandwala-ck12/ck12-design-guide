@@ -169,25 +169,17 @@ const mathReviewLinks = {
   },
   "math-symbol-label": {
     "fields": {
-      "Space for character": [
-        {
-          "id": "math-grade-7-p79",
-          "label": "Grade 7 · Prime symbol and font settings"
-        },
-        {
-          "id": "math-grade-10-p100",
-          "label": "Grade 10 · Prime symbol and font settings"
-        },
+      "Prime glyph tracking": [
         {
           "id": "math-2025-p145",
-          "label": "Math 2025 · Math symbol and character settings"
+          "label": "Math · 2025 · Math symbol and character settings"
         }
       ]
     },
     "decisions": [
       {
         "id": "tracking",
-        "label": "Prime glyph tracking and units"
+        "label": "Prime glyph in Illustrator"
       }
     ]
   },
@@ -195,22 +187,18 @@ const mathReviewLinks = {
     "fields": {
       "Arc start radius": [
         {
-          "id": "math-grade-7-p90",
-          "label": "Grade 7 · Angle marker arc radii and spacing"
+          "id": "math-2025-p164",
+          "label": "Math · 2025 · Angle marker arc radii and spacing"
         },
         {
           "id": "math-grade-10-p150",
-          "label": "Grade 10 · Angle marker arc radii and spacing"
+          "label": "Math · Grade 10 · Angle marker arc radii and spacing"
         }
       ],
       "Arc gap": [
         {
-          "id": "math-grade-7-p90",
-          "label": "Grade 7 · Angle marker arc radii and spacing"
-        },
-        {
           "id": "math-2025-p164",
-          "label": "Math 2025 · Angle marker arc radii and spacing"
+          "label": "Math · 2025 · Angle marker arc radii and spacing"
         }
       ],
       "90° marker size": [
@@ -231,47 +219,53 @@ const mathReviewLinks = {
     "decisions": [
       {
         "id": "angles",
-        "label": "Grade 7 arc radius and gap"
+        "label": "Angle marker radius and gap"
       }
     ]
   },
   "hatch-marker": {
     "fields": {
-      "Size": [
+      "Tick height": [
         {
-          "id": "math-grade-7-p117",
-          "label": "Grade 7 · Length and hatch marker spacing"
+          "id": "math-2025-p202",
+          "label": "Math · 2025 · Hatch marker dimensions"
         },
         {
           "id": "math-grade-10-p173",
-          "label": "Grade 10 · Length marker spacing"
+          "label": "Math · Grade 10 · Length marker spacing"
+        }
+      ],
+      "Spacing between ticks": [
+        {
+          "id": "math-2025-p202",
+          "label": "Math · 2025 · Hatch marker dimensions"
         }
       ]
     },
     "decisions": [
       {
         "id": "hatches",
-        "label": "Two Grade 10 hatch sizes"
+        "label": "Equal-length tick marks"
       }
     ]
   },
   "feathers": {
     "fields": {
-      "Size": [
+      "Marker dimension (all grades)": [
         {
           "id": "math-grade-7-p129",
-          "label": "Grade 7 · Parallel line feather markers"
+          "label": "Math · Grade 7 · Parallel line feather markers"
         },
         {
-          "id": "math-grade-9-p42",
-          "label": "Grade 9 · Parallel line feathers on a triangle"
+          "id": "math-2025-p214",
+          "label": "Math · 2025 · Parallel line feather markers"
         }
       ]
     },
     "decisions": [
       {
         "id": "feathers",
-        "label": "Grade 9 parallel marker dimensions"
+        "label": "Parallel line marker dimensions"
       }
     ]
   },
@@ -318,10 +312,6 @@ const mathReviewLinks = {
       {
         "id": "pointcolor",
         "label": "Grade 7 number-line point color"
-      },
-      {
-        "id": "coordinates",
-        "label": "Grade 9 transform coordinates"
       }
     ]
   },
@@ -351,7 +341,7 @@ const mathReviewLinks = {
     "decisions": [
       {
         "id": "number-fonts",
-        "label": "Number-line typography and context"
+        "label": "Number-line label size and color"
       }
     ]
   },
@@ -403,7 +393,7 @@ const mathReviewLinks = {
     "decisions": [
       {
         "id": "equation",
-        "label": "Linear graph equation color"
+        "label": "Equation text color"
       }
     ]
   },
@@ -419,7 +409,7 @@ const mathReviewLinks = {
     "decisions": [
       {
         "id": "equation",
-        "label": "Linear graph equation color"
+        "label": "Equation text color"
       }
     ]
   },
@@ -445,7 +435,7 @@ const mathReviewLinks = {
     "decisions": [
       {
         "id": "linepalette",
-        "label": "Unassigned multicolor graph palette"
+        "label": "Multi-line and multicolor bar graph palettes"
       }
     ]
   },
@@ -469,12 +459,12 @@ const mathReviewLinks = {
       ],
       "Measurement label numerals — outside": [
         {
-          "id": "math-grade-8-p88",
-          "label": "Grade 8 · Pie chart with data labels outside the slices"
+          "id": "math-2025-p346",
+          "label": "Math 2025 · Pie chart with outside subject labels (placement example)"
         },
         {
-          "id": "math-grade-8-p105",
-          "label": "Grade 8 · Pie chart with percentages or angles outside"
+          "id": "math-2025-p364",
+          "label": "Math 2025 · Pie chart with percentages outside (placement example)"
         }
       ],
       "Label points": [
@@ -487,7 +477,7 @@ const mathReviewLinks = {
     "decisions": [
       {
         "id": "pie-placement",
-        "label": "Pie-chart outside measurement numeral"
+        "label": "Pie-chart measurement numerals"
       }
     ]
   },
@@ -507,7 +497,7 @@ const mathReviewLinks = {
     "decisions": [
       {
         "id": "pie-order",
-        "label": "Pie palette role and position"
+        "label": "Pie-chart palette order"
       }
     ]
   },
@@ -600,6 +590,38 @@ const mathReviewLinks = {
       {
         "id": "sequence",
         "label": "Sequence diagram grade coverage"
+      }
+    ]
+  },
+  "multi-line-graph": {
+    "fields": {
+      "Primary line": [
+        {
+          "id": "math-grade-10-p295",
+          "label": "Math · Grade 10 · Multi-line graph with multiple equation lines"
+        }
+      ]
+    },
+    "decisions": [
+      {
+        "id": "linepalette",
+        "label": "Multi-line and multicolor bar graph palettes"
+      }
+    ]
+  },
+  "bar-colors": {
+    "fields": {
+      "Primary bar color": [
+        {
+          "id": "math-grade-9-p90",
+          "label": "Math · Grade 9 · Grouped bar graph"
+        }
+      ]
+    },
+    "decisions": [
+      {
+        "id": "linepalette",
+        "label": "Multi-line and multicolor bar graph palettes"
       }
     ]
   }

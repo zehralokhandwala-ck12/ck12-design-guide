@@ -118,7 +118,7 @@ const DATA = { subjects: [
       gradeTable:{ columns:["Property","Grade 6–7","Grade 8–9","Grade 10+"], rows:[
         {label:"Diagram point", values:["10px","6px","4px"], highlight:true},
         {label:"Construction point", values:["6px","6px","4px"], highlight:true},
-        {label:"Number line point", values:["10px","6px","4px"], highlight:true},
+        {label:"Number line point", values:["10px","6px","6px"], highlight:true},
         {label:"Hollow point", values:["Fill #fff · Stroke 1px #000","Fill #fff · Stroke 1px #000","Fill #fff · Stroke 1px #000"]},
         {label:"Vector point (all grades)", values:["5px","5px","5px"]},
         {label:"Color (all solid)", values:["#000000","#000000","#000000"], type:"color"},
@@ -169,10 +169,12 @@ const DATA = { subjects: [
           {type:"note", text:"Labels like 6cm, 28cm → Left aligned. Labels like 10cm, 36cm → Center aligned."},
         ]
       },
-      { id:"math-symbol-label", label:"Math Symbol Label", images:[],
+      { id:"math-symbol-label", label:"Math Symbols and Prime Glyphs", images:[],
         specs:[
-          {label:"Font", value:"Latin Modern Roman (Regular)"},
-          {label:"Space for character", value:"100px"},
+          {label:"Math symbol font", value:"Latin Modern Roman (Regular)"},
+          {label:"Prime glyph font", value:"Latin Modern Roman CK12 · 10 Bold Italic"},
+          {label:"Prime glyph size", value:"18 pt"},
+          {label:"Prime glyph tracking", value:"100 in the Illustrator Character panel"},
         ],
         banners:[
           {type:"info", text:"Copy-paste symbols from the Math & Science Symbol Sheet. Download button above."},
@@ -189,22 +191,24 @@ const DATA = { subjects: [
         {label:"Cap", value:"Butt"},
         {label:"Corner", value:"Miter join"},
         {label:"Align Stroke", value:"Center"},
-        {label:"Arc start radius", value:"Flexible (~40px default)"},
-        {label:"Arc gap", value:"Flexible (~10px default)"},
+        {label:"Arc start radius", value:"40 px (all grades)"},
+        {label:"Arc gap", value:"10 px between arcs"},
         {label:"90° marker size", value:"15–25px by diagram"},
       ],
       banners:[
         {type:"info", text:"<strong>Grade 6–7 color logic:</strong> Line color is <code>#666666</code>, so angle marker uses <code>#999999</code> to differentiate without introducing a new color."},
-        {type:"note", text:"Arc radius and gap are flexible — adjust by diagram size. Defaults are starting points."},
+        {type:"note", text:"Reduce the radius when the canvas is small or a complex diagram leaves too little room."},
         {type:"note", text:"No need to write 90° when using a square angle marker."},
         {type:"note", text:"Use 40% arrowhead scale in complex, space-limited diagrams."},
       ]
     }]},
 
-    { id:"length-markers", label:"Length Markers", elements:[{
-      id:"hatch-marker", label:"Hatch Marker", gradeVaries:true, images:[],
+    { id:"length-markers", label:"Equal-Length Marks", elements:[{
+      id:"hatch-marker", label:"Equal-Length Tick Marks (Hatch Marks)", gradeVaries:true, images:[],
       specs:[
-        {label:"Size", value:"2px"},
+        {label:"Stroke width", value:"2px"},
+        {label:"Tick height", value:"15 px (10 px on smaller diagrams)"},
+        {label:"Spacing between ticks", value:"5 px"},
         {label:"Color (Grade 8+)", value:"#cccccc", type:"color"},
         {label:"Color (Grade 6–7)", value:"#bbbbbb", type:"color"},
         {label:"Cap", value:"Round"},
@@ -212,14 +216,15 @@ const DATA = { subjects: [
         {label:"Align Stroke", value:"Center"},
       ],
       banners:[
-        {type:"note", text:"10px height hatch marker can be used depending on diagram size."},
+        {type:"note", text:"Use matching tick marks to identify line segments of equal length."},
       ]
     }]},
 
     { id:"parallel-markers", label:"Parallel Line Markers", elements:[{
-      id:"feathers", label:"Feathers", gradeVaries:true, images:[],
+      id:"feathers", label:"Parallel Line Markers (Feathers)", gradeVaries:true, images:[],
       specs:[
-        {label:"Size", value:"2px"},
+        {label:"Stroke width", value:"2px"},
+        {label:"Marker dimension (all grades)", value:"10 px · use 7 px when space is limited"},
         {label:"Color (Grade 8+)", value:"#cccccc", type:"color"},
         {label:"Color (Grade 6–7)", value:"#bbbbbb", type:"color"},
         {label:"Cap", value:"Round"},
@@ -257,6 +262,9 @@ const DATA = { subjects: [
       { id:"number-line-spec", label:"Number Line", gradeVaries:true, images:[],
         specs:[
           {label:"Size", value:"2px"},
+          {label:"Point diameter (Grades 6–7)", value:"10 px"},
+          {label:"Point diameter (Grade 8 and above)", value:"6 px"},
+          {label:"Point color", value:"#000000", type:"color"},
           {label:"Color (Grade 8+)", value:"#999999", type:"color"},
           {label:"Color (Grade 6–7)", value:"#666666", type:"color"},
           {label:"Arrowhead", value:"Arrow 7, 60% scale"},
@@ -272,7 +280,7 @@ const DATA = { subjects: [
           {label:"Font", values:["Latin Modern Roman","Latin Modern Roman","Latin Modern Roman"]},
           {label:"Size (in graph)", values:["14px","14px","14px"]},
           {label:"Size (standalone)", values:["18px","18px","18px"]},
-          {label:"Label color", values:["#333333","#666666","#666666"], highlight:true, type:"color"},
+          {label:"Label color", values:["#999999","#999999","#999999"], type:"color"},
           {label:"Style", values:["10 Bold","10 Bold","10 Bold"]},
           {label:"Graph axis marker", values:["2px #999999","2px #999999","2px #999999"]},
           {label:"Denominator color", values:["#333333","#999999","#666666"], highlight:true, type:"color"},
@@ -316,6 +324,7 @@ const DATA = { subjects: [
           {label:"Superscript / subscript", value:"21px"},
         ],
         banners:[
+          {type:"note", text:"Use #666666 when colored fills make the default equation color #999999 hard to read."},
           {type:"note", text:"Y-axis label: right side for bar graphs, left side for function graphs. 10px from axis line."},
           {type:"note", text:"Use title case for headings, object names, graph description text."},
           {type:"note", text:"Equation on graph: minus = hyphen. Equation below graph: use math symbols."},
@@ -326,14 +335,28 @@ const DATA = { subjects: [
           {label:"Alphabet labels", value:"Latin Modern Roman, 16px, #666666, 10 Bold Italic"},
           {label:"Axis numeral markers", value:"Latin Modern Roman, 14px, #000000 @ 40% opacity"},
           {label:"Axis labels (x, y)", value:"Latin Modern Roman, 14px, #666666, 10 Bold Italic"},
-          {label:"Graph equation color", value:"#4a4a4a", type:"color"},
+          {label:"Graph equation color", value:"#999999", type:"color"},
+          {label:"Equation color on low-contrast fills", value:"#666666", type:"color"},
           {label:"Grid color", value:"#000000 @ 10% opacity, 1px"},
           {label:"Solution region", value:"#4D80F5 @ 40% opacity", type:"color-inline", colorValue:"#4D80F5"},
         ],
         banners:[
-          {type:"info", text:"<strong>Equation color <code>#4a4a4a</code> is specific to inequality/function graphs only.</strong> All other graphs use <code>#666666</code>."},
+          {type:"note", text:"Use #666666 for the equation when a colored region makes #999999 hard to read."},
           {type:"note", text:"Shade opacity guide: #EE706B→20% · #5BC9CA→20% · #5EBF43→15% · #A165EF→10% · #2189F9→15% · #F29D38→25% · #CDCA52→30%"},
         ]
+      },
+      { id:"multi-line-graph", label:"Multi-line Graph — Equation Line Colors",
+        images:[{src:"source-images/math/grade-10/image20.png", caption:"Grade 10 example with multiple equation lines"}],
+        specs:[
+          {label:"Primary line", value:"#EE706B", type:"color"},
+          {label:"Secondary line", value:"#5BC9CA", type:"color"},
+          {label:"3rd line", value:"#5EBF43", type:"color"},
+          {label:"4th line", value:"#A165EF", type:"color"},
+          {label:"5th line", value:"#2189F9", type:"color"},
+          {label:"6th line", value:"#F29D38", type:"color"},
+          {label:"7th line", value:"#CDCA52", type:"color"},
+        ],
+        banners:[{type:"note", text:"Use this palette in order when plotting multiple equation lines on one graph. Equation text follows the graph label color rule."}]
       },
       { id:"bar-graph", label:"Bar Graph", images:[],
         specs:[
@@ -351,6 +374,18 @@ const DATA = { subjects: [
           {type:"note", text:"Axis line layer must be above bar graph layer in Illustrator."},
         ]
       },
+      { id:"bar-colors", label:"Multicolor Bar Graph — Color Palette",
+        specs:[
+          {label:"Primary bar color", value:"#FF6666", type:"color"},
+          {label:"Secondary bar color", value:"#0DC9BB", type:"color"},
+          {label:"3rd bar color", value:"#5EBF43", type:"color"},
+          {label:"4th bar color", value:"#DA51E5", type:"color"},
+          {label:"5th bar color", value:"#3399FF", type:"color"},
+          {label:"6th bar color", value:"#ADBD00", type:"color"},
+          {label:"7th bar color", value:"#A165EF", type:"color"},
+          {label:"8th bar color", value:"#F29D38", type:"color"},
+        ]
+      },
       { id:"pie-chart", label:"Pie Chart", images:[],
         specs:[
           {label:"Segment stroke", value:"2px, #FFFFFF, Round cap"},
@@ -366,7 +401,7 @@ const DATA = { subjects: [
           {label:"Title", value:"Proxima Nova, 21px, #000000, Bold"},
         ],
         banners:[
-          {type:"info", text:"Label colors differ based on placement. Labels <strong>inside</strong> the pie use <code>#000000</code>. Descriptive labels <strong>outside</strong> use <code>#4a4a4a</code> Regular. Use label line + point when data cannot fit inside."},
+          {type:"info", text:"Measurement numerals, including percentages and angles, use #000000 inside and outside the pie. Outside descriptive text uses #4A4A4A Regular. Add a label line and point when data cannot fit inside."},
         ]
       },
       { id:"pie-colors", label:"Pie Chart Color Palette",
@@ -389,7 +424,7 @@ const DATA = { subjects: [
           {label:"Solid line color", values:["#666666","#999999","#999999"], highlight:true, type:"color"},
           {label:"Dotted line color", values:["#666666","#bbbbbb","#bbbbbb"], highlight:true, type:"color"},
           {label:"Arc color", values:["#666666","#999999","#999999"], highlight:true, type:"color"},
-          {label:"Length marker color", values:["#bbbbbb","#cccccc","#cccccc"], highlight:true, type:"color"},
+          {label:"Equal-length tick mark color", values:["#bbbbbb","#cccccc","#cccccc"], highlight:true, type:"color"},
           {label:"Angle marker color", values:["#999999","#666666","#666666"], highlight:true, type:"color"},
           {label:"Point size", values:["6px","6px","4px"], highlight:true},
           {label:"All stroke sizes", values:["2px","2px","2px"]},

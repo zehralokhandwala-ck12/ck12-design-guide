@@ -72,6 +72,10 @@ function revealTarget() {
   }
   const details = target.closest('details');
   if (details) details.open = true;
+  if (target.classList.contains('topic')) {
+    const current = target.querySelector('details');
+    if (current?.querySelector('summary')?.textContent === 'Current guide wording') current.open = true;
+  }
   target.scrollIntoView();
 }
 

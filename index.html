@@ -524,7 +524,7 @@ function renderEl(el, accentColor, subjectBadge) {
   };
   const pc = pillColors[subjectBadge] || pillColors.math;
 
-  let h = `<div class="spec-card">
+  let h = `<div class="spec-card" id="spec-${el.id}" tabindex="-1" style="scroll-margin-top:65px">
     <div class="card-header">
       <span class="card-dot" style="background:${accentColor}" aria-hidden="true"></span>
       <h3 class="card-title">${el.label}</h3>
@@ -536,7 +536,7 @@ function renderEl(el, accentColor, subjectBadge) {
   if (review) {
     h += `<p><a class="math-review-link" href="math-review/#${el.id}">Compare the six Math sources</a></p>`;
     for (const decision of review.decisions) {
-      h += bnr({ type: 'note', text: `Under review · <a class="math-review-link" href="math-review/#decision-${decision.id}">${decision.label}</a>` });
+      h += `<p class="source-links"><a href="math-review/#decision-${decision.id}">Approved decision · ${decision.label}</a></p>`;
     }
   }
   h += imgGallery(el.images);
@@ -568,7 +568,7 @@ function renderEl(el, accentColor, subjectBadge) {
 }
 
 /* ── RENDER PAGE ── */
-function renderPage(sid, cid) {
+function renderPage(sid, cid, elementId) {
   closeResDropdown();
   const sub = DATA.subjects.find(s => s.id === sid);
   const cat = sub.categories.find(c => c.id === cid);
@@ -606,6 +606,11 @@ function renderPage(sid, cid) {
   h += `</div>`;
   document.getElementById('content').innerHTML = h;
   document.getElementById('main').scrollTop = 0;
+  if (elementId) {
+    const card = document.getElementById('spec-' + elementId);
+    card?.focus({ preventScroll: true });
+    card?.scrollIntoView({ block: 'start' });
+  }
 
   /* Update active nav */
   document.querySelectorAll('.nav-item').forEach(n => {
@@ -815,7 +820,7 @@ function doSearch(q) {
     h += `<div class="empty"><div class="ei" aria-hidden="true">🔍</div><p>No specs found. Try a color code, element name, or px value.</p></div>`;
   } else {
     res.forEach(r => {
-      h += `<button class="ri" onclick="renderPage('${r.s.id}','${r.c.id}')" aria-label="Go to ${r.e.label} in ${r.c.label}">
+      h += `<button class="ri" onclick="renderPage('${r.s.id}','${r.c.id}','${r.e.id}')" aria-label="Go to ${r.e.label} in ${r.c.label}">
         <div class="ri-name">${r.e.label}</div>
         <div class="ri-meta">
           <span class="subject-badge badge-${r.s.badge}" style="font-size:9px;padding:2px 6px">${r.s.label}</span>
