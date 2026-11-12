@@ -12,7 +12,8 @@ const mathReviewLinks = {
         }
       ]
     },
-    "decisions": []
+    "decisions": [],
+    "figureCount": 2
   },
   "solid-line": {
     "fields": {
@@ -34,7 +35,8 @@ const mathReviewLinks = {
         "id": "grade6lines",
         "label": "Grade 6 diagram outlines"
       }
-    ]
+    ],
+    "figureCount": 5
   },
   "dotted-line": {
     "fields": {
@@ -54,7 +56,8 @@ const mathReviewLinks = {
         "id": "grade6lines",
         "label": "Grade 6 diagram outlines"
       }
-    ]
+    ],
+    "figureCount": 3
   },
   "points-size": {
     "fields": {
@@ -109,6 +112,12 @@ const mathReviewLinks = {
           "id": "math-2025-p55",
           "label": "Math 2025 · Solid and hollow points"
         }
+      ],
+      "Hollow point diameter in the Math 2025 example": [
+        {
+          "id": "math-2025-p55",
+          "label": "Math · 2025 · Solid and hollow points"
+        }
       ]
     },
     "decisions": [
@@ -119,8 +128,13 @@ const mathReviewLinks = {
       {
         "id": "pointcolor",
         "label": "Grade 7 number-line point color"
+      },
+      {
+        "id": "grade6construction",
+        "label": "Grade 6 construction point diameter"
       }
-    ]
+    ],
+    "figureCount": 8
   },
   "arrow-length-marker": {
     "fields": {
@@ -129,9 +143,22 @@ const mathReviewLinks = {
           "id": "math-2025-p133",
           "label": "Math 2025 · Length arrow and label spacing"
         }
+      ],
+      "Arrow to diagram line": [
+        {
+          "id": "math-2025-p133",
+          "label": "Math · 2025 · Length arrow and label spacing"
+        }
+      ],
+      "Arrowhead scale": [
+        {
+          "id": "math-2025-p137",
+          "label": "Math · 2025 · Reduced arrowheads in a complex diagram"
+        }
       ]
     },
-    "decisions": []
+    "decisions": [],
+    "figureCount": 3
   },
   "vertex-label": {
     "fields": {
@@ -146,7 +173,8 @@ const mathReviewLinks = {
         }
       ]
     },
-    "decisions": []
+    "decisions": [],
+    "figureCount": 3
   },
   "measurement-label": {
     "fields": {
@@ -163,9 +191,16 @@ const mathReviewLinks = {
           "id": "math-2025-p111",
           "label": "Math 2025 · Right-aligned measurement label"
         }
+      ],
+      "Label to diagram line": [
+        {
+          "id": "math-2025-p105",
+          "label": "Math · 2025 · Center-aligned measurement label"
+        }
       ]
     },
-    "decisions": []
+    "decisions": [],
+    "figureCount": 9
   },
   "math-symbol-label": {
     "fields": {
@@ -181,7 +216,8 @@ const mathReviewLinks = {
         "id": "tracking",
         "label": "Prime glyph in Illustrator"
       }
-    ]
+    ],
+    "figureCount": 4
   },
   "angle-marker-spec": {
     "fields": {
@@ -221,7 +257,8 @@ const mathReviewLinks = {
         "id": "angles",
         "label": "Angle marker radius and gap"
       }
-    ]
+    ],
+    "figureCount": 14
   },
   "hatch-marker": {
     "fields": {
@@ -247,7 +284,8 @@ const mathReviewLinks = {
         "id": "hatches",
         "label": "Equal-length tick marks"
       }
-    ]
+    ],
+    "figureCount": 4
   },
   "feathers": {
     "fields": {
@@ -267,7 +305,8 @@ const mathReviewLinks = {
         "id": "feathers",
         "label": "Parallel line marker dimensions"
       }
-    ]
+    ],
+    "figureCount": 5
   },
   "vector-spec": {
     "fields": {
@@ -276,9 +315,28 @@ const mathReviewLinks = {
           "id": "math-2025-p224",
           "label": "Math 2025 · Illustrator vector arrow settings"
         }
+      ],
+      "Illustrator stroke weight": [
+        {
+          "id": "math-2025-p224",
+          "label": "Math · 2025 · Illustrator vector arrow settings"
+        }
+      ],
+      "End arrow scale": [
+        {
+          "id": "math-2025-p224",
+          "label": "Math · 2025 · Illustrator vector arrow settings"
+        }
+      ],
+      "Stroke profile": [
+        {
+          "id": "math-2025-p224",
+          "label": "Math · 2025 · Illustrator vector arrow settings"
+        }
       ]
     },
-    "decisions": []
+    "decisions": [],
+    "figureCount": 3
   },
   "vector-colors": {
     "fields": {
@@ -289,7 +347,12 @@ const mathReviewLinks = {
         }
       ]
     },
-    "decisions": []
+    "decisions": [
+      {
+        "id": "vector-order",
+        "label": "Fifth vector palette color"
+      }
+    ]
   },
   "number-line-spec": {
     "fields": {
@@ -301,6 +364,22 @@ const mathReviewLinks = {
         {
           "id": "math-grade-10-p214",
           "label": "Grade 10 · Number line points and labels"
+        }
+      ],
+      "Point diameter (Grade 8 and above)": [
+        {
+          "id": "math-grade-8-p53",
+          "label": "Math · Grade 8 · Number line points and labels"
+        },
+        {
+          "id": "math-grade-9-p70",
+          "label": "Math · Grade 9 · Number line points and labels"
+        }
+      ],
+      "Point diameter (Grades 6–7)": [
+        {
+          "id": "math-grade-7-p151",
+          "label": "Math · Grade 7 · Number line points and labels"
         }
       ]
     },
@@ -343,7 +422,8 @@ const mathReviewLinks = {
         "id": "number-fonts",
         "label": "Number-line label size and color"
       }
-    ]
+    ],
+    "figureCount": 5
   },
   "graph-grid": {
     "fields": {
@@ -356,9 +436,20 @@ const mathReviewLinks = {
           "id": "math-grade-10-p223",
           "label": "Grade 10 · Graph grid spacing"
         }
+      ],
+      "Grid spacing": [
+        {
+          "id": "math-2025-p261",
+          "label": "Math · 2025 · Graph grid spacing"
+        },
+        {
+          "id": "math-grade-10-p223",
+          "label": "Math · Grade 10 · Graph grid spacing"
+        }
       ]
     },
-    "decisions": []
+    "decisions": [],
+    "figureCount": 2
   },
   "graph-axis": {
     "fields": {
@@ -369,7 +460,8 @@ const mathReviewLinks = {
         }
       ]
     },
-    "decisions": []
+    "decisions": [],
+    "figureCount": 2
   },
   "linear-graph": {
     "fields": {
@@ -395,7 +487,8 @@ const mathReviewLinks = {
         "id": "equation",
         "label": "Equation text color"
       }
-    ]
+    ],
+    "figureCount": 8
   },
   "function-graph": {
     "fields": {
@@ -411,7 +504,8 @@ const mathReviewLinks = {
         "id": "equation",
         "label": "Equation text color"
       }
-    ]
+    ],
+    "figureCount": 1
   },
   "bar-graph": {
     "fields": {
@@ -430,6 +524,18 @@ const mathReviewLinks = {
           "id": "math-2025-p326",
           "label": "Math 2025 · Double bar graph"
         }
+      ],
+      "Category labels to axis heading": [
+        {
+          "id": "math-2025-p325",
+          "label": "Math · 2025 · Bar graph with vertically arranged categories"
+        }
+      ],
+      "Grade 10 mixed category label (e.g. 5 yr old)": [
+        {
+          "id": "math-grade-10-p281",
+          "label": "Math · Grade 10 · Bar graph label callouts"
+        }
       ]
     },
     "decisions": [
@@ -437,7 +543,8 @@ const mathReviewLinks = {
         "id": "linepalette",
         "label": "Multi-line and multicolor bar graph palettes"
       }
-    ]
+    ],
+    "figureCount": 10
   },
   "pie-chart": {
     "fields": {
@@ -457,20 +564,20 @@ const mathReviewLinks = {
           "label": "Grade 8 · Pie chart with percentages or angles outside"
         }
       ],
-      "Measurement label numerals — outside": [
-        {
-          "id": "math-2025-p346",
-          "label": "Math 2025 · Pie chart with outside subject labels (placement example)"
-        },
-        {
-          "id": "math-2025-p364",
-          "label": "Math 2025 · Pie chart with percentages outside (placement example)"
-        }
-      ],
       "Label points": [
         {
           "id": "math-grade-8-p88",
           "label": "Grade 8 · Pie chart with data labels outside the slices"
+        }
+      ],
+      "Measurement label numerals — outside percentages and angles": [
+        {
+          "id": "math-2025-p364",
+          "label": "Math 2025 · Pie chart with percentages outside (placement example)"
+        },
+        {
+          "id": "math-2025-p346",
+          "label": "Math 2025 · Pie chart with outside subject labels (placement example)"
         }
       ]
     },
@@ -479,7 +586,8 @@ const mathReviewLinks = {
         "id": "pie-placement",
         "label": "Pie-chart measurement numerals"
       }
-    ]
+    ],
+    "figureCount": 8
   },
   "pie-colors": {
     "fields": {
@@ -522,7 +630,12 @@ const mathReviewLinks = {
         }
       ]
     },
-    "decisions": []
+    "decisions": [
+      {
+        "id": "grade6construction",
+        "label": "Grade 6 construction point diameter"
+      }
+    ]
   },
   "construction-labels": {
     "fields": {
@@ -541,7 +654,8 @@ const mathReviewLinks = {
         }
       ]
     },
-    "decisions": []
+    "decisions": [],
+    "figureCount": 4
   },
   "sequence-spec": {
     "fields": {
@@ -584,6 +698,42 @@ const mathReviewLinks = {
           "id": "math-grade-10-p114",
           "label": "Grade 10 · Sequence diagram labels and circles"
         }
+      ],
+      "Grade 6 counter tile diameter": [
+        {
+          "id": "math-grade-6-p29",
+          "label": "Math · Grade 6 · Sequence diagram labels and tiles"
+        }
+      ],
+      "Grade 6 counter tile clearances": [
+        {
+          "id": "math-grade-6-p29",
+          "label": "Math · Grade 6 · Sequence diagram labels and tiles"
+        }
+      ],
+      "Grade 10 sequence circle diameter": [
+        {
+          "id": "math-grade-10-p114",
+          "label": "Math · Grade 10 · Sequence diagram labels and circles"
+        }
+      ],
+      "Grade 10 factor tree circle diameter": [
+        {
+          "id": "math-grade-10-p131",
+          "label": "Math · Grade 10 · Factor tree line and arrow example"
+        }
+      ],
+      "Grade 10 factor tree branch to numeral": [
+        {
+          "id": "math-grade-10-p131",
+          "label": "Math · Grade 10 · Factor tree line and arrow example"
+        }
+      ],
+      "Grade 6 Illustrator Scale dialog (source example)": [
+        {
+          "id": "math-grade-6-p88",
+          "label": "Math · Grade 6 · Illustrator arrowhead settings for a sequence"
+        }
       ]
     },
     "decisions": [
@@ -591,7 +741,8 @@ const mathReviewLinks = {
         "id": "sequence",
         "label": "Sequence diagram grade coverage"
       }
-    ]
+    ],
+    "figureCount": 11
   },
   "multi-line-graph": {
     "fields": {
@@ -607,7 +758,8 @@ const mathReviewLinks = {
         "id": "linepalette",
         "label": "Multi-line and multicolor bar graph palettes"
       }
-    ]
+    ],
+    "figureCount": 1
   },
   "bar-colors": {
     "fields": {

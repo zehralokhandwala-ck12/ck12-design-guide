@@ -115,6 +115,9 @@ const DATA = { subjects: [
 
     { id:"points", label:"Points", elements:[{
       id:"points-size", label:"Points — Size by Grade", gradeVaries:true, images:[],
+      specs:[
+        {label:"Hollow point diameter in the Math 2025 example", value:"4 px"},
+      ],
       gradeTable:{ columns:["Property","Grade 6–7","Grade 8–9","Grade 10+"], rows:[
         {label:"Diagram point", values:["10px","6px","4px"], highlight:true},
         {label:"Construction point", values:["6px","6px","4px"], highlight:true},
@@ -132,6 +135,8 @@ const DATA = { subjects: [
     { id:"labelling", label:"Diagram Labelling", elements:[
       { id:"arrow-length-marker", label:"Arrow (Length Marker)", gradeVaries:true, images:[],
         specs:[
+          {label:"Arrow to diagram line", value:"10 px"},
+          {label:"Arrowhead scale", value:"60% standard, 40% when labels are crowded"},
           {label:"Size", value:"2px"},
           {label:"Color (Grade 8+)", value:"#999999", type:"color"},
           {label:"Color (Grade 6–7)", value:"#666666", type:"color"},
@@ -158,6 +163,7 @@ const DATA = { subjects: [
       },
       { id:"measurement-label", label:"Measurement Label", gradeVaries:true, images:[],
         specs:[
+          {label:"Label to diagram line", value:"10 px"},
           {label:"Font", value:"Latin Modern Roman"},
           {label:"Size", value:"18px"},
           {label:"Color (Grade 8+)", value:"#999999", type:"color"},
@@ -236,6 +242,9 @@ const DATA = { subjects: [
     { id:"vectors", label:"Vectors", elements:[
       { id:"vector-spec", label:"Vector Specs", images:[],
         specs:[
+          {label:"Illustrator stroke weight", value:"3 pt"},
+          {label:"End arrow scale", value:"50%"},
+          {label:"Stroke profile", value:"Uniform"},
           {label:"Arrow type", value:"Arrow 7 (Illustrator)"},
           {label:"Point size", value:"5px (all grades)"},
           {label:"Point color", value:"#000000", type:"color"},
@@ -250,7 +259,7 @@ const DATA = { subjects: [
           {label:"Secondary", value:"#00ceab", type:"color"},
           {label:"Tertiary", value:"#7575fc", type:"color"},
           {label:"Quaternary", value:"#ff6b00", type:"color"},
-          {label:"Senary", value:"#1590ff", type:"color"},
+          {label:"5th color", value:"#1590FF", type:"color"},
         ],
         banners:[
           {type:"note", text:"Same palette used in Physics. Consistent across both subjects."},
@@ -292,6 +301,7 @@ const DATA = { subjects: [
     { id:"graphs", label:"Graphs", elements:[
       { id:"graph-grid", label:"Graph Grid", images:[],
         specs:[
+          {label:"Grid spacing", value:"30 px horizontally and vertically"},
           {label:"Size", value:"1px"},
           {label:"Color", value:"#e6e6e6", type:"color"},
           {label:"Cap / Corner", value:"Round"},
@@ -310,6 +320,7 @@ const DATA = { subjects: [
       },
       { id:"linear-graph", label:"Linear Graph — Labels", images:[],
         specs:[
+          {label:"Equation font", value:"Latin Modern Roman CK12, 16 px"},
           {label:"Point diameter", value:"4px"},
           {label:"Point color", value:"#000000", type:"color"},
           {label:"Alphabet labels", value:"Latin Modern Roman, 16px, #666666, 10 Bold Italic"},
@@ -332,6 +343,8 @@ const DATA = { subjects: [
       },
       { id:"function-graph", label:"Function / Inequality Graphs", images:[],
         specs:[
+          {label:"Equation font", value:"Latin Modern Roman CK12, 16 px · letters 10 Bold Italic · numerals 10 Bold"},
+          {label:"Axis labels (X, X′, Y, Y′)", value:"Latin Modern Roman CK12, 16 px, #666666, 10 Bold Italic"},
           {label:"Alphabet labels", value:"Latin Modern Roman, 16px, #666666, 10 Bold Italic"},
           {label:"Axis numeral markers", value:"Latin Modern Roman, 14px, #000000 @ 40% opacity"},
           {label:"Axis labels (x, y)", value:"Latin Modern Roman, 14px, #666666, 10 Bold Italic"},
@@ -341,6 +354,7 @@ const DATA = { subjects: [
           {label:"Solution region", value:"#4D80F5 @ 40% opacity", type:"color-inline", colorValue:"#4D80F5"},
         ],
         banners:[
+          {type:"note", text:"Match each region’s shade to its arrow color. Adjust shade opacity for the hue and number of overlapping regions. The solution region uses its specified 40% opacity."},
           {type:"note", text:"Use #666666 for the equation when a colored region makes #999999 hard to read."},
           {type:"note", text:"Shade opacity guide: #EE706B→20% · #5BC9CA→20% · #5EBF43→15% · #A165EF→10% · #2189F9→15% · #F29D38→25% · #CDCA52→30%"},
         ]
@@ -360,6 +374,8 @@ const DATA = { subjects: [
       },
       { id:"bar-graph", label:"Bar Graph", images:[],
         specs:[
+          {label:"Grade 10 mixed category label (e.g. 5 yr old)", value:"Latin Modern Roman CK12, 14 px, #999999 · numeral 10 Bold, words 10 Bold Italic"},
+          {label:"Category labels to axis heading", value:"10 px of clearance"},
           {label:"Grid lines", value:"1px, #e6e6e6, Round"},
           {label:"Bar labels (day/month etc)", value:"Latin Modern Roman, 14px, #999999, 10 Bold"},
           {label:"Axis label (Days of Week etc)", value:"Proxima Nova, 18px, #999999, Regular"},
@@ -395,7 +411,7 @@ const DATA = { subjects: [
           {label:"Numerals — inside chart", value:"Latin Modern Roman, 18px, #000000, 10 Bold"},
           {label:"Descriptive labels — inside chart", value:"Proxima Nova, 18px, #000000, Bold"},
           {label:"Descriptive labels — outside chart", value:"Proxima Nova, 18px, #4a4a4a, Regular"},
-          {label:"Measurement label numerals — outside", value:"Latin Modern Roman, 18px, #000000, 10 Bold"},
+          {label:"Measurement label numerals — outside percentages and angles", value:"Latin Modern Roman, 18px, #000000, 10 Bold"},
           {label:"Measurement label alphabets — outside", value:"Latin Modern Roman, 18px, #000000, 10 Bold Italic"},
           {label:"Legends", value:"Proxima Nova, 18px, #666666, Regular"},
           {label:"Title", value:"Proxima Nova, 21px, #000000, Bold"},
@@ -427,7 +443,7 @@ const DATA = { subjects: [
           {label:"Equal-length tick mark color", values:["#bbbbbb","#cccccc","#cccccc"], highlight:true, type:"color"},
           {label:"Angle marker color", values:["#999999","#666666","#666666"], highlight:true, type:"color"},
           {label:"Point size", values:["6px","6px","4px"], highlight:true},
-          {label:"All stroke sizes", values:["2px","2px","2px"]},
+          {label:"Construction lines and arcs", values:["2px","2px","2px"]},
           {label:"Angle marker size", values:["3px","3px","3px"]},
           {label:"Cap", values:["Round","Round","Round"]},
           {label:"Angle marker cap", values:["Butt","Butt","Butt"]},
@@ -468,15 +484,21 @@ const DATA = { subjects: [
         {label:"Label term style", values:["10 Bold","10 Bold Italic"], highlight:true},
       ]},
       specs:[
+        {label:"Grade 6 counter tile diameter", value:"36 px"},
+        {label:"Grade 6 counter tile clearances", value:"10 px at the top, 5 px at the side, 20 px between counters"},
+        {label:"Grade 10 sequence circle diameter", value:"50 px in the sequence example"},
+        {label:"Grade 10 factor tree circle diameter", value:"40 px in the factor tree example"},
+        {label:"Grade 10 factor tree branch to numeral", value:"10 px in the factor tree example"},
         {label:"Line size", value:"2px"},
         {label:"Shape stroke", value:"2px, #999999"},
         {label:"Point size", value:"4px"},
         {label:"Point color", value:"#000000"},
+        {label:"Grade 6 Illustrator Scale dialog (source example)", value:"Uniform 120% · Scale Corners enabled · Scale Strokes & Effects disabled"},
         {label:"Arrow", value:"Arrow 7, 1px stroke, 20% scale"},
       ],
       banners:[
         {type:"info", text:"<strong>Grade 6 uses colorful, larger labels</strong> with Proxima Nova and darker colors. Grade 7 onwards uses Latin Modern Roman with #999999 throughout."},
-        {type:"note", text:"Arc arrow construction: full circle → remove lower semicircle → push top anchor down 3px → center Arrow 7 on arc."},
+        {type:"note", text:"Grade 6 arc construction: draw a circle with a 1 px stroke and a diameter equal to the distance between the two axis markers. Remove the lower semicircle, lower the top anchor by 3 px, then center the arrow on the remaining arc."},
       ]
     }]}
 
@@ -495,7 +517,11 @@ const DATA = { subjects: [
   categories:[
 
     { id:"bio-labels", label:"Labels & Typography", elements:[{
-      id:"bio-general-labels", label:"General Label Specs", images:[],
+      id:"bio-general-labels", label:"General Label Specs", images:[
+          {src:"source-images/biology/updated/image23.png", caption:"Biology P21 · Heading and leader lines on an illustration"},
+          {src:"source-images/biology/updated/image7.png", caption:"Biology P22 · Dark-background label example"},
+          {src:"source-images/biology/updated/image22.png", caption:"Biology P25 · Illustrator double-stroke settings"},
+        ],
       specs:[
         {label:"Font", value:"Proxima Nova"},
         {label:"Heading", value:"21px, Bold"},
@@ -503,73 +529,135 @@ const DATA = { subjects: [
         {label:"Label text", value:"18px, Regular"},
         {label:"Label color (primary)", value:"#999999", type:"color"},
         {label:"Label color (secondary)", value:"#000000", type:"color"},
-        {label:"Label line", value:"2px, #000000"},
+        {label:"Leader line (all Biology labels)", value:"2 px, #000000"},
+        {label:"Heading to subheading", value:"40 px in the source example; adjust for canvas space"},
+        {label:"Subheading to bracket", value:"10 px in the source example; adjust for canvas space"},
       ],
       banners:[
-        {type:"warn", text:"Guidelines updated — old assets will show color variation. New standard: primary <code>#999999</code>, secondary <code>#000000</code>."},
-        {type:"note", text:"Use <code>#000000</code> when <code>#999999</code> merges with diagram. Designer's call."},
+        {type:"warn", text:"Label text uses #999999 by default. For every Biology leader line, use a 2 px black stroke (#000000)."},
+        {type:"note", text:"Use black label text when gray text merges with the illustration."},
         {type:"note", text:"If there is no subheading in the image, use 18px Bold for the heading instead of 21px."},
         {type:"note", text:"If the image has more labels, 16px is acceptable for label text."},
-        {type:"note", text:"Use double stroke in Illustrator on dark backgrounds for label line visibility."},
-        {type:"note", text:"The 40px and 10px label spacing can be adjusted according to the image. Designer's call based on canvas space available."},
+        {type:"note", text:"On dark backgrounds, add a white backing stroke for visibility. The historical Appearance panel shows 1 pt black over 2 pt white. The working black leader is 2 px."},
       ]
     }]},
 
     { id:"bio-cell-references", label:"Cell & Organism References", elements:[
       {
-        id:"cell-membrane", label:"Cell Membrane & Cytoplasm", images:[],
-        specs:[],
-        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+        id:"cell-membrane", label:"Cell Membrane & Cytoplasm", images:[
+          {src:"source-images/biology/updated/image8.jpg", caption:"Biology P35 · Cell membrane and cytoplasm palette"},
+        ],
+        specs:[
+          {label:"Cytoplasm", value:"#FFDECC", type:"color"},
+          {label:"Cell membrane · light", value:"#FFA792", type:"color"},
+          {label:"Cell membrane · dark", value:"#EA7373", type:"color"},
+        ]
       },
       {
-        id:"chromosome", label:"Chromosome", images:[],
-        specs:[],
-        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+        id:"chromosome", label:"Chromosome", images:[
+          {src:"source-images/biology/updated/image6.jpg", caption:"Biology P38 · Chromosome palette"},
+        ],
+        specs:[
+          {label:"Chromosome", value:"#173766", type:"color"},
+        ]
       },
       {
-        id:"dna-atgc", label:"DNA — ATGC", images:[],
-        specs:[],
-        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+        id:"dna-atgc", label:"DNA — ATGC", images:[
+          {src:"source-images/biology/updated/image3.jpg", caption:"Biology P40 · DNA bases A T G C palette"},
+        ],
+        specs:[
+          {label:"A · adenine", value:"#FF7A9D", type:"color"},
+          {label:"T · thymine", value:"#FFBC50", type:"color"},
+          {label:"C · cytosine", value:"#61DE94", type:"color"},
+          {label:"G · guanine", value:"#7295FF", type:"color"},
+        ]
       },
       {
-        id:"enzymes", label:"Enzymes", images:[],
-        specs:[],
-        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+        id:"enzymes", label:"Enzymes", images:[
+          {src:"source-images/biology/updated/image12.jpg", caption:"Biology P43 · Enzyme palette"},
+        ],
+        specs:[
+          {label:"Magenta", value:"#DE62D0", type:"color"},
+          {label:"Green", value:"#42DD82", type:"color"},
+          {label:"Yellow", value:"#FFDC4A", type:"color"},
+          {label:"Orange", value:"#FF8D47", type:"color"},
+          {label:"Gray", value:"#ADBCBF", type:"color"},
+          {label:"Cyan", value:"#80CDE1", type:"color"},
+        ]
       },
       {
-        id:"mitochondria", label:"Mitochondria", images:[],
-        specs:[],
-        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+        id:"mitochondria", label:"Mitochondria", images:[
+          {src:"source-images/biology/updated/image20.jpg", caption:"Biology P47 · Mitochondria palette"},
+        ],
+        specs:[
+          {label:"Dark pink", value:"#C6056A", type:"color"},
+          {label:"Bright pink", value:"#F236AF", type:"color"},
+        ]
       },
       {
-        id:"nucleus-dna", label:"Nucleus & DNA Strand", images:[],
-        specs:[],
-        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+        id:"nucleus-dna", label:"Nucleus & DNA Strand", images:[
+          {src:"source-images/biology/updated/image1.jpg", caption:"Biology P51 · Nucleus and DNA strand palette"},
+        ],
+        specs:[
+          {label:"Nucleus · coral", value:"#FF7566", type:"color"},
+          {label:"Nucleus · red", value:"#E63232", type:"color"},
+          {label:"Nucleus · orange", value:"#FF9203", type:"color"},
+          {label:"DNA in nucleus", value:"#451FFF", type:"color"},
+          {label:"Ribosomes in nucleus illustration", value:"#3708B7", type:"color"},
+        ]
       },
       {
-        id:"ribosome", label:"Ribosome", images:[],
-        specs:[],
-        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+        id:"ribosome", label:"Ribosome", images:[
+          {src:"source-images/biology/updated/image9.jpg", caption:"Biology P53 · Ribosome palette"},
+        ],
+        specs:[
+          {label:"Light purple", value:"#968FEF", type:"color"},
+          {label:"Dark purple", value:"#323296", type:"color"},
+        ]
       },
       {
-        id:"plant-cell", label:"Plant Cell", images:[],
-        specs:[],
-        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+        id:"plant-cell", label:"Plant Cell", images:[
+          {src:"source-images/biology/updated/image2.png", caption:"Biology P57 · Plant cell diagram"},
+          {src:"source-images/biology/updated/image21.png", caption:"Biology P59 · Plant cell palette"},
+        ],
+        specs:[
+          {label:"Cell wall fill", value:"#99DD17", type:"color"},
+          {label:"Cell wall outline", value:"#39C121", type:"color"},
+          {label:"Cytoplasm (plant cell)", value:"#99DD17", type:"color"},
+          {label:"Cell membrane fill", value:"#06874F", type:"color"},
+          {label:"Cell membrane outline", value:"#024225", type:"color"},
+        ],
+        banners:[{type:"note", text:"Use the printed #99DD17 value for plant-cell cytoplasm. The pale-yellow sample in the source image is an earlier discrepancy."}]
       },
       {
-        id:"bacteria-cell", label:"Bacteria Cell", images:[],
-        specs:[],
-        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+        id:"bacteria-cell", label:"Bacteria Cell", images:[
+          {src:"source-images/biology/updated/image4.png", caption:"Biology P63 · Bacteria cell diagram"},
+          {src:"source-images/biology/updated/image17.png", caption:"Biology P66 · Bacteria cell palette"},
+        ],
+        specs:[
+          {label:"Cell wall fill", value:"#F236AF", type:"color"},
+          {label:"Cell wall outline", value:"#CE097A", type:"color"},
+          {label:"Cytoplasm", value:"#EAE6FF", type:"color"},
+          {label:"Plasma membrane", value:"#CA6EFF", type:"color"},
+          {label:"Capsule", value:"#8E32F9", type:"color"},
+          {label:"Pilus", value:"#8E2680", type:"color"},
+        ]
       },
       {
-        id:"membrane-proteins", label:"Membrane Proteins", images:[],
-        specs:[],
-        banners:[{type:"info", text:"Visual reference only — no fixed numerical specs. Add reference image when available."}]
+        id:"membrane-proteins", label:"Membrane Proteins", images:[
+          {src:"source-images/biology/updated/image15.png", caption:"Biology P70 · Membrane protein palette"},
+        ],
+        specs:[
+          {label:"Blue", value:"#3D7FB3", type:"color"},
+          {label:"Purple", value:"#D15CD9", type:"color"},
+        ]
       },
     ]},
 
     { id:"bio-protein", label:"Protein Structure", elements:[
-      { id:"protein-primary", label:"Primary Structure", images:[],
+      { id:"protein-primary", label:"Primary Structure", images:[
+          {src:"source-images/biology/updated/image16.png", caption:"Biology P75 · Primary protein structure"},
+        ],
         specs:[
           {label:"Fill color", value:"#66a2ed", type:"color"},
           {label:"Stroke color", value:"#4172b2", type:"color"},
@@ -581,13 +669,18 @@ const DATA = { subjects: [
         ]
       },
       {
-        id:"protein-secondary", label:"Secondary Structure", images:[],
-        specs:[],
-        banners:[
-          {type:"info", text:"Secondary structure is defined visually. No fixed numerical specs in the doc. Add reference image when available."},
+        id:"protein-secondary", label:"Secondary Structure", images:[
+          {src:"source-images/biology/updated/image14.png", caption:"Biology P82 · Secondary protein ribbons"},
+          {src:"source-images/biology/updated/image11.png", caption:"Biology P85 · Secondary protein structure palette"},
+        ],
+        specs:[
+          {label:"Ribbon · yellow", value:"#FFD15E", type:"color"},
+          {label:"Ribbon · orange", value:"#E9803F", type:"color"},
         ]
       },
-      { id:"protein-tertiary", label:"Tertiary Structure", images:[],
+      { id:"protein-tertiary", label:"Tertiary Structure", images:[
+          {src:"source-images/biology/updated/image10.png", caption:"Biology P89 · Tertiary protein structure"},
+        ],
         specs:[
           {label:"Fill color", value:"#8564d5", type:"color"},
           {label:"Stroke color", value:"#5b4491", type:"color"},
@@ -607,7 +700,9 @@ const DATA = { subjects: [
 
     { id:"bio-lipids", label:"Lipids", elements:[
       {
-        id:"lipid-low", label:"Lipid — Low Fidelity", images:[],
+        id:"lipid-low", label:"Lipid — Low Fidelity", images:[
+          {src:"source-images/biology/updated/image13.png", caption:"Biology P103 · Low-fidelity lipid"},
+        ],
         specs:[
           {label:"Head fill", value:"#ff816e", type:"color"},
           {label:"Head stroke", value:"#a14739", type:"color"},
@@ -617,16 +712,21 @@ const DATA = { subjects: [
         ]
       },
       {
-        id:"lipid-high", label:"Lipid — High Fidelity", images:[],
-        specs:[],
-        banners:[
-          {type:"info", text:"High fidelity lipid is defined visually. No fixed numerical specs in the doc. Add reference image when available."},
+        id:"lipid-high", label:"Lipid — High Fidelity", images:[
+          {src:"source-images/biology/updated/image5.png", caption:"Biology P111 · High-fidelity lipid head and tail palette"},
+        ],
+        specs:[
+          {label:"Lipid head", value:"#D06955", type:"color"},
+          {label:"Lipid tail", value:"#FFD592", type:"color"},
         ]
       }
     ]},
 
     { id:"bio-energy", label:"Energy-Carrying Molecules", elements:[{
-      id:"energy-molecule", label:"Molecule Shapes", images:[],
+      id:"energy-molecule", label:"Molecule Shapes", images:[
+          {src:"source-images/biology/updated/image18.png", caption:"Biology P115 · Energy-carrying molecule labels"},
+          {src:"source-images/biology/updated/image19.png", caption:"Biology P123 · ATP shape"},
+        ],
       specs:[
         {label:"Shape height", value:"30px"},
         {label:"Blue fill", value:"#58a3f0", type:"color"},
@@ -636,8 +736,8 @@ const DATA = { subjects: [
         {label:"Stroke size", value:"2px"},
         {label:"Corner radius", value:"5px"},
         {label:"Padding", value:"10px each side"},
-        {label:"Small shape fill", value:"#fcef58", type:"color"},
-        {label:"Small shape stroke", value:"#b9ad45, 1px"},
+        {label:"ATP starburst fill", value:"#fcef58", type:"color"},
+        {label:"ATP starburst stroke", value:"#b9ad45, 1px"},
       ]
     }]}
 
@@ -710,7 +810,7 @@ const DATA = { subjects: [
           {label:"Secondary", value:"#00ceab", type:"color"},
           {label:"Tertiary", value:"#7575fc", type:"color"},
           {label:"Quaternary", value:"#ff6b00", type:"color"},
-          {label:"Senary", value:"#1590ff", type:"color"},
+          {label:"5th color", value:"#1590FF", type:"color"},
         ]
       },
       { id:"fbd-spec", label:"Free Body Diagrams (FBD)", images:[],

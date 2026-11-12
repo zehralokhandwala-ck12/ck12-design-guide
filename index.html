@@ -322,8 +322,8 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- Resources dropdown panel -->
 <div id="res-dropdown" class="res-dropdown" role="region" aria-label="Downloads and resources"></div>
 
-<script src="specs.js?v=264ab33"></script>
-<script src="math-review/guide-links.js?v=264ab33"></script>
+<script src="specs.js?v=abda84f0b3"></script>
+<script src="math-review/guide-links.js?v=bd09685a7f"></script>
 <script>
 /* ── HELPERS ── */
 function cp(text) {
@@ -413,9 +413,9 @@ function gTable(gt, review) {
     <thead><tr>`;
   gt.columns.forEach(c => { h += `<th scope="col">${c}</th>`; });
   h += `</tr></thead><tbody>`;
-  gt.rows.forEach(r => {
+  gt.rows.forEach((r, i) => {
     const diff = r.highlight && new Set(r.values).size > 1;
-    h += `<tr><th scope="row" style="text-align:left;font-family:var(--sans);color:var(--text-muted);font-size:var(--text-sm);padding:7px 8px 7px 0;font-weight:400;border-bottom:1px solid var(--note-bg)">${r.label}${referenceLinks(review, r.label)}</th>`;
+    h += `<tr data-match-row="grade-${i}" tabindex="-1"><th scope="row" style="text-align:left;font-family:var(--sans);color:var(--text-muted);font-size:var(--text-sm);padding:7px 8px 7px 0;font-weight:400;border-bottom:1px solid var(--note-bg)">${r.label}${referenceLinks(review, r.label)}</th>`;
     r.values.forEach(v => {
       let cell = v;
       const hm = r.type === 'color' && v.match(/#?([0-9a-fA-F]{6})/);
@@ -535,6 +535,9 @@ function renderEl(el, accentColor, subjectBadge) {
   const review = subjectBadge === 'math' ? mathReviewLinks[el.id] : null;
   if (review) {
     h += `<p><a class="math-review-link" href="math-review/#${el.id}">Compare the six Math sources</a></p>`;
+    if (review.figureCount) {
+      h += `<p><a class="math-review-link" href="math-review/#figures-${el.id}">View source figures (${review.figureCount})</a></p>`;
+    }
     for (const decision of review.decisions) {
       h += `<p class="source-links"><a href="math-review/#decision-${decision.id}">Approved decision · ${decision.label}</a></p>`;
     }
@@ -556,8 +559,8 @@ function renderEl(el, accentColor, subjectBadge) {
     h += `<table class="spec-table" role="table">
       <thead><tr><th scope="col">Property</th><th scope="col">Value</th></tr></thead>
       <tbody>`;
-    el.specs.forEach(s => {
-      h += `<tr><td class="lc">${s.label}</td><td>${svClean(s)}${referenceLinks(review, s.label)}</td></tr>`;
+    el.specs.forEach((s, i) => {
+      h += `<tr data-match-row="spec-${i}" tabindex="-1"><td class="lc">${s.label}</td><td>${svClean(s)}${referenceLinks(review, s.label)}</td></tr>`;
     });
     h += `</tbody></table>`;
   }
@@ -568,7 +571,7 @@ function renderEl(el, accentColor, subjectBadge) {
 }
 
 /* ── RENDER PAGE ── */
-function renderPage(sid, cid, elementId) {
+function renderPage(sid, cid, elementId, rowKey, selectedGrade) {
   closeResDropdown();
   const sub = DATA.subjects.find(s => s.id === sid);
   const cat = sub.categories.find(c => c.id === cid);
@@ -608,8 +611,15 @@ function renderPage(sid, cid, elementId) {
   document.getElementById('main').scrollTop = 0;
   if (elementId) {
     const card = document.getElementById('spec-' + elementId);
-    card?.focus({ preventScroll: true });
-    card?.scrollIntoView({ block: 'start' });
+    const target = Array.from(card?.querySelectorAll('[data-match-row]') || [])
+      .find(row => row.dataset.matchRow === rowKey) || card;
+    if (selectedGrade) {
+      const references = target?.querySelector('.source-links');
+      const gradeLink = references?.querySelector(`a[href*="math-grade-${selectedGrade}-"]`);
+      if (gradeLink) references.prepend(gradeLink);
+    }
+    target?.focus({ preventScroll: true });
+    target?.scrollIntoView({ block: rowKey ? 'center' : 'start' });
   }
 
   /* Update active nav */
@@ -774,6 +784,62 @@ function renderWelcome() {
 }
 
 /* ── SEARCH ── */
+function normalizeSearch(text) {
+  return text.toLowerCase().replace(/[-‐‑‒–—]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function gradeApplies(label, grade) {
+  const range = label.match(/\bgrades?\s*(\d+)(?:\s*[-–]\s*(\d+))?(\+|\s+and above)?/i);
+  if (!range) return true;
+  const start = Number(range[1]);
+  const end = range[3] ? Infinity : Number(range[2] || range[1]);
+  return grade >= start && grade <= end;
+}
+
+function searchSpecs(query) {
+  const gradeTerm = query.match(/\bgrade\s*(\d+)\b/i);
+  const grade = gradeTerm ? Number(gradeTerm[1]) : null;
+  const words = normalizeSearch(gradeTerm ? query.replace(gradeTerm[0], '') : query).split(' ').filter(Boolean);
+  const results = [];
+  for (const s of DATA.subjects) {
+    if (grade !== null && s.id !== 'math') continue;
+    for (const c of s.categories) {
+      for (const e of c.elements) {
+        const context = normalizeSearch([s.label, c.label, e.label].join(' '));
+        let best;
+        function consider(text, rowKey = '', scoped = false) {
+          if (!words.length && !scoped) return;
+          const field = normalizeSearch(text);
+          if (!words.every(word => context.includes(word) || field.includes(word))) return;
+          const score = words.filter(word => field.includes(word)).length * 3
+            + (scoped ? 3 : 0) + (rowKey ? 8 : 0);
+          if (!best || score > best.score) best = {s, c, e, mt:text, rowKey, score, grade};
+        }
+        consider(e.label);
+        (e.specs || []).forEach((sp, i) => {
+          if (grade !== null && !gradeApplies(sp.label, grade)) return;
+          consider(sp.label + ' · ' + sp.value, 'spec-' + i, grade !== null && /grades?\s*\d/i.test(sp.label));
+        });
+        (e.gradeTable?.rows || []).forEach((row, i) => {
+          row.values.forEach((v, j) => {
+            const column = e.gradeTable.columns[j + 1];
+            if (grade !== null && !gradeApplies(column, grade)) return;
+            consider(row.label + ' · ' + column + ' · ' + v, 'grade-' + i, grade !== null);
+          });
+        });
+        for (const b of e.banners || []) consider(b.text.replace(/<[^>]+>/g, ''));
+        if (best) results.push(best);
+      }
+    }
+  }
+  return results.sort((a, b) => b.score - a.score);
+}
+
+function escapeSearchText(text) {
+  return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+}
+
+
 function doSearch(q) {
   const query = q.toLowerCase().trim();
   document.getElementById('sclear').classList.toggle('vis', q.length > 0);
@@ -785,17 +851,7 @@ function doSearch(q) {
     return;
   }
 
-  const res = [];
-  DATA.subjects.forEach(s => s.categories.forEach(c => c.elements.forEach(e => {
-    let ok = false, mt = '';
-    const ck = str => str && str.toLowerCase().includes(query);
-    if (ck(e.label)) { ok = true; mt = e.label; }
-    if (!ok && ck(c.label)) { ok = true; mt = c.label; }
-    if (!ok && e.specs) e.specs.forEach(sp => { if (ck(sp.label) || ck(sp.value)) { ok = true; mt = `${sp.label}: ${sp.value}`; } });
-    if (!ok && e.gradeTable) e.gradeTable.rows.forEach(r => { if (ck(r.label) || r.values.some(v => ck(v))) { ok = true; mt = r.label; } });
-    if (!ok && e.banners) e.banners.forEach(b => { if (ck(b.text.replace(/<[^>]+>/g, ''))) { ok = true; mt = b.text.replace(/<[^>]+>/g, '').slice(0, 70); } });
-    if (ok) res.push({ s, c, e, mt });
-  })));
+  const res = searchSpecs(query);
 
   document.querySelectorAll('.nav-group').forEach(g => {
     const sid = g.id.replace('ng-', '');
@@ -812,7 +868,7 @@ function doSearch(q) {
   });
 
   let h = `<div class="sr" role="region" aria-label="Search results">
-    <div class="sr-hd" aria-live="polite"><strong>${res.length} result${res.length !== 1 ? 's' : ''}</strong> for "${q}"</div>`;
+    <div class="sr-hd" aria-live="polite"><strong>${res.length} result${res.length !== 1 ? 's' : ''}</strong> for "${escapeSearchText(q)}"</div>`;
 
   h += `<p><a href="source-images/?q=${encodeURIComponent(query)}">Search source images for this topic</a></p>`;
   h += `<p><a href="math-review/?q=${encodeURIComponent(query)}">Search the Math source comparison</a></p>`;
@@ -820,13 +876,13 @@ function doSearch(q) {
     h += `<div class="empty"><div class="ei" aria-hidden="true">🔍</div><p>No specs found. Try a color code, element name, or px value.</p></div>`;
   } else {
     res.forEach(r => {
-      h += `<button class="ri" onclick="renderPage('${r.s.id}','${r.c.id}','${r.e.id}')" aria-label="Go to ${r.e.label} in ${r.c.label}">
+      h += `<button class="ri" onclick="renderPage('${r.s.id}','${r.c.id}','${r.e.id}','${r.rowKey}',${r.grade})" aria-label="Go to ${r.e.label} in ${r.c.label}">
         <div class="ri-name">${r.e.label}</div>
         <div class="ri-meta">
           <span class="subject-badge badge-${r.s.badge}" style="font-size:9px;padding:2px 6px">${r.s.label}</span>
           <span aria-hidden="true">›</span> ${r.c.label}
           <span aria-hidden="true">·</span>
-          <span class="ri-match">${r.mt.slice(0, 60)}</span>
+          <span class="ri-match">${escapeSearchText(r.mt)}</span>
         </div>
       </button>`;
     });
@@ -837,7 +893,14 @@ function doSearch(q) {
 
 /* ── INIT ── */
 buildNav();
-renderWelcome();
+const requestedSpec = new URLSearchParams(location.search).get('spec');
+const initialSubject = DATA.subjects.find(s => s.categories.some(c => c.elements.some(e => e.id === requestedSpec)));
+if (initialSubject) {
+  const category = initialSubject.categories.find(c => c.elements.some(e => e.id === requestedSpec));
+  renderPage(initialSubject.id, category.id, requestedSpec);
+} else {
+  renderWelcome();
+}
 
 const si = document.getElementById('search-input');
 si.addEventListener('input', e => doSearch(e.target.value));
