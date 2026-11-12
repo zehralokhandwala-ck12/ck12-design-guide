@@ -322,7 +322,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- Resources dropdown panel -->
 <div id="res-dropdown" class="res-dropdown" role="region" aria-label="Downloads and resources"></div>
 
-<script src="specs.js?v=761c8ffc56"></script>
+<script src="specs.js?v=4d9f51c29f"></script>
 <script src="math-review/guide-links.js?v=bd09685a7f"></script>
 <script>
 /* ── HELPERS ── */
@@ -449,7 +449,9 @@ function imgGallery(images) {
 
 /* ── DOWNLOAD BUTTON ── */
 function dlBtn(r) {
-  return `<a href="${r.url}" target="_blank" rel="noopener" class="dl-btn" aria-label="Open ${r.label} (opens in new tab)">
+  const action = r.download ? 'download' : 'target="_blank" rel="noopener"';
+  const label = r.download ? 'Download ' + r.label : 'Open ' + r.label + ' (opens in new tab)';
+  return `<a href="${r.url}" ${action} class="dl-btn" aria-label="${label}">
     <span class="dl-icon" aria-hidden="true">${r.icon}</span>${r.label}
   </a>`;
 }
@@ -542,7 +544,8 @@ function renderEl(el, accentColor, subjectBadge) {
       h += `<p class="source-links"><a href="math-review/#decision-${decision.id}">Approved decision · ${decision.label}</a></p>`;
     }
   }
-  if (subjectBadge !== 'chemistry') h += imgGallery(el.images);
+  const sourceReview = subjectBadge === 'chemistry' || subjectBadge === 'physics';
+  if (!sourceReview) h += imgGallery(el.images);
   if (el.docEmbed) {
     h += `<div class="doc-embed-wrap">
       <div class="doc-embed-bar">
@@ -567,12 +570,12 @@ function renderEl(el, accentColor, subjectBadge) {
   }
 
   if (el.banners) el.banners.forEach(b => { h += bnr(b); });
-  if (subjectBadge === 'chemistry') {
+  if (sourceReview) {
     h += imgGallery(el.images);
     if (el.archivalImages?.length) {
       h += `<details><summary>Original Illustrator references (${el.archivalImages.length})</summary>${imgGallery(el.archivalImages)}</details>`;
     }
-    h += `<p><a class="math-review-link" href="chemistry-review/#topic-${el.id}">Source passages for this entry</a></p>`;
+    h += `<p><a class="math-review-link" href="${subjectBadge}-review/#topic-${el.id}">Source passages for this entry</a></p>`;
   }
   h += `</div></div>`;
   return h;

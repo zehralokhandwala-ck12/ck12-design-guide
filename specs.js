@@ -44,6 +44,7 @@ const RES = {
     { label:"Artwork Creation Guide", url:"https://docs.google.com/document/d/1Zd2j9117hieGSQTK3h3OicJoPJRUPu2ReIlF7ApoYFk/edit?tab=t.0", icon:"📄" },
   ],
   physics: [
+    { label:"Artwork Creation Guide", url:"https://docs.google.com/document/d/1Zd2j9117hieGSQTK3h3OicJoPJRUPu2ReIlF7ApoYFk/edit?tab=t.0", icon:"📄" },
     { label:"Circuit Symbol Library (.ai)", url:"https://drive.google.com/open?id=1bQQJJVUAFu2WFH4qrN1UFtPQUisBwd8y&usp=drive_fs", icon:"⚡" },
     { label:"Texture Library (.ai)", url:"https://drive.google.com/open?id=1iU_0KGthFyy8HjP1_Kefb40mXL2hyoQk&usp=drive_fs", icon:"🎨" },
     { label:"Optical Instruments (.ai)", url:"https://drive.google.com/open?id=1U3lhcPEHD4eOUQ6dBItvR40o1PETDtqN&usp=drive_fs", icon:"🔭" },
@@ -51,7 +52,7 @@ const RES = {
   chemistry: [
     { label:"Structure sizing reference (.ai)", url:"https://drive.google.com/open?id=1TbVfYxc1cIMVSrS2a3U2ZzQ8_Q62gzma&usp=drive_fs", icon:"📐" },
     { label:"Charges (.ai file)", url:"https://drive.google.com/open?id=1Tyeq4raCrkF3P73czzVtoRyAx2ngJpm0&usp=drive_fs", icon:"⚗" },
-    { label:"Periodic Table (colors)", url:"https://drive.google.com/file/d/1ZoRgkow3tB25WzwhcrE6uHS11qoYgg-r/view?usp=drive_link", icon:"🔬" },
+    { label:"Periodic Table · Element Colors (.ai)", url:"assets/chemistry/periodic-table-simplified.ai", download:true, icon:"🔬" },
     { label:"Atomic Radius Sheet", url:"https://docs.google.com/spreadsheets/d/1vQTlV8xBBgzu4fv803PwACB1vCMWLclgEmOw7k0VeiY/edit#gid=0", icon:"📊" },
   ],
 };
@@ -755,153 +756,264 @@ const DATA = { subjects: [
   description:"Vectors, charges, fields, optics, circuits",
   downloads:"physics",
   categories:[
-
-    { id:"phys-illustrations", label:"Illustrations", elements:[{
-      id:"phys-illus", label:"Physics Illustrations", images:[],
-      specs:[],
-      banners:[
-        {type:"info", text:"Physics vector illustrations follow the same guidelines as the <strong>Artwork Creation Guide</strong>. Download link above."},
-        {type:"warn", text:"Physics guidelines have been updated. Older assets may have inconsistencies — do not replicate old styles."},
-      ]
-    }]},
-
-    { id:"phys-labels", label:"Labels & Typography", elements:[{
-      id:"phys-general-labels", label:"General Label Specs", images:[],
-      specs:[
-        {label:"Font", value:"Proxima Nova"},
-        {label:"Color (primary)", value:"#999999", type:"color"},
-        {label:"Color (secondary)", value:"#000000", type:"color"},
-        {label:"Heading", value:"21px, Bold"},
-        {label:"Subheading", value:"18px, Bold"},
-        {label:"Label text", value:"18px, Regular"},
-        {label:"Label line", value:"2px, #999999 or #000000"},
-      ],
-      banners:[
-        {type:"info", text:"Physics graph and vector labelling follows <strong>math guidelines</strong> exactly."},
-      ]
-    }]},
-
-    { id:"phys-graphs", label:"Physics Graphs", elements:[{
-      id:"phys-graph-rules", label:"Graph Rules — Physics Exceptions", images:[],
-      specs:[
-        {label:"Base specs", value:"Follow all Math graph guidelines"},
-        {label:"x/y axis labels", value:"Do NOT add unless explicitly instructed"},
-        {label:"X, X′ labels", value:"Do NOT add unless explicitly instructed"},
-        {label:"Origin 'O'", value:"Do NOT add unless explicitly instructed"},
-      ],
-      banners:[
-        {type:"info", text:"Physics graphs follow all math graph guidelines with the above exceptions."},
-        {type:"note", text:"If there is explicit instruction from SME to add axis labels, also add the origin 'O' in that case."},
-      ]
-    }]},
-
-    { id:"phys-vectors", label:"Vectors", elements:[
-      { id:"phys-vector-types", label:"Physics Vector Types", images:[],
+    { id:"phys-illustrations", label:"Illustrations", elements:[
+      {
+        id:"phys-illus",
+        label:"Physics Illustrations",
         specs:[
-          {label:"Position vectors (r, r₁, r₂)", value:"#ec008c — Primary", type:"color-inline", colorValue:"#ec008c"},
-          {label:"Force vectors (F₂₁, F₁₂)", value:"#00ceab — Secondary", type:"color-inline", colorValue:"#00ceab"},
-          {label:"Resultant (Fnet, →F)", value:"#7575fc — Tertiary", type:"color-inline", colorValue:"#7575fc"},
-          {label:"Point size", value:"5px (all)"},
+          {label:"Style reference", value:"Use the CK-12 Artwork Creation Guide for Physics vector illustrations."},
         ],
-        banners:[{type:"note", text:"Same vector color palette as Math. See Graphic Style Library for arrow settings."}]
-      },
-      { id:"phys-vector-colors", label:"Vector Color Palette",
+        banners:[
+          {type:"note", text:"<a href=\"physics-review/\">View the Physics source review</a> for the original passages, figure links and approved decisions."},
+        ]
+      }
+    ]},
+    { id:"phys-labels", label:"Labels & Typography", elements:[
+      {
+        id:"phys-general-labels",
+        label:"Physics Illustration Labels & Leader Lines",
         specs:[
-          {label:"Primary", value:"#ec008c", type:"color"},
-          {label:"Secondary", value:"#00ceab", type:"color"},
-          {label:"Tertiary", value:"#7575fc", type:"color"},
-          {label:"Quaternary", value:"#ff6b00", type:"color"},
+          {label:"Typeface", value:"Proxima Nova"},
+          {label:"Heading", value:"21 px, Bold"},
+          {label:"Subheading", value:"18 px, Bold"},
+          {label:"Text label", value:"18 px, Regular"},
+          {label:"Primary label and leader-line color", value:"#999999", type:"color"},
+          {label:"Fallback color for visibility", value:"#000000", type:"color"},
+          {label:"Leader line stroke", value:"2 px"},
+        ],
+        banners:[
+          {type:"note", text:"Use black when gray merges into the illustration. For graph and vector notation, follow the <a href=\"?spec=linear-graph\">Math graph label specs</a> and the <a href=\"?spec=phys-graph-rules\">Physics axis exceptions</a>."},
+        ]
+      }
+    ]},
+    { id:"phys-graphs", label:"Physics Graphs", elements:[
+      {
+        id:"phys-graph-rules",
+        label:"Physics Graph Labels and Origin",
+        specs:[
+          {label:"Axis letters", value:"Omit x, y, X and X′ by default.", figure:"physics-2025-p28"},
+          {label:"Origin O", value:"Omit by default. When axis letters are explicitly requested, also mark O at the origin.", figure:"physics-2025-p28"},
+          {label:"Quantity labels and units", value:"Keep the relevant quantity and unit. The source example labels velocity (m/s) and time (s).", figure:"physics-2025-p28"},
+        ],
+        images:[
+          {src:"source-images/physics/2025/image13.png", caption:"Physics P28 · Physics axis and origin labeling example"},
+          {src:"source-images/physics/2025/image7.png", caption:"Physics P17 · Label placement on a Physics graph"},
+        ],
+        banners:[
+          {type:"note", text:"Use the shared <a href=\"?spec=graph-grid\">Math grid</a> and <a href=\"?spec=graph-axis\">axis settings</a>."},
+        ]
+      }
+    ]},
+    { id:"phys-vectors", label:"Vectors", elements:[
+      {
+        id:"phys-vector-types",
+        label:"Physics Vector Types & Arrow Settings",
+        specs:[
+          {label:"Position vectors · r, r₁, r₂, r₂₁", value:"#EC008C · primary", type:"color-inline", colorValue:"#EC008C"},
+          {label:"Force vectors · F₂₁, F₁₂", value:"#00CEAB · secondary", type:"color-inline", colorValue:"#00CEAB"},
+          {label:"Resultant vector · Fnet", value:"#7575FC · tertiary", type:"color-inline", colorValue:"#7575FC"},
+          {label:"Point diameter", value:"5 px", figure:"physics-2025-p59"},
+          {label:"General vector stroke weight", value:"3 pt in the Illustrator reference", figure:"physics-2025-p51"},
+          {label:"Arrowhead scale", value:"50% on the arrowhead end", figure:"physics-2025-p51"},
+          {label:"Cap / join / alignment", value:"Round cap, round join, center-aligned stroke", figure:"physics-2025-p51"},
+          {label:"Stroke profile", value:"Uniform, solid", figure:"physics-2025-p51"},
+        ],
+        images:[
+          {src:"source-images/physics/2025/image3.png", caption:"Physics P59 · Position and force vector examples"},
+          {src:"source-images/physics/2025/image6.png", caption:"Physics P18 · Label placement on a vector diagram"},
+        ],
+        archivalImages:[
+          {src:"source-images/physics/2025/image5.png", caption:"Physics P51 · Illustrator vector arrow settings"},
+        ],
+        banners:[
+          {type:"note", text:"Use <a href=\"?spec=fbd-spec\">the free-body diagram rule</a> for force arrows in an FBD. P18 illustrates vector label placement. Its green resultant predates or differs from the documented tertiary color."},
+        ]
+      },
+      {
+        id:"phys-vector-colors",
+        label:"Vector Color Palette",
+        specs:[
+          {label:"Primary", value:"#EC008C", type:"color"},
+          {label:"Secondary", value:"#00CEAB", type:"color"},
+          {label:"Tertiary", value:"#7575FC", type:"color"},
+          {label:"Quaternary", value:"#FF6B00", type:"color"},
           {label:"5th color", value:"#1590FF", type:"color"},
+        ],
+        banners:[
+          {type:"note", text:"The fifth color is shared with <a href=\"?spec=vector-colors\">Math vectors</a>."},
         ]
       },
-      { id:"fbd-spec", label:"Free Body Diagrams (FBD)", images:[],
+      {
+        id:"fbd-spec",
+        label:"Free-Body Diagrams (FBD)",
         specs:[
-          {label:"Arrow color", value:"#ec008c (Primary)", type:"color-inline", colorValue:"#ec008c"},
-          {label:"Stroke", value:"3px"},
-          {label:"Arrow scale", value:"50%"},
+          {label:"Force arrow color", value:"#EC008C · primary", type:"color-inline", colorValue:"#EC008C", figure:"physics-2025-p62"},
+          {label:"Stroke", value:"3 px"},
+          {label:"Arrowhead scale", value:"50%"},
+        ],
+        images:[
+          {src:"source-images/physics/2025/image4.png", caption:"Physics P62 · Free-body diagram on a slope"},
+          {src:"source-images/physics/2025/image22.png", caption:"Physics P63 · Free-body diagram of a suspended object"},
+        ],
+        banners:[
+          {type:"note", text:"Apply this primary-color rule to the force arrows in a free-body diagram."},
         ]
       }
     ]},
-
-    { id:"phys-charges", label:"Charges", elements:[{
-      id:"charge-spec", label:"Point Charge", images:[],
-      specs:[
-        {label:"Positive fill", value:"#3399ff @ 30% opacity", type:"color-inline", colorValue:"#3399ff"},
-        {label:"Negative fill", value:"#da51e5 @ 30% opacity", type:"color-inline", colorValue:"#da51e5"},
-        {label:"Circle diameter (small)", value:"25px"},
-        {label:"Circle diameter (large)", value:"45px"},
-        {label:"Stroke", value:"2px"},
-        {label:"Label font", value:"Proxima Nova, 24–28px, Bold, #666666"},
-      ],
-      banners:[
-        {type:"note", text:"<strong>Point charge:</strong> Represent in a circle. Two sizes: 25px or 45px diameter."},
-        {type:"note", text:"<strong>Continuous charge:</strong> No circle. Font size varies: 18px Bold or 22px Bold, Proxima Nova, #666666."},
-        {type:"note", text:"<strong>Generic charge:</strong> 10px circle, fill #666666, stroke 2px #000000."},
-        {type:"note", text:"Font size and style for 'q' remains the same as math."},
-      ]
-    }]},
-
+    { id:"phys-charges", label:"Charges", elements:[
+      {
+        id:"charge-spec",
+        label:"Point Charge",
+        specs:[
+          {label:"Symbol", value:"Place the positive or negative sign in a circle.", figure:"physics-2025-p79"},
+          {label:"Small circle diameter", value:"25 px"},
+          {label:"Large circle diameter", value:"40 px"},
+          {label:"Positive circle color", value:"#3399FF", type:"color"},
+          {label:"Negative circle color", value:"#DA51E5", type:"color"},
+          {label:"Circle fill opacity", value:"30%"},
+          {label:"Circle stroke", value:"2 px"},
+          {label:"Plus or minus sign", value:"Proxima Nova Bold, 24 px or 28 px, #666666"},
+          {label:"Variable q", value:"Follow the Math variable label style.", figure:"physics-2025-p81"},
+        ],
+        images:[
+          {src:"source-images/physics/2025/image12.png", caption:"Physics P79 · Positive and negative point charges"},
+          {src:"source-images/physics/2025/image19.png", caption:"Physics P81 · Point charge and q label"},
+        ],
+        banners:[
+          {type:"note", text:"Choose the circle size for the available space and detail. P79 shows the circle styling. Use P81 for the field direction around a negative charge."},
+        ]
+      },
+      {
+        id:"continuous-charge",
+        label:"Continuous Charge — Surface Labels",
+        specs:[
+          {label:"Representation", value:"Place charge signs directly on the surface, without enclosing circles."},
+          {label:"Label size", value:"18 px or 22 px, depending on the number of charges"},
+          {label:"Typeface", value:"Proxima Nova Bold"},
+          {label:"Label color", value:"#666666", type:"color"},
+        ]
+      },
+      {
+        id:"generic-charge",
+        label:"Generic Charge Symbol",
+        specs:[
+          {label:"Circle diameter", value:"10 px", figure:"physics-2025-p93"},
+          {label:"Fill", value:"#666666", type:"color"},
+          {label:"Stroke", value:"#000000 · 2 px", type:"color-inline", colorValue:"#000000"},
+        ],
+        images:[
+          {src:"source-images/physics/2025/image17.png", caption:"Physics P93 · Generic charge symbol"},
+        ]
+      }
+    ]},
     { id:"phys-fields", label:"Electric & Magnetic Fields", elements:[
-      { id:"field-lines", label:"Electric & Magnetic Field Lines", images:[],
+      {
+        id:"field-lines",
+        label:"Electric & Magnetic Field Lines",
         specs:[
-          {label:"Electric field arrows", value:"#aacde2, 2px, Arrow 7, 60%", type:"color-inline", colorValue:"#aacde2"},
-          {label:"Magnetic field arrows", value:"#e5aaaa, 2px, Arrow 7, 60%", type:"color-inline", colorValue:"#e5aaaa"},
+          {label:"Electric field arrow color", value:"#AACDE2", type:"color", figure:"physics-2025-p98"},
+          {label:"Magnetic field arrow color", value:"#E5AAAA", type:"color", figure:"physics-2025-p98"},
+          {label:"Field arrow stroke", value:"2 px"},
+          {label:"Arrowhead", value:"Arrow 7 at 60% scale"},
+          {label:"Electric field direction", value:"Away from positive charge and toward negative charge.", figure:"physics-2025-p81"},
+        ],
+        images:[
+          {src:"source-images/physics/2025/image8.png", caption:"Physics P98 · Electric and magnetic field arrows"},
+          {src:"source-images/physics/2025/image10.png", caption:"Physics P99 · Electric field through a surface"},
+        ],
+        banners:[
+          {type:"note", text:"The magenta vector in the surface example is the surface normal. The pale blue arrows represent the electric field."},
         ]
       },
-      { id:"equipotential", label:"Equipotential Lines & Surface", images:[],
+      {
+        id:"equipotential",
+        label:"Equipotential Lines & Surface",
         specs:[
-          {label:"Lines", value:"#5ebf43, 2px, 6pt dash", type:"color-inline", colorValue:"#5ebf43"},
-          {label:"Surface stroke", value:"#5ebf43, 2px, 6pt dash"},
-          {label:"Surface fill", value:"#cdefc7, 100% opacity", type:"color-inline", colorValue:"#cdefc7"},
+          {label:"Line and surface outline stroke", value:"2 pt", figure:"physics-2025-p106"},
+          {label:"Dash length", value:"6 pt", figure:"physics-2025-p106"},
+          {label:"Outline color", value:"#5EBF43", type:"color", figure:"physics-2025-p110"},
+          {label:"Cap / join / alignment", value:"Round cap, round join, center-aligned stroke", figure:"physics-2025-p106"},
+          {label:"Surface fill", value:"#CDEFC7", type:"color", figure:"physics-2025-p113"},
+          {label:"Surface opacity", value:"100%", figure:"physics-2025-p113"},
+        ],
+        images:[
+          {src:"source-images/physics/2025/image1.png", caption:"Physics P110 · Equipotential lines around a point charge"},
+          {src:"source-images/physics/2025/image2.png", caption:"Physics P113 · Equipotential surface in a field"},
+        ],
+        archivalImages:[
+          {src:"source-images/physics/2025/image20.png", caption:"Physics P106 · Illustrator settings for equipotential lines"},
         ]
       }
     ]},
-
-    { id:"phys-optics", label:"Optical Instruments", elements:[{
-      id:"optics-spec", label:"Lens & Mirror Specs", images:[],
-      specs:[
-        {label:"Medium fill (lens/glass/water)", value:"#04adef @ 20% opacity", type:"color-inline", colorValue:"#04adef"},
-        {label:"Medium stroke", value:"#04adef, 2px, Round cap"},
-        {label:"Light ray arrows", value:"#ff6666, 2px, Arrow 7, 60%", type:"color-inline", colorValue:"#ff6666"},
-        {label:"Object / image / reflection arrows", value:"#3a3aa5, 3px, Arrow 7, 50%", type:"color-inline", colorValue:"#3a3aa5"},
-        {label:"Principal axis & vertical axis", value:"#bbbbbb, 2px, dash line, 6px gap"},
-      ],
-      banners:[
-        {type:"note", text:"Light ray layers (red arrows) must sit <strong>below</strong> the lens layer in Illustrator."},
-        {type:"note", text:"Use Mirror Hatch marks brush from the Optical Instruments .ai file for all lens shading."},
-        {type:"info", text:"This guideline is in progress and will be updated as needed."},
-      ]
-    }]},
-
-    { id:"phys-circuit", label:"Circuit Symbols", elements:[{
-      id:"circuit-symbols", label:"Circuit Symbol Library", images:[],
-      specs:[],
-      banners:[
-        {type:"info", text:"All circuit symbols are maintained in the Circuit Symbol Library .ai file. Download above."},
-        {type:"note", text:"The library is updated regularly as new symbols are needed."},
-      ]
-    }]},
-
-    { id:"phys-texture", label:"Texture Library", elements:[{
-      id:"texture-library", label:"Physics Texture Library", images:[],
-      specs:[],
-      banners:[
-        {type:"info", text:"Wood texture patterns, oil color, spring brush etc. are in the Texture Library .ai file. Download above."},
-        {type:"note", text:"This library is in progress and will be updated as needed."},
-      ]
-    }]},
-
-    { id:"phys-diagram-specs", label:"Diagram Specs", elements:[{
-      id:"real-life-objects", label:"Real-Life Object Outlines", images:[],
-      specs:[
-        {label:"Outline style", value:"Black outline"},
-        {label:"Purpose", value:"Differentiate real-life objects from diagram elements"},
-      ],
-      banners:[
-        {type:"info", text:"Any real-life object in a physics diagram must use a black outline to allow proper visual differentiation."},
-      ]
-    }]}
-
+    { id:"phys-optics", label:"Optical Instruments", elements:[
+      {
+        id:"optics-spec",
+        label:"Lens, Light Ray & Mirror Specs",
+        specs:[
+          {label:"Lens, glass, water or prism fill", value:"#04ADEF · 20% opacity", type:"color-inline", colorValue:"#04ADEF"},
+          {label:"Medium outline", value:"#04ADEF · 2 px, round cap", type:"color-inline", colorValue:"#04ADEF"},
+          {label:"Light ray arrows", value:"#FF6666 · 2 px, Arrow 7, 60%", type:"color-inline", colorValue:"#FF6666", figure:"physics-2025-p153"},
+          {label:"Object, image and reflection arrows", value:"#3A3AA5 · 3 px, Arrow 7, 50%", type:"color-inline", colorValue:"#3A3AA5", figure:"physics-2025-p155"},
+          {label:"Principal and vertical lens axes", value:"#BBBBBB · 2 px dashed line, 6 px gap", type:"color-inline", colorValue:"#BBBBBB", figure:"physics-2025-p155"},
+          {label:"Layer order", value:"Place the red light rays below the lens layer.", figure:"physics-2025-p155"},
+          {label:"Mirror hatching", value:"Use the mirror-right and mirror-left brushes in the optical instruments file.", figure:"physics-2025-p159"},
+        ],
+        images:[
+          {src:"source-images/physics/2025/image9.png", caption:"Physics P153 · Optical light ray diagram with mirrors"},
+          {src:"source-images/physics/2025/image14.png", caption:"Physics P155 · Lens ray diagram with object and image"},
+          {src:"source-images/physics/2025/image15.png", caption:"Physics P159 · Concave and convex mirror hatching"},
+          {src:"source-images/physics/2025/image11.png", caption:"Physics P162 · Plane mirror hatching"},
+        ],
+        banners:[
+          {type:"note", text:"The optics resource contains the lens brush and eye icon. See both the curved and plane mirror examples for hatching direction."},
+        ]
+      }
+    ]},
+    { id:"phys-circuit", label:"Circuit Symbols", elements:[
+      {
+        id:"circuit-symbols",
+        label:"Circuit Symbols and Dielectric References",
+        specs:[
+          {label:"Circuit symbols", value:"Use the named assets in the maintained Illustrator file in Physics Resources."},
+          {label:"Switch and key", value:"Use the same icon for both names, as specified in the source comment at P120."},
+          {label:"Single and multiple dielectrics (K)", value:"A source comment points to these examples in the circuit Illustrator file. The Word export supplies no dimensions or embedded circuit figure."},
+        ]
+      }
+    ]},
+    { id:"phys-texture", label:"Physics Texture Library", elements:[
+      {
+        id:"texture-library",
+        label:"Physics Texture Library",
+        specs:[
+          {label:"Wood", value:"Use the wood-grain reference.", figure:"physics-2025-p171"},
+          {label:"Water", value:"Light cyan with horizontal dashed lines in the texture example.", figure:"physics-2025-p171"},
+          {label:"Oil or other-density liquid", value:"Pale yellow in the reference.", figure:"physics-2025-p171"},
+          {label:"Metal", value:"Silver-gray for steel or aluminium in this reference.", figure:"physics-2025-p171"},
+          {label:"Copper or bronze", value:"Warm copper fill and darker border in the reference.", figure:"physics-2025-p171"},
+          {label:"Spring", value:"Use the coil brush shown in the source.", figure:"physics-2025-p171"},
+        ],
+        images:[
+          {src:"source-images/physics/2025/image18.png", caption:"Physics P171 · Physics texture library examples"},
+        ],
+        banners:[
+          {type:"note", text:"These are visual references. The source figure does not print numeric texture swatches."},
+        ]
+      }
+    ]},
+    { id:"phys-diagram-specs", label:"Physics Diagram Specs", elements:[
+      {
+        id:"real-life-objects",
+        label:"Real-Life Object Outlines",
+        specs:[
+          {label:"Outline color", value:"#000000", type:"color", figure:"physics-2025-p178"},
+          {label:"Use", value:"Outline real-life objects in black to distinguish them from the rest of the diagram."},
+        ],
+        images:[
+          {src:"source-images/physics/2025/image21.png", caption:"Physics P178 · Real-life outline on a container"},
+          {src:"source-images/physics/2025/image16.png", caption:"Physics P181 · Object outlines in a mechanics diagram"},
+        ]
+      }
+    ]}
   ]
 },
 
@@ -951,9 +1063,10 @@ const DATA = { subjects: [
           {label:"Light-colored atom example", value:"The pale atom in the reference shows a 100% opacity highlight.", figure:"chemistry-master-p25"},
           {label:"Shade", value:"20% darker than the atom color", figure:"chemistry-master-p25"},
           {label:"Light direction", value:"Top left, with a 45° rotation", figure:"chemistry-master-p33"},
-          {label:"Atom fill colors", value:"Use the CK-12 periodic table in Resources."},
+          {label:"Atom fill colors", value:"Use the downloadable CK-12 periodic-table vector in Chemistry Resources. It contains individual swatches and shared group colors."},
           {label:"When scaling", value:"Scale highlight and shade proportionally to the atom. Retain the outline thickness specified for that size."},
         ],
+        banners:[{type:"info", text:'<a href="assets/chemistry/periodic-table-simplified.ai" download>Download periodic-table element colors (.ai)</a>'}],
         images:[
           {src:"source-images/chemistry/master/image15.png", caption:"Master P10 · Base atom diameter and outline"},
           {src:"source-images/chemistry/master/image4.png", caption:"Master P14 · Highlight and shade position"},

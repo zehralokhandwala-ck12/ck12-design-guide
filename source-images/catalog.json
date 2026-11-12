@@ -1302,7 +1302,8 @@
         "src": "physics/2025/image7.png",
         "width": 350,
         "height": 320,
-        "sha256": "1628ca3dfc01c7530884715e83eb04c5d52394d98319376567b0bd1c6e94e94f"
+        "sha256": "1628ca3dfc01c7530884715e83eb04c5d52394d98319376567b0bd1c6e94e94f",
+        "specId": "phys-graph-rules"
       },
       {
         "id": "physics-2025-p18",
@@ -1311,7 +1312,9 @@
         "src": "physics/2025/image6.png",
         "width": 340,
         "height": 210,
-        "sha256": "7ec5639dc13628f928d99e56a7cd1e677845e0d3e7ecb84c77b416e228ed670c"
+        "sha256": "7ec5639dc13628f928d99e56a7cd1e677845e0d3e7ecb84c77b416e228ed670c",
+        "specId": "phys-vector-types",
+        "reviewNote": "Label placement example. Use #7575FC for a resultant vector under the working Physics palette."
       },
       {
         "id": "physics-2025-p28",
@@ -1320,7 +1323,8 @@
         "src": "physics/2025/image13.png",
         "width": 701,
         "height": 568,
-        "sha256": "4e36083fe479e4ec2bf9685ef62640e40999a1610583cf9c18aa4f6f42bf0edd"
+        "sha256": "4e36083fe479e4ec2bf9685ef62640e40999a1610583cf9c18aa4f6f42bf0edd",
+        "specId": "phys-graph-rules"
       },
       {
         "id": "physics-2025-p51",
@@ -1329,7 +1333,8 @@
         "src": "physics/2025/image5.png",
         "width": 284,
         "height": 400,
-        "sha256": "7a0974b34c53cd69a1ca6b8a3320824e3c9dda2b32ee3de72b479b17231dbadd"
+        "sha256": "7a0974b34c53cd69a1ca6b8a3320824e3c9dda2b32ee3de72b479b17231dbadd",
+        "specId": "phys-vector-types"
       },
       {
         "id": "physics-2025-p59",
@@ -1338,7 +1343,8 @@
         "src": "physics/2025/image3.png",
         "width": 341,
         "height": 441,
-        "sha256": "e24b33be813a9052aec1d9d15a27035ee0f8dff0e70dc2349c4a3dd97ea1746e"
+        "sha256": "e24b33be813a9052aec1d9d15a27035ee0f8dff0e70dc2349c4a3dd97ea1746e",
+        "specId": "phys-vector-types"
       },
       {
         "id": "physics-2025-p62",
@@ -1347,7 +1353,8 @@
         "src": "physics/2025/image4.png",
         "width": 669,
         "height": 514,
-        "sha256": "4a27536feeaa711ce6fec172b6c12cff5f7eef52ca8c0a619806afc4d3808b15"
+        "sha256": "4a27536feeaa711ce6fec172b6c12cff5f7eef52ca8c0a619806afc4d3808b15",
+        "specId": "fbd-spec"
       },
       {
         "id": "physics-2025-p63",
@@ -1356,7 +1363,8 @@
         "src": "physics/2025/image22.png",
         "width": 341,
         "height": 554,
-        "sha256": "96e39ec67ba278c91f0d06a5b346f4cf9eeb7b24fe938092bebdf9fb94faa820"
+        "sha256": "96e39ec67ba278c91f0d06a5b346f4cf9eeb7b24fe938092bebdf9fb94faa820",
+        "specId": "fbd-spec"
       },
       {
         "id": "physics-2025-p79",
@@ -1365,7 +1373,9 @@
         "src": "physics/2025/image12.png",
         "width": 583,
         "height": 538,
-        "sha256": "274873b8adc3d09c68ba22d472fca593eb81a6c5020dc47211fdf40827f90fbc"
+        "sha256": "274873b8adc3d09c68ba22d472fca593eb81a6c5020dc47211fdf40827f90fbc",
+        "specId": "charge-spec",
+        "reviewNote": "Use this figure for charge symbol styling. Its negative-charge arrows point the wrong way. P81 shows electric field arrows pointing toward a negative charge."
       },
       {
         "id": "physics-2025-p81",
@@ -1374,7 +1384,8 @@
         "src": "physics/2025/image19.png",
         "width": 575,
         "height": 552,
-        "sha256": "fd9c37a8b077beada4bd4ba55191fcc470398aa5a323ce1f3065fe6a515e060f"
+        "sha256": "fd9c37a8b077beada4bd4ba55191fcc470398aa5a323ce1f3065fe6a515e060f",
+        "specId": "charge-spec"
       },
       {
         "id": "physics-2025-p93",
@@ -1383,7 +1394,8 @@
         "src": "physics/2025/image17.png",
         "width": 470,
         "height": 154,
-        "sha256": "02391d1eae6c71dde11d9fe893b65014097d08028adf633e5480cf3a3d9d0a46"
+        "sha256": "02391d1eae6c71dde11d9fe893b65014097d08028adf633e5480cf3a3d9d0a46",
+        "specId": "generic-charge"
       },
       {
         "id": "physics-2025-p98",
@@ -1392,7 +1404,8 @@
         "src": "physics/2025/image8.png",
         "width": 761,
         "height": 586,
-        "sha256": "d5e4232aa297a858a6e64f043895c1118d67d8a325f791034e761f93ef6fd777"
+        "sha256": "d5e4232aa297a858a6e64f043895c1118d67d8a325f791034e761f93ef6fd777",
+        "specId": "field-lines"
       },
       {
         "id": "physics-2025-p99",
@@ -1401,7 +1414,8 @@
         "src": "physics/2025/image10.png",
         "width": 671,
         "height": 525,
-        "sha256": "0f85728b89cd6596099bad30e7b788da02ffd679a97d972fcebcc29e83b9c689"
+        "sha256": "0f85728b89cd6596099bad30e7b788da02ffd679a97d972fcebcc29e83b9c689",
+        "specId": "field-lines"
       },
       {
         "id": "physics-2025-p106",
@@ -1410,7 +1424,9 @@
         "src": "physics/2025/image20.png",
         "width": 301,
         "height": 402,
-        "sha256": "ab93725a39289da55e57da25ff34249773dabc6995afb5bcbb493ffe2f5b8355"
+        "sha256": "ab93725a39289da55e57da25ff34249773dabc6995afb5bcbb493ffe2f5b8355",
+        "specId": "equipotential",
+        "reviewNote": "Approved equipotential stroke: 2 pt with a 6 pt dash. The table in the Word file prints the older 2 px value."
       },
       {
         "id": "physics-2025-p110",
@@ -1419,7 +1435,8 @@
         "src": "physics/2025/image1.png",
         "width": 402,
         "height": 377,
-        "sha256": "503030f4e6e2bf28357273760c76f89f8f7d337482dda371ffa49a8995d67ef0"
+        "sha256": "503030f4e6e2bf28357273760c76f89f8f7d337482dda371ffa49a8995d67ef0",
+        "specId": "equipotential"
       },
       {
         "id": "physics-2025-p113",
@@ -1428,7 +1445,8 @@
         "src": "physics/2025/image2.png",
         "width": 576,
         "height": 455,
-        "sha256": "2ce32d92c0d04a4712428c621de66894bd59222ef5e6919ccc8efe9bb035010c"
+        "sha256": "2ce32d92c0d04a4712428c621de66894bd59222ef5e6919ccc8efe9bb035010c",
+        "specId": "equipotential"
       },
       {
         "id": "physics-2025-p153",
@@ -1437,7 +1455,8 @@
         "src": "physics/2025/image9.png",
         "width": 530,
         "height": 461,
-        "sha256": "9d43508700eaeebcfefdc6fb114f6de0f8340daac3fcdec427ea1ee766df6762"
+        "sha256": "9d43508700eaeebcfefdc6fb114f6de0f8340daac3fcdec427ea1ee766df6762",
+        "specId": "optics-spec"
       },
       {
         "id": "physics-2025-p155",
@@ -1446,7 +1465,8 @@
         "src": "physics/2025/image14.png",
         "width": 1009,
         "height": 782,
-        "sha256": "bec66ef482012ad3a5618615c82f662cdc81baa0fed0b95471a7bcdcf4512e50"
+        "sha256": "bec66ef482012ad3a5618615c82f662cdc81baa0fed0b95471a7bcdcf4512e50",
+        "specId": "optics-spec"
       },
       {
         "id": "physics-2025-p159",
@@ -1455,7 +1475,8 @@
         "src": "physics/2025/image15.png",
         "width": 626,
         "height": 382,
-        "sha256": "9ad012f207242f03e106bee24c31d44c2f0fb0a5797e4d318750561cc267e92f"
+        "sha256": "9ad012f207242f03e106bee24c31d44c2f0fb0a5797e4d318750561cc267e92f",
+        "specId": "optics-spec"
       },
       {
         "id": "physics-2025-p162",
@@ -1464,7 +1485,8 @@
         "src": "physics/2025/image11.png",
         "width": 628,
         "height": 578,
-        "sha256": "64ade60133b66ea5510f2582c3bbc77d993b01e05f000c59180085112711db88"
+        "sha256": "64ade60133b66ea5510f2582c3bbc77d993b01e05f000c59180085112711db88",
+        "specId": "optics-spec"
       },
       {
         "id": "physics-2025-p171",
@@ -1473,7 +1495,8 @@
         "src": "physics/2025/image18.png",
         "width": 846,
         "height": 547,
-        "sha256": "3f45143d47d22349cc73f3dad2391045129c2f04cfb742a3127983a4a21937eb"
+        "sha256": "3f45143d47d22349cc73f3dad2391045129c2f04cfb742a3127983a4a21937eb",
+        "specId": "texture-library"
       },
       {
         "id": "physics-2025-p178",
@@ -1482,7 +1505,8 @@
         "src": "physics/2025/image21.png",
         "width": 943,
         "height": 531,
-        "sha256": "038ee927f66f71c13b45ad3890c2104c04779e42706c9fd85d3393cc69393b10"
+        "sha256": "038ee927f66f71c13b45ad3890c2104c04779e42706c9fd85d3393cc69393b10",
+        "specId": "real-life-objects"
       },
       {
         "id": "physics-2025-p181",
@@ -1491,7 +1515,8 @@
         "src": "physics/2025/image16.png",
         "width": 568,
         "height": 346,
-        "sha256": "f10ac526433790b94af6306fd433cc7c4e85e956830bb3da6398059d031c769d"
+        "sha256": "f10ac526433790b94af6306fd433cc7c4e85e956830bb3da6398059d031c769d",
+        "specId": "real-life-objects"
       }
     ]
   },

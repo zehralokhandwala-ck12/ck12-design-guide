@@ -80,7 +80,7 @@ function buildSection(doc) {
 }
 
 async function loadCatalog() {
-  const response = await fetch('catalog.json?v=a4f201367f');
+  const response = await fetch('catalog.json?v=1a3f179b8e');
   if (!response.ok) throw new Error('Catalog unavailable');
   const documents = await response.json();
   for (const name of new Set(documents.map(doc => doc.subject))) subject.add(new Option(name, name));
