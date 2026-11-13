@@ -279,6 +279,11 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 /* Toast */
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--text);color:white;padding:7px 14px;border-radius:7px;font-size:var(--text-sm);font-weight:500;pointer-events:none;opacity:0;transition:opacity .2s;z-index:9999;role:status;aria-live:polite}
 .toast.show{opacity:1}
+.img-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:18px;margin:18px 0}
+.img-item{min-width:0;align-items:stretch}
+.img-btn{width:100%;height:180px;display:grid;place-items:center;background:white;border:1px solid var(--border)}
+.img-item img{width:100%;height:100%;min-height:0;max-width:100%;max-height:180px;border:0;background:white}
+.img-caption{text-align:left;font-style:normal;line-height:1.4}
 </style>
 <script defer src="contribute/copy.js"></script></head>
 <body>
@@ -326,7 +331,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 <script src="specs.js?v=4d9f51c29f"></script>
 <script src="contribute/model.js"></script>
 <script src="contribute/published.js?v=f209a3fac474"></script>
-<script src="math-review/guide-links.js?v=inline1"></script>
+<script src="math-review/guide-links.js?v=curated2"></script>
 <script>
 /* ── HELPERS ── */
 function cp(text) {
@@ -403,14 +408,6 @@ function bnr(b) {
 }
 
 /* ── GRADE TABLE (no legend inside — shown once per page) ── */
-function referenceLinks(review, field) {
-  const refs = review?.fields[field];
-  if (!refs?.length) return '';
-  return '<div class="source-links">' + refs.map(ref =>
-    `<a href="source-images/#${ref.id}">${ref.label}</a>`
-  ).join('') + '</div>';
-}
-
 function gTable(gt, review) {
   let h = `<div class="gt-wrap"><table class="gt" role="table">
     <thead><tr>`;
@@ -418,7 +415,7 @@ function gTable(gt, review) {
   h += `</tr></thead><tbody>`;
   gt.rows.forEach((r, i) => {
     const diff = r.highlight && new Set(r.values).size > 1;
-    h += `<tr data-match-row="grade-${i}" tabindex="-1"><th scope="row" style="text-align:left;font-family:var(--sans);color:var(--text-muted);font-size:var(--text-sm);padding:7px 8px 7px 0;font-weight:400;border-bottom:1px solid var(--note-bg)">${r.label}${referenceLinks(review, r.label)}</th>`;
+    h += `<tr data-match-row="grade-${i}" tabindex="-1"><th scope="row" style="text-align:left;font-family:var(--sans);color:var(--text-muted);font-size:var(--text-sm);padding:7px 8px 7px 0;font-weight:400;border-bottom:1px solid var(--note-bg)">${r.label}</th>`;
     r.values.forEach(v => {
       let cell = v;
       const hm = r.type === 'color' && v.match(/#?([0-9a-fA-F]{6})/);
@@ -548,7 +545,7 @@ function renderEl(el, accentColor, subjectBadge) {
     }
   }
   const sourceReview = !el.contributed && (subjectBadge === 'chemistry' || subjectBadge === 'physics');
-  if (!sourceReview) h += imgGallery([...(el.images || []), ...(review?.images || [])]);
+
   if (el.docEmbed) {
     h += `<div class="doc-embed-wrap">
       <div class="doc-embed-bar">
@@ -566,14 +563,16 @@ function renderEl(el, accentColor, subjectBadge) {
       <thead><tr><th scope="col">Property</th><th scope="col">Value</th></tr></thead>
       <tbody>`;
     el.specs.forEach((s, i) => {
-      const figure = s.figure ? `<div class="source-links"><a href="source-images/#${s.figure}">View annotated source figure</a></div>` : '';
-      const references = s.sourceLabel === null ? '' : referenceLinks(review, s.sourceLabel ?? s.label);
       const note = s.contributionNote ? `<div class="source-links">${s.contributionNote} · <a href="https://github.com/${SpecChanges.repository}/issues/${Number(s.issue)}">Review history</a></div>` : '';
-      h += `<tr data-match-row="spec-${i}" tabindex="-1"><td class="lc">${s.label}</td><td>${svClean(s)}${references}${figure}${note}</td></tr>`;
+      h += `<tr data-match-row="spec-${i}" tabindex="-1"><td class="lc">${s.label}</td><td>${svClean(s)}${note}</td></tr>`;
     });
     h += `</tbody></table>`;
   }
 
+  if (!sourceReview) {
+    const images = [...(review?.images || []), ...(el.images || [])];
+    h += imgGallery(images.filter((image, i) => images.findIndex(other => other.src === image.src) === i));
+  }
   if (el.banners) el.banners.forEach(b => { h += bnr(b); });
   if (sourceReview) {
     h += imgGallery(el.images);
@@ -911,6 +910,27 @@ function doSearch(q) {
 
 /* ── INIT ── */
 for (const record of REVIEWED_CHANGES) SpecChanges.apply(DATA, record);
+// Compare the approved grade bands while keeping common settings in one place.
+for (const category of DATA.subjects.find(subject => subject.id === 'math').categories) {
+  for (const entry of category.elements) {
+    if (entry.gradeTable || !entry.specs) continue;
+    const rows = [];
+    const paired = new Set();
+    for (const lower of entry.specs) {
+      const match = lower.label.match(/^(.*) \(Grades? 6–7\)$/);
+      if (!match) continue;
+      const label = match[1];
+      const upper = entry.specs.find(row => [label+' (Grade 8+)', label+' (Grade 8 and above)'].includes(row.label));
+      if (!upper) continue;
+      rows.push({label, values:[lower.value, upper.value], type:lower.type, highlight:true});
+      paired.add(lower); paired.add(upper);
+    }
+    if (rows.length) {
+      entry.gradeTable = {columns:['Property','Grades 6–7','Grade 8+'],rows};
+      entry.specs = entry.specs.filter(row => !paired.has(row));
+    }
+  }
+}
 buildNav();
 const requestedSpec = new URLSearchParams(location.search).get('spec');
 const initialSubject = DATA.subjects.find(s => s.categories.some(c => c.elements.some(e => e.id === requestedSpec)));
