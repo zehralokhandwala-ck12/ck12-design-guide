@@ -145,7 +145,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 /* Image buttons for keyboard access */
 .img-btn{border:none;padding:0;background:none;cursor:zoom-in;border-radius:6px;display:block}
 .img-btn:focus-visible{outline:2px solid var(--green);outline-offset:2px}
-.img-item img{border-radius:6px;border:1px solid var(--border);object-fit:contain;background:var(--surface2);max-width:340px;max-height:220px;display:block;transition:opacity .15s}
+.img-item img{border-radius:6px;border:1px solid var(--border);object-fit:contain;background:var(--surface2);max-width:min(100%,340px);max-height:220px;display:block;transition:opacity .15s}
 .img-btn:hover img{opacity:.92}
 .img-caption{font-size:var(--text-xs);color:var(--text-muted);text-align:center;font-style:italic}
 
@@ -326,7 +326,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 <script src="specs.js?v=4d9f51c29f"></script>
 <script src="contribute/model.js"></script>
 <script src="contribute/published.js?v=f209a3fac474"></script>
-<script src="math-review/guide-links.js?v=bd09685a7f"></script>
+<script src="math-review/guide-links.js?v=inline1"></script>
 <script>
 /* ── HELPERS ── */
 function cp(text) {
@@ -543,15 +543,12 @@ function renderEl(el, accentColor, subjectBadge) {
   }
   if (review) {
     h += `<p><a class="math-review-link" href="math-review/#${el.id}">Compare the six Math sources</a></p>`;
-    if (review.figureCount) {
-      h += `<p><a class="math-review-link" href="math-review/#figures-${el.id}">View source figures (${review.figureCount})</a></p>`;
-    }
     for (const decision of review.decisions) {
       h += `<p class="source-links"><a href="math-review/#decision-${decision.id}">Approved decision · ${decision.label}</a></p>`;
     }
   }
   const sourceReview = !el.contributed && (subjectBadge === 'chemistry' || subjectBadge === 'physics');
-  if (!sourceReview) h += imgGallery(el.images);
+  if (!sourceReview) h += imgGallery([...(el.images || []), ...(review?.images || [])]);
   if (el.docEmbed) {
     h += `<div class="doc-embed-wrap">
       <div class="doc-embed-bar">
@@ -581,7 +578,7 @@ function renderEl(el, accentColor, subjectBadge) {
   if (sourceReview) {
     h += imgGallery(el.images);
     if (el.archivalImages?.length) {
-      h += `<details><summary>Original Illustrator references (${el.archivalImages.length})</summary>${imgGallery(el.archivalImages)}</details>`;
+      h += `<details open><summary>Original Illustrator references (${el.archivalImages.length})</summary>${imgGallery(el.archivalImages)}</details>`;
     }
     h += `<p><a class="math-review-link" href="${subjectBadge}-review/#topic-${el.id}">Source passages for this entry</a></p>`;
   }

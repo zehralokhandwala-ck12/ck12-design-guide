@@ -13,7 +13,17 @@ const mathReviewLinks = {
       ]
     },
     "decisions": [],
-    "figureCount": 2
+    "figureCount": 2,
+    "images": [
+      {
+        "src": "source-images/math/2025/image10.png",
+        "caption": "Canvas padding near a vertex · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image12.png",
+        "caption": "Padding around a horizontal line · Math · 2025"
+      }
+    ]
   },
   "solid-line": {
     "fields": {
@@ -36,7 +46,29 @@ const mathReviewLinks = {
         "label": "Grade 6 diagram outlines"
       }
     ],
-    "figureCount": 5
+    "figureCount": 5,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image23.png",
+        "caption": "Solid line segment · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image29.png",
+        "caption": "Illustrator transform panel for a solid line · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-7/image8.png",
+        "caption": "Solid line segment · Math · Grade 7"
+      },
+      {
+        "src": "source-images/math/2025/image31.png",
+        "caption": "Solid line segment · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image33.png",
+        "caption": "Illustrator transform panel and half-pixel coordinates · Math · 2025"
+      }
+    ]
   },
   "dotted-line": {
     "fields": {
@@ -57,7 +89,21 @@ const mathReviewLinks = {
         "label": "Grade 6 diagram outlines"
       }
     ],
-    "figureCount": 3
+    "figureCount": 3,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image22.png",
+        "caption": "Dotted line segment · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-7/image9.png",
+        "caption": "Dotted line segment · Math · Grade 7"
+      },
+      {
+        "src": "source-images/math/2025/image13.png",
+        "caption": "Dotted line segment · Math · 2025"
+      }
+    ]
   },
   "points-size": {
     "fields": {
@@ -134,7 +180,41 @@ const mathReviewLinks = {
         "label": "Grade 6 construction point diameter"
       }
     ],
-    "figureCount": 8
+    "figureCount": 8,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image17.png",
+        "caption": "Diagram points on a triangle · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image10.png",
+        "caption": "Construction points on a bisected triangle · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-7/image14.png",
+        "caption": "Diagram points on a quadrilateral · Math · Grade 7"
+      },
+      {
+        "src": "source-images/math/grade-7/image2.png",
+        "caption": "Construction points on a bisected triangle · Math · Grade 7"
+      },
+      {
+        "src": "source-images/math/grade-9/image5.png",
+        "caption": "Diagram points on a triangle · Math · Grade 9"
+      },
+      {
+        "src": "source-images/math/grade-9/image7.png",
+        "caption": "Construction points on a bisected triangle · Math · Grade 9"
+      },
+      {
+        "src": "source-images/math/2025/image15.png",
+        "caption": "Solid and hollow points · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image25.png",
+        "caption": "Diagram points on a triangle · Math · 2025"
+      }
+    ]
   },
   "arrow-length-marker": {
     "fields": {
@@ -158,7 +238,21 @@ const mathReviewLinks = {
       ]
     },
     "decisions": [],
-    "figureCount": 3
+    "figureCount": 3,
+    "images": [
+      {
+        "src": "source-images/math/2025/image19.png",
+        "caption": "Length arrow and label spacing · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image34.png",
+        "caption": "Length markers on a vector diagram · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image36.png",
+        "caption": "Reduced arrowheads in a complex diagram · Math · 2025"
+      }
+    ]
   },
   "vertex-label": {
     "fields": {
@@ -174,7 +268,21 @@ const mathReviewLinks = {
       ]
     },
     "decisions": [],
-    "figureCount": 3
+    "figureCount": 3,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image15.png",
+        "caption": "Vertex and measurement label callouts · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/2025/image14.png",
+        "caption": "Vertex and measurement label callouts · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image41.png",
+        "caption": "Point label placement guide · Math · 2025"
+      }
+    ]
   },
   "measurement-label": {
     "fields": {
@@ -200,7 +308,45 @@ const mathReviewLinks = {
       ]
     },
     "decisions": [],
-    "figureCount": 9
+    "figureCount": 9,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image24.png",
+        "caption": "Center-aligned measurement label · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image7.png",
+        "caption": "Left-aligned measurement label · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image18.png",
+        "caption": "Right-aligned measurement label · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-7/image1.png",
+        "caption": "Vertex and measurement labels · Math · Grade 7"
+      },
+      {
+        "src": "source-images/math/2025/image16.png",
+        "caption": "Center-aligned measurement label · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image40.png",
+        "caption": "Left-aligned measurement label · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image37.png",
+        "caption": "Right-aligned measurement label · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image35.png",
+        "caption": "Radius and diameter label placement · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image18.png",
+        "caption": "Radius markers on concentric circles · Math · 2025"
+      }
+    ]
   },
   "math-symbol-label": {
     "fields": {
@@ -217,7 +363,25 @@ const mathReviewLinks = {
         "label": "Prime glyph in Illustrator"
       }
     ],
-    "figureCount": 4
+    "figureCount": 4,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image4.png",
+        "caption": "Prime symbol and font settings · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image6.png",
+        "caption": "Point label placement guide · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-7/image11.png",
+        "caption": "Prime symbol and font settings · Math · Grade 7"
+      },
+      {
+        "src": "source-images/math/2025/image38.png",
+        "caption": "Math symbol and character settings · Math · 2025"
+      }
+    ]
   },
   "angle-marker-spec": {
     "fields": {
@@ -258,7 +422,65 @@ const mathReviewLinks = {
         "label": "Angle marker radius and gap"
       }
     ],
-    "figureCount": 14
+    "figureCount": 14,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image5.png",
+        "caption": "Angle marker arc radii and spacing · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image2.png",
+        "caption": "Right angle marker at 15 px · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image8.png",
+        "caption": "Right angle marker at 20 px · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image27.png",
+        "caption": "Right angle marker at 25 px · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-7/image7.png",
+        "caption": "Angle marker arc radii and spacing · Math · Grade 7"
+      },
+      {
+        "src": "source-images/math/grade-7/image10.png",
+        "caption": "Right angle marker at 15 px · Math · Grade 7"
+      },
+      {
+        "src": "source-images/math/grade-7/image12.png",
+        "caption": "Right angle marker at 20 px · Math · Grade 7"
+      },
+      {
+        "src": "source-images/math/grade-7/image4.png",
+        "caption": "Right angle marker at 25 px · Math · Grade 7"
+      },
+      {
+        "src": "source-images/math/2025/image39.png",
+        "caption": "Angle marker arc radii and spacing · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image28.png",
+        "caption": "Arrowhead placement in a tight angle diagram · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image8.png",
+        "caption": "Multiple angle markers on a triangle · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image17.png",
+        "caption": "Right angle marker at 15 px · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image20.png",
+        "caption": "Right angle marker at 20 px · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image24.png",
+        "caption": "Right angle marker at 25 px · Math · 2025"
+      }
+    ]
   },
   "hatch-marker": {
     "fields": {
@@ -285,7 +507,25 @@ const mathReviewLinks = {
         "label": "Equal-length tick marks"
       }
     ],
-    "figureCount": 4
+    "figureCount": 4,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image30.png",
+        "caption": "Length marker spacing · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image13.png",
+        "caption": "Hatch marker examples on a triangle · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-7/image5.png",
+        "caption": "Length and hatch marker spacing · Math · Grade 7"
+      },
+      {
+        "src": "source-images/math/2025/image29.png",
+        "caption": "Hatch marker dimensions · Math · 2025"
+      }
+    ]
   },
   "feathers": {
     "fields": {
@@ -306,7 +546,29 @@ const mathReviewLinks = {
         "label": "Parallel line marker dimensions"
       }
     ],
-    "figureCount": 5
+    "figureCount": 5,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image11.png",
+        "caption": "Parallel line feather markers · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-7/image13.png",
+        "caption": "Parallel line feather markers · Math · Grade 7"
+      },
+      {
+        "src": "source-images/math/grade-9/image10.png",
+        "caption": "Parallel line feathers on a triangle · Math · Grade 9"
+      },
+      {
+        "src": "source-images/math/grade-9/image1.png",
+        "caption": "Parallel line feathers on a quadrilateral · Math · Grade 9"
+      },
+      {
+        "src": "source-images/math/2025/image3.png",
+        "caption": "Parallel line feather markers · Math · 2025"
+      }
+    ]
   },
   "vector-spec": {
     "fields": {
@@ -336,7 +598,21 @@ const mathReviewLinks = {
       ]
     },
     "decisions": [],
-    "figureCount": 3
+    "figureCount": 3,
+    "images": [
+      {
+        "src": "source-images/math/2025/image30.png",
+        "caption": "Illustrator vector arrow settings · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image2.png",
+        "caption": "Vectors with common origin · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image34.png",
+        "caption": "Vector components and projection · Math · 2025"
+      }
+    ]
   },
   "vector-colors": {
     "fields": {
@@ -423,7 +699,29 @@ const mathReviewLinks = {
         "label": "Number-line label size and color"
       }
     ],
-    "figureCount": 5
+    "figureCount": 5,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image26.png",
+        "caption": "Number line points and labels · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-7/image6.png",
+        "caption": "Number line points and labels · Math · Grade 7"
+      },
+      {
+        "src": "source-images/math/grade-8/image2.png",
+        "caption": "Number line points and labels · Math · Grade 8"
+      },
+      {
+        "src": "source-images/math/grade-9/image9.png",
+        "caption": "Number line points and labels · Math · Grade 9"
+      },
+      {
+        "src": "source-images/math/2025/image26.png",
+        "caption": "Number line points and labels · Math · 2025"
+      }
+    ]
   },
   "graph-grid": {
     "fields": {
@@ -449,7 +747,17 @@ const mathReviewLinks = {
       ]
     },
     "decisions": [],
-    "figureCount": 2
+    "figureCount": 2,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image28.png",
+        "caption": "Graph grid spacing · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/2025/image1.png",
+        "caption": "Graph grid spacing · Math · 2025"
+      }
+    ]
   },
   "graph-axis": {
     "fields": {
@@ -461,7 +769,17 @@ const mathReviewLinks = {
       ]
     },
     "decisions": [],
-    "figureCount": 2
+    "figureCount": 2,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image12.png",
+        "caption": "Graph axis tick marks · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/2025/image27.png",
+        "caption": "Graph axis tick marks · Math · 2025"
+      }
+    ]
   },
   "linear-graph": {
     "fields": {
@@ -488,7 +806,41 @@ const mathReviewLinks = {
         "label": "Equation text color"
       }
     ],
-    "figureCount": 8
+    "figureCount": 8,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image1.png",
+        "caption": "Linear graph label callouts · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image32.png",
+        "caption": "Graph title and descriptive labels · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image3.png",
+        "caption": "Title case on a graph · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image33.png",
+        "caption": "Minus and equation symbols on graph · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image25.png",
+        "caption": "Equation on a plotted curve · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image14.png",
+        "caption": "Equation labels inside graph · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image34.png",
+        "caption": "Equation below graph · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/2025/image5.png",
+        "caption": "Axis labels on a plotted graph · Math · 2025"
+      }
+    ]
   },
   "function-graph": {
     "fields": {
@@ -505,7 +857,13 @@ const mathReviewLinks = {
         "label": "Equation text color"
       }
     ],
-    "figureCount": 1
+    "figureCount": 1,
+    "images": [
+      {
+        "src": "source-images/math/2025/image9.png",
+        "caption": "Inequality graph with shaded regions · Math · 2025"
+      }
+    ]
   },
   "bar-graph": {
     "fields": {
@@ -544,7 +902,49 @@ const mathReviewLinks = {
         "label": "Multi-line and multicolor bar graph palettes"
       }
     ],
-    "figureCount": 10
+    "figureCount": 10,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image31.png",
+        "caption": "Bar graph label callouts · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image21.png",
+        "caption": "Histogram axis and bars · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-9/image8.png",
+        "caption": "Vertical bar graph · Math · Grade 9"
+      },
+      {
+        "src": "source-images/math/grade-9/image3.png",
+        "caption": "Double bar graph · Math · Grade 9"
+      },
+      {
+        "src": "source-images/math/grade-9/image4.png",
+        "caption": "Horizontal bar graph · Math · Grade 9"
+      },
+      {
+        "src": "source-images/math/grade-9/image6.png",
+        "caption": "Grouped bar graph · Math · Grade 9"
+      },
+      {
+        "src": "source-images/math/grade-9/image2.png",
+        "caption": "Income distribution histogram · Math · Grade 9"
+      },
+      {
+        "src": "source-images/math/2025/image23.png",
+        "caption": "Bar graph with horizontal labels · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image32.png",
+        "caption": "Bar graph with vertically arranged categories · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image22.png",
+        "caption": "Double bar graph · Math · 2025"
+      }
+    ]
   },
   "pie-chart": {
     "fields": {
@@ -587,7 +987,41 @@ const mathReviewLinks = {
         "label": "Pie-chart measurement numerals"
       }
     ],
-    "figureCount": 8
+    "figureCount": 8,
+    "images": [
+      {
+        "src": "source-images/math/grade-8/image5.png",
+        "caption": "Pie chart with labels inside the slices · Math · Grade 8"
+      },
+      {
+        "src": "source-images/math/grade-8/image3.png",
+        "caption": "Pie chart with data labels outside the slices · Math · Grade 8"
+      },
+      {
+        "src": "source-images/math/grade-8/image1.png",
+        "caption": "Pie chart with percentages or angles outside · Math · Grade 8"
+      },
+      {
+        "src": "source-images/math/2025/image4.png",
+        "caption": "Pie chart with outside category labels · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image6.png",
+        "caption": "Pie chart with outside subject labels · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image11.png",
+        "caption": "Pie chart with values inside slices · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image7.png",
+        "caption": "Pie chart with angles inside slices · Math · 2025"
+      },
+      {
+        "src": "source-images/math/2025/image21.png",
+        "caption": "Pie chart with percentages outside · Math · 2025"
+      }
+    ]
   },
   "pie-colors": {
     "fields": {
@@ -655,7 +1089,25 @@ const mathReviewLinks = {
       ]
     },
     "decisions": [],
-    "figureCount": 4
+    "figureCount": 4,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image9.png",
+        "caption": "Construction diagram and label callouts · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-7/image3.png",
+        "caption": "Construction diagram and label callouts · Math · Grade 7"
+      },
+      {
+        "src": "source-images/math/grade-8/image4.png",
+        "caption": "Construction diagram and label callouts · Math · Grade 8"
+      },
+      {
+        "src": "source-images/math/grade-9/image11.png",
+        "caption": "Construction diagram and label callouts · Math · Grade 9"
+      }
+    ]
   },
   "sequence-spec": {
     "fields": {
@@ -742,7 +1194,53 @@ const mathReviewLinks = {
         "label": "Sequence diagram grade coverage"
       }
     ],
-    "figureCount": 11
+    "figureCount": 11,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image16.png",
+        "caption": "Sequence diagram labels and circles · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-10/image19.png",
+        "caption": "Factor tree line and arrow example · Math · Grade 10"
+      },
+      {
+        "src": "source-images/math/grade-6/image2.png",
+        "caption": "Sequence diagram labels and tiles · Math · Grade 6"
+      },
+      {
+        "src": "source-images/math/grade-6/image9.png",
+        "caption": "Factor tree labels and branches · Math · Grade 6"
+      },
+      {
+        "src": "source-images/math/grade-6/image4.png",
+        "caption": "Sequence arrow on a number line · Math · Grade 6"
+      },
+      {
+        "src": "source-images/math/grade-6/image6.png",
+        "caption": "Step 1 · Draw the circle between axis markers · Math · Grade 6"
+      },
+      {
+        "src": "source-images/math/grade-6/image1.png",
+        "caption": "Step 2 · Remove the lower semicircle · Math · Grade 6"
+      },
+      {
+        "src": "source-images/math/grade-6/image8.png",
+        "caption": "Step 3 · Select the top anchor point · Math · Grade 6"
+      },
+      {
+        "src": "source-images/math/grade-6/image7.png",
+        "caption": "Step 4 · Lower the top anchor point · Math · Grade 6"
+      },
+      {
+        "src": "source-images/math/grade-6/image3.png",
+        "caption": "Step 5 · Center the arrow on the arc · Math · Grade 6"
+      },
+      {
+        "src": "source-images/math/grade-6/image5.png",
+        "caption": "Illustrator arrowhead settings for a sequence · Math · Grade 6"
+      }
+    ]
   },
   "multi-line-graph": {
     "fields": {
@@ -759,7 +1257,13 @@ const mathReviewLinks = {
         "label": "Multi-line and multicolor bar graph palettes"
       }
     ],
-    "figureCount": 1
+    "figureCount": 1,
+    "images": [
+      {
+        "src": "source-images/math/grade-10/image20.png",
+        "caption": "Multi-line graph with multiple equation lines · Math · Grade 10"
+      }
+    ]
   },
   "bar-colors": {
     "fields": {
