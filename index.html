@@ -284,14 +284,14 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 .img-btn{width:100%;height:180px;display:grid;place-items:center;background:white;border:1px solid var(--border)}
 .img-item img{width:100%;height:100%;min-height:0;max-width:100%;max-height:180px;border:0;background:white}
 .img-caption{text-align:left;font-style:normal;line-height:1.4}
-.spec-card{--property-width:clamp(7rem,30%,14rem)}
+.spec-card{--property-width:12rem}
 .spec-card :is(.gt,.spec-table){table-layout:fixed}
 .spec-card :is(.gt,.spec-table) thead th:first-child{width:var(--property-width)}
 .spec-card :is(.gt,.spec-table) :is(td,th){text-align:left;vertical-align:middle;overflow-wrap:anywhere}
 .spec-card :is(.gt,.spec-table) :is(td,th):not(:first-child){padding-left:8px;padding-right:8px}
 .gt tbody th{letter-spacing:normal;text-transform:none}
 .gt .sw-btn,.spec-table .sw-btn{max-width:100%}
-@media(max-width:600px){.gt{min-width:calc(var(--grade-columns) * 6.5rem + 7rem)}}
+@media(max-width:600px){.spec-card{--property-width:7rem}.gt{min-width:calc(var(--grade-columns) * 6.5rem + 7rem)}}
 </style>
 <script defer src="contribute/copy.js"></script></head>
 <body>
