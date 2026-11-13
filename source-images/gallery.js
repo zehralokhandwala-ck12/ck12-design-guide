@@ -62,8 +62,12 @@ function buildSection(doc) {
     link.setAttribute('aria-label', 'Link to ' + doc.title + ', ' + item.location + ', ' + item.title);
     if (item.specId) {
       const spec = document.createElement('a');
-      spec.href = '../?spec=' + encodeURIComponent(item.specId);
-      spec.textContent = 'Working spec';
+      const destination = new URLSearchParams({spec: item.specId});
+      if (item.specRow) destination.set('row', item.specRow);
+      if (item.specGrade) destination.set('grade', item.specGrade);
+      spec.href = '../?' + destination.toString();
+      spec.textContent = item.specRow ? 'View placement rule' : 'Working spec';
+      spec.setAttribute('aria-label', spec.textContent + ' for ' + item.title);
       link.after(' · ', spec);
     }
     if (item.reviewNote) {
@@ -80,7 +84,7 @@ function buildSection(doc) {
 }
 
 async function loadCatalog() {
-  const response = await fetch('catalog.json?v=1a3f179b8e');
+  const response = await fetch('catalog.json?v=figure-return-links');
   if (!response.ok) throw new Error('Catalog unavailable');
   const documents = await response.json();
   for (const name of new Set(documents.map(doc => doc.subject))) subject.add(new Option(name, name));

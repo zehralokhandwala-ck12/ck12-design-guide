@@ -90,7 +90,7 @@ const SpecChanges = (() => {
           const label=escape(line(row.label,'Property name',300));
           if(field==='grade')return {label,values:row.values.map(v=>escape(line(v,'Grade value',1500))),highlight:true};
           const value=escape(line(row.value,'Property value',2000));
-          return {label,value,...(hex.test(value)?{type:'color'}:{})};
+          return {label,value,...(previous.id ? {id:previous.id} : {}),...(hex.test(value)?{type:'color'}:{})};
         });
         if(field==='grade')entry.gradeTable.rows=updated;else entry.specs=updated;
       }

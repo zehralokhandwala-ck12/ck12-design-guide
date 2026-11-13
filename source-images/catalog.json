@@ -11,7 +11,8 @@
         "src": "math/2025/image10.png",
         "width": 850,
         "height": 613,
-        "sha256": "72001ccaf0279f25ca4ab48971fa7a565ad0dc246c6250d4826a8942c9f71f88"
+        "sha256": "72001ccaf0279f25ca4ab48971fa7a565ad0dc246c6250d4826a8942c9f71f88",
+        "specId": "canvas-size"
       },
       {
         "id": "math-2025-p21",
@@ -20,7 +21,8 @@
         "src": "math/2025/image12.png",
         "width": 689,
         "height": 283,
-        "sha256": "26186ecbb5b32c7d20d5312f7c30f468a5e6de9f60a4d564dd643ac155b2d231"
+        "sha256": "26186ecbb5b32c7d20d5312f7c30f468a5e6de9f60a4d564dd643ac155b2d231",
+        "specId": "canvas-size"
       },
       {
         "id": "math-2025-p28",
@@ -29,7 +31,8 @@
         "src": "math/2025/image31.png",
         "width": 1163,
         "height": 126,
-        "sha256": "7853c131209ebccf8b3f608f8a75bb18ba1e67bb16754c6d693723b3cbdf74f9"
+        "sha256": "7853c131209ebccf8b3f608f8a75bb18ba1e67bb16754c6d693723b3cbdf74f9",
+        "specId": "solid-line"
       },
       {
         "id": "math-2025-p33",
@@ -38,7 +41,8 @@
         "src": "math/2025/image33.png",
         "width": 488,
         "height": 579,
-        "sha256": "5b28eb2fecfc6e1885b19ffc2a180e71ed1a5dd28ba17ef52a4cdf83a479fbd3"
+        "sha256": "5b28eb2fecfc6e1885b19ffc2a180e71ed1a5dd28ba17ef52a4cdf83a479fbd3",
+        "specId": "solid-line"
       },
       {
         "id": "math-2025-p45",
@@ -47,7 +51,8 @@
         "src": "math/2025/image13.png",
         "width": 1163,
         "height": 126,
-        "sha256": "6b398152a44109dc5b6a2185da256fc1b0b24a36cdde861144627b1760b28a7e"
+        "sha256": "6b398152a44109dc5b6a2185da256fc1b0b24a36cdde861144627b1760b28a7e",
+        "specId": "dotted-line"
       },
       {
         "id": "math-2025-p55",
@@ -56,7 +61,8 @@
         "src": "math/2025/image15.png",
         "width": 613,
         "height": 301,
-        "sha256": "c66f8c3247f801e8755b1fca383206632201cfb05a7e70d9cef2be0dbb05cdc6"
+        "sha256": "c66f8c3247f801e8755b1fca383206632201cfb05a7e70d9cef2be0dbb05cdc6",
+        "specId": "points-size"
       },
       {
         "id": "math-2025-p65",
@@ -65,7 +71,8 @@
         "src": "math/2025/image25.png",
         "width": 424,
         "height": 335,
-        "sha256": "7531ffacb696c284e1254f595d3ec0f5e64f3747bdf9417c0defc633454b08ed"
+        "sha256": "7531ffacb696c284e1254f595d3ec0f5e64f3747bdf9417c0defc633454b08ed",
+        "specId": "points-size"
       },
       {
         "id": "math-2025-p76",
@@ -74,7 +81,8 @@
         "src": "math/2025/image14.png",
         "width": 448,
         "height": 424,
-        "sha256": "e1ffb8befd7de4b04bc8f143d72e754aa1f92147178d79060693585c122a955a"
+        "sha256": "e1ffb8befd7de4b04bc8f143d72e754aa1f92147178d79060693585c122a955a",
+        "specId": "vertex-label"
       },
       {
         "id": "math-2025-p105",
@@ -83,7 +91,8 @@
         "src": "math/2025/image16.png",
         "width": 1138,
         "height": 238,
-        "sha256": "73cc4e790671292cc01b01b92831546f4b3fae810dccac814a3491146b90226d"
+        "sha256": "73cc4e790671292cc01b01b92831546f4b3fae810dccac814a3491146b90226d",
+        "specId": "measurement-label"
       },
       {
         "id": "math-2025-p108",
@@ -92,7 +101,8 @@
         "src": "math/2025/image40.png",
         "width": 284,
         "height": 1000,
-        "sha256": "8b06c659eae0ea9cc1f5fffdee7d007257971b3fb854d1f846ad0e662b2c2e27"
+        "sha256": "8b06c659eae0ea9cc1f5fffdee7d007257971b3fb854d1f846ad0e662b2c2e27",
+        "specId": "measurement-label"
       },
       {
         "id": "math-2025-p111",
@@ -101,7 +111,8 @@
         "src": "math/2025/image37.png",
         "width": 298,
         "height": 1000,
-        "sha256": "307614c0ab5662a4748b965fb70837b8584941a7f24f579d23a03e67ee541604"
+        "sha256": "307614c0ab5662a4748b965fb70837b8584941a7f24f579d23a03e67ee541604",
+        "specId": "measurement-label"
       },
       {
         "id": "math-2025-p124",
@@ -110,7 +121,8 @@
         "src": "math/2025/image35.png",
         "width": 581,
         "height": 569,
-        "sha256": "24629020eb4f8a75914686e6a48702b40b87a7c32a12df4038b4e9d3cb4e47f1"
+        "sha256": "24629020eb4f8a75914686e6a48702b40b87a7c32a12df4038b4e9d3cb4e47f1",
+        "specId": "measurement-label"
       },
       {
         "id": "math-2025-p128",
@@ -119,7 +131,8 @@
         "src": "math/2025/image18.png",
         "width": 300,
         "height": 330,
-        "sha256": "f532ec2cc08d9d2409685efb8b1bfa4528ae196cd03b7a52c6574d9c7a7568d7"
+        "sha256": "f532ec2cc08d9d2409685efb8b1bfa4528ae196cd03b7a52c6574d9c7a7568d7",
+        "specId": "measurement-label"
       },
       {
         "id": "math-2025-p133",
@@ -128,7 +141,8 @@
         "src": "math/2025/image19.png",
         "width": 676,
         "height": 553,
-        "sha256": "9d62582e464a41929eb1ab439e84bc668b3dffb14267f030652f170e4f34c690"
+        "sha256": "9d62582e464a41929eb1ab439e84bc668b3dffb14267f030652f170e4f34c690",
+        "specId": "arrow-length-marker"
       },
       {
         "id": "math-2025-p135",
@@ -137,7 +151,8 @@
         "src": "math/2025/image34.png",
         "width": 572,
         "height": 537,
-        "sha256": "5a2ea41d87f67244a21590bb8beb17057333e46da462618812999d1f689a4990"
+        "sha256": "5a2ea41d87f67244a21590bb8beb17057333e46da462618812999d1f689a4990",
+        "specId": "arrow-length-marker"
       },
       {
         "id": "math-2025-p137",
@@ -146,7 +161,8 @@
         "src": "math/2025/image36.png",
         "width": 410,
         "height": 300,
-        "sha256": "6a80d9d5c7ee01e3a69e022b5d63e5e5436f285de0b13c314dc8c5c6c8ea743e"
+        "sha256": "6a80d9d5c7ee01e3a69e022b5d63e5e5436f285de0b13c314dc8c5c6c8ea743e",
+        "specId": "arrow-length-marker"
       },
       {
         "id": "math-2025-p145",
@@ -155,7 +171,8 @@
         "src": "math/2025/image38.png",
         "width": 1200,
         "height": 663,
-        "sha256": "bb96638614b0b27de87ec519591f40957e7cc2b45f2ae5cb41ac8a24b5c4b6c4"
+        "sha256": "bb96638614b0b27de87ec519591f40957e7cc2b45f2ae5cb41ac8a24b5c4b6c4",
+        "specId": "math-symbol-label"
       },
       {
         "id": "math-2025-p150",
@@ -164,7 +181,8 @@
         "src": "math/2025/image41.png",
         "width": 1496,
         "height": 648,
-        "sha256": "1b94045b6fc845ac5572a38f96bd67783e3dbd1cfb36a1ffee332899552d6baa"
+        "sha256": "1b94045b6fc845ac5572a38f96bd67783e3dbd1cfb36a1ffee332899552d6baa",
+        "specId": "vertex-label"
       },
       {
         "id": "math-2025-p164",
@@ -173,7 +191,8 @@
         "src": "math/2025/image39.png",
         "width": 418,
         "height": 257,
-        "sha256": "5f0f38767bac2cde78e97f5ce5172999438f9c38641a759e0ca2d4b19bc868ff"
+        "sha256": "5f0f38767bac2cde78e97f5ce5172999438f9c38641a759e0ca2d4b19bc868ff",
+        "specId": "angle-marker-spec"
       },
       {
         "id": "math-2025-p171",
@@ -182,7 +201,8 @@
         "src": "math/2025/image28.png",
         "width": 826,
         "height": 576,
-        "sha256": "b3d3535769c312c37bd6d3a5813e0341049396790add51459d76e656e6fe3687"
+        "sha256": "b3d3535769c312c37bd6d3a5813e0341049396790add51459d76e656e6fe3687",
+        "specId": "angle-marker-spec"
       },
       {
         "id": "math-2025-p182",
@@ -191,7 +211,8 @@
         "src": "math/2025/image8.png",
         "width": 350,
         "height": 350,
-        "sha256": "7ae9003cade43097c39b0e43cec1ad4b13424f94ee4486eb157553b67521b951"
+        "sha256": "7ae9003cade43097c39b0e43cec1ad4b13424f94ee4486eb157553b67521b951",
+        "specId": "angle-marker-spec"
       },
       {
         "id": "math-2025-p186",
@@ -200,7 +221,8 @@
         "src": "math/2025/image17.png",
         "width": 346,
         "height": 156,
-        "sha256": "2c25a68405394892f14b42e05f05a447b2737e492ecdf3834631d84c610efefd"
+        "sha256": "2c25a68405394892f14b42e05f05a447b2737e492ecdf3834631d84c610efefd",
+        "specId": "angle-marker-spec"
       },
       {
         "id": "math-2025-p188",
@@ -209,7 +231,8 @@
         "src": "math/2025/image20.png",
         "width": 199,
         "height": 302,
-        "sha256": "4919c3804128425bc7e393af763b18fd79f2a33e5bfef7eeecc42b0cfa3f7b38"
+        "sha256": "4919c3804128425bc7e393af763b18fd79f2a33e5bfef7eeecc42b0cfa3f7b38",
+        "specId": "angle-marker-spec"
       },
       {
         "id": "math-2025-p190",
@@ -218,7 +241,8 @@
         "src": "math/2025/image24.png",
         "width": 373,
         "height": 263,
-        "sha256": "1255214236c5a53333e23b0c69e70601fac2c04c7ea8ff3a8bd31033041347c4"
+        "sha256": "1255214236c5a53333e23b0c69e70601fac2c04c7ea8ff3a8bd31033041347c4",
+        "specId": "angle-marker-spec"
       },
       {
         "id": "math-2025-p202",
@@ -227,7 +251,8 @@
         "src": "math/2025/image29.png",
         "width": 285,
         "height": 257,
-        "sha256": "8f0e23e4dda947a42429ec87c46e7134387b4186572284b2d7052df6305d3402"
+        "sha256": "8f0e23e4dda947a42429ec87c46e7134387b4186572284b2d7052df6305d3402",
+        "specId": "hatch-marker"
       },
       {
         "id": "math-2025-p214",
@@ -236,7 +261,8 @@
         "src": "math/2025/image3.png",
         "width": 323,
         "height": 300,
-        "sha256": "441bae63dcefd58483e1723c8fb4d0c813ffad4dd628a2271f4a5e31d690b79d"
+        "sha256": "441bae63dcefd58483e1723c8fb4d0c813ffad4dd628a2271f4a5e31d690b79d",
+        "specId": "feathers"
       },
       {
         "id": "math-2025-p224",
@@ -245,7 +271,8 @@
         "src": "math/2025/image30.png",
         "width": 287,
         "height": 398,
-        "sha256": "d83aa206b0cbec2dbf63f158590c0e3f3520ff5c9fa13344e8e819c270deb7d0"
+        "sha256": "d83aa206b0cbec2dbf63f158590c0e3f3520ff5c9fa13344e8e819c270deb7d0",
+        "specId": "vector-spec"
       },
       {
         "id": "math-2025-p229",
@@ -254,7 +281,8 @@
         "src": "math/2025/image2.png",
         "width": 553,
         "height": 518,
-        "sha256": "df18b52986a4347a562023ef7b4d0b5ae60c617ea3ca43b69205e8578b3982e1"
+        "sha256": "df18b52986a4347a562023ef7b4d0b5ae60c617ea3ca43b69205e8578b3982e1",
+        "specId": "vector-spec"
       },
       {
         "id": "math-2025-p230",
@@ -263,7 +291,8 @@
         "src": "math/2025/image34.png",
         "width": 572,
         "height": 537,
-        "sha256": "5a2ea41d87f67244a21590bb8beb17057333e46da462618812999d1f689a4990"
+        "sha256": "5a2ea41d87f67244a21590bb8beb17057333e46da462618812999d1f689a4990",
+        "specId": "vector-spec"
       },
       {
         "id": "math-2025-p245",
@@ -272,7 +301,8 @@
         "src": "math/2025/image26.png",
         "width": 1434,
         "height": 454,
-        "sha256": "82ab4206f15f68ed0aad1b4590bb3a41176be3db34e809d108009944f21e5b03"
+        "sha256": "82ab4206f15f68ed0aad1b4590bb3a41176be3db34e809d108009944f21e5b03",
+        "specId": "number-line-fonts"
       },
       {
         "id": "math-2025-p261",
@@ -281,7 +311,8 @@
         "src": "math/2025/image1.png",
         "width": 289,
         "height": 282,
-        "sha256": "ba5121bd4b078bfc15bf5fd772f61f823b5fe1ab1151529b16196bad56d0c4d8"
+        "sha256": "ba5121bd4b078bfc15bf5fd772f61f823b5fe1ab1151529b16196bad56d0c4d8",
+        "specId": "graph-grid"
       },
       {
         "id": "math-2025-p266",
@@ -290,7 +321,8 @@
         "src": "math/2025/image27.png",
         "width": 322,
         "height": 242,
-        "sha256": "47f1bec498a7cbc04b81c875bdd8378accf1b1261b61605da63270eae62e0bdb"
+        "sha256": "47f1bec498a7cbc04b81c875bdd8378accf1b1261b61605da63270eae62e0bdb",
+        "specId": "graph-axis"
       },
       {
         "id": "math-2025-p274",
@@ -299,7 +331,8 @@
         "src": "math/2025/image5.png",
         "width": 316,
         "height": 422,
-        "sha256": "8368eb5cd676dcc3ac16fd1225414a166004d5265f675aa2c518574f30cf785e"
+        "sha256": "8368eb5cd676dcc3ac16fd1225414a166004d5265f675aa2c518574f30cf785e",
+        "specId": "linear-graph"
       },
       {
         "id": "math-2025-p291",
@@ -308,7 +341,8 @@
         "src": "math/2025/image9.png",
         "width": 680,
         "height": 675,
-        "sha256": "07bcb3f0e6f26169446998d0f6c7ba8bf06f6660994e08fb903f382b01cc8466"
+        "sha256": "07bcb3f0e6f26169446998d0f6c7ba8bf06f6660994e08fb903f382b01cc8466",
+        "specId": "function-graph"
       },
       {
         "id": "math-2025-p313",
@@ -317,7 +351,8 @@
         "src": "math/2025/image23.png",
         "width": 607,
         "height": 479,
-        "sha256": "c71d87f237484c6d1493b3f88ae6ef10642c1c38fa15059d31a12c0e7a05407a"
+        "sha256": "c71d87f237484c6d1493b3f88ae6ef10642c1c38fa15059d31a12c0e7a05407a",
+        "specId": "bar-graph"
       },
       {
         "id": "math-2025-p325",
@@ -326,7 +361,8 @@
         "src": "math/2025/image32.png",
         "width": 953,
         "height": 743,
-        "sha256": "0f04888545148003aca1c11af8aced6676b8a4c8dec88a3ca7d7aee66fa494dd"
+        "sha256": "0f04888545148003aca1c11af8aced6676b8a4c8dec88a3ca7d7aee66fa494dd",
+        "specId": "bar-graph"
       },
       {
         "id": "math-2025-p326",
@@ -335,7 +371,8 @@
         "src": "math/2025/image22.png",
         "width": 520,
         "height": 499,
-        "sha256": "e2608dcf66b85ce56a2a1b656e70ae4f478d6ba0db6097cef40b8e38166bc60b"
+        "sha256": "e2608dcf66b85ce56a2a1b656e70ae4f478d6ba0db6097cef40b8e38166bc60b",
+        "specId": "bar-graph"
       },
       {
         "id": "math-2025-p344",
@@ -344,7 +381,8 @@
         "src": "math/2025/image4.png",
         "width": 625,
         "height": 365,
-        "sha256": "e337b53d73b774809d09c16e321b39985fee6af5c5aeaef111e364d1c09bc2ae"
+        "sha256": "e337b53d73b774809d09c16e321b39985fee6af5c5aeaef111e364d1c09bc2ae",
+        "specId": "pie-chart"
       },
       {
         "id": "math-2025-p346",
@@ -353,7 +391,8 @@
         "src": "math/2025/image6.png",
         "width": 535,
         "height": 350,
-        "sha256": "8e4a0bd42a3e79b823505cc84f2fa2f0b24d4e6622f481c97ded74ead449dede"
+        "sha256": "8e4a0bd42a3e79b823505cc84f2fa2f0b24d4e6622f481c97ded74ead449dede",
+        "specId": "pie-chart"
       },
       {
         "id": "math-2025-p355",
@@ -362,7 +401,8 @@
         "src": "math/2025/image11.png",
         "width": 370,
         "height": 400,
-        "sha256": "483981f697b6fead6384481fe93ab53cdc4de9e2c119771bf0b3fd2e1ce55381"
+        "sha256": "483981f697b6fead6384481fe93ab53cdc4de9e2c119771bf0b3fd2e1ce55381",
+        "specId": "pie-chart"
       },
       {
         "id": "math-2025-p358",
@@ -371,7 +411,8 @@
         "src": "math/2025/image7.png",
         "width": 360,
         "height": 400,
-        "sha256": "1fd03d312957233b47681976c3e1341a3e791ae2fa8b20a75d123f10c4bb175e"
+        "sha256": "1fd03d312957233b47681976c3e1341a3e791ae2fa8b20a75d123f10c4bb175e",
+        "specId": "pie-chart"
       },
       {
         "id": "math-2025-p364",
@@ -380,7 +421,8 @@
         "src": "math/2025/image21.png",
         "width": 620,
         "height": 360,
-        "sha256": "2ad990d9f5f3e5f05c6e2989230d0bb4cdce74b9338698d7e4a2e9eb7ae4a8d5"
+        "sha256": "2ad990d9f5f3e5f05c6e2989230d0bb4cdce74b9338698d7e4a2e9eb7ae4a8d5",
+        "specId": "pie-chart"
       }
     ]
   },
@@ -396,7 +438,8 @@
         "src": "math/grade-6/image2.png",
         "width": 2048,
         "height": 842,
-        "sha256": "8444e69f4625f2c092175ed496b9df828c6adcd77b49a2efa55c35670abe7955"
+        "sha256": "8444e69f4625f2c092175ed496b9df828c6adcd77b49a2efa55c35670abe7955",
+        "specId": "sequence-spec"
       },
       {
         "id": "math-grade-6-p38",
@@ -405,7 +448,8 @@
         "src": "math/grade-6/image9.png",
         "width": 598,
         "height": 692,
-        "sha256": "b5bb5973129829eb715bcbf294de7430006eb0d375f0cf36d93e1f875d9ee591"
+        "sha256": "b5bb5973129829eb715bcbf294de7430006eb0d375f0cf36d93e1f875d9ee591",
+        "specId": "sequence-spec"
       },
       {
         "id": "math-grade-6-p47",
@@ -414,7 +458,8 @@
         "src": "math/grade-6/image4.png",
         "width": 2048,
         "height": 372,
-        "sha256": "21c95d18cb055c59afab0943b5d696a333874667f20586af1bb8c17a77427aea"
+        "sha256": "21c95d18cb055c59afab0943b5d696a333874667f20586af1bb8c17a77427aea",
+        "specId": "sequence-spec"
       },
       {
         "id": "math-grade-6-p55",
@@ -423,7 +468,8 @@
         "src": "math/grade-6/image6.png",
         "width": 2048,
         "height": 299,
-        "sha256": "dcb82bc0a7f635bed35778688f6731693cfb12b2bb63ac5683ae7843b6474dea"
+        "sha256": "dcb82bc0a7f635bed35778688f6731693cfb12b2bb63ac5683ae7843b6474dea",
+        "specId": "sequence-spec"
       },
       {
         "id": "math-grade-6-p63",
@@ -432,7 +478,8 @@
         "src": "math/grade-6/image1.png",
         "width": 2048,
         "height": 299,
-        "sha256": "47b32da634e32d84d2b8065dc646148ea48c748995365641f63849b0df5adf6e"
+        "sha256": "47b32da634e32d84d2b8065dc646148ea48c748995365641f63849b0df5adf6e",
+        "specId": "sequence-spec"
       },
       {
         "id": "math-grade-6-p69",
@@ -441,7 +488,8 @@
         "src": "math/grade-6/image8.png",
         "width": 869,
         "height": 156,
-        "sha256": "1f75e2724e7d157c5b5f60de0ee6d6643328a05dfa43f1a291edec410042ff89"
+        "sha256": "1f75e2724e7d157c5b5f60de0ee6d6643328a05dfa43f1a291edec410042ff89",
+        "specId": "sequence-spec"
       },
       {
         "id": "math-grade-6-p75",
@@ -450,7 +498,8 @@
         "src": "math/grade-6/image7.png",
         "width": 2048,
         "height": 286,
-        "sha256": "2b138a52ef5d3e7cc5940e17a285d92eb69a25d450c51f2fa782d54bdd12d48c"
+        "sha256": "2b138a52ef5d3e7cc5940e17a285d92eb69a25d450c51f2fa782d54bdd12d48c",
+        "specId": "sequence-spec"
       },
       {
         "id": "math-grade-6-p81",
@@ -459,7 +508,8 @@
         "src": "math/grade-6/image3.png",
         "width": 2048,
         "height": 307,
-        "sha256": "8ba6d324f53d3535564fba7e33e38bc014366bcbe6dade39e2aef9acf6118141"
+        "sha256": "8ba6d324f53d3535564fba7e33e38bc014366bcbe6dade39e2aef9acf6118141",
+        "specId": "sequence-spec"
       },
       {
         "id": "math-grade-6-p88",
@@ -468,7 +518,8 @@
         "src": "math/grade-6/image5.png",
         "width": 647,
         "height": 697,
-        "sha256": "8ea04ea7ce856d1db4bec1be1d21ed24374f5adad3e6e28c6f8574dfb399acac"
+        "sha256": "8ea04ea7ce856d1db4bec1be1d21ed24374f5adad3e6e28c6f8574dfb399acac",
+        "specId": "sequence-spec"
       }
     ]
   },
@@ -484,7 +535,8 @@
         "src": "math/grade-7/image8.png",
         "width": 1228,
         "height": 88,
-        "sha256": "3929f9de7665d083aa495ce4dd952db0c4c6c5d91fe1824fb554773de9d17bbf"
+        "sha256": "3929f9de7665d083aa495ce4dd952db0c4c6c5d91fe1824fb554773de9d17bbf",
+        "specId": "solid-line"
       },
       {
         "id": "math-grade-7-p34",
@@ -493,7 +545,8 @@
         "src": "math/grade-7/image9.png",
         "width": 1163,
         "height": 126,
-        "sha256": "ed3a15fdfb551bd359bb972345382537d0298a2275ddb9eef766104d65bf3827"
+        "sha256": "ed3a15fdfb551bd359bb972345382537d0298a2275ddb9eef766104d65bf3827",
+        "specId": "dotted-line"
       },
       {
         "id": "math-grade-7-p50",
@@ -502,7 +555,8 @@
         "src": "math/grade-7/image14.png",
         "width": 388,
         "height": 413,
-        "sha256": "7a04385ee49c9913338fd51e303b3a4cb54e4f5d8abb2e9cfe1aaa030013c5d1"
+        "sha256": "7a04385ee49c9913338fd51e303b3a4cb54e4f5d8abb2e9cfe1aaa030013c5d1",
+        "specId": "points-size"
       },
       {
         "id": "math-grade-7-p55",
@@ -511,7 +565,8 @@
         "src": "math/grade-7/image2.png",
         "width": 333,
         "height": 341,
-        "sha256": "994e2d8da24b3eb9b34e1001bd6bb4ad0654ee4174d443817bf820dfd513114f"
+        "sha256": "994e2d8da24b3eb9b34e1001bd6bb4ad0654ee4174d443817bf820dfd513114f",
+        "specId": "points-size"
       },
       {
         "id": "math-grade-7-p66",
@@ -520,7 +575,8 @@
         "src": "math/grade-7/image1.png",
         "width": 586,
         "height": 390,
-        "sha256": "1f4dd738c7040a0fb09b285686a4a93e84b9d107d13fc0a072478a50166612f6"
+        "sha256": "1f4dd738c7040a0fb09b285686a4a93e84b9d107d13fc0a072478a50166612f6",
+        "specId": "measurement-label"
       },
       {
         "id": "math-grade-7-p79",
@@ -529,7 +585,8 @@
         "src": "math/grade-7/image11.png",
         "width": 1200,
         "height": 663,
-        "sha256": "e761ef3708e2b2b1e8b2f6484461ff8cbdd2baab4f81e1c2f37d28635831392f"
+        "sha256": "e761ef3708e2b2b1e8b2f6484461ff8cbdd2baab4f81e1c2f37d28635831392f",
+        "specId": "math-symbol-label"
       },
       {
         "id": "math-grade-7-p90",
@@ -538,7 +595,8 @@
         "src": "math/grade-7/image7.png",
         "width": 489,
         "height": 331,
-        "sha256": "64bd4573deeeced8e188d5d5ceb926c5eef7f4cd71dd343962f9b9ea4932d723"
+        "sha256": "64bd4573deeeced8e188d5d5ceb926c5eef7f4cd71dd343962f9b9ea4932d723",
+        "specId": "angle-marker-spec"
       },
       {
         "id": "math-grade-7-p97",
@@ -547,7 +605,8 @@
         "src": "math/grade-7/image10.png",
         "width": 224,
         "height": 424,
-        "sha256": "2e231c9c17ede62d22039c4591f4b476cdd88287a702d81ea864224d302d0658"
+        "sha256": "2e231c9c17ede62d22039c4591f4b476cdd88287a702d81ea864224d302d0658",
+        "specId": "angle-marker-spec"
       },
       {
         "id": "math-grade-7-p99",
@@ -556,7 +615,8 @@
         "src": "math/grade-7/image12.png",
         "width": 393,
         "height": 330,
-        "sha256": "1a4e54d1e02a0c3ed16a18720fcf5c550ba58bb03325c314ce584597bd5c7bb6"
+        "sha256": "1a4e54d1e02a0c3ed16a18720fcf5c550ba58bb03325c314ce584597bd5c7bb6",
+        "specId": "angle-marker-spec"
       },
       {
         "id": "math-grade-7-p104",
@@ -565,7 +625,8 @@
         "src": "math/grade-7/image4.png",
         "width": 393,
         "height": 330,
-        "sha256": "ad7334b87871ce1e4df65232590ef604f3d0a05ba08d0249758e25b199b3e705"
+        "sha256": "ad7334b87871ce1e4df65232590ef604f3d0a05ba08d0249758e25b199b3e705",
+        "specId": "angle-marker-spec"
       },
       {
         "id": "math-grade-7-p117",
@@ -574,7 +635,8 @@
         "src": "math/grade-7/image5.png",
         "width": 414,
         "height": 283,
-        "sha256": "07a06a6e108d5c4f64745280f1ad46d43ae3c3e6fcab8d49b4413e02e313f7f6"
+        "sha256": "07a06a6e108d5c4f64745280f1ad46d43ae3c3e6fcab8d49b4413e02e313f7f6",
+        "specId": "hatch-marker"
       },
       {
         "id": "math-grade-7-p129",
@@ -583,7 +645,8 @@
         "src": "math/grade-7/image13.png",
         "width": 599,
         "height": 466,
-        "sha256": "86937ec950624018dbf9d28a01cb669f7f2ef08a28e2cfedb2a4013c56b895de"
+        "sha256": "86937ec950624018dbf9d28a01cb669f7f2ef08a28e2cfedb2a4013c56b895de",
+        "specId": "feathers"
       },
       {
         "id": "math-grade-7-p139",
@@ -592,7 +655,8 @@
         "src": "math/grade-7/image3.png",
         "width": 610,
         "height": 486,
-        "sha256": "4c9171eab5c6d702e707ddc2cbf7158e4885bb725e9a68e4249fa3058d6a4444"
+        "sha256": "4c9171eab5c6d702e707ddc2cbf7158e4885bb725e9a68e4249fa3058d6a4444",
+        "specId": "construction-labels"
       },
       {
         "id": "math-grade-7-p151",
@@ -601,7 +665,8 @@
         "src": "math/grade-7/image6.png",
         "width": 627,
         "height": 202,
-        "sha256": "8aa920aacb43f36adb3ab0091a90ed4b07f3738625f6ef32a004786ecfedb69d"
+        "sha256": "8aa920aacb43f36adb3ab0091a90ed4b07f3738625f6ef32a004786ecfedb69d",
+        "specId": "number-line-fonts"
       }
     ]
   },
@@ -617,7 +682,8 @@
         "src": "math/grade-8/image4.png",
         "width": 494,
         "height": 389,
-        "sha256": "53f6b30a4eadb553609aba18edce50af3ffe7b6086b4c021362d5419358464f5"
+        "sha256": "53f6b30a4eadb553609aba18edce50af3ffe7b6086b4c021362d5419358464f5",
+        "specId": "construction-labels"
       },
       {
         "id": "math-grade-8-p53",
@@ -626,7 +692,8 @@
         "src": "math/grade-8/image2.png",
         "width": 627,
         "height": 202,
-        "sha256": "3e4984fc79a0d35ff470faa6ad6680a080bc237daaf352fbbd3c82802ec36216"
+        "sha256": "3e4984fc79a0d35ff470faa6ad6680a080bc237daaf352fbbd3c82802ec36216",
+        "specId": "number-line-fonts"
       },
       {
         "id": "math-grade-8-p75",
@@ -635,7 +702,10 @@
         "src": "math/grade-8/image5.png",
         "width": 692,
         "height": 597,
-        "sha256": "cbfe22379d313399e46de3d95deb01a5b0482e1bcc83766de8823c95daacdc54"
+        "sha256": "cbfe22379d313399e46de3d95deb01a5b0482e1bcc83766de8823c95daacdc54",
+        "specId": "pie-chart",
+        "specRow": "case-inside",
+        "specGrade": 8
       },
       {
         "id": "math-grade-8-p88",
@@ -644,7 +714,10 @@
         "src": "math/grade-8/image3.png",
         "width": 806,
         "height": 545,
-        "sha256": "dd3a12aba115062f4e86f907a13a018ea2c5046e9490ab9072b5d4cf5e9777ab"
+        "sha256": "dd3a12aba115062f4e86f907a13a018ea2c5046e9490ab9072b5d4cf5e9777ab",
+        "specId": "pie-chart",
+        "specRow": "case-names-outside",
+        "specGrade": 8
       },
       {
         "id": "math-grade-8-p105",
@@ -653,7 +726,10 @@
         "src": "math/grade-8/image1.png",
         "width": 799,
         "height": 535,
-        "sha256": "002ec826f01c832657cb22dd29342f26d9d0d520147d71005ee693b69c58281e"
+        "sha256": "002ec826f01c832657cb22dd29342f26d9d0d520147d71005ee693b69c58281e",
+        "specId": "pie-chart",
+        "specRow": "case-measurements-outside",
+        "specGrade": 8
       }
     ]
   },
@@ -669,7 +745,8 @@
         "src": "math/grade-9/image5.png",
         "width": 424,
         "height": 335,
-        "sha256": "d20a170dfeffd94a234ee1c75d9ec5e4a869067c8393cd2cc505c321c79d7cef"
+        "sha256": "d20a170dfeffd94a234ee1c75d9ec5e4a869067c8393cd2cc505c321c79d7cef",
+        "specId": "points-size"
       },
       {
         "id": "math-grade-9-p35",
@@ -678,7 +755,8 @@
         "src": "math/grade-9/image7.png",
         "width": 168,
         "height": 214,
-        "sha256": "857059ec2c4b0540502395d8a8c2f341c63b946c59521c01f0e276310afe77f9"
+        "sha256": "857059ec2c4b0540502395d8a8c2f341c63b946c59521c01f0e276310afe77f9",
+        "specId": "points-size"
       },
       {
         "id": "math-grade-9-p42",
@@ -687,7 +765,8 @@
         "src": "math/grade-9/image10.png",
         "width": 323,
         "height": 300,
-        "sha256": "077181d2ad3830f3089e329d8b46d0cdfbe38882c2cc8bf47185dfc407d32490"
+        "sha256": "077181d2ad3830f3089e329d8b46d0cdfbe38882c2cc8bf47185dfc407d32490",
+        "specId": "feathers"
       },
       {
         "id": "math-grade-9-p44",
@@ -696,7 +775,8 @@
         "src": "math/grade-9/image1.png",
         "width": 493,
         "height": 347,
-        "sha256": "2ce120dfbb8e41bf4666c31c27c69e9dd84d634ebd4811b39511e57b58ce20db"
+        "sha256": "2ce120dfbb8e41bf4666c31c27c69e9dd84d634ebd4811b39511e57b58ce20db",
+        "specId": "feathers"
       },
       {
         "id": "math-grade-9-p58",
@@ -705,7 +785,8 @@
         "src": "math/grade-9/image11.png",
         "width": 494,
         "height": 389,
-        "sha256": "53f6b30a4eadb553609aba18edce50af3ffe7b6086b4c021362d5419358464f5"
+        "sha256": "53f6b30a4eadb553609aba18edce50af3ffe7b6086b4c021362d5419358464f5",
+        "specId": "construction-labels"
       },
       {
         "id": "math-grade-9-p70",
@@ -714,7 +795,8 @@
         "src": "math/grade-9/image9.png",
         "width": 640,
         "height": 202,
-        "sha256": "09ca7e99f8b9dcbb59115d676f3d15f227888d3b699386807a123e137a046662"
+        "sha256": "09ca7e99f8b9dcbb59115d676f3d15f227888d3b699386807a123e137a046662",
+        "specId": "number-line-fonts"
       },
       {
         "id": "math-grade-9-p81",
@@ -723,7 +805,8 @@
         "src": "math/grade-9/image8.png",
         "width": 463,
         "height": 665,
-        "sha256": "31df75de029943aca042b6fee8699d5ed49129bb2cfc0710c44e38fef39050ed"
+        "sha256": "31df75de029943aca042b6fee8699d5ed49129bb2cfc0710c44e38fef39050ed",
+        "specId": "bar-graph"
       },
       {
         "id": "math-grade-9-p84",
@@ -732,7 +815,8 @@
         "src": "math/grade-9/image3.png",
         "width": 510,
         "height": 500,
-        "sha256": "fe23c2b7aff941bd76232f6184358b978b34e1980d408e8cbc6ee24339fe4269"
+        "sha256": "fe23c2b7aff941bd76232f6184358b978b34e1980d408e8cbc6ee24339fe4269",
+        "specId": "bar-graph"
       },
       {
         "id": "math-grade-9-p86",
@@ -741,7 +825,8 @@
         "src": "math/grade-9/image4.png",
         "width": 400,
         "height": 350,
-        "sha256": "7baa3927c31736578df91346268d54eab57d246b6322a010f27c7de4d35d30e5"
+        "sha256": "7baa3927c31736578df91346268d54eab57d246b6322a010f27c7de4d35d30e5",
+        "specId": "bar-graph"
       },
       {
         "id": "math-grade-9-p90",
@@ -750,7 +835,8 @@
         "src": "math/grade-9/image6.png",
         "width": 520,
         "height": 370,
-        "sha256": "83515de843e9fe32c23d69abb888ad0dff781c2c60875b2b5c69be60b391d2ad"
+        "sha256": "83515de843e9fe32c23d69abb888ad0dff781c2c60875b2b5c69be60b391d2ad",
+        "specId": "bar-graph"
       },
       {
         "id": "math-grade-9-p94",
@@ -759,7 +845,8 @@
         "src": "math/grade-9/image2.png",
         "width": 446,
         "height": 325,
-        "sha256": "dd002647999bbcc9cfdc1597d6d77b15311205aa6834fe55e8dac638bcfb03fc"
+        "sha256": "dd002647999bbcc9cfdc1597d6d77b15311205aa6834fe55e8dac638bcfb03fc",
+        "specId": "bar-graph"
       }
     ]
   },
@@ -775,7 +862,8 @@
         "src": "math/grade-10/image23.png",
         "width": 1163,
         "height": 126,
-        "sha256": "7853c131209ebccf8b3f608f8a75bb18ba1e67bb16754c6d693723b3cbdf74f9"
+        "sha256": "7853c131209ebccf8b3f608f8a75bb18ba1e67bb16754c6d693723b3cbdf74f9",
+        "specId": "solid-line"
       },
       {
         "id": "math-grade-10-p24",
@@ -784,7 +872,8 @@
         "src": "math/grade-10/image29.png",
         "width": 488,
         "height": 579,
-        "sha256": "32c8b0ec9e85c7819e74c5418663dc773ce5a61ae7f7cf2f75fca1b4a13401a2"
+        "sha256": "32c8b0ec9e85c7819e74c5418663dc773ce5a61ae7f7cf2f75fca1b4a13401a2",
+        "specId": "solid-line"
       },
       {
         "id": "math-grade-10-p36",
@@ -793,7 +882,8 @@
         "src": "math/grade-10/image22.png",
         "width": 1163,
         "height": 126,
-        "sha256": "6b398152a44109dc5b6a2185da256fc1b0b24a36cdde861144627b1760b28a7e"
+        "sha256": "6b398152a44109dc5b6a2185da256fc1b0b24a36cdde861144627b1760b28a7e",
+        "specId": "dotted-line"
       },
       {
         "id": "math-grade-10-p55",
@@ -802,7 +892,8 @@
         "src": "math/grade-10/image17.png",
         "width": 424,
         "height": 335,
-        "sha256": "d20a170dfeffd94a234ee1c75d9ec5e4a869067c8393cd2cc505c321c79d7cef"
+        "sha256": "d20a170dfeffd94a234ee1c75d9ec5e4a869067c8393cd2cc505c321c79d7cef",
+        "specId": "points-size"
       },
       {
         "id": "math-grade-10-p60",
@@ -811,7 +902,8 @@
         "src": "math/grade-10/image10.png",
         "width": 168,
         "height": 214,
-        "sha256": "857059ec2c4b0540502395d8a8c2f341c63b946c59521c01f0e276310afe77f9"
+        "sha256": "857059ec2c4b0540502395d8a8c2f341c63b946c59521c01f0e276310afe77f9",
+        "specId": "points-size"
       },
       {
         "id": "math-grade-10-p75",
@@ -820,7 +912,8 @@
         "src": "math/grade-10/image15.png",
         "width": 448,
         "height": 424,
-        "sha256": "00bd129cf60bae4f85b8039c08f3142fd24f092219638090a7c45b0ee08cf68c"
+        "sha256": "00bd129cf60bae4f85b8039c08f3142fd24f092219638090a7c45b0ee08cf68c",
+        "specId": "vertex-label"
       },
       {
         "id": "math-grade-10-p88",
@@ -829,7 +922,8 @@
         "src": "math/grade-10/image24.png",
         "width": 1185,
         "height": 147,
-        "sha256": "b5bc0e69099692d69eaebeea6c7851d0a57770011a489ba8aeae008cea1fd232"
+        "sha256": "b5bc0e69099692d69eaebeea6c7851d0a57770011a489ba8aeae008cea1fd232",
+        "specId": "measurement-label"
       },
       {
         "id": "math-grade-10-p91",
@@ -838,7 +932,8 @@
         "src": "math/grade-10/image7.png",
         "width": 284,
         "height": 1000,
-        "sha256": "8b06c659eae0ea9cc1f5fffdee7d007257971b3fb854d1f846ad0e662b2c2e27"
+        "sha256": "8b06c659eae0ea9cc1f5fffdee7d007257971b3fb854d1f846ad0e662b2c2e27",
+        "specId": "measurement-label"
       },
       {
         "id": "math-grade-10-p94",
@@ -847,7 +942,8 @@
         "src": "math/grade-10/image18.png",
         "width": 298,
         "height": 1000,
-        "sha256": "307614c0ab5662a4748b965fb70837b8584941a7f24f579d23a03e67ee541604"
+        "sha256": "307614c0ab5662a4748b965fb70837b8584941a7f24f579d23a03e67ee541604",
+        "specId": "measurement-label"
       },
       {
         "id": "math-grade-10-p100",
@@ -856,7 +952,8 @@
         "src": "math/grade-10/image4.png",
         "width": 1200,
         "height": 663,
-        "sha256": "e761ef3708e2b2b1e8b2f6484461ff8cbdd2baab4f81e1c2f37d28635831392f"
+        "sha256": "e761ef3708e2b2b1e8b2f6484461ff8cbdd2baab4f81e1c2f37d28635831392f",
+        "specId": "math-symbol-label"
       },
       {
         "id": "math-grade-10-p103",
@@ -865,7 +962,8 @@
         "src": "math/grade-10/image6.png",
         "width": 1496,
         "height": 648,
-        "sha256": "40a796bcbce11546e7b6772da7b39819943834c2c2b7e7f469da2cfc28d3f4f9"
+        "sha256": "40a796bcbce11546e7b6772da7b39819943834c2c2b7e7f469da2cfc28d3f4f9",
+        "specId": "math-symbol-label"
       },
       {
         "id": "math-grade-10-p114",
@@ -874,7 +972,8 @@
         "src": "math/grade-10/image16.png",
         "width": 629,
         "height": 234,
-        "sha256": "922b2062290d3a9261f0c895fef66316bdd88624b5a028b4acc0ddf0565c7274"
+        "sha256": "922b2062290d3a9261f0c895fef66316bdd88624b5a028b4acc0ddf0565c7274",
+        "specId": "sequence-spec"
       },
       {
         "id": "math-grade-10-p131",
@@ -883,7 +982,8 @@
         "src": "math/grade-10/image19.png",
         "width": 320,
         "height": 383,
-        "sha256": "e815482caa18cf3ed1e57b980d7b596a0caa1587b1f3badc4f9113c515fa5ced"
+        "sha256": "e815482caa18cf3ed1e57b980d7b596a0caa1587b1f3badc4f9113c515fa5ced",
+        "specId": "sequence-spec"
       },
       {
         "id": "math-grade-10-p150",
@@ -892,7 +992,8 @@
         "src": "math/grade-10/image5.png",
         "width": 418,
         "height": 257,
-        "sha256": "6084a631046a1aae304382759d921e961c919855521a51ad618c41254af0791e"
+        "sha256": "6084a631046a1aae304382759d921e961c919855521a51ad618c41254af0791e",
+        "specId": "angle-marker-spec"
       },
       {
         "id": "math-grade-10-p154",
@@ -901,7 +1002,8 @@
         "src": "math/grade-10/image2.png",
         "width": 346,
         "height": 156,
-        "sha256": "646b1f4c0c8c68335808e51c3b6857ab1426f73e8e34211fb63ec0a8941c7e53"
+        "sha256": "646b1f4c0c8c68335808e51c3b6857ab1426f73e8e34211fb63ec0a8941c7e53",
+        "specId": "angle-marker-spec"
       },
       {
         "id": "math-grade-10-p156",
@@ -910,7 +1012,8 @@
         "src": "math/grade-10/image8.png",
         "width": 199,
         "height": 302,
-        "sha256": "51cddd85c40eee77ee01eef5bb2c52794407e88debece0497df16e74f4795d15"
+        "sha256": "51cddd85c40eee77ee01eef5bb2c52794407e88debece0497df16e74f4795d15",
+        "specId": "angle-marker-spec"
       },
       {
         "id": "math-grade-10-p158",
@@ -919,7 +1022,8 @@
         "src": "math/grade-10/image27.png",
         "width": 373,
         "height": 263,
-        "sha256": "242e463119b39e413d30796e162cd692f14932a590c4c6df7e57ebff4cca897a"
+        "sha256": "242e463119b39e413d30796e162cd692f14932a590c4c6df7e57ebff4cca897a",
+        "specId": "angle-marker-spec"
       },
       {
         "id": "math-grade-10-p173",
@@ -928,7 +1032,8 @@
         "src": "math/grade-10/image30.png",
         "width": 285,
         "height": 257,
-        "sha256": "3c0ffc586a2ae96ececcb6db12a6eb1779f64c4ce978774f056e6338482454a1"
+        "sha256": "3c0ffc586a2ae96ececcb6db12a6eb1779f64c4ce978774f056e6338482454a1",
+        "specId": "hatch-marker"
       },
       {
         "id": "math-grade-10-p175",
@@ -937,7 +1042,8 @@
         "src": "math/grade-10/image13.png",
         "width": 346,
         "height": 185,
-        "sha256": "91ac1d88cf064ee3f3d463b751efc0d25e552f2fc0a8b53c78f5c67a38cb0ed4"
+        "sha256": "91ac1d88cf064ee3f3d463b751efc0d25e552f2fc0a8b53c78f5c67a38cb0ed4",
+        "specId": "hatch-marker"
       },
       {
         "id": "math-grade-10-p185",
@@ -946,7 +1052,8 @@
         "src": "math/grade-10/image11.png",
         "width": 323,
         "height": 300,
-        "sha256": "f89f8bfc722b5c39d91471b44db2901392cae32f4aec90ab50fd9d2049a7a5a7"
+        "sha256": "f89f8bfc722b5c39d91471b44db2901392cae32f4aec90ab50fd9d2049a7a5a7",
+        "specId": "feathers"
       },
       {
         "id": "math-grade-10-p199",
@@ -955,7 +1062,8 @@
         "src": "math/grade-10/image9.png",
         "width": 225,
         "height": 219,
-        "sha256": "885b6a892ad9bcc85d0ab2363b9a02d24748b64a9410028d8c6bc015fbec59f3"
+        "sha256": "885b6a892ad9bcc85d0ab2363b9a02d24748b64a9410028d8c6bc015fbec59f3",
+        "specId": "construction-labels"
       },
       {
         "id": "math-grade-10-p214",
@@ -964,7 +1072,8 @@
         "src": "math/grade-10/image26.png",
         "width": 1434,
         "height": 454,
-        "sha256": "d76604064d6902eaf04ace9cbf812fffa6dffb4af82e6d603bc96a80ee8d91a4"
+        "sha256": "d76604064d6902eaf04ace9cbf812fffa6dffb4af82e6d603bc96a80ee8d91a4",
+        "specId": "number-line-fonts"
       },
       {
         "id": "math-grade-10-p223",
@@ -973,7 +1082,8 @@
         "src": "math/grade-10/image28.png",
         "width": 289,
         "height": 282,
-        "sha256": "962d42b5ed26d3e99a557d442219bd93ad19c28b8b420cfb015b576bd299f06a"
+        "sha256": "962d42b5ed26d3e99a557d442219bd93ad19c28b8b420cfb015b576bd299f06a",
+        "specId": "graph-grid"
       },
       {
         "id": "math-grade-10-p229",
@@ -982,7 +1092,8 @@
         "src": "math/grade-10/image12.png",
         "width": 322,
         "height": 242,
-        "sha256": "92c3a1a65316777d0c1ac41bb19f91f5744b0eeb769e47dac4fdc5a6fed6e1cb"
+        "sha256": "92c3a1a65316777d0c1ac41bb19f91f5744b0eeb769e47dac4fdc5a6fed6e1cb",
+        "specId": "graph-axis"
       },
       {
         "id": "math-grade-10-p248",
@@ -991,7 +1102,8 @@
         "src": "math/grade-10/image1.png",
         "width": 539,
         "height": 445,
-        "sha256": "0d6834ceef68e188980b78b6a6b6839ffcfe987bcbc36755b30a8249013c9944"
+        "sha256": "0d6834ceef68e188980b78b6a6b6839ffcfe987bcbc36755b30a8249013c9944",
+        "specId": "linear-graph"
       },
       {
         "id": "math-grade-10-p250",
@@ -1000,7 +1112,8 @@
         "src": "math/grade-10/image32.png",
         "width": 1774,
         "height": 1165,
-        "sha256": "77be108fb153c9dabc92b5c0889bacde3b915e63ed550928282e5ab1de23678f"
+        "sha256": "77be108fb153c9dabc92b5c0889bacde3b915e63ed550928282e5ab1de23678f",
+        "specId": "linear-graph"
       },
       {
         "id": "math-grade-10-p256",
@@ -1009,7 +1122,8 @@
         "src": "math/grade-10/image3.png",
         "width": 447,
         "height": 625,
-        "sha256": "5c677546dbb9f3fdd63708050eef0ea50738d7d29984d7826dd95256be193c75"
+        "sha256": "5c677546dbb9f3fdd63708050eef0ea50738d7d29984d7826dd95256be193c75",
+        "specId": "linear-graph"
       },
       {
         "id": "math-grade-10-p261",
@@ -1018,7 +1132,8 @@
         "src": "math/grade-10/image33.png",
         "width": 1480,
         "height": 1150,
-        "sha256": "3711dd22b8d78731214276dc478b7c59596d72bbb30498187888fb4f98946a4f"
+        "sha256": "3711dd22b8d78731214276dc478b7c59596d72bbb30498187888fb4f98946a4f",
+        "specId": "linear-graph"
       },
       {
         "id": "math-grade-10-p263",
@@ -1027,7 +1142,8 @@
         "src": "math/grade-10/image25.png",
         "width": 275,
         "height": 482,
-        "sha256": "5b29e50465522e406bb3e0a575e27c629e0db5314c4931f1a72dccf1525de785"
+        "sha256": "5b29e50465522e406bb3e0a575e27c629e0db5314c4931f1a72dccf1525de785",
+        "specId": "linear-graph"
       },
       {
         "id": "math-grade-10-p265",
@@ -1036,7 +1152,8 @@
         "src": "math/grade-10/image14.png",
         "width": 316,
         "height": 422,
-        "sha256": "8368eb5cd676dcc3ac16fd1225414a166004d5265f675aa2c518574f30cf785e"
+        "sha256": "8368eb5cd676dcc3ac16fd1225414a166004d5265f675aa2c518574f30cf785e",
+        "specId": "linear-graph"
       },
       {
         "id": "math-grade-10-p269",
@@ -1045,7 +1162,8 @@
         "src": "math/grade-10/image34.png",
         "width": 1191,
         "height": 1933,
-        "sha256": "dc715ab33eaebf19c7d93e4962a06ddbff9e631b5f15eb6da6ca3ea2b5aaf938"
+        "sha256": "dc715ab33eaebf19c7d93e4962a06ddbff9e631b5f15eb6da6ca3ea2b5aaf938",
+        "specId": "linear-graph"
       },
       {
         "id": "math-grade-10-p281",
@@ -1054,7 +1172,8 @@
         "src": "math/grade-10/image31.png",
         "width": 1730,
         "height": 1224,
-        "sha256": "7cf2aabe3e98b17216fcc2b59e6ecc095505103d77ef2e10c764176d9a394533"
+        "sha256": "7cf2aabe3e98b17216fcc2b59e6ecc095505103d77ef2e10c764176d9a394533",
+        "specId": "bar-graph"
       },
       {
         "id": "math-grade-10-p284",
@@ -1063,7 +1182,8 @@
         "src": "math/grade-10/image21.png",
         "width": 943,
         "height": 868,
-        "sha256": "89694aed7abca36a88819c815d954bfba5144e98047ca37b15492eb10b8c0980"
+        "sha256": "89694aed7abca36a88819c815d954bfba5144e98047ca37b15492eb10b8c0980",
+        "specId": "bar-graph"
       },
       {
         "id": "math-grade-10-p295",
@@ -1072,7 +1192,8 @@
         "src": "math/grade-10/image20.png",
         "width": 565,
         "height": 430,
-        "sha256": "52b4eb8ed00dccaf83e32c7547c91b4ee5bf19857e5b82ed12a0bae7dce16162"
+        "sha256": "52b4eb8ed00dccaf83e32c7547c91b4ee5bf19857e5b82ed12a0bae7dce16162",
+        "specId": "multi-line-graph"
       }
     ]
   },
@@ -1088,7 +1209,8 @@
         "src": "biology/updated/image23.png",
         "width": 652,
         "height": 578,
-        "sha256": "ba3624292bbe2c62372025347fef2102ef6c17a4a4f67f6511b2e6d3a8386b9b"
+        "sha256": "ba3624292bbe2c62372025347fef2102ef6c17a4a4f67f6511b2e6d3a8386b9b",
+        "specId": "bio-general-labels"
       },
       {
         "id": "biology-updated-p22",
@@ -1097,7 +1219,8 @@
         "src": "biology/updated/image7.png",
         "width": 874,
         "height": 586,
-        "sha256": "c8b28a0a975a0e2a2107df33001bad7b364c400a87a9566e0f14aa340e393950"
+        "sha256": "c8b28a0a975a0e2a2107df33001bad7b364c400a87a9566e0f14aa340e393950",
+        "specId": "bio-general-labels"
       },
       {
         "id": "biology-updated-p25",
@@ -1106,7 +1229,8 @@
         "src": "biology/updated/image22.png",
         "width": 279,
         "height": 354,
-        "sha256": "88e391026ffd43aebc615e64e42f57aef9eb70ed0e3b531e714b64c90bd40982"
+        "sha256": "88e391026ffd43aebc615e64e42f57aef9eb70ed0e3b531e714b64c90bd40982",
+        "specId": "bio-general-labels"
       },
       {
         "id": "biology-updated-p35",
@@ -1115,7 +1239,8 @@
         "src": "biology/updated/image8.jpg",
         "width": 1982,
         "height": 1724,
-        "sha256": "ca6508d263a4c8f9b94fd942a252aabe85f4242a28f57686acbcae436bf9e4b5"
+        "sha256": "ca6508d263a4c8f9b94fd942a252aabe85f4242a28f57686acbcae436bf9e4b5",
+        "specId": "cell-membrane"
       },
       {
         "id": "biology-updated-p38",
@@ -1124,7 +1249,8 @@
         "src": "biology/updated/image6.jpg",
         "width": 2048,
         "height": 1461,
-        "sha256": "f54fc46a65747754438711b7b2e0f3c774c5ce05aa021b56f71f77f0d5b4e1f7"
+        "sha256": "f54fc46a65747754438711b7b2e0f3c774c5ce05aa021b56f71f77f0d5b4e1f7",
+        "specId": "chromosome"
       },
       {
         "id": "biology-updated-p40",
@@ -1133,7 +1259,8 @@
         "src": "biology/updated/image3.jpg",
         "width": 2048,
         "height": 1461,
-        "sha256": "e5130e9c02e27e3053896d577d1d13e9bf2812c267bfb541a086491d576e3052"
+        "sha256": "e5130e9c02e27e3053896d577d1d13e9bf2812c267bfb541a086491d576e3052",
+        "specId": "dna-atgc"
       },
       {
         "id": "biology-updated-p43",
@@ -1142,7 +1269,8 @@
         "src": "biology/updated/image12.jpg",
         "width": 2048,
         "height": 1798,
-        "sha256": "043ae1945033e7ac3d43171340c3d319c38b0dd106e2291cb78b7581e8ff03fc"
+        "sha256": "043ae1945033e7ac3d43171340c3d319c38b0dd106e2291cb78b7581e8ff03fc",
+        "specId": "enzymes"
       },
       {
         "id": "biology-updated-p47",
@@ -1151,7 +1279,8 @@
         "src": "biology/updated/image20.jpg",
         "width": 1982,
         "height": 1724,
-        "sha256": "18a841829a18b561748467da682775e66a3f123962832551b098e3cb2a78224f"
+        "sha256": "18a841829a18b561748467da682775e66a3f123962832551b098e3cb2a78224f",
+        "specId": "mitochondria"
       },
       {
         "id": "biology-updated-p51",
@@ -1160,7 +1289,8 @@
         "src": "biology/updated/image1.jpg",
         "width": 2048,
         "height": 1461,
-        "sha256": "052d1b73d225874ea3ca03636266b541767f558b3cec0e8f758215eefa262a2f"
+        "sha256": "052d1b73d225874ea3ca03636266b541767f558b3cec0e8f758215eefa262a2f",
+        "specId": "nucleus-dna"
       },
       {
         "id": "biology-updated-p53",
@@ -1169,7 +1299,8 @@
         "src": "biology/updated/image9.jpg",
         "width": 2048,
         "height": 1461,
-        "sha256": "6c3d2009e0530787020577804f651410fe6cf1b05393efb9051fed60af6db95b"
+        "sha256": "6c3d2009e0530787020577804f651410fe6cf1b05393efb9051fed60af6db95b",
+        "specId": "ribosome"
       },
       {
         "id": "biology-updated-p57",
@@ -1178,7 +1309,8 @@
         "src": "biology/updated/image2.png",
         "width": 580,
         "height": 329,
-        "sha256": "ccdac1db6be6565934f2f4249e9f99e3a96d45c46410bdbc31f30b27519ecc12"
+        "sha256": "ccdac1db6be6565934f2f4249e9f99e3a96d45c46410bdbc31f30b27519ecc12",
+        "specId": "plant-cell"
       },
       {
         "id": "biology-updated-p59",
@@ -1187,7 +1319,8 @@
         "src": "biology/updated/image21.png",
         "width": 1831,
         "height": 272,
-        "sha256": "c330711a683346a8425121f361c0a47bc84d8fc3451d3ea4c8c70a2188ec03bf"
+        "sha256": "c330711a683346a8425121f361c0a47bc84d8fc3451d3ea4c8c70a2188ec03bf",
+        "specId": "plant-cell"
       },
       {
         "id": "biology-updated-p63",
@@ -1196,7 +1329,8 @@
         "src": "biology/updated/image4.png",
         "width": 1424,
         "height": 835,
-        "sha256": "cfe467fa1b58b141a392e683d2c3513efce8c46c33c83ced01bec46e8a58dd37"
+        "sha256": "cfe467fa1b58b141a392e683d2c3513efce8c46c33c83ced01bec46e8a58dd37",
+        "specId": "bacteria-cell"
       },
       {
         "id": "biology-updated-p66",
@@ -1205,7 +1339,8 @@
         "src": "biology/updated/image17.png",
         "width": 1085,
         "height": 1014,
-        "sha256": "8ef701ebeedf3da8b280ed57a76b59b8bd2ab15477ed25ba811d06e13538e3d2"
+        "sha256": "8ef701ebeedf3da8b280ed57a76b59b8bd2ab15477ed25ba811d06e13538e3d2",
+        "specId": "bacteria-cell"
       },
       {
         "id": "biology-updated-p70",
@@ -1214,7 +1349,8 @@
         "src": "biology/updated/image15.png",
         "width": 562,
         "height": 392,
-        "sha256": "31f89cb341540129605399da66959e35662a32e225b146700f6c70c76b7cbaff"
+        "sha256": "31f89cb341540129605399da66959e35662a32e225b146700f6c70c76b7cbaff",
+        "specId": "membrane-proteins"
       },
       {
         "id": "biology-updated-p75",
@@ -1223,7 +1359,8 @@
         "src": "biology/updated/image16.png",
         "width": 504,
         "height": 505,
-        "sha256": "458e43328ff81832e245384834d0825c7b79dcaa696a740198fda35097541417"
+        "sha256": "458e43328ff81832e245384834d0825c7b79dcaa696a740198fda35097541417",
+        "specId": "protein-primary"
       },
       {
         "id": "biology-updated-p82",
@@ -1232,7 +1369,8 @@
         "src": "biology/updated/image14.png",
         "width": 435,
         "height": 521,
-        "sha256": "342ad6cccdb128cfd0b6ef3967c523fca4340779ab99c68ad4f83befa5bb7cbb"
+        "sha256": "342ad6cccdb128cfd0b6ef3967c523fca4340779ab99c68ad4f83befa5bb7cbb",
+        "specId": "protein-secondary"
       },
       {
         "id": "biology-updated-p85",
@@ -1241,7 +1379,8 @@
         "src": "biology/updated/image11.png",
         "width": 494,
         "height": 190,
-        "sha256": "caf2635e42121bd3294c1f2bb8070ad102f849575a80fcc8095c9545471bf664"
+        "sha256": "caf2635e42121bd3294c1f2bb8070ad102f849575a80fcc8095c9545471bf664",
+        "specId": "protein-secondary"
       },
       {
         "id": "biology-updated-p89",
@@ -1250,7 +1389,8 @@
         "src": "biology/updated/image10.png",
         "width": 630,
         "height": 527,
-        "sha256": "4cd25f30536cd9fd4c7da87fa3bd22a0736a3764e723891b10e8b66079ad0bef"
+        "sha256": "4cd25f30536cd9fd4c7da87fa3bd22a0736a3764e723891b10e8b66079ad0bef",
+        "specId": "protein-tertiary"
       },
       {
         "id": "biology-updated-p103",
@@ -1259,7 +1399,8 @@
         "src": "biology/updated/image13.png",
         "width": 31,
         "height": 65,
-        "sha256": "3161657f7fc0377f0a08372560250efea3d4eca1265f19c0576b468c135dda65"
+        "sha256": "3161657f7fc0377f0a08372560250efea3d4eca1265f19c0576b468c135dda65",
+        "specId": "lipid-low"
       },
       {
         "id": "biology-updated-p111",
@@ -1268,7 +1409,8 @@
         "src": "biology/updated/image5.png",
         "width": 839,
         "height": 267,
-        "sha256": "58405f9573f026f6a1140ce835d36ecddcff2f549e78fda4631e27fe99e55bd5"
+        "sha256": "58405f9573f026f6a1140ce835d36ecddcff2f549e78fda4631e27fe99e55bd5",
+        "specId": "lipid-high"
       },
       {
         "id": "biology-updated-p115",
@@ -1277,7 +1419,8 @@
         "src": "biology/updated/image18.png",
         "width": 1272,
         "height": 937,
-        "sha256": "f4d74b1be908db109324ef81eccf0f665f73e33e8133a60cbc00108439536663"
+        "sha256": "f4d74b1be908db109324ef81eccf0f665f73e33e8133a60cbc00108439536663",
+        "specId": "energy-molecule"
       },
       {
         "id": "biology-updated-p123",
@@ -1286,7 +1429,8 @@
         "src": "biology/updated/image19.png",
         "width": 275,
         "height": 188,
-        "sha256": "788257a5660db54e6d55714edd6ef3b3f2e0fcb58d0f3ddbaa5672bfa5531406"
+        "sha256": "788257a5660db54e6d55714edd6ef3b3f2e0fcb58d0f3ddbaa5672bfa5531406",
+        "specId": "energy-molecule"
       }
     ]
   },

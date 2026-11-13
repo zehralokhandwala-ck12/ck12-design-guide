@@ -14,7 +14,7 @@
   --bg:#f4f5f7; --surface:#fff; --surface2:#f0f1f4;
   --border:#e3e5ea; --border2:#c8cdd7;
   /* CONTRAST-FIXED: was #737885 (fails) → now #5f6472 (6.1:1 on white ✓) */
-  --text:#1a1d23; --text-mid:#44485a; --text-muted:#5f6472; --text-dim:#9ba0ad;
+  --text:#1a1d23; --text-mid:#44485a; --text-muted:#5f6472; --text-dim:#626876;
   --warn-bg:#fff5e6; --warn-border:#ffd9a8;
   --info-bg:#eeeeff; --info-border:#c5c3f5;
   --note-bg:#f6f7f9; --note-border:#e3e5ea;
@@ -297,6 +297,63 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 .card-edit{order:2;border:1px solid var(--border);border-radius:5px;background:white;color:var(--text-mid);padding:4px 10px;cursor:pointer}
 .inline-editor{display:grid;gap:12px;padding:16px}.inline-editor fieldset{border:1px solid var(--border);padding:10px;min-width:0}.inline-editor label{display:grid;gap:3px;font-size:13px}.inline-editor input{min-width:0;padding:6px;width:100%;box-sizing:border-box}.inline-editor .edit-row{display:flex;flex-wrap:wrap;align-items:end;gap:8px;margin-bottom:8px}.edit-row label{flex:1 1 110px}.inline-editor button{cursor:pointer;padding:5px 10px}.inline-editor img{width:85px;height:60px;object-fit:contain}
 </style>
+<style>
+#main{min-width:0}
+#section-menu{display:flex;flex-direction:column;min-height:0;flex:1}
+#menu-toggle{display:none}
+.ri,.subject-card{display:block;color:inherit;text-decoration:none}
+.nav-item{text-decoration:none}
+.sr-sources{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px}
+.sr-sources a,.return-link{color:var(--green-dark);text-underline-offset:3px}
+.rule-context{margin-bottom:14px}
+.placement-guide{margin:20px 0 24px}
+.placement-guide h4{font-size:18px}
+.placement-nav{display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0 14px}
+.placement-guide a{color:var(--green-dark);text-underline-offset:3px}
+.placement-case{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px;padding:18px 0;border-top:1px solid var(--border);scroll-margin-top:72px}
+.placement-case h5{font-size:16px;line-height:1.35;margin-bottom:6px}
+.placement-case p,.placement-case dl,.placement-case figcaption{font-size:13px;line-height:1.5}
+.placement-case dl{margin-top:12px}
+.placement-case dt{font-weight:600;margin-top:8px}
+.placement-case dd{font-family:var(--mono)}
+.placement-case figure{min-width:0}
+.placement-case figure button{display:block;width:100%;padding:6px;border:1px solid var(--border);border-radius:6px;background:white;cursor:zoom-in}
+.placement-case figure img{display:block;width:100%;height:auto}
+.placement-case figcaption{margin-top:6px;color:var(--text-muted)}
+.placement-case:focus{outline:2px solid var(--green);outline-offset:2px}
+@media(max-width:600px){.placement-case{grid-template-columns:1fr;gap:12px}.placement-case :is(p,dl,figcaption){font-size:14px}}
+.matched-rule{background:var(--green-pale);box-shadow:inset 3px 0 var(--green)}
+.matched-rule>td:first-child,.matched-rule>th:first-child{padding-left:8px!important}
+.matched-grade{box-shadow:inset 0 -2px var(--green)}
+.ri-match{font-size:12px;line-height:1.5}
+@media(max-width:760px){
+  body{flex-direction:column;height:100dvh}
+  #sidebar{position:relative;z-index:30;width:100%;min-width:0;flex:none;overflow:visible;border:0;border-bottom:1px solid var(--border)}
+  .sidebar-brand{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 14px;border:0}
+  .brand-logo{margin:0;min-height:44px}.brand-sub,.brand-version{display:none}
+  #menu-toggle{display:block;min-height:44px;padding:0 10px;border:0;background:none;color:var(--green-dark);font:600 14px var(--sans);cursor:pointer}
+  #menu-toggle[aria-expanded="true"]{background:var(--green-light)}
+  .search-wrap{padding:0 14px 10px;border:0}.search-icon{top:calc(50% - 5px);left:25px}
+  #search-input{min-height:44px;font-size:16px;padding-right:42px}
+  #sclear{top:calc(50% - 5px);right:15px;width:42px;height:42px;background:transparent;font-size:15px}
+  #section-menu{display:none;position:absolute;top:100%;left:0;right:0;background:white;max-height:calc(100dvh - 120px);overflow:auto;padding-top:10px;border-bottom:1px solid var(--border);box-shadow:var(--sh-md)}
+  #sidebar.menu-open #section-menu{display:flex}
+  #section-menu>a{padding:8px 0}#nav{overflow:visible}
+  .nav-group-btn,.nav-item{min-height:44px}
+  .welcome,.sr,.content-area{padding:16px 14px 40px}
+  .subject-cards,.welcome-dl-grid{grid-template-columns:1fr}
+  .welcome-hero{padding:18px;margin-bottom:14px}
+  .sticky-bar{padding:5px 12px;gap:8px;flex-wrap:wrap;background:var(--bg)}
+  .sticky-bar>.subject-badge{display:none}
+  .breadcrumb{flex-wrap:wrap;min-width:80px}
+  .sticky-bar a,.res-btn{display:inline-flex;align-items:center;min-height:42px}
+  .res-dropdown{right:12px;width:min(440px,calc(100vw - 24px));max-height:55dvh}
+  .card-body{padding:12px}.card-header{flex-wrap:wrap}
+  .spec-table td,.source-links,.sc-desc,.ri-name{font-size:14px}
+  .dl-btn{white-space:normal}.sc-count{font-size:12px}
+}
+@media(max-height:480px) and (max-width:760px){#section-menu{max-height:calc(100dvh - 110px)}}
+</style>
 <script defer src="contribute/copy.js"></script></head>
 <body>
 
@@ -311,11 +368,12 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 
 <div id="sidebar">
   <div class="sidebar-brand">
-    <a class="brand-logo" href="#" onclick="renderWelcome();clearNav();return false;" aria-label="CK-12 Diagram Style Guide — Go to home">
+    <a class="brand-logo" href="?" aria-label="CK-12 Diagram Style Guide — Go to home">
       <svg width="52" height="19" viewBox="0 0 74 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M13.9449 24.9298C13.0997 25.3241 11.2073 26 8.85564 26C3.49081 26 0 22.2638 0 16.6877C0 11.0741 3.74803 7 9.53543 7C11.4462 7 13.1365 7.48814 14 7.97628L13.2651 10.4733C12.5118 10.0791 11.2625 9.60968 9.51706 9.60968C5.43832 9.60968 3.25197 12.7075 3.25197 16.5C3.25197 20.7055 5.89764 23.2777 9.40682 23.2777C11.2441 23.2777 12.4383 22.8271 13.3753 22.414L13.9449 24.9298Z" fill="#FF6633"/><path d="M44 14V17H35V14H44Z" fill="#99CC66"/><path d="M50.5081 4.11538H50.4042L45.7067 6.48077L45 3.92308L50.8822 1H54V26H50.4665V4.11538H50.5081Z" fill="#99CC66"/><path d="M59.0181 25.9811V23.9576L61.5181 21.4425C67.5326 15.4478 70.2862 12.2708 70.2862 8.5643C70.2862 6.06808 69.1812 3.76097 65.6486 3.76097C63.5109 3.76097 61.7355 4.89561 60.6486 5.84115L59.6159 3.49622C61.192 2.11573 63.5471 1 66.2645 1C71.2826 1 73.4203 4.61195 73.4203 8.14826C73.4203 12.6868 70.25 16.3366 65.3225 21.348L63.4565 23.1634V23.2579H74V26H59V25.9811H59.0181Z" fill="#99CC66"/><path d="M34.5729 23.0925C34.7958 22.7197 34.9443 22.3283 35 21.9556C35 21.9556 28.6313 13.1398 21.9284 12.2824C22.0212 12.2452 22.2069 12.1706 22.2069 12.1706C27.4615 10.8659 32.1592 6.35556 33.1432 4.37993C33.1804 4.28674 32.9761 3.83943 32.9761 3.74624C31.2679 6.02007 29.2997 8.79713 23.4509 11.5928C29.0769 8.75986 32.8276 3.03799 32.8276 3.03799C32.8276 3.03799 32.7347 2.75842 32.5119 2.32975C31.8064 3.41075 30.1538 5.61004 26.8302 8.40574C29.7639 5.46093 31.6578 2.83297 32.2891 1.91971C31.9178 1.34194 31.3236 0.633692 30.3767 0C28.5942 2.90753 24.0637 8.07025 21 10.3627V14.3326C24.008 16.476 27.313 19.719 30.9708 26C31.8249 25.6645 33.0504 24.8631 33.9045 23.9125C33.0504 21.6946 29.931 17.6688 27.1088 15.0968C30.5438 17.1283 32.7347 20.1104 34.5729 23.0925Z" fill="#009966"/><path d="M20 12.5564V0H17V26H20V16.1053V12.5564Z" fill="#99CC66"/></svg>
       <div><div class="brand-title">Diagram Style Guide</div><div class="brand-sub">Math · Bio · Physics · Chem</div></div>
     </a>
     <div class="brand-version">v2025 · Math + Science</div>
+    <button id="menu-toggle" aria-expanded="false" aria-controls="section-menu">Subjects ▾</button>
   </div>
 
   <div class="search-wrap">
@@ -325,23 +383,25 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
     <button id="sclear" aria-label="Clear search">✕</button>
   </div>
 
+  <div id="section-menu">
   <a href="source-images/" style="margin:0 18px 10px;color:var(--green-dark);font-size:var(--text-sm)">Source images</a>
   <a class="math-review-link" href="math-review/" style="margin:0 18px 10px;font-size:var(--text-sm)">Math source comparison</a>
   <a class="math-review-link" href="contribute/" style="margin:0 18px 10px;font-size:var(--text-sm)">Add new spec</a>
   <nav id="nav" aria-label="Style guide sections"></nav>
+  </div>
 </div>
 
-<div id="main" tabindex="-1">
+<main id="main" tabindex="-1">
   <div id="content"></div>
-</div>
+</main>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- Resources dropdown panel -->
 <div id="res-dropdown" class="res-dropdown" role="region" aria-label="Downloads and resources"></div>
 
-<script src="specs.js?v=card-edit1"></script>
-<script src="contribute/model.js?v=3"></script>
+<script src="specs.js?v=pie-placement"></script>
+<script src="contribute/model.js?v=4"></script>
 <script src="contribute/save.js"></script><script defer src="contribute/card-editor.js"></script><script src="contribute/published.js?v=f209a3fac474"></script>
 <script src="math-review/guide-links.js?v=curated2"></script>
 <script>
@@ -375,6 +435,10 @@ function closeLightbox() {
 }
 function lbKeyHandler(e) {
   if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'Tab') {
+    e.preventDefault();
+    document.getElementById('lightbox-close').focus();
+  }
 }
 document.getElementById('lightbox').addEventListener('click', function(e) {
   if (e.target === this) closeLightbox();
@@ -420,14 +484,19 @@ function bnr(b) {
 }
 
 /* ── GRADE TABLE (no legend inside — shown once per page) ── */
-function gTable(gt, review) {
-  let h = `<div class="gt-wrap"><table class="gt" role="table" style="--grade-columns:${gt.columns.length-1}">
+function propertyKey(kind, row) {
+  return kind + '-' + (row.id || row.label).normalize('NFKC').toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-|-$/g, '');
+}
+
+function gTable(gt, title) {
+  let h = `<div class="gt-wrap" tabindex="0" role="region" aria-label="Grade comparison for ${escapeAttribute(title)}"><table class="gt" role="table" style="--grade-columns:${gt.columns.length-1}">
     <thead><tr>`;
   gt.columns.forEach(c => { h += `<th scope="col">${c}</th>`; });
   h += `</tr></thead><tbody>`;
-  gt.rows.forEach((r, i) => {
+  gt.rows.forEach(r => {
     const diff = r.highlight && new Set(r.values).size > 1;
-    h += `<tr data-match-row="grade-${i}" tabindex="-1"><th scope="row" style="text-align:left;font-family:var(--sans);color:var(--text-muted);font-size:var(--text-sm);padding:7px 8px 7px 0;font-weight:400;border-bottom:1px solid var(--note-bg)">${r.label}</th>`;
+    h += `<tr data-match-row="${propertyKey('grade', r)}" tabindex="-1"><th scope="row" style="text-align:left;font-family:var(--sans);color:var(--text-muted);font-size:var(--text-sm);padding:7px 8px 7px 0;font-weight:400;border-bottom:1px solid var(--note-bg)">${r.label}</th>`;
     r.values.forEach(v => {
       let cell = v;
       const hm = r.type === 'color' && v.match(/#?([0-9a-fA-F]{6})/);
@@ -500,6 +569,7 @@ function toggleResDropdown(subjectDownloads) {
   resDropdownOpen = !resDropdownOpen;
   if (resDropdownOpen) {
     buildResDropdown(subjectDownloads);
+    panel.style.top = Math.round(btn.getBoundingClientRect().bottom + 4) + 'px';
     panel.classList.add('show');
     btn.classList.add('open');
     btn.setAttribute('aria-expanded', 'true');
@@ -525,6 +595,24 @@ document.addEventListener('keydown', function(e) {
 });
 
 /* ── RENDER ELEMENT ── */
+function placementGuide(entry, cases) {
+  if (!cases.length) return '';
+  const href = item => readerLink({spec:entry.id, row:'case-' + item.id, grade:8, q:si.value});
+  const links = cases.map(item => `<a href="${href(item)}">${item.title}</a>`).join('');
+  const examples = cases.map(item => {
+    const settings = item.fields.map(id => entry.specs.find(row => row.id === id)).filter(Boolean);
+    const values = settings.map(row => `<dt>${row.label}</dt><dd>${svClean(row)}</dd>`).join('');
+    return `<section class="placement-case" data-match-row="case-${item.id}" tabindex="-1" aria-labelledby="case-${item.id}">
+      <div><h5 id="case-${item.id}">${item.title}</h5><p>${item.instruction}</p><dl>${values}</dl></div>
+      <figure><button type="button" onclick="openLightbox(this.firstElementChild.src,this.firstElementChild.alt)" aria-label="Enlarge example: ${item.title}">
+        <img src="${item.src}" alt="${escapeAttribute(item.caption)}" loading="lazy" width="${item.width}" height="${item.height}"></button>
+        <figcaption>${item.caption} <a href="source-images/#${item.figure}">Source figure</a></figcaption></figure>
+    </section>`;
+  }).join('');
+  return `<section class="placement-guide" aria-label="Grade 8 label placement"><h4>Grade 8 label placement</h4>
+    <nav class="placement-nav" aria-label="Choose a label placement">${links}</nav>${examples}</section>`;
+}
+
 function renderEl(el, accentColor, subjectBadge) {
   const hasGradeTable = !!el.gradeTable;
   const pill = el.gradeVaries || hasGradeTable;
@@ -547,6 +635,14 @@ function renderEl(el, accentColor, subjectBadge) {
     <div class="card-body">`;
 
   const review = subjectBadge === 'math' ? mathReviewLinks[el.id] : null;
+  const placements = (el.placements || []).filter(item => !el.hiddenImages?.includes(item.src));
+  if (el.id === 'pie-chart') {
+    (el.banners || []).forEach(b => { h += bnr(b); });
+    for (const decision of review?.decisions || []) {
+      h += `<p class="rule-context source-links"><a href="math-review/#decision-${decision.id}">Approved decision · ${decision.label}</a></p>`;
+    }
+    h += placementGuide(el, placements);
+  }
   if (SpecChanges.palettes.includes(el.id)) {
     h += `<p class="source-links"><a href="contribute/?subject=math&amp;category=graphs&amp;target=${el.id}">Add color</a> <a href="contribute/?subject=math&amp;category=graphs&amp;target=${el.id}&amp;operation=edit">Edit palette color</a></p>`;
   }
@@ -561,25 +657,33 @@ function renderEl(el, accentColor, subjectBadge) {
       <iframe src="${el.docEmbed}" class="doc-embed" title="${el.label}" loading="lazy"></iframe>
     </div>`;
   }
-  if (hasGradeTable) h += gTable(el.gradeTable, review);
+  if (hasGradeTable) h += gTable(el.gradeTable, el.label);
 
   if (el.specs && el.specs.length) {
     if (hasGradeTable) h += `<div style="height:12px"></div>`;
     h += `<table class="spec-table" role="table">
       <thead><tr><th scope="col">Property</th><th scope="col">Value</th></tr></thead>
       <tbody>`;
-    el.specs.forEach((s, i) => {
+    el.specs.forEach(s => {
       const note = s.contributionNote ? `<div class="source-links">${s.contributionNote} · <a href="https://github.com/${SpecChanges.repository}/issues/${Number(s.issue)}">Review history</a></div>` : '';
-      h += `<tr data-match-row="spec-${i}" tabindex="-1"><td class="lc">${s.label}</td><td>${svClean(s)}${note}</td></tr>`;
+      const figures = el.id === 'pie-chart' ? review?.fields[s.label] || [] : [];
+      const examples = placements.filter(item => item.fields.includes(s.id));
+      const caseLinks = examples.map(item => `<a href="${readerLink({spec:el.id,row:'case-' + item.id,grade:8,q:si.value})}">Grade 8 example · ${item.title}</a>`);
+      const sources = figures.filter(f => !examples.some(item => item.figure === f.id));
+      const links = caseLinks.concat(sources.map(f => `<a href="source-images/#${f.id}">${f.label}</a>`)).join('');
+      h += `<tr data-match-row="${propertyKey('spec', s)}" tabindex="-1"><td class="lc">${s.label}</td><td>${svClean(s)}${note}${links ? '<div class="source-links">' + links + '</div>' : ''}</td></tr>`;
     });
     h += `</tbody></table>`;
   }
 
   if (!sourceReview) {
     const images = [...(review?.images || []).filter(img=>!el.hiddenImages?.includes(img.src)), ...(el.images || [])];
-    h += imgGallery(images.filter((image, i) => images.findIndex(other => other.src === image.src) === i));
+    h += imgGallery(images.filter((image, i) => !placements.some(item => item.src === image.src) && images.findIndex(other => other.src === image.src) === i));
   }
-  if (el.banners) el.banners.forEach(b => { h += bnr(b); });
+  if (el.banners && el.id !== 'pie-chart') el.banners.forEach(b => { h += bnr(b); });
+  if (subjectBadge === 'biology' && !el.contributed) {
+    h += `<p><a class="math-review-link" href="biology-review/#topic-${el.id}">Source passages for this entry</a></p>`;
+  }
   if (sourceReview) {
     h += imgGallery(el.images);
     if (el.archivalImages?.length) {
@@ -605,6 +709,7 @@ function renderPage(sid, cid, elementId, rowKey, selectedGrade) {
       <span>${sub.label}</span>
       <span style="color:var(--text-dim);font-size:10px" aria-hidden="true">›</span>
       <span aria-current="page">${cat.label}</span>
+      ${elementId ? `<span aria-hidden="true">›</span><span>${cat.elements.find(el => el.id === elementId).label}</span>` : ''}
     </div>
     <span class="subject-badge badge-${sub.badge}" aria-label="Subject: ${sub.label}">${sub.label}</span>
     <a class="math-review-link" href="contribute/?subject=${sid}&amp;category=${cid}">Add new spec</a>
@@ -614,6 +719,9 @@ function renderPage(sid, cid, elementId, rowKey, selectedGrade) {
     </button>
   </div>
   <div class="content-area">`;
+  if (si.value.trim()) {
+    h += `<p class="rule-context"><a class="return-link" href="${readerLink({q:si.value})}">Results for “${escapeSearchText(si.value)}”</a></p>`;
+  }
 
   /* Grade table legend — shown ONCE at top if any grade table exists */
   if (hasAnyGradeTable) {
@@ -635,13 +743,20 @@ function renderPage(sid, cid, elementId, rowKey, selectedGrade) {
     const card = document.getElementById('spec-' + elementId);
     const target = Array.from(card?.querySelectorAll('[data-match-row]') || [])
       .find(row => row.dataset.matchRow === rowKey) || card;
-    if (selectedGrade) {
-      const references = target?.querySelector('.source-links');
-      const gradeLink = references?.querySelector(`a[href*="math-grade-${selectedGrade}-"]`);
-      if (gradeLink) references.prepend(gradeLink);
+    if (selectedGrade && card) {
+      card.querySelector('.card-title').insertAdjacentHTML('afterend', `<span class="grade-pill">Grade ${selectedGrade}</span>`);
+      const headers = target?.closest('.gt')?.tHead.rows[0].cells;
+      if (headers) Array.from(headers).forEach((cell, i) => {
+        if (i && /grade/i.test(cell.textContent) && gradeApplies(cell.textContent, selectedGrade)) {
+          cell.classList.add('matched-grade');
+          target.cells[i].classList.add('matched-grade');
+        }
+      });
     }
+    const isProperty = target?.tagName === 'TR';
+    if (isProperty) target.classList.add('matched-rule');
     target?.focus({ preventScroll: true });
-    target?.scrollIntoView({ block: rowKey ? 'center' : 'start' });
+    target?.scrollIntoView({ block: isProperty ? 'center' : 'start' });
   }
 
   /* Update active nav */
@@ -693,17 +808,15 @@ function buildNav() {
         <span class="nav-group-count" aria-label="${s.categories.length} categories">${s.categories.length}</span>
         <span class="nav-chevron" aria-hidden="true">›</span>
       </button>
-      <div class="nav-items" id="ni-${s.id}" role="list">`;
+      <div class="nav-items" id="ni-${s.id}">`;
     s.categories.forEach(c => {
       const hasWarn = c.elements.some(e => e.banners && e.banners.some(b => b.type === 'warn'));
-      h += `<button class="nav-item"
+      h += `<a class="nav-item"
         data-key="${s.id}__${c.id}"
-        onclick="renderPage('${s.id}','${c.id}')"
-        aria-current="false"
-        role="listitem">
+        href="${readerLink({subject:s.id, category:c.id})}" aria-current="false">
         ${c.label}
         ${hasWarn ? `<span class="nav-warn-dot" aria-label="Contains warnings" title="Contains warnings"></span>` : ''}
-      </button>`;
+      </a>`;
     });
     h += `</div></div>`;
   });
@@ -720,7 +833,7 @@ function renderWelcome() {
       `<span class="sc-cat-tag">${c.label}</span>`).join('');
     const more = s.categories.length > 3
       ? `<span class="sc-cat-tag" style="color:var(--text-dim)">+${s.categories.length - 3} more</span>` : '';
-    return `<button class="subject-card" onclick="renderPage('${s.id}','${firstCat}')" aria-label="Open ${s.label} style guide">
+    return `<a class="subject-card" href="${readerLink({subject:s.id, category:firstCat})}" aria-label="Open ${s.label} style guide">
       <span class="sc-stripe" style="background:${s.accentColor}" aria-hidden="true"></span>
       <div class="sc-header">
         <span class="sc-icon" style="background:${s.iconBg};color:${s.iconColor}" aria-hidden="true">${s.icon}</span>
@@ -732,7 +845,7 @@ function renderWelcome() {
         <span class="sc-count">${s.categories.length} categories</span>
         <span class="sc-arrow" aria-hidden="true">→</span>
       </div>
-    </button>`;
+    </a>`;
   }).join('');
 
   const wdl = `<div class="welcome-dl" role="region" aria-label="Downloads and resources">
@@ -793,7 +906,7 @@ function renderWelcome() {
         <h1>CK-12 Diagram Style Guide</h1>
         <p>Single source of truth for all diagram specifications — for internal teams and external contractors. Pick a subject below to get started.</p>
       </div>
-      <div class="subject-cards" role="list" aria-label="Subjects">${cards}</div>
+      <nav class="subject-cards" aria-label="Subjects">${cards}</nav>
       ${wdl}
       ${legend}
     </div>`;
@@ -834,20 +947,23 @@ function searchSpecs(query) {
           if (!words.length && !scoped) return;
           const field = normalizeSearch(text);
           if (!words.every(word => context.includes(word) || field.includes(word))) return;
-          const score = words.filter(word => field.includes(word)).length * 3
-            + (scoped ? 3 : 0) + (rowKey ? 8 : 0);
+          const fieldMatches = words.filter(word => !context.includes(word) && field.includes(word)).length;
+          const exactTitle = !rowKey && words.length && words.join(' ') === normalizeSearch(e.label);
+          const titleMatches = text === e.label ? words.filter(word => field.includes(word)).length : 0;
+          const score = (exactTitle ? 30 : 0) + titleMatches + fieldMatches * 3
+            + (scoped ? 3 : 0) + (rowKey && (fieldMatches || !words.length) ? 2 : 0);
           if (!best || score > best.score) best = {s, c, e, mt:text, rowKey, score, grade};
         }
         consider(e.label);
-        (e.specs || []).forEach((sp, i) => {
+        (e.specs || []).forEach(sp => {
           if (grade !== null && !gradeApplies(sp.label, grade)) return;
-          consider([sp.label, sp.value, sp.contributionNote].filter(Boolean).join(' · '), 'spec-' + i, grade !== null && /grades?\s*\d/i.test(sp.label));
+          consider([sp.label, sp.value, sp.contributionNote].filter(Boolean).join(' · '), propertyKey('spec', sp), grade !== null && /grades?\s*\d/i.test(sp.label));
         });
-        (e.gradeTable?.rows || []).forEach((row, i) => {
+        (e.gradeTable?.rows || []).forEach(row => {
           row.values.forEach((v, j) => {
             const column = e.gradeTable.columns[j + 1];
             if (grade !== null && !gradeApplies(column, grade)) return;
-            consider(row.label + ' · ' + column + ' · ' + v, 'grade-' + i, grade !== null);
+            consider(row.label + ' · ' + column + ' · ' + v, propertyKey('grade', row), grade !== null);
           });
         });
         for (const b of e.banners || []) consider(b.text.replace(/<[^>]+>/g, ''));
@@ -862,6 +978,21 @@ function escapeSearchText(text) {
   return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 }
 
+function escapeAttribute(text) {
+  return escapeSearchText(text).replaceAll('"', '&quot;');
+}
+
+function queryFor(fields) {
+  const params = new URLSearchParams();
+  for (const [key, value] of Object.entries(fields)) {
+    if (value != null && value !== '') params.set(key, value);
+  }
+  return '?' + params.toString();
+}
+
+function readerLink(fields) {
+  return escapeAttribute(queryFor(fields));
+}
 
 function doSearch(q) {
   const query = q.toLowerCase().trim();
@@ -893,24 +1024,27 @@ function doSearch(q) {
   let h = `<div class="sr" role="region" aria-label="Search results">
     <div class="sr-hd" aria-live="polite"><strong>${res.length} result${res.length !== 1 ? 's' : ''}</strong> for "${escapeSearchText(q)}"</div>`;
 
-  h += `<p><a href="source-images/?q=${encodeURIComponent(query)}">Search source images for this topic</a></p>`;
-  h += `<p><a href="math-review/?q=${encodeURIComponent(query)}">Search the Math source comparison</a></p>`;
   if (!res.length) {
     h += `<div class="empty"><div class="ei" aria-hidden="true">🔍</div><p>No specs found. Try a color code, element name, or px value.</p></div>`;
   } else {
     res.forEach(r => {
-      h += `<button class="ri" onclick="renderPage('${r.s.id}','${r.c.id}','${r.e.id}','${r.rowKey}',${r.grade})" aria-label="Go to ${r.e.label} in ${r.c.label}">
+      const href = readerLink({spec:r.e.id, row:r.rowKey, grade:r.grade, q});
+      h += `<a class="ri" href="${href}">
         <div class="ri-name">${r.e.label}</div>
         <div class="ri-meta">
           <span class="subject-badge badge-${r.s.badge}" style="font-size:9px;padding:2px 6px">${r.s.label}</span>
-          <span aria-hidden="true">›</span> ${r.c.label}
+          <span aria-hidden="true">›</span> ${r.c.label} ${r.grade ? ' · Grade ' + r.grade : ''}
           <span aria-hidden="true">·</span>
-          <span class="ri-match">${escapeSearchText(r.mt)}</span>
+          <span class="ri-match">${r.mt === r.e.label ? 'View specifications' : escapeSearchText(r.mt)}</span>
         </div>
-      </button>`;
+      </a>`;
     });
   }
-  h += `</div>`;
+  h += `<div class="sr-sources"><a href="source-images/?q=${encodeURIComponent(query)}">Search source images</a>`;
+  if (res.some(r => r.s.id === 'math') || /\b(math|grade)\b/i.test(query)) {
+    h += `<a href="math-review/?q=${encodeURIComponent(query)}">Search Math source comparison</a>`;
+  }
+  h += '</div></div>';
   document.getElementById('content').innerHTML = h;
 }
 
@@ -942,20 +1076,67 @@ for (const category of DATA.subjects.find(subject => subject.id === 'math').cate
   }
 }
 buildNav();
-const requestedSpec = new URLSearchParams(location.search).get('spec');
-const initialSubject = DATA.subjects.find(s => s.categories.some(c => c.elements.some(e => e.id === requestedSpec)));
-if (initialSubject) {
-  const category = initialSubject.categories.find(c => c.elements.some(e => e.id === requestedSpec));
-  renderPage(initialSubject.id, category.id, requestedSpec);
-} else {
-  renderWelcome();
+const si = document.getElementById('search-input');
+const menu = document.getElementById('menu-toggle');
+function setMenu(open) {
+  document.getElementById('sidebar').classList.toggle('menu-open', open);
+  menu.setAttribute('aria-expanded', String(open));
+}
+menu.addEventListener('click', () => {
+  const open = menu.getAttribute('aria-expanded') !== 'true';
+  setMenu(open);
+  if (open) document.querySelector('#section-menu a').focus();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') {
+    setMenu(false);
+    menu.focus();
+  }
+});
+document.addEventListener('focusin', event => {
+  if (!event.target.closest('#section-menu, #menu-toggle')) setMenu(false);
+});
+document.addEventListener('click', event => {
+  if (!event.target.closest('#sidebar')) setMenu(false);
+});
+
+function restoreReader() {
+  const params = new URLSearchParams(location.search);
+  si.value = params.get('q') || '';
+  clearNav();
+  document.querySelectorAll('#nav .nh').forEach(item => item.classList.remove('nh'));
+  const spec = params.get('spec');
+  const subject = spec
+    ? DATA.subjects.find(s => s.categories.some(c => c.elements.some(e => e.id === spec)))
+    : DATA.subjects.find(s => s.id === params.get('subject'));
+  const category = subject?.categories.find(c => spec
+    ? c.elements.some(e => e.id === spec) : c.id === params.get('category'));
+  if (category) {
+    document.getElementById('sclear').classList.toggle('vis', Boolean(si.value));
+    const grade = Number(params.get('grade'));
+    renderPage(subject.id, category.id, spec, params.get('row'), Number.isSafeInteger(grade) && grade > 0 ? grade : null);
+  } else {
+    doSearch(si.value);
+  }
 }
 
-const si = document.getElementById('search-input');
-si.addEventListener('input', e => doSearch(e.target.value));
+function updateSearch() {
+  const params = new URLSearchParams(location.search);
+  const isSearch = params.has('q') && !params.has('spec') && !params.has('category');
+  const url = queryFor({q:si.value});
+  if (location.search !== url) history[isSearch ? 'replaceState' : 'pushState'](null, '', url);
+  setMenu(false);
+  closeResDropdown();
+  clearNav();
+  doSearch(si.value);
+  document.getElementById('main').scrollTop = 0;
+}
+si.addEventListener('input', updateSearch);
 document.getElementById('sclear').addEventListener('click', () => {
-  si.value = ''; doSearch(''); si.focus();
+  si.value = ''; updateSearch(); si.focus();
 });
+window.addEventListener('popstate', restoreReader);
+restoreReader();
 </script>
 </body>
 </html>
