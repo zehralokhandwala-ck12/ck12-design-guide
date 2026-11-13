@@ -349,11 +349,16 @@ const DATA = { subjects: [
           {label:"Equation color on low-contrast fills", value:"#666666", type:"color"},
           {label:"Grid color", value:"#000000 @ 10% opacity, 1px"},
           {label:"Solution region", value:"#4D80F5 @ 40% opacity", type:"color-inline", colorValue:"#4D80F5"},
+          {label:"Region shade 1", value:"#EE706B at 20% opacity", type:"color-inline", colorValue:"#EE706B"},
+          {label:"Region shade 2", value:"#5BC9CA at 20% opacity", type:"color-inline", colorValue:"#5BC9CA"},
+          {label:"Region shade 3", value:"#5EBF43 at 15% opacity", type:"color-inline", colorValue:"#5EBF43"},
+          {label:"Region shade 4", value:"#A165EF at 10% opacity", type:"color-inline", colorValue:"#A165EF"},
+          {label:"Region shade 5", value:"#2189F9 at 15% opacity", type:"color-inline", colorValue:"#2189F9"},
+          {label:"Region shade 6", value:"#F29D38 at 25% opacity", type:"color-inline", colorValue:"#F29D38"},
+          {label:"Region shade 7", value:"#CDCA52 at 30% opacity", type:"color-inline", colorValue:"#CDCA52"},
         ],
         banners:[
           {type:"note", text:"Match each region’s shade to its arrow color. Adjust shade opacity for the hue and number of overlapping regions. The solution region uses its specified 40% opacity."},
-          {type:"note", text:"Use #666666 for the equation when a colored region makes #999999 hard to read."},
-          {type:"note", text:"Shade opacity guide: #EE706B→20% · #5BC9CA→20% · #5EBF43→15% · #A165EF→10% · #2189F9→15% · #F29D38→25% · #CDCA52→30%"},
         ]
       },
       { id:"multi-line-graph", label:"Multi-line Graph — Equation Line Colors",

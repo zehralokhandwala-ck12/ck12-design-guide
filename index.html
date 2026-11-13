@@ -292,6 +292,10 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 .gt tbody th{letter-spacing:normal;text-transform:none}
 .gt .sw-btn,.spec-table .sw-btn{max-width:100%}
 @media(max-width:600px){.spec-card{--property-width:7rem}.gt{min-width:calc(var(--grade-columns) * 6.5rem + 7rem)}}
+.gt .gd:has(.sw-btn),.gt .gd:has([data-copy-hex]){background:transparent;padding:0}
+.spec-card [data-copy-hex]{border:0!important}
+.card-edit{order:2;border:1px solid var(--border);border-radius:5px;background:white;color:var(--text-mid);padding:4px 10px;cursor:pointer}
+.inline-editor{display:grid;gap:12px;padding:16px}.inline-editor fieldset{border:1px solid var(--border);padding:10px;min-width:0}.inline-editor label{display:grid;gap:3px;font-size:13px}.inline-editor input{min-width:0;padding:6px;width:100%;box-sizing:border-box}.inline-editor .edit-row{display:flex;flex-wrap:wrap;align-items:end;gap:8px;margin-bottom:8px}.edit-row label{flex:1 1 110px}.inline-editor button{cursor:pointer;padding:5px 10px}.inline-editor img{width:85px;height:60px;object-fit:contain}
 </style>
 <script defer src="contribute/copy.js"></script></head>
 <body>
@@ -336,9 +340,9 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- Resources dropdown panel -->
 <div id="res-dropdown" class="res-dropdown" role="region" aria-label="Downloads and resources"></div>
 
-<script src="specs.js?v=clean-notes1"></script>
-<script src="contribute/model.js"></script>
-<script src="contribute/published.js?v=f209a3fac474"></script>
+<script src="specs.js?v=card-edit1"></script>
+<script src="contribute/model.js?v=3"></script>
+<script src="contribute/save.js"></script><script defer src="contribute/card-editor.js"></script><script src="contribute/published.js?v=f209a3fac474"></script>
 <script src="math-review/guide-links.js?v=curated2"></script>
 <script>
 /* ── HELPERS ── */
@@ -537,7 +541,7 @@ function renderEl(el, accentColor, subjectBadge) {
   let h = `<div class="spec-card" id="spec-${el.id}" tabindex="-1" style="scroll-margin-top:65px">
     <div class="card-header">
       <span class="card-dot" style="background:${accentColor}" aria-hidden="true"></span>
-      <h3 class="card-title">${el.label}</h3>
+      <h3 class="card-title">${el.label}</h3><button class="card-edit" data-edit-card="${el.id}">Edit</button>
       ${pill ? `<span class="grade-pill" style="background:${pc.bg};color:${pc.color};border-color:${pc.border}">grade-specific</span>` : ''}
     </div>
     <div class="card-body">`;
@@ -572,7 +576,7 @@ function renderEl(el, accentColor, subjectBadge) {
   }
 
   if (!sourceReview) {
-    const images = [...(review?.images || []), ...(el.images || [])];
+    const images = [...(review?.images || []).filter(img=>!el.hiddenImages?.includes(img.src)), ...(el.images || [])];
     h += imgGallery(images.filter((image, i) => images.findIndex(other => other.src === image.src) === i));
   }
   if (el.banners) el.banners.forEach(b => { h += bnr(b); });
@@ -912,6 +916,10 @@ function doSearch(q) {
 
 /* ── INIT ── */
 for (const record of REVIEWED_CHANGES) SpecChanges.apply(DATA, record);
+const editableCards = structuredClone(DATA);
+for(const entry of SpecChanges.entries(DATA)){
+  for(const field of ['images','archivalImages']) if(entry[field])entry[field]=entry[field].filter(img=>!entry.hiddenImages?.includes(img.src));
+}
 // Compare the approved grade bands while keeping common settings in one place.
 for (const category of DATA.subjects.find(subject => subject.id === 'math').categories) {
   for (const entry of category.elements) {

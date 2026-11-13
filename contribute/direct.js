@@ -33,8 +33,6 @@ function row(){
   const b=document.createElement('button');b.type='button';b.className='plain';b.textContent='Remove';b.onclick=()=>div.remove();div.append(b);$('rows').append(div);
 }
 row();$('add').onclick=row;
-function base64(bytes){let s='';for(const b of bytes)s+=String.fromCharCode(b);return btoa(s)}
-const endpoint='https://api.github.com/repos/'+repo+'/contents/contribute/published.js';
 $('editor').onsubmit=async event=>{
   event.preventDefault();$('submit').disabled=true;$('status').textContent='Saving…';
   try{
@@ -50,25 +48,8 @@ $('editor').onsubmit=async event=>{
       if(!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>450000)throw Error('Choose a PNG, JPEG or WebP screenshot under 450 KB.');
       r.attachment={src:'data:'+file.type+';base64,'+base64(new Uint8Array(await file.arrayBuffer())),caption:$('caption').value.trim()||title};
     }
-    const headers={Authorization:'Bearer '+key,Accept:'application/vnd.github+json'};
-    const response=await fetch(endpoint+'?ref=main',{headers,cache:'no-store'});
-    if(!response.ok)throw Error('GitHub could not open the guide. Check your editor access.');
-    const current=await response.json();
-    let encoded=current.content;
-    if(!encoded){
-      const blob=await fetch('https://api.github.com/repos/'+repo+'/git/blobs/'+current.sha,{headers,cache:'no-store'});
-      if(!blob.ok)throw Error('GitHub could not read the current guide. Try again.');
-      encoded=(await blob.json()).content;
-    }
-    const source=new TextDecoder().decode(Uint8Array.from(atob(encoded),c=>c.charCodeAt(0)));
-    const prefix='const REVIEWED_CHANGES = ';
-    if(!source?.startsWith(prefix))throw Error('Reload the guide and try again.');
-    const records=JSON.parse(source.trim().slice(prefix.length,-1));
-    if(JSON.stringify(records)!==JSON.stringify(REVIEWED_CHANGES))throw Error('A teammate saved a change. Wait for the guide to update, then reload before editing.');
     SpecChanges.apply(structuredClone(DATA),r);
-    const body={message:'Update guide: '+title,branch:'main',sha:current.sha,content:base64(new TextEncoder().encode(prefix+JSON.stringify([...records,r],null,2)+';\n'))};
-    const saved=await fetch(endpoint,{method:'PUT',headers:{...headers,'Content-Type':'application/json'},body:JSON.stringify(body)});
-    if(!saved.ok)throw Error(saved.status===409?'A teammate saved first. Reload before retrying.':'GitHub could not save. Check that your account can write to this repository.');
+    await saveGuideChange(key,r,title);
     $('editor').hidden=true;$('status').textContent='Saved to GitHub. The guide will update after GitHub Pages publishes.';$('result').hidden=false;$('result').href='../?spec='+r.id;
   }catch(err){$('status').textContent=err.message}finally{$('submit').disabled=false}
 };

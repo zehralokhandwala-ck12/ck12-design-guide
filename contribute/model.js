@@ -78,6 +78,30 @@ const SpecChanges = (() => {
     return result;
   }
   function apply(data, record) {
+    if (record.kind === 'card-edit') {
+      const entry=category(data,record.subject,record.category)?.elements.find(e=>e.id===record.id);
+      requireValue(entry,'Card unavailable.');
+      for(const [field,changes] of Object.entries(record.rows)){
+        requireValue(['specs','grade'].includes(field),'Invalid property group.');
+        const original=field==='grade'?entry.gradeTable.rows:(entry.specs || []);
+        const updated=changes.map(row=>{
+          const previous=original[row.index] || {};
+          if(!row.edit)return previous;
+          const label=escape(line(row.label,'Property name',300));
+          if(field==='grade')return {label,values:row.values.map(v=>escape(line(v,'Grade value',1500))),highlight:true};
+          const value=escape(line(row.value,'Property value',2000));
+          return {label,value,...(hex.test(value)?{type:'color'}:{})};
+        });
+        if(field==='grade')entry.gradeTable.rows=updated;else entry.specs=updated;
+      }
+      entry.hiddenImages=[...new Set([...(entry.hiddenImages||[]),...record.removeImages])];
+      for(const img of record.addImages){
+        requireValue(/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(img.src),'Invalid image.');
+        (entry.images ||= []).push({src:img.src,caption:escape(img.caption)});
+        entry.hiddenImages=entry.hiddenImages.filter(src=>src!==img.src);
+      }
+      return;
+    }
     if (record.kind === 'direct') {
       const subject=data.subjects.find(s=>s.id===record.subject);
       requireValue(subject && id.test(record.category) && id.test(record.id),'Invalid destination.');
