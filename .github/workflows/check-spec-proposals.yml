@@ -1,0 +1,21 @@
+name: Check spec proposals
+on:
+  pull_request:
+    paths: ['contribute/**', 'scripts/prepare-spec.cjs', 'specs.js', 'source-images/catalog.json', '.github/workflows/*spec*.yml']
+  push:
+    branches: [main]
+    paths: ['contribute/**', 'scripts/prepare-spec.cjs', 'specs.js', 'source-images/catalog.json', '.github/workflows/*spec*.yml']
+permissions:
+  contents: read
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Replay approved records and test both proposal types
+        run: node scripts/prepare-spec.cjs
+        env:
+          PROPOSAL_MODE: pilot

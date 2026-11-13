@@ -29,6 +29,7 @@ function addGuideWording(entry) {
 }
 
 if (typeof DATA !== 'undefined') {
+  for (const record of REVIEWED_CHANGES) SpecChanges.apply(DATA, record);
   DATA.subjects.find(subject => subject.id === 'math')?.categories.forEach(category => category.elements.forEach(addGuideWording));
 }
 

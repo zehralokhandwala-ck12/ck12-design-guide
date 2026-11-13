@@ -1,0 +1,38 @@
+name: Prepare spec review
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Prepare a submitted issue, or verify both pilot paths
+        type: choice
+        options: [proposal, pilot]
+        default: proposal
+        required: true
+      issue:
+        description: Proposal issue number (leave empty for pilot)
+        type: string
+        required: false
+permissions:
+  contents: write
+  issues: read
+  pull-requests: write
+concurrency:
+  group: prepare-spec-${{ inputs.issue || 'pilot' }}
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate proposal and prepare review
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROPOSAL_ISSUE: ${{ inputs.issue }}
+          PROPOSAL_MODE: ${{ inputs.mode }}
+        run: node scripts/prepare-spec.cjs
