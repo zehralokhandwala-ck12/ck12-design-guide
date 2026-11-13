@@ -96,7 +96,6 @@ const DATA = { subjects: [
           {label:"Align Stroke", value:"Center"},
         ],
         banners:[
-          {type:"info", text:"<strong>Grade 6–7:</strong> Use <code>#666666</code> — higher contrast for younger readers. Grade 8+ use <code>#999999</code>."},
         ]
       },
       { id:"dotted-line", label:"Dotted / Dash Line", gradeVaries:true, images:[],
@@ -110,7 +109,6 @@ const DATA = { subjects: [
           {label:"Dash", value:"6pt"},
         ],
         banners:[
-          {type:"info", text:"<strong>Grade 6–7:</strong> Use <code>#666666</code> for higher contrast."},
         ]
       }
     ]},
@@ -129,7 +127,6 @@ const DATA = { subjects: [
         {label:"Color (all solid)", values:["#000000","#000000","#000000"], type:"color"},
       ]},
       banners:[
-        {type:"note", text:"Vector point is always 5px regardless of grade."},
         {type:"note", text:"Hollow point: white fill with 1px black stroke. One point type — not two separate elements."},
       ]
     }]},
@@ -147,7 +144,6 @@ const DATA = { subjects: [
           {label:"Align Stroke", value:"Center"},
         ],
         banners:[
-          {type:"note", text:"In complex diagrams, reduce arrowhead to 40% (from standard 60%) in Illustrator."},
           {type:"note", text:"Arrow placed first, then label. 10px spacing between arrow and diagram line."},
           {type:"note", text:"<strong>Right-aligned</strong> labels are also valid depending on placement. Use left, center, or right alignment so that if text is edited later, it does not overlap the diagram."},
           {type:"note", text:"If limited space or multiple labels, align the label <strong>along the direction of the line</strong> to clarify which label belongs to which segment."},
@@ -204,7 +200,6 @@ const DATA = { subjects: [
         {label:"90° marker size", value:"15–25px by diagram"},
       ],
       banners:[
-        {type:"info", text:"<strong>Grade 6–7 color logic:</strong> Line color is <code>#666666</code>, so angle marker uses <code>#999999</code> to differentiate without introducing a new color."},
         {type:"note", text:"Reduce the radius when the canvas is small or a complex diagram leaves too little room."},
         {type:"note", text:"No need to write 90° when using a square angle marker."},
         {type:"note", text:"Use 40% arrowhead scale in complex, space-limited diagrams."},
@@ -452,7 +447,6 @@ const DATA = { subjects: [
           {label:"Angle marker corner", values:["Miter","Miter","Miter"]},
         ]},
         banners:[
-          {type:"info", text:"Grade 6–7 darker colors are intentional — higher contrast for younger students."},
         ]
       },
       { id:"construction-labels", label:"Construction — Labels", gradeVaries:true,
@@ -499,7 +493,6 @@ const DATA = { subjects: [
         {label:"Arrow", value:"Arrow 7, 1px stroke, 20% scale"},
       ],
       banners:[
-        {type:"info", text:"<strong>Grade 6 uses colorful, larger labels</strong> with Proxima Nova and darker colors. Grade 7 onwards uses Latin Modern Roman with #999999 throughout."},
         {type:"note", text:"Grade 6 arc construction: draw a circle with a 1 px stroke and a diameter equal to the distance between the two axis markers. Remove the lower semicircle, lower the top anchor by 3 px, then center the arrow on the remaining arc."},
       ]
     }]}

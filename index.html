@@ -284,6 +284,14 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 .img-btn{width:100%;height:180px;display:grid;place-items:center;background:white;border:1px solid var(--border)}
 .img-item img{width:100%;height:100%;min-height:0;max-width:100%;max-height:180px;border:0;background:white}
 .img-caption{text-align:left;font-style:normal;line-height:1.4}
+.spec-card{--property-width:clamp(7rem,30%,14rem)}
+.spec-card :is(.gt,.spec-table){table-layout:fixed}
+.spec-card :is(.gt,.spec-table) thead th:first-child{width:var(--property-width)}
+.spec-card :is(.gt,.spec-table) :is(td,th){text-align:left;vertical-align:middle;overflow-wrap:anywhere}
+.spec-card :is(.gt,.spec-table) :is(td,th):not(:first-child){padding-left:8px;padding-right:8px}
+.gt tbody th{letter-spacing:normal;text-transform:none}
+.gt .sw-btn,.spec-table .sw-btn{max-width:100%}
+@media(max-width:600px){.gt{min-width:calc(var(--grade-columns) * 6.5rem + 7rem)}}
 </style>
 <script defer src="contribute/copy.js"></script></head>
 <body>
@@ -328,7 +336,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- Resources dropdown panel -->
 <div id="res-dropdown" class="res-dropdown" role="region" aria-label="Downloads and resources"></div>
 
-<script src="specs.js?v=4d9f51c29f"></script>
+<script src="specs.js?v=clean-notes1"></script>
 <script src="contribute/model.js"></script>
 <script src="contribute/published.js?v=f209a3fac474"></script>
 <script src="math-review/guide-links.js?v=curated2"></script>
@@ -409,7 +417,7 @@ function bnr(b) {
 
 /* ── GRADE TABLE (no legend inside — shown once per page) ── */
 function gTable(gt, review) {
-  let h = `<div class="gt-wrap"><table class="gt" role="table">
+  let h = `<div class="gt-wrap"><table class="gt" role="table" style="--grade-columns:${gt.columns.length-1}">
     <thead><tr>`;
   gt.columns.forEach(c => { h += `<th scope="col">${c}</th>`; });
   h += `</tr></thead><tbody>`;
@@ -537,12 +545,6 @@ function renderEl(el, accentColor, subjectBadge) {
   const review = subjectBadge === 'math' ? mathReviewLinks[el.id] : null;
   if (SpecChanges.palettes.includes(el.id)) {
     h += `<p class="source-links"><a href="contribute/?subject=math&amp;category=graphs&amp;target=${el.id}">Add color</a> <a href="contribute/?subject=math&amp;category=graphs&amp;target=${el.id}&amp;operation=edit">Edit palette color</a></p>`;
-  }
-  if (review) {
-    h += `<p><a class="math-review-link" href="math-review/#${el.id}">Compare the six Math sources</a></p>`;
-    for (const decision of review.decisions) {
-      h += `<p class="source-links"><a href="math-review/#decision-${decision.id}">Approved decision · ${decision.label}</a></p>`;
-    }
   }
   const sourceReview = !el.contributed && (subjectBadge === 'chemistry' || subjectBadge === 'physics');
 
