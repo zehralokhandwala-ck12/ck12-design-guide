@@ -54,8 +54,13 @@ $('editor').onsubmit=async event=>{
     const response=await fetch(endpoint+'?ref=main',{headers,cache:'no-store'});
     if(!response.ok)throw Error('GitHub could not open the guide. Check your editor access.');
     const current=await response.json();
-    const raw=current.content?null:await fetch(endpoint+'?ref=main',{headers:{...headers,Accept:'application/vnd.github.raw+json'},cache:'no-store'}).then(async res=>res.ok?res.text():null);
-    const source=current.content?new TextDecoder().decode(Uint8Array.from(atob(current.content),c=>c.charCodeAt(0))):raw;
+    let encoded=current.content;
+    if(!encoded){
+      const blob=await fetch('https://api.github.com/repos/'+repo+'/git/blobs/'+current.sha,{headers,cache:'no-store'});
+      if(!blob.ok)throw Error('GitHub could not read the current guide. Try again.');
+      encoded=(await blob.json()).content;
+    }
+    const source=new TextDecoder().decode(Uint8Array.from(atob(encoded),c=>c.charCodeAt(0)));
     const prefix='const REVIEWED_CHANGES = ';
     if(!source?.startsWith(prefix))throw Error('Reload the guide and try again.');
     const records=JSON.parse(source.trim().slice(prefix.length,-1));
