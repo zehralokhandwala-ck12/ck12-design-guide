@@ -280,7 +280,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--text);color:white;padding:7px 14px;border-radius:7px;font-size:var(--text-sm);font-weight:500;pointer-events:none;opacity:0;transition:opacity .2s;z-index:9999;role:status;aria-live:polite}
 .toast.show{opacity:1}
 </style>
-</head>
+<script defer src="contribute/copy.js"></script></head>
 <body>
 
 <!-- Skip link for keyboard users -->
@@ -310,7 +310,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 
   <a href="source-images/" style="margin:0 18px 10px;color:var(--green-dark);font-size:var(--text-sm)">Source images</a>
   <a class="math-review-link" href="math-review/" style="margin:0 18px 10px;font-size:var(--text-sm)">Math source comparison</a>
-  <a class="math-review-link" href="contribute/" style="margin:0 18px 10px;font-size:var(--text-sm)">Add spec</a>
+  <a class="math-review-link" href="contribute/" style="margin:0 18px 10px;font-size:var(--text-sm)">Add new spec</a>
   <nav id="nav" aria-label="Style guide sections"></nav>
 </div>
 
@@ -539,7 +539,7 @@ function renderEl(el, accentColor, subjectBadge) {
 
   const review = subjectBadge === 'math' ? mathReviewLinks[el.id] : null;
   if (SpecChanges.palettes.includes(el.id)) {
-    h += `<p class="source-links"><a href="contribute/?kind=color&amp;target=${el.id}">Add color</a> <a href="contribute/?kind=color&amp;target=${el.id}&amp;operation=edit">Edit palette color</a></p>`;
+    h += `<p class="source-links"><a href="contribute/?subject=math&amp;category=graphs&amp;target=${el.id}">Add color</a> <a href="contribute/?subject=math&amp;category=graphs&amp;target=${el.id}&amp;operation=edit">Edit palette color</a></p>`;
   }
   if (review) {
     h += `<p><a class="math-review-link" href="math-review/#${el.id}">Compare the six Math sources</a></p>`;
@@ -605,7 +605,7 @@ function renderPage(sid, cid, elementId, rowKey, selectedGrade) {
       <span aria-current="page">${cat.label}</span>
     </div>
     <span class="subject-badge badge-${sub.badge}" aria-label="Subject: ${sub.label}">${sub.label}</span>
-    <a class="math-review-link" href="contribute/?subject=${sid}&amp;category=${cid}">Add spec</a>
+    <a class="math-review-link" href="contribute/?subject=${sid}&amp;category=${cid}">Add new spec</a>
     <button id="res-toggle-btn" class="res-btn" onclick="toggleResDropdown('${sub.downloads||''}')"
       aria-expanded="false" aria-controls="res-dropdown" aria-haspopup="true">
       Resources <span class="res-arrow" aria-hidden="true">▾</span>

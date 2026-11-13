@@ -78,6 +78,35 @@ const SpecChanges = (() => {
     return result;
   }
   function apply(data, record) {
+    if (record.kind === 'direct') {
+      const subject=data.subjects.find(s=>s.id===record.subject);
+      requireValue(subject && id.test(record.category) && id.test(record.id),'Invalid destination.');
+      let destination=category(data,record.subject,record.category);
+      if (!destination) {
+        requireValue(record.categoryName,'Missing category name.');
+        destination={id:record.category,label:escape(record.categoryName),elements:[]};
+        subject.categories.push(destination);
+      }
+      let entry=destination.elements.find(e=>e.id===record.id);
+      if (!record.existing) {
+        requireValue(!entries(data).some(e=>e.id===record.id),'This type already exists.');
+        entry={id:record.id,label:escape(record.title),specs:[],images:[],contributed:true};
+        destination.elements.push(entry);
+      }
+      requireValue(entry,'Select an existing type.');
+      entry.specs ||= [];
+      for (const p of record.properties) {
+        const label=escape(p.label)+(record.scope?' ('+escape(record.scope)+')':'');
+        const index=entry.specs.findIndex(s=>s.label.toLowerCase()===label.toLowerCase());
+        const value={label,value:escape(p.value),...(hex.test(p.value)?{type:'color'}:{})};
+        if(index<0) entry.specs.push(value); else entry.specs[index]=value;
+      }
+      if(record.attachment) {
+        requireValue(/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(record.attachment.src),'Invalid screenshot.');
+        (entry.images ||= []).push({src:record.attachment.src,caption:escape(record.attachment.caption)});
+      }
+      return;
+    }
     const c = category(data, record.subject, record.category);
     requireValue(c, 'The destination category is missing.');
     const images = [record.image,record.attachment].filter(Boolean).map(img => ({src:img.src,caption:escape(img.caption)}));
