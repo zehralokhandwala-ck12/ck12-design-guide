@@ -7,7 +7,7 @@ async function saveGuideChange(key,r,title){
     const current=await response.json();
     let encoded=current.content;
     if(!encoded){
-      const blob=await fetch('https://api.github.com/repos/'+repo+'/git/blobs/'+current.sha,{headers,cache:'no-store'});
+      const blob=await fetch('https://api.github.com/repos/'+SpecChanges.repository+'/git/blobs/'+current.sha,{headers,cache:'no-store'});
       if(!blob.ok)throw Error('GitHub could not read the current guide. Try again.');
       encoded=(await blob.json()).content;
     }
