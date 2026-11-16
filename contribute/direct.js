@@ -30,6 +30,8 @@ function row(){
   for(const [label,hint] of [['Property','Point color, ray color, stroke…'],['Value','#999999 or 2 px']]){
     const l=document.createElement('label');l.textContent=label;const i=document.createElement('input');i.required=true;i.maxLength=label==='Property'?100:500;i.placeholder=hint;l.append(i);div.append(l);
   }
+  const inputs=div.querySelectorAll('input');
+  propertyPicker(div,inputs[0],[inputs[1]]);
   const b=document.createElement('button');b.type='button';b.className='plain';b.textContent='Remove';b.onclick=()=>div.remove();div.append(b);$('rows').append(div);
 }
 row();$('add').onclick=row;

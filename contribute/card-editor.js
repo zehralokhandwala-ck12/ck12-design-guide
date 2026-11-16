@@ -35,6 +35,7 @@ document.addEventListener('click', event => {
       const row=append(list,'div');row.className='edit-row';
       const before=[original.label||'',...(field==='grade'?original.values||columns.map(()=>''):[original.value||''])].map(plain);
       const inputs=['Property',...columns].map((label,i)=>{const box=input(row,label,before[i]);box.required=true;return box});
+      propertyPicker(row,inputs[0],inputs.slice(1));
       button(row,'Remove',()=>{rows.delete(row);row.remove()});
       rows.set(row,()=>{
         const values=inputs.map(i=>i.value.trim());

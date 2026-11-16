@@ -424,7 +424,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 .resource-row strong{font-size:15px;font-weight:550}.resource-row small{display:block;margin-top:7px;font-size:13px;color:var(--text-muted)}.resource-row:hover strong{text-decoration:underline;color:var(--green-dark)}
 @media(max-width:760px){.landing,.resource-page{padding:28px 22px 56px}.guide-menu{padding:14px 18px;gap:20px;flex-wrap:wrap}.sticky-bar .guide-menu{width:100%;padding:8px 0}.subject-directory{grid-template-columns:1fr}.download-intro{align-items:start;flex-direction:column;padding:24px;gap:20px}.resource-section{grid-template-columns:1fr;gap:4px}.page-intro{margin-bottom:30px}.resource-tabs{gap:8px 18px}}
 </style><style>
-.content-area{zoom:.8}
+.content-area{zoom:.88}
 #download-pane[hidden]{display:none}
 #download-pane{width:350px;flex:0 0 350px;background:white;border-left:1px solid var(--border);height:100dvh;overflow-y:auto;padding:22px;box-sizing:border-box}
 #download-pane header{display:flex;align-items:center;gap:16px;margin-bottom:26px}
@@ -433,7 +433,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 #download-pane h3{font-size:14px;margin:26px 0 8px;color:var(--text-muted)}
 #download-pane .resource-row{padding:16px 0}
 @media(max-width:1100px){#download-pane{position:fixed;right:0;top:0;z-index:80;box-shadow:-10px 0 30px #0002;width:min(350px,100vw)}}
-</style></head>
+</style><style>.property-picker{display:flex;gap:12px;flex-basis:100%}.property-picker label{flex:1}.property-picker select{width:100%;padding:8px;font:inherit}.graph-type{margin-top:32px}.graph-type h4{font-size:17px;margin-bottom:12px}</style></head>
 <body>
 
 <!-- Skip link for keyboard users -->
@@ -463,7 +463,6 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
   </div>
 
   <div id="section-menu">
-  <a class="math-review-link" href="contribute/" style="margin:0 18px 10px;font-size:var(--text-sm)">Add new spec</a>
   <nav id="nav" aria-label="Style guide sections"></nav>
   </div>
 </div>
@@ -479,7 +478,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 
 <script src="specs.js?v=drive-audit2"></script>
 <script src="contribute/model.js?v=4"></script>
-<script src="contribute/save.js"></script><script defer src="contribute/card-editor.js"></script><script src="contribute/published.js?v=f209a3fac474"></script>
+<script src="contribute/save.js"></script><script src="contribute/property-picker.js"></script><script defer src="contribute/card-editor.js?v=picker1"></script><script src="contribute/published.js?v=f209a3fac474"></script>
 <script src="math-review/guide-links.js?v=curated2"></script>
 <script>
 /* ── HELPERS ── */
@@ -751,7 +750,21 @@ function renderEl(el, accentColor, subjectBadge) {
 
   if (!sourceReview) {
     const images = [...(review?.images || []).filter(img=>!el.hiddenImages?.includes(img.src)), ...(el.images || [])];
-    h += imgGallery(images.filter((image, i) => !placements.some(item => item.src === image.src) && images.findIndex(other => other.src === image.src) === i));
+    const distinctImages=images.filter((image, i) => !placements.some(item => item.src === image.src) && images.findIndex(other => other.src === image.src) === i);
+    if(el.id==='bar-graph'){
+      const types=[
+        ['Vertical bar graphs', /vertical bar graph|bar graph label callouts|horizontal labels|vertically arranged categories/i],
+        ['Horizontal bar graphs', /horizontal bar graph/i],
+        ['Grouped and double bar graphs', /double bar|grouped bar/i],
+        ['Histograms', /histogram/i]
+      ];
+      for(const [title,match] of types){
+        const examples=distinctImages.filter(img=>match.test(img.caption));
+        if(examples.length)h += '<section class="graph-type"><h4>'+title+'</h4>'+imgGallery(examples)+'</section>';
+      }
+      const other=distinctImages.filter(img=>!types.some(([,match])=>match.test(img.caption)));
+      if(other.length)h+=imgGallery(other);
+    }else h+=imgGallery(distinctImages);
   }
   if (el.banners && el.id !== 'pie-chart') el.banners.forEach(b => { h += bnr(b); });
 
