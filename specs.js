@@ -35,6 +35,8 @@ const RES = {
     { label:"CMU Serif Roman", url:"https://drive.google.com/open?id=1wM5EEnnxLuiuwTp-aik9oHhLZNIDapLj&usp=drive_fs", icon:"Σ" },
   ],
   math: [
+    {label:"Math Symbol Sheet · source file",url:"https://drive.google.com/open?id=1apHXJKmDtaWwHqaDuy9yuW0fNPYFtOfo&usp=drive_fs",icon:"∑"},
+    {label:"Grade 10 Diagram Labelling Reference",url:"https://drive.google.com/file/d/1aHU8yE5amOxZBTffCWvOftBQjr-PGioG/view?usp=sharing",icon:"📐"},
     { label:"Diagram Labelling .ai Files", url:"https://drive.google.com/open?id=1CN_AgUXP4Dc2roR0qbYdsArv28AY8N0f&usp=drive_fs", icon:"📐" },
     { label:"Guide to Place Point Labels (.ai)", url:"https://drive.google.com/open?id=1CQwbXSi8yEYCIywe2ti5cx3ay95RhSn8&usp=drive_fs", icon:"📍" },
     { label:"AP Image Guidelines (Graphs)", url:"https://docs.google.com/document/d/15O2UthiEJMu-_0EfefMBEcZs7Dd_mQ9emk4hqyPk0h4/edit?tab=t.0", icon:"📄" },

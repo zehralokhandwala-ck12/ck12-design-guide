@@ -423,6 +423,16 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 .resource-section h2{font-size:20px;padding-top:16px}.resource-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text)}
 .resource-row strong{font-size:15px;font-weight:550}.resource-row small{display:block;margin-top:7px;font-size:13px;color:var(--text-muted)}.resource-row:hover strong{text-decoration:underline;color:var(--green-dark)}
 @media(max-width:760px){.landing,.resource-page{padding:28px 22px 56px}.guide-menu{padding:14px 18px;gap:20px;flex-wrap:wrap}.sticky-bar .guide-menu{width:100%;padding:8px 0}.subject-directory{grid-template-columns:1fr}.download-intro{align-items:start;flex-direction:column;padding:24px;gap:20px}.resource-section{grid-template-columns:1fr;gap:4px}.page-intro{margin-bottom:30px}.resource-tabs{gap:8px 18px}}
+</style><style>
+.content-area{zoom:.8}
+#download-pane[hidden]{display:none}
+#download-pane{width:350px;flex:0 0 350px;background:white;border-left:1px solid var(--border);height:100dvh;overflow-y:auto;padding:22px;box-sizing:border-box}
+#download-pane header{display:flex;align-items:center;gap:16px;margin-bottom:26px}
+#download-pane h2{font-size:19px;flex:1;line-height:1.4}
+#close-download-pane{font:26px var(--sans);width:40px;height:40px;border:1px solid var(--border);border-radius:6px;background:white;cursor:pointer}
+#download-pane h3{font-size:14px;margin:26px 0 8px;color:var(--text-muted)}
+#download-pane .resource-row{padding:16px 0}
+@media(max-width:1100px){#download-pane{position:fixed;right:0;top:0;z-index:80;box-shadow:-10px 0 30px #0002;width:min(350px,100vw)}}
 </style></head>
 <body>
 
@@ -467,7 +477,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- Resources dropdown panel -->
 <div id="res-dropdown" class="res-dropdown" role="region" aria-label="Downloads and resources"></div>
 
-<script src="specs.js?v=source-clean1"></script>
+<script src="specs.js?v=drive-audit2"></script>
 <script src="contribute/model.js?v=4"></script>
 <script src="contribute/save.js"></script><script defer src="contribute/card-editor.js"></script><script src="contribute/published.js?v=f209a3fac474"></script>
 <script src="math-review/guide-links.js?v=curated2"></script>
@@ -884,7 +894,7 @@ function buildNav() {
 
 function guideMenu(subject, returnTo) {
   const downloads = '?downloads=' + (subject || 'all') + (returnTo ? '&return=' + encodeURIComponent(returnTo) : '');
-  return `<nav class="guide-menu" aria-label="Guide navigation"><a href="?">Overview</a><a href="${downloads}">${subject ? DATA.subjects.find(s=>s.id===subject).label+' downloads' : 'Downloads'}</a><a href="contribute/${subject ? '?subject='+subject : ''}">Add spec</a></nav>`;
+  return `<nav class="guide-menu" aria-label="Guide navigation"><a href="?">Overview</a><a href="${downloads}" ${subject ? 'data-download-pane="'+subject+'"' : ''}>${subject ? DATA.subjects.find(s=>s.id===subject).label+' downloads' : 'Downloads'}</a><a href="contribute/${subject ? '?subject='+subject : ''}">Add spec</a></nav>`;
 }
 function resourceRows(resources) {
   return resources.map(resource => `<a class="resource-row" href="${resource.url}" ${resource.download ? 'download' : 'target="_blank" rel="noopener"'}><span><strong>${resource.label}</strong><small>${resource.download ? 'Illustrator file · Direct download' : /docs.google.com/.test(resource.url) ? 'Reference document · Google Workspace' : /drive.google.com/.test(resource.url) ? 'Reference file · Google Drive' : 'Font resource'}</small></span><span aria-hidden="true">${resource.download ? '↓' : '↗'}</span></a>`).join('');
@@ -1141,5 +1151,28 @@ document.addEventListener('click', event => {
 window.addEventListener('popstate', restoreReader);
 restoreReader();
 </script>
-</body>
+<aside id="download-pane" hidden aria-label="Subject downloads"><header><h2 id="download-pane-title"></h2><button type="button" id="close-download-pane" aria-label="Close downloads">×</button></header><div id="download-pane-body"></div></aside>
+<script>
+let downloadOpener;
+function closeDownloadPane(){
+  document.getElementById('download-pane').hidden=true;
+  document.body.classList.remove('downloads-open');
+  downloadOpener?.focus({preventScroll:true});
+}
+document.addEventListener('click',event=>{
+  const link=event.target.closest('[data-download-pane]');
+  if(!link || event.ctrlKey || event.metaKey || event.shiftKey)return;
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  downloadOpener=link;
+  const id=link.dataset.downloadPane;
+  document.getElementById('download-pane-title').textContent=DATA.subjects.find(s=>s.id===id).label+' downloads';
+  document.getElementById('download-pane-body').innerHTML=[[id,'Reference files'],['shared','Shared libraries'],['fonts','Fonts']].map(([key,title])=>'<section><h3>'+title+'</h3>'+resourceRows(RES[key]||[])+'</section>').join('');
+  document.getElementById('download-pane').hidden=false;
+  document.body.classList.add('downloads-open');
+  document.getElementById('close-download-pane').focus();
+},true);
+document.getElementById('close-download-pane').onclick=closeDownloadPane;
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!document.getElementById('download-pane').hidden)closeDownloadPane()});
+</script></body>
 </html>
