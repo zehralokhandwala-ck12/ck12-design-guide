@@ -77,6 +77,14 @@ const SpecChanges = (() => {
     result.splice(record.position, record.operation === 'edit' ? 1 : 0, record.color);
     return result;
   }
+  function resources(items) {
+    requireValue(Array.isArray(items),'Invalid references.');
+    return items.map(r=>{
+      const name=line(r.name,'Reference name',2000);
+      if(r.data){requireValue(/^data:application\/octet-stream;base64,[A-Za-z0-9+/=]*$/.test(r.data),'Invalid file attachment.');return {name,filename:line(r.filename,'File name',300),data:r.data};}
+      requireValue(typeof r.url==='string' && /^https?:\/\//i.test(r.url),'Invalid reference link.');new URL(r.url);return {name,url:r.url};
+    });
+  }
   function apply(data, record) {
     if (record.kind === 'card-edit') {
       const entry=category(data,record.subject,record.category)?.elements.find(e=>e.id===record.id);
@@ -94,6 +102,7 @@ const SpecChanges = (() => {
         });
         if(field==='grade')entry.gradeTable.rows=updated;else entry.specs=updated;
       }
+      if(record.resources)entry.resources=resources(record.resources);
       entry.hiddenImages=[...new Set([...(entry.hiddenImages||[]),...record.removeImages])];
       for(const img of record.addImages){
         requireValue(/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(img.src),'Invalid image.');
@@ -125,6 +134,7 @@ const SpecChanges = (() => {
         const value={label,value:escape(p.value),...(hex.test(p.value)?{type:'color'}:{})};
         if(index<0) entry.specs.push(value); else entry.specs[index]=value;
       }
+      if(record.resources)entry.resources=[...(entry.resources||[]),...resources(record.resources)];
       if(record.attachment) {
         requireValue(/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(record.attachment.src),'Invalid screenshot.');
         (entry.images ||= []).push({src:record.attachment.src,caption:escape(record.attachment.caption)});

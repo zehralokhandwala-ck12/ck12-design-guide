@@ -478,7 +478,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 
 <script src="specs.js?v=drive-audit2"></script>
 <script src="contribute/model.js?v=4"></script>
-<script src="contribute/save.js"></script><script src="contribute/property-picker.js"></script><script defer src="contribute/card-editor.js?v=picker1"></script><script src="contribute/published.js?v=f209a3fac474"></script>
+<script src="contribute/save.js"></script><script src="contribute/resources.js"></script><script src="contribute/property-picker.js"></script><script defer src="contribute/card-editor.js?v=files1"></script><script src="contribute/published.js?v=f209a3fac474"></script>
 <script src="math-review/guide-links.js?v=curated2"></script>
 <script>
 /* ── HELPERS ── */
@@ -773,6 +773,11 @@ function renderEl(el, accentColor, subjectBadge) {
     if (el.archivalImages?.length) {
       h += `<details open><summary>Original Illustrator references (${el.archivalImages.length})</summary>${imgGallery(el.archivalImages)}</details>`;
     }
+  }
+  if(el.resources?.length){
+    h+='<section class="spec-resources"><h4>Links & files</h4><ul>';
+    for(const r of el.resources)h+='<li><a href="'+escapeAttribute(r.data||r.url)+'" '+(r.data?'download="'+escapeAttribute(r.filename)+'"':'target="_blank" rel="noopener"')+'>'+escapeSearchText(r.name)+'</a></li>';
+    h+='</ul></section>';
   }
   h += `</div></div>`;
   return h;

@@ -62,6 +62,7 @@ document.addEventListener('click', event => {
     const caption=input(row,'Caption');added.push({row,file,caption});
     button(row,'Remove',()=>row.remove());
   });
+  const readResources=resourceEditor(form,entry.resources||[]);
   const access=append(form,'details');append(access,'summary','Editor access');
   const token=input(access,'GitHub editor token');token.type='password';token.autocomplete='off';
   const help=append(access,'a','Editor access setup');help.href='contribute/';help.target='_blank';help.rel='noopener';
@@ -81,6 +82,7 @@ document.addEventListener('click', event => {
       }
       const rows=Object.fromEntries(Object.entries(readers).map(([field,read])=>[field,read()]));
       const record={kind:'card-edit',subject:subject.id,category:category.id,id,rows,removeImages:[...removed],addImages,date:new Date().toISOString()};
+      record.resources=await readResources();
       SpecChanges.apply(structuredClone(editableCards),record);
       await saveGuideChange(token.value.trim(),record,plain(entry.label));
       token.value='';form.replaceChildren();append(form,'p','Saved. GitHub Pages will publish your changes shortly.');const link=append(form,'a','Reload this card');link.href='?spec='+id;

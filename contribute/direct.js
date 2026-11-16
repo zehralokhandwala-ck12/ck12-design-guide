@@ -35,6 +35,8 @@ function row(){
   const b=document.createElement('button');b.type='button';b.className='plain';b.textContent='Remove';b.onclick=()=>div.remove();div.append(b);$('rows').append(div);
 }
 row();$('add').onclick=row;
+const resourceHost=document.createElement('div');$('editor').insertBefore(resourceHost,$('editor').querySelector('details'));
+const readResources=resourceEditor(resourceHost);
 $('editor').onsubmit=async event=>{
   event.preventDefault();$('submit').disabled=true;$('status').textContent='Saving…';
   try{
@@ -50,6 +52,7 @@ $('editor').onsubmit=async event=>{
       if(!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>450000)throw Error('Choose a PNG, JPEG or WebP screenshot under 450 KB.');
       r.attachment={src:'data:'+file.type+';base64,'+base64(new Uint8Array(await file.arrayBuffer())),caption:$('caption').value.trim()||title};
     }
+    r.resources=await readResources();
     SpecChanges.apply(structuredClone(DATA),r);
     await saveGuideChange(key,r,title);
     $('editor').hidden=true;$('status').textContent='Saved to GitHub. The guide will update after GitHub Pages publishes.';$('result').hidden=false;$('result').href='../?spec='+r.id;
