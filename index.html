@@ -392,7 +392,38 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
  .img-gallery{grid-template-columns:1fr;gap:22px}
 }
 </style>
-</head>
+<style>
+.guide-menu{display:flex;align-items:center;gap:26px;padding:20px 32px;border-bottom:1px solid var(--border);background:white}
+.guide-menu a{font-size:14px;color:var(--text-mid);text-decoration:none;min-height:28px;display:flex;align-items:center}
+.guide-menu a:hover{color:var(--green-dark);text-decoration:underline}
+.sticky-bar .guide-menu{padding:0;border:0;background:transparent;gap:18px}
+.landing,.resource-page{max-width:1080px;margin:auto;padding:48px 44px 80px}
+.page-intro{margin-bottom:44px}
+.page-intro h1{font-size:clamp(34px,4vw,54px);font-weight:650;letter-spacing:-.04em;line-height:1.12;margin:12px 0 22px;color:#203e34}
+.page-intro p{font-size:17px;line-height:1.65;max-width:590px;color:var(--text-muted)}
+.page-intro .eyebrow{font-size:12px;font-weight:650;letter-spacing:.12em;color:var(--green-dark)}
+#landing-search{display:flex;max-width:620px;margin-top:28px;border:1px solid #adbbb4;background:white;border-radius:8px;overflow:hidden}
+#landing-query{min-width:0;flex:1;padding:16px;border:0;font:15px var(--sans);background:transparent}
+#landing-search button{border:0;background:#176445;color:white;padding:12px 22px;font:600 14px var(--sans);cursor:pointer}
+.subject-directory{display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+.subject-entry{padding:28px 0;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:20px}
+.subject-entry h2{font-size:24px;margin:0 0 12px}.subject-entry h2 a{text-decoration:none;color:var(--text)}
+.subject-entry h2 span{font-size:18px;color:var(--green-dark)}
+.subject-entry p{font-size:15px;line-height:1.7;color:var(--text-muted)}
+.subject-download{font-size:14px;color:var(--green-dark);text-decoration:none}
+.download-intro{margin-top:48px;padding:30px;background:#eaf1ed;border-radius:10px;display:flex;align-items:center;gap:32px;justify-content:space-between}
+.download-intro h2{font-size:23px;margin-bottom:10px}.download-intro p{font-size:15px;line-height:1.6;max-width:470px;color:var(--text-muted)}
+.download-intro a{white-space:nowrap;color:var(--green-dark);font-weight:600;font-size:14px}
+.reader-hint{margin-top:28px;color:var(--text-muted);font-size:13px}
+.resource-page .page-intro{margin-top:28px}
+.resource-tabs{display:flex;flex-wrap:wrap;gap:10px 22px;border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:36px}
+.resource-tabs a{padding:8px 0;color:var(--text-muted);text-decoration:none;font-size:14px}
+.resource-tabs a[aria-current]{color:var(--green-dark);box-shadow:0 2px var(--green-dark);font-weight:650}
+.resource-section{display:grid;grid-template-columns:180px 1fr;gap:26px;margin:32px 0 48px}
+.resource-section h2{font-size:20px;padding-top:16px}.resource-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text)}
+.resource-row strong{font-size:15px;font-weight:550}.resource-row small{display:block;margin-top:7px;font-size:13px;color:var(--text-muted)}.resource-row:hover strong{text-decoration:underline;color:var(--green-dark)}
+@media(max-width:760px){.landing,.resource-page{padding:28px 22px 56px}.guide-menu{padding:14px 18px;gap:20px;flex-wrap:wrap}.sticky-bar .guide-menu{width:100%;padding:8px 0}.subject-directory{grid-template-columns:1fr}.download-intro{align-items:start;flex-direction:column;padding:24px;gap:20px}.resource-section{grid-template-columns:1fr;gap:4px}.page-intro{margin-bottom:30px}.resource-tabs{gap:8px 18px}}
+</style></head>
 <body>
 
 <!-- Skip link for keyboard users -->
@@ -740,12 +771,7 @@ function renderPage(sid, cid, elementId, rowKey, selectedGrade) {
       <span aria-current="page">${cat.label}</span>
       ${elementId ? `<span aria-hidden="true">›</span><span>${cat.elements.find(el => el.id === elementId).label}</span>` : ''}
     </div>
-    <span class="subject-badge badge-${sub.badge}" aria-label="Subject: ${sub.label}">${sub.label}</span>
-    <a class="math-review-link" href="contribute/?subject=${sid}&amp;category=${cid}">Add new spec</a>
-    <button id="res-toggle-btn" class="res-btn" onclick="toggleResDropdown('${sub.downloads||''}')"
-      aria-expanded="false" aria-controls="res-dropdown" aria-haspopup="true">
-      Resources <span class="res-arrow" aria-hidden="true">▾</span>
-    </button>
+    ${guideMenu(sid, location.search)}
   </div>
   <div class="content-area">`;
   if (si.value.trim()) {
@@ -855,98 +881,34 @@ function buildNav() {
 }
 
 /* ── WELCOME ── */
+
+function guideMenu(subject, returnTo) {
+  const downloads = '?downloads=' + (subject || 'all') + (returnTo ? '&return=' + encodeURIComponent(returnTo) : '');
+  return `<nav class="guide-menu" aria-label="Guide navigation"><a href="?">Overview</a><a href="${downloads}">${subject ? DATA.subjects.find(s=>s.id===subject).label+' downloads' : 'Downloads'}</a><a href="contribute/${subject ? '?subject='+subject : ''}">Add spec</a></nav>`;
+}
+function resourceRows(resources) {
+  return resources.map(resource => `<a class="resource-row" href="${resource.url}" ${resource.download ? 'download' : 'target="_blank" rel="noopener"'}><span><strong>${resource.label}</strong><small>${resource.download ? 'Illustrator file · Direct download' : /docs.google.com/.test(resource.url) ? 'Reference document · Google Workspace' : /drive.google.com/.test(resource.url) ? 'Reference file · Google Drive' : 'Font resource'}</small></span><span aria-hidden="true">${resource.download ? '↓' : '↗'}</span></a>`).join('');
+}
+function renderDownloads(selected, returnTo) {
+  closeResDropdown();
+  const allowed=['all','shared','fonts',...DATA.subjects.map(s=>s.id)];
+  if(!allowed.includes(selected)) selected='all';
+  const groups=[['math','Math'],['biology','Biology'],['physics','Physics'],['chemistry','Chemistry'],['shared','Shared libraries'],['fonts','Fonts']];
+  const tabs=[['all','All resources'],...groups].map(([id,label])=>`<a href="?downloads=${id}${returnTo ? '&return='+encodeURIComponent(returnTo) : ''}" ${selected===id?'aria-current="page"':''}>${label}</a>`).join('');
+  const relevant=groups.filter(([id])=>selected==='all'||selected===id||(['math','biology','physics','chemistry'].includes(selected)&&['shared','fonts'].includes(id)));
+  const safeReturn=returnTo && /^\?/.test(returnTo) ? returnTo : '?';
+  document.getElementById('content').innerHTML=guideMenu()+`<div class="resource-page"><a class="return-link" href="${escapeSearchText(safeReturn)}">← ${returnTo?'Back to specifications':'Overview'}</a><header class="page-intro"><h1>Downloads & resources</h1><p>Illustrator files, fonts, and references for your next diagram.</p></header><nav class="resource-tabs" aria-label="Resource subjects">${tabs}</nav>${relevant.map(([id,label])=>`<section class="resource-section"><h2>${label}</h2><div>${resourceRows(RES[id]||[])}</div></section>`).join('')}</div>`;
+  document.getElementById('main').scrollTop=0;
+}
 function renderWelcome() {
   closeResDropdown();
-
-  const cards = DATA.subjects.map(s => {
-    const firstCat = s.categories[0].id;
-    const cats = s.categories.slice(0, 3).map(c =>
-      `<span class="sc-cat-tag">${c.label}</span>`).join('');
-    const more = s.categories.length > 3
-      ? `<span class="sc-cat-tag" style="color:var(--text-dim)">+${s.categories.length - 3} more</span>` : '';
-    return `<a class="subject-card" href="${readerLink({subject:s.id, category:firstCat})}" aria-label="Open ${s.label} style guide">
-      <span class="sc-stripe" style="background:${s.accentColor}" aria-hidden="true"></span>
-      <div class="sc-header">
-        <span class="sc-icon" style="background:${s.iconBg};color:${s.iconColor}" aria-hidden="true">${s.icon}</span>
-        <span class="sc-name" style="color:${s.accentColor}">${s.label}</span>
-      </div>
-      <div class="sc-desc">${s.description}</div>
-      <div class="sc-cats" aria-hidden="true">${cats}${more}</div>
-      <div class="sc-meta">
-        <span class="sc-count">${s.categories.length} categories</span>
-        <span class="sc-arrow" aria-hidden="true">→</span>
-      </div>
-    </a>`;
-  }).join('');
-
-  const wdl = `<div class="welcome-dl" role="region" aria-label="Downloads and resources">
-    <div class="welcome-dl-title">Downloads & Resources</div>
-    <div class="welcome-dl-grid">
-      <div>
-        <div class="wdl-sub"><div class="wdl-group-label math-label">Math / Shared</div><div class="dl-row">${RES.shared.map(dlBtn).join('')}</div></div>
-        <div class="wdl-sub"><div class="wdl-group-label math-label" style="margin-top:8px">Math Files</div><div class="dl-row">${RES.math.map(dlBtn).join('')}</div></div>
-        <div class="wdl-sub"><div class="wdl-group-label bio-label">Biology</div><div class="dl-row">${RES.biology.map(dlBtn).join('')}</div></div>
-        <div class="wdl-sub"><div class="wdl-group-label font-label">Fonts</div><div class="dl-row">${RES.fonts.map(dlBtn).join('')}</div></div>
-      </div>
-      <div>
-        <div class="wdl-sub"><div class="wdl-group-label phys-label">Physics</div><div class="dl-row">${RES.physics.map(dlBtn).join('')}</div></div>
-        <div class="wdl-sub"><div class="wdl-group-label chem-label">Chemistry</div><div class="dl-row">${RES.chemistry.map(dlBtn).join('')}</div></div>
-      </div>
-    </div>
-  </div>`;
-
-  const legend = `<div class="legend-card" id="legend-card">
-    <button class="legend-toggle" onclick="document.getElementById('legend-card').classList.toggle('open')"
-      aria-expanded="false" aria-controls="legend-body" id="legend-toggle">
-      <span>How to read this guide</span>
-      <span class="legend-chevron" aria-hidden="true">›</span>
-    </button>
-    <div class="legend-body" id="legend-body" role="region" aria-labelledby="legend-toggle">
-      <div class="legend-items">
-        <div class="legend-item">
-          <span class="li-icon" aria-hidden="true">⚠️</span>
-          <div class="li-desc"><strong>Warning</strong> — important rule or updated guideline. Old assets may not match.</div>
-        </div>
-        <div class="legend-item">
-          <span class="li-icon" aria-hidden="true" style="font-size:11px;font-weight:700;color:var(--indigo)">i</span>
-          <div class="li-desc"><strong>Info</strong> — clarification, formula, or cross-reference to another resource.</div>
-        </div>
-        <div class="legend-item">
-          <span class="li-icon" aria-hidden="true">•</span>
-          <div class="li-desc"><strong>Note</strong> — additional context or exception to the main rule.</div>
-        </div>
-        <div class="legend-item">
-          <span class="li-icon" style="font-size:9px;background:var(--green-light);color:var(--green-dark);padding:2px 5px;border-radius:3px;font-family:var(--mono);font-weight:600;line-height:2;width:auto" aria-hidden="true">grade-specific</span>
-          <div class="li-desc" style="margin-left:4px"><strong>Grade-specific</strong> — values differ by grade. Check the grade comparison table.</div>
-        </div>
-        <div class="legend-item">
-          <span class="li-icon" aria-hidden="true">🎨</span>
-          <div class="li-desc"><strong>Click any color swatch or hex value</strong> to copy it to clipboard.</div>
-        </div>
-        <div class="legend-item">
-          <span class="li-icon" aria-hidden="true">🔍</span>
-          <div class="li-desc"><strong>Click any reference image</strong> to zoom in.</div>
-        </div>
-      </div>
-    </div>
-  </div>`;
-
-  document.getElementById('content').innerHTML = `
-    <div class="welcome">
-      <div class="welcome-hero" role="banner">
-        <h1>CK-12 Diagram Style Guide</h1>
-        <p>Single source of truth for all diagram specifications — for internal teams and external contractors. Pick a subject below to get started.</p>
-      </div>
-      <nav class="subject-cards" aria-label="Subjects">${cards}</nav>
-      ${wdl}
-      ${legend}
-    </div>`;
-
-  /* Sync legend toggle aria */
-  document.getElementById('legend-card').addEventListener('click', function() {
-    const tog = document.getElementById('legend-toggle');
-    tog.setAttribute('aria-expanded', this.classList.contains('open') ? 'true' : 'false');
-  });
+  const subjects=DATA.subjects.map(subject=>`<article class="subject-entry"><div><h2><a href="${readerLink({subject:subject.id,category:subject.categories[0].id})}">${subject.label}<span aria-hidden="true"> ↗</span></a></h2><p>${subject.categories.slice(0,4).map(c=>c.label).join(' · ')}</p></div><a class="subject-download" href="?downloads=${subject.id}">${subject.label} downloads →</a></article>`).join('');
+  document.getElementById('content').innerHTML=guideMenu()+`<div class="landing"><header class="page-intro"><p class="eyebrow">CK-12 DESIGN GUIDELINES</p><h1>Every diagram.<br>A shared standard.</h1><p>Find the right colors, typography, and illustration specifications for your subject.</p><form id="landing-search" role="search"><label class="visually-hidden" for="landing-query">Search design specifications</label><input id="landing-query" type="search" placeholder="Search a diagram, property, or hex code" required><button>Search</button></form></header><section class="subject-directory" aria-label="Browse subjects">${subjects}</section><section class="download-intro"><div><h2>Start with the right files.</h2><p>Keep the symbol libraries, reference artwork, and typefaces close at hand.</p></div><a href="?downloads=all">Browse downloads →</a></section><p class="reader-hint">Click a color to copy its hex code. Click a reference image to enlarge it.</p></div>`;
+  document.getElementById('landing-search').onsubmit=event=>{
+    event.preventDefault();
+    history.pushState(null,'',queryFor({q:document.getElementById('landing-query').value.trim()}));
+    restoreReader();
+  };
 }
 
 /* ── SEARCH ── */
@@ -1132,6 +1094,7 @@ function restoreReader() {
   si.value = params.get('q') || '';
   clearNav();
   document.querySelectorAll('#nav .nh').forEach(item => item.classList.remove('nh'));
+  if(params.has('downloads')){renderDownloads(params.get('downloads'),params.get('return'));return;}
   const spec = params.get('spec');
   const subject = spec
     ? DATA.subjects.find(s => s.categories.some(c => c.elements.some(e => e.id === spec)))
