@@ -776,7 +776,6 @@ const DATA = { subjects: [
           {label:"Style reference", value:"Use the CK-12 Artwork Creation Guide for Physics vector illustrations."},
         ],
         banners:[
-          {type:"note", text:"<a href=\"physics-review/\">View the Physics source review</a> for the original passages, figure links and approved decisions."},
         ]
       }
     ]},
@@ -1048,7 +1047,6 @@ const DATA = { subjects: [
           {label:"Text and labels", value:"Set headings, captions, element labels, charges and locants manually. Check font, size, alignment and spacing in the finished figure."},
         ],
         banners:[
-          {type:"note", text:"<a href=\"chemistry-review/\">Read the Chemistry source review</a> for the original Word passages, figures and reviewed decisions."},
         ]
       }
     ]},
