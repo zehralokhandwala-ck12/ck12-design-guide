@@ -367,7 +367,32 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 }
 @media(max-height:480px) and (max-width:760px){#section-menu{max-height:calc(100dvh - 110px)}}
 </style>
-<script defer src="contribute/copy.js"></script></head>
+<script defer src="contribute/copy.js"></script><style>
+/* Keep a comfortable reading width with generous space around each spec. */
+.content-area,.welcome,.sr{width:100%;max-width:1120px;margin-inline:auto;padding:36px 40px 80px}
+.spec-card{margin-bottom:32px;box-shadow:none;border-radius:10px}
+.card-header{padding:18px 24px;gap:12px}
+.card-body{padding:24px}
+.spec-table td,.gt td{padding-top:13px;padding-bottom:13px}
+.spec-table th,.gt thead th{padding-bottom:12px}
+.img-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin:28px 0 8px}
+.img-item{gap:10px}
+.img-btn{height:210px;padding:12px;background:#fff}
+.img-item img{max-height:186px}
+.img-caption{line-height:1.6}
+.banner{margin-top:20px;padding:14px 16px}
+.card-edit{font-size:13px;padding:6px 12px}
+.placement-case{padding:26px 0;gap:28px}
+@media(min-width:1700px){.content-area,.welcome,.sr{max-width:1200px;padding-inline:48px}}
+@media(max-width:1000px){.content-area,.welcome,.sr{padding:24px 22px 60px}}
+@media(max-width:600px){
+ .content-area,.welcome,.sr{padding:20px 14px 48px}
+ .card-header{padding:16px}.card-body{padding:18px 16px}
+ .spec-card{margin-bottom:24px}
+ .img-gallery{grid-template-columns:1fr;gap:22px}
+}
+</style>
+</head>
 <body>
 
 <!-- Skip link for keyboard users -->
@@ -736,7 +761,7 @@ function renderPage(sid, cid, elementId, rowKey, selectedGrade) {
   }
 
   cat.elements.forEach((el, i) => {
-    if (i > 0) h += `<div class="sdiv" aria-hidden="true">${el.label}</div>`;
+
     h += renderEl(el, sub.accentColor, sub.badge);
   });
 
