@@ -439,6 +439,11 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 .category-jumps a,.section-jumps a{color:var(--green-dark)}
 .compound-spec{display:grid;gap:12px;margin:0;text-align:left}.compound-spec>div{display:grid;grid-template-columns:145px minmax(0,1fr);gap:14px;align-items:baseline}.compound-spec dt{font:400 14px/1.5 var(--sans);color:var(--text-muted)}.compound-spec dd{margin:0;font:400 15px/1.6 var(--sans);overflow-wrap:anywhere}.spec-table td:not(.lc){font-family:var(--sans);line-height:1.65}.spec-table td:has(.compound-spec){padding-top:18px;padding-bottom:18px}.copy-color{display:inline-flex;align-items:center;gap:6px;font:inherit;color:inherit;background:transparent;border:0;padding:4px 2px;cursor:copy;border-radius:4px}.copy-color:hover,.sw-btn:hover{background:var(--green-light)}.copy-color::before{content:'';width:14px;height:14px;background:var(--copy-color);border:1px solid #a9adb3;border-radius:3px;flex:none}.copy-color::after,.sw-btn::after{content:'⧉';font:16px var(--sans);color:var(--text-muted);margin-left:4px}.copy-color:focus-visible{outline:2px solid var(--green);outline-offset:2px}.gt .compound-spec>div{grid-template-columns:1fr;gap:2px}.gt .compound-spec dt{font-size:13px}@media(max-width:600px){.compound-spec>div{grid-template-columns:1fr;gap:2px}}
 .category-subnav{margin:2px 14px 12px 46px;padding-left:12px;border-left:1px solid var(--border2);display:grid;gap:3px}.category-subnav a{display:block;padding:9px 10px;font-size:14px;line-height:1.45;color:var(--text-muted);text-decoration:none;border-radius:5px}.category-subnav a:hover{background:var(--bg);color:var(--text)}.category-subnav a[aria-current="location"]{background:var(--green-light);color:var(--green-dark);font-weight:600}.category-intro{margin-bottom:24px}
+
+.spec-table-section{margin:0 0 28px}.spec-table-section>h4{font-size:18px;font-weight:650;margin:0 0 12px;color:var(--text)}.spec-table-scroll{overflow:auto;border:1px solid #d5dce0;border-radius:6px}.type-spec-table{width:100%;min-width:760px;border-collapse:collapse;table-layout:fixed;font-size:15px;line-height:1.55}.type-spec-table thead th{background:#eef2f4;padding:14px 16px;text-align:left;font-weight:650;border-bottom:1px solid #cbd3d8}.type-spec-table thead th:nth-child(1){width:25%}.type-spec-table thead th:nth-child(2){width:24%}.type-spec-table thead th:nth-child(3){width:23%}.type-spec-table thead th:nth-child(4){width:10%}.type-spec-table thead th:nth-child(5){width:18%}.type-spec-table tbody th,.type-spec-table tbody td{padding:18px 16px;border-bottom:1px solid #dce2e6;text-align:left;vertical-align:top;overflow-wrap:anywhere;font-weight:400}.type-spec-table tbody th{font-weight:600;color:var(--text)}.type-spec-table tbody tr:nth-child(even){background:#f7f9fa}.type-spec-table tbody tr:last-child>*{border-bottom:0}.type-spec-table .sw-btn{font-size:14px;white-space:nowrap}.size-value{white-space:nowrap}.unspecified{color:var(--text-muted);font-size:13px}.opacity-value{display:block;margin-top:6px;font-size:13px;color:var(--text-muted)}
+.spec-table{border:1px solid #d5dce0;table-layout:fixed}.spec-table thead th{background:#eef2f4;text-transform:none;letter-spacing:0;font-size:15px;padding:13px 16px;color:var(--text);border-bottom:1px solid #cbd3d8}.spec-table thead th:first-child{width:30%}.spec-table tbody .lc{width:30%;padding:16px;vertical-align:top;background:#f7f9fa;color:var(--text);font-size:15px;line-height:1.6;font-weight:600;text-transform:none;letter-spacing:0;border-bottom:1px solid #d5dce0}.spec-table tbody td{padding:16px!important;vertical-align:top;border-bottom:1px solid #d5dce0;font-size:15px}.spec-table tbody tr:last-child>*{border-bottom:0}.spec-table .compound-spec{gap:9px}.spec-table .compound-spec>div{grid-template-columns:150px minmax(0,1fr)}.spec-table .compound-spec dt{font-size:14px}.spec-table .compound-spec dd{font-size:15px}.spec-table .property-group-heading th{padding:15px 16px;background:#eaf0ed;border-bottom:1px solid #cbd5cf;font-size:16px;text-transform:none;letter-spacing:0}.gt th,.gt td{vertical-align:top!important}.gt .compound-spec{padding:8px;background:#f7f9fa;border:1px solid #e0e5e8;border-radius:4px}
+@media(max-width:650px){.spec-table tbody .lc,.spec-table thead th:first-child{width:36%}.spec-table .compound-spec>div{grid-template-columns:1fr;gap:2px}.spec-table tbody td,.spec-table tbody .lc{padding:12px!important}}
+.table-footnote{margin-top:9px;font-size:13px;color:var(--text-muted)}
 </style></head>
 <body>
 
@@ -484,7 +489,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 
 <script src="specs.js?v=drive-audit2"></script>
 <script src="contribute/model.js?v=4"></script>
-<script src="contribute/save.js"></script><script src="contribute/resources.js"></script><script src="contribute/property-picker.js"></script><script src="contribute/property-groups.js?v=groups1"></script><script src="contribute/editor-session.js?v=drafts1"></script><script src="contribute/property-values.js?v=groups1"></script><script defer src="contribute/card-editor.js?v=drafts1"></script><script src="contribute/published.js?v=f209a3fac474"></script>
+<script src="contribute/save.js"></script><script src="contribute/resources.js"></script><script src="contribute/property-picker.js"></script><script src="contribute/property-groups.js?v=groups1"></script><script src="contribute/editor-session.js?v=drafts1"></script><script src="contribute/property-values.js?v=tables2"></script><script defer src="contribute/card-editor.js?v=drafts1"></script><script src="contribute/published.js?v=f209a3fac474"></script>
 <script src="math-review/guide-links.js?v=curated2"></script>
 <script>
 /* ── HELPERS ── */
@@ -742,22 +747,38 @@ function renderEl(el, accentColor, subjectBadge) {
   if (hasGradeTable) h += gTable(el.gradeTable, el.label);
 
   if (el.specs && el.specs.length) {
-    if (hasGradeTable) h += `<div style="height:12px"></div>`;
-    h += `<table class="spec-table" role="table">
-      <thead><tr><th scope="col">Property</th><th scope="col">Value</th></tr></thead>
-      <tbody>`;
-    let previousGroup=null;
-    el.specs.forEach(s => {
-      const group=s.propertyGroup;
-      if(group && group.id!==previousGroup)h+='<tr class="property-group-heading"><th colspan="2" scope="colgroup">'+escapeSearchText(group.name)+(group.scope?' · '+escapeSearchText(group.scope):'')+'</th></tr>';
-      previousGroup=group?.id;
-      const note = s.contributionNote ? `<div class="source-links">${s.contributionNote} · <a href="https://github.com/${SpecChanges.repository}/issues/${Number(s.issue)}">Review history</a></div>` : '';
-      const examples = placements.filter(item => item.fields.includes(s.id));
-      const caseLinks = examples.map(item => `<a href="${readerLink({spec:el.id,row:'case-' + item.id,grade:8,q:si.value})}">Grade 8 example · ${item.title}</a>`);
-      const links = caseLinks.join('');
-      h += `<tr data-match-row="${propertyKey('spec', s)}" tabindex="-1"><td class="lc">${s.propertyGroup?escapeSearchText(s.groupField):s.label}</td><td>${svClean(s)}${note}${links ? '<div class="source-links">' + links + '</div>' : ''}</td></tr>`;
-    });
-    h += `</tbody></table>`;
+    const typography=[],other=[];
+    for(const row of el.specs){
+      const markup=structuredSpecValue(row.value,row.label);
+      const doc=new DOMParser().parseFromString(markup,'text/html');
+      const fields=[...doc.querySelectorAll('.compound-spec>div')].map(n=>[n.querySelector('dt').textContent,n.querySelector('dd').textContent]);
+      if(fields.some(([key])=>key==='Font family')&&!row.propertyGroup)typography.push({row,fields:Object.fromEntries(fields)});else other.push(row);
+    }
+    function rowLinks(row){
+      const examples=placements.filter(item=>item.fields.includes(row.id));
+      const note=row.contributionNote?'<div class="source-links">'+row.contributionNote+'</div>':'';
+      return note+(examples.length?'<div class="source-links">'+examples.map(item=>'<a href="'+readerLink({spec:el.id,row:'case-'+item.id,grade:8,q:si.value})+'">Grade 8 example · '+item.title+'</a>').join('')+'</div>':'');
+    }
+    if(typography.length){
+      h+='<section class="spec-table-section"><h4>Typography</h4><div class="spec-table-scroll" tabindex="0" role="region" aria-label="Typography for '+escapeAttribute(el.label)+'"><table class="type-spec-table"><thead><tr><th scope="col">Element</th><th scope="col">Font family</th><th scope="col">Style</th><th scope="col">Size</th><th scope="col">Color</th></tr></thead><tbody>';
+      const unspecified='<span class="unspecified" title="Not stated in this row; check related rules below" aria-label="Not stated in this row">—</span>';
+      for(const {row,fields:f} of typography){
+        h+='<tr data-match-row="'+propertyKey('spec',row)+'" tabindex="-1"><th scope="row">'+row.label+rowLinks(row)+'</th><td>'+escapeSearchText(f['Font family'])+'</td><td>'+(f['Font style / usage']?escapeSearchText(f['Font style / usage']):unspecified)+'</td><td class="size-value">'+escapeSearchText(f['Font size'])+'</td><td>'+(f.Color?swBtn(f.Color):unspecified)+(f.Opacity?'<span class="opacity-value">Opacity '+escapeSearchText(f.Opacity)+'</span>':'')+'</td></tr>';
+      }
+      h+='</tbody></table></div><p class="table-footnote">— Not stated in this row. Related rules may appear below.</p></section>';
+    }
+    if(other.length){
+      h+='<section class="spec-table-section">'+(typography.length?'<h4>Other properties</h4>':'')+'<table class="spec-table" role="table"><thead><tr><th scope="col">Property</th><th scope="col">Specification</th></tr></thead><tbody>';
+      let previousGroup=null;
+      for(const row of other){
+        const group=row.propertyGroup;
+        if(group&&group.id!==previousGroup)h+='<tr class="property-group-heading"><th colspan="2" scope="colgroup">'+escapeSearchText(group.name)+(group.scope?' · '+escapeSearchText(group.scope):'')+'</th></tr>';
+        previousGroup=group?.id;
+        const note=row.contributionNote?'<div class="source-links">'+row.contributionNote+'</div>':'';
+        h+='<tr data-match-row="'+propertyKey('spec',row)+'" tabindex="-1"><th scope="row" class="lc">'+(group?escapeSearchText(row.groupField):row.label)+'</th><td>'+svClean(row)+rowLinks(row)+'</td></tr>';
+      }
+      h+='</tbody></table></section>';
+    }
   }
 
   if (!sourceReview) {

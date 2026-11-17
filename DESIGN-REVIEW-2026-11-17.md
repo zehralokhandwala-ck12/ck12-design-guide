@@ -66,3 +66,11 @@ Ask each designer to find a Grade 7 hollow-point rule, copy its stroke color, fi
 - Added exit warnings for reload/close and clicked navigation away from dirty editors. Draft recovery remains the fallback for browser history navigation.
 - Added optional previews in both editors, without requiring a token or publishing. This is a content preview; a before/after diff remains future work.
 - Browser checks verified restored name/font size, empty token after reload, draft discard, both previews, and sidebar scroll tracking. File reattachment is required after restoring a draft.
+
+## Spec-table redesign following visual feedback
+
+The nested value lists made parent-child relationships ambiguous. Recognized compound typography now uses one row per element with fixed Element / Font family / Style / Size / Color columns. Other settings use a separate bordered table with top-aligned row headers. Compound non-text fields use a consistent display order. Grade tables retain their comparison layout. Source values and search row keys are preserved. Missing cells mean not stated in that particular source row; they do not override related rules.
+
+References: [IBM Carbon data-table guidance](https://www.carbondesignsystem.com/building-blocks/core/components/data-table/guidelines), emphasizing consistent table structure and sizing; [Google Material typography](https://m3.material.io/styles/typography/applying-type), organizing typography by purpose. These informed the presentation, not CK-12 artwork values.
+
+Verification: all 416 standard property rows accounted for across 84 cards; clipboard copy verified; 390 px viewport has no page overflow and permits horizontal table scrolling.
