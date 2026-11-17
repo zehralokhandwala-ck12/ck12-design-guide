@@ -77,6 +77,11 @@ const SpecChanges = (() => {
     result.splice(record.position, record.operation === 'edit' ? 1 : 0, record.color);
     return result;
   }
+  function groupMetadata(row) {
+    if(!row.propertyGroup)return {};
+    const g=row.propertyGroup;
+    return {propertyGroup:{id:line(g.id,'Group ID',100),type:line(g.type,'Group type',50),name:line(g.name,'Group name',100),scope:typeof g.scope==='string'?g.scope:''},groupField:line(row.groupField,'Group setting',100)};
+  }
   function resources(items) {
     requireValue(Array.isArray(items),'Invalid references.');
     return items.map(r=>{
@@ -98,7 +103,7 @@ const SpecChanges = (() => {
           const label=escape(line(row.label,'Property name',300));
           if(field==='grade')return {label,values:row.values.map(v=>escape(line(v,'Grade value',1500))),highlight:true};
           const value=escape(line(row.value,'Property value',2000));
-          return {label,value,...(previous.id ? {id:previous.id} : {}),...(hex.test(value)?{type:'color'}:{})};
+          return {label,value,...groupMetadata(row),...(previous.id ? {id:previous.id} : {}),...(hex.test(value)?{type:'color'}:{})};
         });
         if(field==='grade')entry.gradeTable.rows=updated;else entry.specs=updated;
       }
@@ -131,7 +136,7 @@ const SpecChanges = (() => {
       for (const p of record.properties) {
         const label=escape(p.label)+(record.scope?' ('+escape(record.scope)+')':'');
         const index=entry.specs.findIndex(s=>s.label.toLowerCase()===label.toLowerCase());
-        const value={label,value:escape(p.value),...(hex.test(p.value)?{type:'color'}:{})};
+        const value={label,value:escape(p.value),...groupMetadata(p.propertyGroup?{...p,propertyGroup:{...p.propertyGroup,scope:record.scope||p.propertyGroup.scope||''}}:p),...(hex.test(p.value)?{type:'color'}:{})};
         if(index<0) entry.specs.push(value); else entry.specs[index]=value;
       }
       if(record.resources)entry.resources=[...(entry.resources||[]),...resources(record.resources)];

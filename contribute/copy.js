@@ -18,7 +18,7 @@
       for(const m of matches){
         frag.append(n.data.slice(start,m.index));
         const b=document.createElement('button'); b.type='button'; b.dataset.copyHex=m[0]; b.title='Copy '+m[0]; b.setAttribute('aria-label',b.title);
-        b.style.cssText='font:inherit;color:inherit;background:transparent;border:0;border-bottom:1px dotted currentColor;padding:0 .1em;cursor:copy';
+        b.className='copy-color';b.style.setProperty('--copy-color',m[0]);
         b.textContent=m[0]; frag.append(b); start=m.index+m[0].length;
       }
       frag.append(n.data.slice(start)); n.replaceWith(frag);

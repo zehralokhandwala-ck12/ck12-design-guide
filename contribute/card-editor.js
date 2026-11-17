@@ -35,7 +35,6 @@ document.addEventListener('click', event => {
       const row=append(list,'div');row.className='edit-row';
       const before=[original.label||'',...(field==='grade'?original.values||columns.map(()=>''):[original.value||''])].map(plain);
       const inputs=['Property',...columns].map((label,i)=>{const box=input(row,label,before[i]);box.required=true;return box});
-      propertyPicker(row,inputs[0],inputs.slice(1));
       button(row,'Remove',()=>{rows.delete(row);row.remove()});
       rows.set(row,()=>{
         const values=inputs.map(i=>i.value.trim());
@@ -44,10 +43,13 @@ document.addEventListener('click', event => {
       });
       return inputs[0];
     }
-    existing.forEach(add);button(section,'+ Add property',()=>add({},-1).focus());
+    existing.forEach((row,index)=>{if(field==='grade'||!row.propertyGroup)add(row,index)});
+    if(field==='grade')button(section,'+ Add grade property',()=>add({},-1).focus());
     readers[field]=()=>Array.from(rows.values(),read=>read());
   }
   properties('specs',entry.specs||[],['Value']);
+  const groupHost=group('Text, shapes & other properties');
+  const groupedProperties=propertyGroups(groupHost,(entry.specs||[]).filter(r=>r.propertyGroup).map(r=>({...r,value:plain(r.value)})));
   if(entry.gradeTable)properties('grade',entry.gradeTable.rows,entry.gradeTable.columns.slice(1));
   const images=group('Reference images'),removed=new Set(),added=[];
   const originals=[...(mathReviewLinks[id]?.images||[]),...(entry.images||[]),...(entry.archivalImages||[])];
@@ -81,6 +83,7 @@ document.addEventListener('click', event => {
         addImages.push({src:'data:'+file.type+';base64,'+base64(new Uint8Array(await file.arrayBuffer())),caption:item.caption.value.trim()||plain(entry.label)});
       }
       const rows=Object.fromEntries(Object.entries(readers).map(([field,read])=>[field,read()]));
+      rows.specs.push(...groupedProperties.read().map(row=>({...row,index:-1,edit:true})));
       const record={kind:'card-edit',subject:subject.id,category:category.id,id,rows,removeImages:[...removed],addImages,date:new Date().toISOString()};
       record.resources=await readResources();
       SpecChanges.apply(structuredClone(editableCards),record);

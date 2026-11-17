@@ -25,23 +25,15 @@ const target=query.get('target');
 if(target && [...$('entry').options].some(o=>o.value===target)) $('entry').value=target;
 $('namebox').hidden=!!$('entry').value;
 $('subject').onchange=destinations;$('category').onchange=types;$('entry').onchange=()=>$('namebox').hidden=!!$('entry').value;
-function row(){
-  const div=document.createElement('div');div.className='prop-row';
-  for(const [label,hint] of [['Property','Point color, ray color, stroke…'],['Value','#999999 or 2 px']]){
-    const l=document.createElement('label');l.textContent=label;const i=document.createElement('input');i.required=true;i.maxLength=label==='Property'?100:500;i.placeholder=hint;l.append(i);div.append(l);
-  }
-  const inputs=div.querySelectorAll('input');
-  propertyPicker(div,inputs[0],[inputs[1]]);
-  const b=document.createElement('button');b.type='button';b.className='plain';b.textContent='Remove';b.onclick=()=>div.remove();div.append(b);$('rows').append(div);
-}
-row();$('add').onclick=row;
+const groupedProperties=propertyGroups($('rows'));
+$('add').remove();
 const resourceHost=document.createElement('div');$('editor').insertBefore(resourceHost,$('editor').querySelector('details'));
 const readResources=resourceEditor(resourceHost);
 $('editor').onsubmit=async event=>{
   event.preventDefault();$('submit').disabled=true;$('status').textContent='Saving…';
   try{
     const key=$('key').value.trim();if(!key)throw Error('Open Editor access and enter your GitHub editor token.');
-    const properties=[...$('rows').children].map(r=>{const [k,v]=r.querySelectorAll('input');return {label:k.value.trim(),value:v.value.trim()}});
+    const properties=groupedProperties.read();
     if(!properties.length || properties.some(p=>!p.label||!p.value))throw Error('Add a property and its value.');
     const title=$('entry').value?$('entry').selectedOptions[0].text:$('name').value.trim();
     const r={kind:'direct',id:$('entry').value||SpecChanges.slug(title),title,existing:!!$('entry').value,subject:subject().id,category:category()?.id||SpecChanges.slug($('catname').value),categoryName:category()?'':$('catname').value.trim(),properties,scope:$('scope').value.trim(),date:new Date().toISOString()};
