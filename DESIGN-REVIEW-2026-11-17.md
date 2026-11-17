@@ -58,3 +58,11 @@ Use comparison tables for repeated variants or grade differences. Use grouped la
 ## Suggested two-designer session
 
 Ask each designer to find a Grade 7 hollow-point rule, copy its stroke color, find a horizontal bar example, download a font without leaving the guide, and draft a new graph type with text, shape, image and Illustrator references. Observe without instructions; record wrong turns, lost work and uncertainty. Review the resulting spec together before any real publication. Prioritize observed failures over decorative changes.
+
+## First follow-up implementation
+
+- Moved category subsection links into the active sidebar category, removed duplicate top-of-page navigation, and added a current-section indicator that follows scrolling.
+- Added browser-local text drafts and restore/discard controls to both editors. Tokens and uploaded files are excluded. Drafts from an older published-data baseline cannot auto-restore over newer edits.
+- Added exit warnings for reload/close and clicked navigation away from dirty editors. Draft recovery remains the fallback for browser history navigation.
+- Added optional previews in both editors, without requiring a token or publishing. This is a content preview; a before/after diff remains future work.
+- Browser checks verified restored name/font size, empty token after reload, draft discard, both previews, and sidebar scroll tracking. File reattachment is required after restoring a draft.

@@ -69,11 +69,12 @@ document.addEventListener('click', event => {
   const token=input(access,'GitHub editor token');token.type='password';token.autocomplete='off';
   const help=append(access,'a','Editor access setup');help.href='contribute/';help.target='_blank';help.rel='noopener';
   const actions=append(form,'div'),save=append(actions,'button','Save changes');save.type='submit';
+  const previewButton=append(actions,'button','Preview changes');previewButton.type='submit';previewButton.dataset.preview='true';
   function cancel(){form.remove();body.hidden=false;trigger.hidden=false;trigger.focus()}
   button(actions,'Cancel',cancel);
   const status=append(form,'p');status.setAttribute('role','status');
   form.onsubmit=async e=>{
-    e.preventDefault();if(!token.value.trim()){access.open=true;token.focus();status.textContent='Enter your editor token to save.';return}
+    e.preventDefault();const preview=e.submitter?.dataset.preview==='true';if(!preview&&!token.value.trim()){access.open=true;token.focus();status.textContent='Enter your editor token to save.';return}
     save.disabled=true;
     try{
       const addImages=[];
@@ -86,10 +87,12 @@ document.addEventListener('click', event => {
       rows.specs.push(...groupedProperties.read().map(row=>({...row,index:-1,edit:true})));
       const record={kind:'card-edit',subject:subject.id,category:category.id,id,rows,removeImages:[...removed],addImages,date:new Date().toISOString()};
       record.resources=await readResources();
-      SpecChanges.apply(structuredClone(editableCards),record);
+      const previewData=structuredClone(editableCards);SpecChanges.apply(previewData,record);
+      if(preview){showEditorPreview(form,SpecChanges.entries(previewData).find(e=>e.id===id));save.disabled=false;status.textContent='Preview ready. Nothing has been published.';return;}
       await saveGuideChange(token.value.trim(),record,plain(entry.label));
-      token.value='';form.replaceChildren();append(form,'p','Saved. GitHub Pages will publish your changes shortly.');const link=append(form,'a','Reload this card');link.href='?spec='+id;
+      draftSession.complete();token.value='';form.replaceChildren();append(form,'p','Saved. GitHub Pages will publish your changes shortly.');const link=append(form,'a','Reload this card');link.href='?spec='+id;
     }catch(err){status.textContent=err.message;save.disabled=false}
   };
+  const draftSession=editorSession(form,'card-'+id);
   body.hidden=true;trigger.hidden=true;card.append(form);form.querySelector('input')?.focus();
 });

@@ -433,11 +433,12 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 #download-pane h3{font-size:14px;margin:26px 0 8px;color:var(--text-muted)}
 #download-pane .resource-row{padding:16px 0}
 @media(max-width:1100px){#download-pane{position:fixed;right:0;top:0;z-index:80;box-shadow:-10px 0 30px #0002;width:min(350px,100vw)}}
-</style><style>.property-picker{display:flex;gap:12px;flex-basis:100%}.property-picker label{flex:1}.property-picker select{width:100%;padding:8px;font:inherit}.graph-type{margin-top:32px}.graph-type h4{font-size:17px;margin-bottom:12px}</style><link rel="stylesheet" href="contribute/property-groups.css?v=groups1"><style>
+</style><style>.property-picker{display:flex;gap:12px;flex-basis:100%}.property-picker label{flex:1}.property-picker select{width:100%;padding:8px;font:inherit}.graph-type{margin-top:32px}.graph-type h4{font-size:17px;margin-bottom:12px}</style><link rel="stylesheet" href="contribute/property-groups.css?v=drafts1"><style>
 .category-intro{margin:0 0 36px}.category-intro h1{font-size:30px;line-height:1.2;margin:0 0 20px}.category-jumps,.section-jumps{display:flex;gap:10px 22px;flex-wrap:wrap;line-height:1.6}.category-jumps{padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.category-jumps span{width:100%;font-size:14px;color:var(--text-dim)}.category-jumps a,.section-jumps a{font-size:16px;text-underline-offset:4px}.category-section,.graph-type{scroll-margin-top:85px}.category-section>h2{font-size:24px;margin:44px 0 14px}.section-jumps{margin:0 0 24px}.category-section:first-of-type>h2{margin-top:20px}.spec-resources{overflow-wrap:anywhere}.inline-editor{font-size:16px;padding:24px}.inline-editor>fieldset>legend{font-size:18px}.inline-editor .edit-row input{min-height:42px;font-size:15px}.inline-editor .edit-row label{font-size:14px}.inline-editor button{min-height:40px}
 .property-group-heading th{padding-top:22px;padding-bottom:10px;text-transform:none;letter-spacing:0;font-size:17px;color:var(--text)}
 .category-jumps a,.section-jumps a{color:var(--green-dark)}
 .compound-spec{display:grid;gap:12px;margin:0;text-align:left}.compound-spec>div{display:grid;grid-template-columns:145px minmax(0,1fr);gap:14px;align-items:baseline}.compound-spec dt{font:400 14px/1.5 var(--sans);color:var(--text-muted)}.compound-spec dd{margin:0;font:400 15px/1.6 var(--sans);overflow-wrap:anywhere}.spec-table td:not(.lc){font-family:var(--sans);line-height:1.65}.spec-table td:has(.compound-spec){padding-top:18px;padding-bottom:18px}.copy-color{display:inline-flex;align-items:center;gap:6px;font:inherit;color:inherit;background:transparent;border:0;padding:4px 2px;cursor:copy;border-radius:4px}.copy-color:hover,.sw-btn:hover{background:var(--green-light)}.copy-color::before{content:'';width:14px;height:14px;background:var(--copy-color);border:1px solid #a9adb3;border-radius:3px;flex:none}.copy-color::after,.sw-btn::after{content:'⧉';font:16px var(--sans);color:var(--text-muted);margin-left:4px}.copy-color:focus-visible{outline:2px solid var(--green);outline-offset:2px}.gt .compound-spec>div{grid-template-columns:1fr;gap:2px}.gt .compound-spec dt{font-size:13px}@media(max-width:600px){.compound-spec>div{grid-template-columns:1fr;gap:2px}}
+.category-subnav{margin:2px 14px 12px 46px;padding-left:12px;border-left:1px solid var(--border2);display:grid;gap:3px}.category-subnav a{display:block;padding:9px 10px;font-size:14px;line-height:1.45;color:var(--text-muted);text-decoration:none;border-radius:5px}.category-subnav a:hover{background:var(--bg);color:var(--text)}.category-subnav a[aria-current="location"]{background:var(--green-light);color:var(--green-dark);font-weight:600}.category-intro{margin-bottom:24px}
 </style></head>
 <body>
 
@@ -483,7 +484,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offs
 
 <script src="specs.js?v=drive-audit2"></script>
 <script src="contribute/model.js?v=4"></script>
-<script src="contribute/save.js"></script><script src="contribute/resources.js"></script><script src="contribute/property-picker.js"></script><script src="contribute/property-groups.js?v=groups1"></script><script src="contribute/property-values.js?v=groups1"></script><script defer src="contribute/card-editor.js?v=groups1"></script><script src="contribute/published.js?v=f209a3fac474"></script>
+<script src="contribute/save.js"></script><script src="contribute/resources.js"></script><script src="contribute/property-picker.js"></script><script src="contribute/property-groups.js?v=groups1"></script><script src="contribute/editor-session.js?v=drafts1"></script><script src="contribute/property-values.js?v=groups1"></script><script defer src="contribute/card-editor.js?v=drafts1"></script><script src="contribute/published.js?v=f209a3fac474"></script>
 <script src="math-review/guide-links.js?v=curated2"></script>
 <script>
 /* ── HELPERS ── */
@@ -837,23 +838,17 @@ function renderPage(sid, cid, elementId, rowKey, selectedGrade) {
   const remaining=cat.elements.filter(el=>!sections.some(g=>g.elements.includes(el)));
   if(sections.length&&remaining.length)sections.push({label:'Additional specifications',id:'category-section-other',elements:remaining});
   let intro='<header class="category-intro"><h1>'+cat.label+'</h1>';
-  if(cat.elements.length>1){
-    intro+='<nav class="category-jumps" aria-label="On this page"><span>On this page</span>';
-    if(sections.length)for(const section of sections)intro+='<a href="#'+section.id+'">'+section.label+'</a>';
-    else for(const el of cat.elements)intro+='<a href="#spec-'+el.id+'">'+el.label+'</a>';
-    intro+='</nav>';
-  }
   intro+='</header>';
   h+=intro;
   if(sections.length)for(const section of sections){
     h+='<section class="category-section" id="'+section.id+'"><h2>'+section.label+'</h2>';
-    if(section.elements.length>1)h+='<nav class="section-jumps" aria-label="'+escapeAttribute(section.label)+'">'+section.elements.map(el=>'<a href="#spec-'+el.id+'">'+el.label+'</a>').join('')+'</nav>';
     for(const el of section.elements)h+=renderEl(el,sub.accentColor,sub.badge);
     h+='</section>';
   }else for(const el of cat.elements)h+=renderEl(el,sub.accentColor,sub.badge);
 
   h += `</div>`;
   document.getElementById('content').innerHTML = h;
+  updateCategoryNav(sid,cid,sections.length?sections.map(g=>({id:g.id,label:g.label})):cat.elements.map(el=>({id:'spec-'+el.id,label:el.label})));
   document.getElementById('main').scrollTop = 0;
   if (elementId) {
     const card = document.getElementById('spec-' + elementId);
@@ -894,7 +889,38 @@ function renderPage(sid, cid, elementId, rowKey, selectedGrade) {
   }
 }
 
+function updateCategoryNav(sid,cid,items){
+  const nav=document.getElementById('nav');
+  const position=nav.scrollTop;
+  nav.querySelectorAll('.category-subnav').forEach(n=>n.remove());
+  const parent=nav.querySelector('[data-key="'+sid+'__'+cid+'"]');
+  if(parent && items.length>1){
+    const list=document.createElement('div');list.className='category-subnav';
+    list.setAttribute('role','navigation');list.setAttribute('aria-label',parent.textContent.trim()+' subsections');
+    for(const item of items){
+      const link=document.createElement('a');link.href='#'+item.id;link.dataset.sectionTarget=item.id;link.textContent=item.label;
+      link.onclick=event=>{
+        event.preventDefault();
+        const target=document.getElementById(item.id);if(!target)return;
+        setMenu(false);target.setAttribute('tabindex','-1');target.focus({preventScroll:true});target.scrollIntoView({block:'start'});updateSectionPosition();
+      };
+      list.append(link);
+    }
+    parent.after(list);
+  }
+  nav.scrollTop=position;
+  requestAnimationFrame(updateSectionPosition);
+}
+function updateSectionPosition(){
+  const links=[...document.querySelectorAll('[data-section-target]')];if(!links.length)return;
+  const top=document.getElementById('main').getBoundingClientRect().top+110;
+  let current=links[0];
+  for(const link of links){const target=document.getElementById(link.dataset.sectionTarget);if(target && target.getBoundingClientRect().top<=top)current=link;}
+  for(const link of links){if(link===current)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');}
+}
+document.getElementById('main').addEventListener('scroll',()=>requestAnimationFrame(updateSectionPosition),{passive:true});
 function clearNav() {
+  document.querySelectorAll('.category-subnav').forEach(n=>n.remove());
   document.querySelectorAll('.nav-item').forEach(n => {
     n.classList.remove('active');
     n.setAttribute('aria-current', 'false');

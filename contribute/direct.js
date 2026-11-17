@@ -29,10 +29,12 @@ const groupedProperties=propertyGroups($('rows'));
 $('add').remove();
 const resourceHost=document.createElement('div');$('editor').insertBefore(resourceHost,$('editor').querySelector('details'));
 const readResources=resourceEditor(resourceHost);
+const previewButton=document.createElement('button');previewButton.type='submit';previewButton.dataset.preview='true';previewButton.textContent='Preview spec';previewButton.className='plain';$('submit').before(previewButton);
+const draftSession=editorSession($('editor'),'new-spec');
 $('editor').onsubmit=async event=>{
-  event.preventDefault();$('submit').disabled=true;$('status').textContent='Saving…';
+  event.preventDefault();const preview=event.submitter?.dataset.preview==='true';$('submit').disabled=true;$('status').textContent='Saving…';
   try{
-    const key=$('key').value.trim();if(!key)throw Error('Open Editor access and enter your GitHub editor token.');
+    const key=$('key').value.trim();if(!preview&&!key)throw Error('Open Editor access and enter your GitHub editor token.');
     const properties=groupedProperties.read();
     if(!properties.length || properties.some(p=>!p.label||!p.value))throw Error('Add a property and its value.');
     const title=$('entry').value?$('entry').selectedOptions[0].text:$('name').value.trim();
@@ -45,8 +47,10 @@ $('editor').onsubmit=async event=>{
       r.attachment={src:'data:'+file.type+';base64,'+base64(new Uint8Array(await file.arrayBuffer())),caption:$('caption').value.trim()||title};
     }
     r.resources=await readResources();
-    SpecChanges.apply(structuredClone(DATA),r);
+    const previewData=structuredClone(DATA);SpecChanges.apply(previewData,r);
+    if(preview){showEditorPreview($('editor'),SpecChanges.entries(previewData).find(e=>e.id===r.id));$('status').textContent='Preview ready. Nothing has been published.';return;}
     await saveGuideChange(key,r,title);
+    draftSession.complete();
     $('editor').hidden=true;$('status').textContent='Saved to GitHub. The guide will update after GitHub Pages publishes.';$('result').hidden=false;$('result').href='../?spec='+r.id;
   }catch(err){$('status').textContent=err.message}finally{$('submit').disabled=false}
 };
